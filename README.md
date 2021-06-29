@@ -48,7 +48,7 @@ Nuestra elección se basó principalmente en la funcionalidad del e-commerce, es
 
 ## Wireframes
 
-- [Home]()
-- [Detalles de producto]()
-- [Carrito de compras]()
-- [Formulario de registro e inicio de sesion]()
+- [Home](https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/blob/main/WIREFRAMES/Home/Desktop%20-%201.png)
+- [Detalles de producto](https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/blob/main/WIREFRAMES/Detalle-del-producto/Desktop-3.png)
+- [Carrito de compras](https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/blob/main/WIREFRAMES/Carrito/Desktop%20-%204.png)
+- [Formulario de registro e inicio de sesion](https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/blob/main/WIREFRAMES/Registro%20e%20inicio%20de%20sesion/Desktop%20-%202.png)
