@@ -27,8 +27,7 @@
 
 ## Temática de la web y audiencia objetivo
 
-Somos un grupo de desarrolladores y creamos Neo-Tech una pagina web de e-commerce. Esta orientada a la venta de productos informaticos y electrónicos como
-computadoras, notebook, tablets, celulares, accesorios gamers, etc. El front-end de la aplicación esta hecho con HTML y CSS. Por otro lado, el Backend está hecho también con Javascript utilizando NodeJS y el framework express.
+Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commerce. Está orientada a la venta de productos informáticos y electrónicos como computadoras, notebook, tablets, celulares, accesorios gamers, etc. El front-end de la página está hecho con HTML y CSS. Por otro lado, para el Backend se está utilizando NodeJS y el framework express.
 
 La audiencia objetivo serán personas de todas las edades.
 
