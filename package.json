@@ -1,0 +1,23 @@
+{
+  "name": "Grupo_14-Neo-Tech-C8",
+  "version": "1.0.0",
+  "description": "- 23 años\r - Estudiante de Programación Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/issues"
+  },
+  "homepage": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
