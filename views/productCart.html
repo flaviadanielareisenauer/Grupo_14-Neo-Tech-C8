@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Carrito de Compras</title>
+</head>
+
+<body class="carrito">
+    <div class="elemento">
+
+        <div class="caja">
+            <img src="/img/compu.jpg" alt="">
+            <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
+            <div class="cantidad">
+                <button type="button">+</button>
+                <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                <button type="button">-</button>
+                <div class="precio">
+                    <p>$1000</p>
+                </div>
+                <i class="fas fa-trash-alt"></i>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="caja">
+            <img src="/img/compu.jpg" width=" 100px">
+            <P>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</P>
+            <div class="cantidad">
+                <button type="button">+</button>
+                <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                <button type="button">-</button>
+                <div class="precio">
+                    <p>$1000</p>
+                </div>
+                <i class="fas fa-trash-alt"></i>
+            </div>
+        </div>
+    </div>
+
+    <div class="resumen">
+        <p parrafo>RESUMEN DEL PEDIDO</p>
+        <div class="pedido">
+            <p>TOTAL:</p>
+            <p>$0</p>
+        </div>
+        <label for="opciones">Cupon de descuento</label>
+        <select id="opciones">
+            <option value="" disabled selected>-- Seleccione --</option>
+            <option value="">10% de descuento</option>
+            <option value="">20% de descuento</option>
+            <option value="">30% de descuento</option>
+            <option value="">40% de descuento</option>
+        </select>
+        <div>
+            <input type="submit" value="COMPRAR" class="btn-ingresar">
+        </div>
+    </div>
+
+</body>
+
+</html>
