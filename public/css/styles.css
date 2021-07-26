@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@import url('admin.css');
+@import url('config-perfil.css');
+@import url('login.css');
+@import url('producto.css');
+@import url('registro.css');
+@import url('total-productos.css');
+
+:root {
+    
+}
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
