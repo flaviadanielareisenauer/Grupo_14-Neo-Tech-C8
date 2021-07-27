@@ -47,6 +47,7 @@ input[type="text"], input[type="e-mail"], input[type="password"] {
     border-radius: 5px;
     cursor: pointer;
     font-weight: bold;
+    transition: all 1s;
 }
 
 .button:hover {
