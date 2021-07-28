@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: #f5ebe4;
+    background-color: #EAEAEA;
 }
 
 h1 {
@@ -51,7 +51,7 @@ input[type="text"], input[type="e-mail"], input[type="password"] {
 }
 
 .button:hover {
-    background: black;
+    background: #070D2B;
 }
 
 p {
