@@ -5,9 +5,10 @@
 
 body {
     background-color: #EAEAEA;
+    height: 100vh;
 }
 
-h1 {
+h2 {
     text-align: center;
     font-weight: bold;
 }
@@ -16,7 +17,17 @@ h1 {
     margin-top: 1.5rem;
     padding: 1rem;
     font-weight: 500;
-    background-color: white;
+    background-color: #ffffff;
+}
+
+.social-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 0.5rem;
+    background-color: #ffffff;
 }
  
 input[type="text"], input[type="e-mail"], input[type="password"] {
@@ -34,7 +45,7 @@ input[type="text"], input[type="e-mail"], input[type="password"] {
 .icon {
     min-width: 5rem;
     text-align: center;
-    color: #999;
+    color: black;
 }
 
 .button {

@@ -7,9 +7,13 @@
 @import url('total-productos.css');
 
 :root {
-    
+    --clarito: #EAEAEA;
+    --blanco: #ffffff;
+    --gris: #aaa;
+    --negro: #000000;
+    --naranja: #ff6000;
+    --azulOscuro: #070D2B;    
 }
-
 
 *, *:before, *:after {
     box-sizing: inherit;
