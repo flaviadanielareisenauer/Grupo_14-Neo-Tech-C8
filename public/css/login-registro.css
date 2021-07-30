@@ -9,30 +9,30 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 30px;
     font-weight: bold;
 }
+
 .form {
-    margin-top: 150px;
-    padding: 3px;
+    margin-top: 1.5rem;
+    padding: 1rem;
     font-weight: 500;
     background-color: white;
 }
  
 input[type="text"], input[type="e-mail"], input[type="password"] {
-    font-size: 15px;
+    font-size: 1.5rem;
     width: 82%;
-    padding: 10px;
+    padding: 1rem;
     border: none;
 }
 
 .input-contenedor {
-    margin-bottom: 15px;
-    border: 1px solid #aaa;
+    margin-bottom: 1.5rem;
+    border: 0.10rem solid #aaa;
 }
 
 .icon {
-    min-width: 50px;
+    min-width: 5rem;
     text-align: center;
     color: #999;
 }
@@ -42,26 +42,31 @@ input[type="text"], input[type="e-mail"], input[type="password"] {
     width: 100%;
     background-color: #ff6000;
     color: white;
-    font-size: 15px;
-    padding: 10px 18px;
-    border-radius: 5px;
+    font-size: 1.5rem;
+    padding: 1rem 1.8rem;
+    border-radius: 0.50rem;
     cursor: pointer;
     font-weight: bold;
     transition: all 1s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255,255,255. 0.3);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.3);
 }
 
 .button:hover {
-    background: #070D2B;
+    background-color: #070D2B;
 }
 
 p {
     text-align: center;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 1.4rem;
 }
 
 a {
-    font-size: 15px;
+    font-size: 1.5rem;
 }
 
 .link {
@@ -72,8 +77,8 @@ a {
 @media (min-width: 768px) {
     .form {
         margin: auto;
-        width: 500px;
-        margin-top: 150px;
+        width: 45rem;
+        margin-top: 10rem;
         border-radius: 2%;
     }
 }

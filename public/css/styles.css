@@ -10,12 +10,35 @@
     
 }
 
-* { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+
+*, *:before, *:after {
+    box-sizing: inherit;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    font: 1.6rem;
+    line-height: 1;
+}
+
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /** Reset para REMS - 62.5% = 10 px de 16px **/
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 3.4rem;
+}
+
+h3 {
+    font-size: 3rem;
+}
+
+h4 {
+    font-size: 2.6rem;
 }
