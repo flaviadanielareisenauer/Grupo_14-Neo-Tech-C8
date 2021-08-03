@@ -15,12 +15,14 @@
     --azulOscuro: #070D2B;    
 }
 
-*, *:before, *:after {
-    box-sizing: inherit;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
     font: 1.6rem;
     line-height: 1;
 }
@@ -28,7 +30,7 @@ body {
 
 html {
     box-sizing: border-box;
-    font-size: 62.5%; /** Reset para REMS - 62.5% = 10 px de 16px **/
+    font-size: 62.5%; 
 }
 
 h1 {
