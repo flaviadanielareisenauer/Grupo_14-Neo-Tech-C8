@@ -10,22 +10,22 @@ app.use(express.static('public'));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/index.html'))
 })
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/admin.html'))
 })
-app.get('/', (req, res) => {
+app.get('/carrito', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/carrito.html'))
 })
-app.get('/', (req, res) => {
+app.get('/config-perfil', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/config-perfil.html'))
 })
-app.get('/', (req, res) => {
+app.get('/login-registro', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/login-registro.html'))
 })
-app.get('/', (req, res) => {
+app.get('/producto', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/producto.html'))
 })
-app.get('/', (req, res) => {
+app.get('/total-productos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/total-productos.html'))
 })
 
