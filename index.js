@@ -13,17 +13,17 @@ app.get('/', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/admin.html'))
 })
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/carrito.html'))
+app.get('/productCart', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/productCard.html'))
 })
 app.get('/config-perfil', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/config-perfil.html'))
 })
-app.get('/login-registro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/login-registro.html'))
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/register.html'))
 })
-app.get('/producto', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/producto.html'))
+app.get('/productDetail', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/productDetail.html'))
 })
 app.get('/total-productos', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/total-productos.html'))
