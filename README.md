@@ -31,6 +31,11 @@ Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commer
 
 La audiencia objetivo serán personas de todas las edades.
 
+
+## Segundo Sprint (05/08)
+### [Tablero](https://trello.com/b/g994yINA/prototipo)
+
+
 ## Páginas de referencia
 
 - [Maximus](https://www.maximus.com.ar/)

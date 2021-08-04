@@ -488,11 +488,11 @@ p {
         top: 22%;
         font-size: .7rem;
     }
-    ul.icon li a {
+    .icon li a {
         margin-top: 20px;
         color: var(--blue);
     }
-    ul li a i {
+    .icon li a i {
         font-size: 1.5rem;
     }
     .secciones {
