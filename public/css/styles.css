@@ -3,4 +3,6 @@
 @import url('register.css');
 @import url('generales.css');
 @import url('home.css');
-@import url('productCa.css');
+@import url('productCart.css');
+@import url('productDetail.css');
+@import url('total-productos.css');
