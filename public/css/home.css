@@ -92,12 +92,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/****** BARRA ******/
-
-
-/* GENERAL */
-
-
 /* HEADER */
 
 .header {
@@ -143,12 +137,6 @@ p {
     padding: 15px;
     text-align: center;
     font-family: Roboto;
-}
-
-h3 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 20px
 }
 
 
@@ -725,7 +713,6 @@ img {
         color: black;
         opacity: .3;
     }
-    /***** BOTÓN VUELTA AL INICIO *****/
     /***** BARRA DE MEDIOS DE PAGO *****/
     .carousel-container {
         margin: 0px auto 50px;
