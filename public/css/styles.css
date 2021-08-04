@@ -1,26 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
 @import url('admin.css');
 @import url('config-perfil.css');
 @import url('login-registro.css');
 @import url('producto.css');
 @import url('total-productos.css');
-
+@import url('home.css');
 :root {
     --clarito: #EAEAEA;
     --blanco: #ffffff;
     --gris: #aaa;
     --negro: #000000;
     --naranja: #ff6000;
-    --azulOscuro: #070D2B;    
+    --azulOscuro: #070D2B;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
+
 body {
     font-family: 'Roboto', sans-serif;
 }
