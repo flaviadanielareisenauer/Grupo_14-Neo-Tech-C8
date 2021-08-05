@@ -10,7 +10,6 @@
     width: 100%;
     height:auto;
     display:flex;
-    
 }
     
     
@@ -104,11 +103,6 @@ a.text-agr-car{
     color: var(--blanco);
 }
 
-
-
-
-
-
 /*-----descripción producto-----*/
 
 .detalle-producto1{
@@ -128,8 +122,6 @@ p.p-destacado{
     margin-left: 0.5rem;
     text-align: left;
 }
-
-
 
 /*----------------hacer comentarios--------*/
 .comentarios {
@@ -163,8 +155,6 @@ p.p-destacado{
 }
 
 
-
-
 #comentarios {
     font-size: 150%;
     align-items: center;
@@ -174,8 +164,6 @@ p.p-destacado{
 .comentarioletra{
     color: var(--blanco);
 }
-
-
 
 /*--------comentarios destacados-------*/
 
