@@ -14,7 +14,7 @@ app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/admin.html'))
 })
 app.get('/productCart', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productCard.html'))
+    res.sendFile(path.join(__dirname, 'views/productCart.html'))
 })
 app.get('/config-perfil', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/config-perfil.html'))
