@@ -1,15 +1,22 @@
 .carrito, .resumen {
-    width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: #E5E5E5;
+}
+
+.elemento {
+    background-color: white;
+    margin-bottom: 10px;
+    border: 1px solid darkgray;
 }
 
 .resumen {
     display: flex;
     padding: 15px;
-    border-style: double;   
+    border-style: double;
+    background-color: white;  
 }
 .resumen select {
     padding: 1px;
@@ -20,7 +27,7 @@
     justify-content: center;
 }
  .carrito img {
-    width: 35%;
+    width: 120px;
     text-align: center;    
 }
 
@@ -86,38 +93,24 @@
 @media screen and (min-width: 564px)
 {
     .carrito {
-        background-color: #E5E5E5;
-        padding: 20px;
-
-    }
-
-    .elemento {
-        background-color: white;
-        border: 1px solid darkgray;
+        padding: 20px 10%;
     }
     
     .resumen { 
         margin-top: 15px;
-        background-color: white;  
     }
-     .carrito img {
-        width: 25%;
-        text-align: center;    
-     }
 }
 
 @media screen and (min-width: 1024px)
 {
 .carrito {
-    background-color: #E5E5E5;
     flex-direction: row;
     margin-top: 200px;
+    padding: 0 40px 0 40px;
 }
 
 .elemento {
-    background-color: white;
     max-width: 60%;
-    border: 1px solid darkgray;
     margin-left: auto;
     margin-right: auto;
 }
@@ -155,10 +148,9 @@ width: 90%;
 
 .resumen {
     padding: 0;
-    background-color: white;
     margin-right: auto;
     margin-left: auto;
-    max-width: 30%;
-    
+    width: 30%;
+    margin-top: 0;
 }
 }
