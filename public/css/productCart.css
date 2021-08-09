@@ -8,7 +8,7 @@
 
 .elemento {
     background-color: white;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     border: 1px solid darkgray;
 }
 
@@ -16,7 +16,8 @@
     display: flex;
     padding: 15px;
     border-style: double;
-    background-color: white;  
+    background-color: white;
+    margin-top: 15px;
 }
 .resumen select {
     padding: 1px;
@@ -38,6 +39,7 @@
 .cantidad {
     max-width: 5%;
     margin: auto;
+    justify-content: center;
 }
 
 .cantidad button:first-child {
@@ -55,6 +57,10 @@
     justify-content: center;
 }
 
+hr {
+    width: 90%;
+}
+
 .cantidad, .cantidad button {
     align-items: center;
     display: flex;
@@ -66,13 +72,12 @@
     width: 30px;
     margin: 0;
 }
-.cantidad i {
-    width: 20px;
-    margin-left: 30px;
+.caja i {
+justify-content: center;
 }
 
 .precio {
-    margin-left: 20px;
+    text-align: center;
     font-weight: 700;
 }
 
@@ -95,10 +100,6 @@
     .carrito {
         padding: 20px 10%;
     }
-    
-    .resumen { 
-        margin-top: 15px;
-    }
 }
 
 @media screen and (min-width: 1024px)
@@ -109,28 +110,32 @@
     padding: 0 40px 0 40px;
 }
 
+.cantidad {
+    margin: auto;
+}
+
 .elemento {
     max-width: 60%;
     margin-left: auto;
-    margin-right: auto;
 }
 
 .caja {
     text-align: center;
     display: flex;
+    padding: 20px;
 }
 
 .caja p {
-    display: flex;
     align-items: center;
     white-space: pre-wrap;
     max-width: 30%;
     justify-content: center;
+    margin: auto;
 }
 
 .caja img {
     width: 100px;
-    margin: 0px 20px 0px 40px;
+    margin: auto;
 }
 
 hr {
@@ -146,11 +151,19 @@ width: 90%;
     font-weight: 800;
 }
 
+.caja i {
+    margin: auto;
+}
+
+.precio {
+    margin: auto;
+}
+
 .resumen {
     padding: 0;
     margin-right: auto;
-    margin-left: auto;
-    width: 30%;
+    margin-left: 40px;
+    width: 450px;
     margin-top: 0;
 }
 }
