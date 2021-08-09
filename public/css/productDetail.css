@@ -102,7 +102,7 @@ a.text-agr-car{
 /*-----descripción producto-----*/
 
 .detalle-producto1{
-    width: 60%;
+    width: 80%;
 }
 
 div.texto-detalle ul li {
@@ -120,26 +120,24 @@ p.p-destacado{
 }
 
 
-
 /*----------------hacer comentarios--------*/
 .comentarios {
     width: 90%;
     margin: 1em;
 }
 
-
 #comentarios1 {
-    font-size: 150%;
+    font-weight: 700;
     align-items: center;
     display: flex;
-    margin: 0 0 2vh 0;
+    margin: 0 0 1rem 0;
 }
 
 .botcomentario{
     border-bottom: var(--negro);
     background-color: var(--naranja);
-    height: 5vh;
-    width: 10vh;
+    height: 3rem;
+    width: 5rem;
 }
 
 .comentarioletra{
@@ -149,14 +147,10 @@ p.p-destacado{
 
 #mensaje{
     width: 70%;
-    height: 5vh;
+    height: 40px;
 }
 
-
-
-
 #comentarios {
-    font-size: 150%;
     align-items: center;
 }
 
@@ -164,7 +158,6 @@ p.p-destacado{
 .comentarioletra{
     color: var(--blanco);
 }
-
 
 
 /*--------comentarios destacados-------*/
@@ -176,7 +169,7 @@ p.p-destacado{
   max-height: 1000px;
   display: flex;
   flex-wrap: wrap;
-  margin: 5%;
+  margin: auto;
 }
 
 .comentariosuser{
@@ -197,7 +190,6 @@ p.p-destacado{
   display: flex;
   text-align: center;
   margin:1em;
-  
 }
 
 
@@ -222,9 +214,7 @@ p.p-destacado{
     .pantalla-dividida2{
         display: flex;
         width: 30%;
-        background-color: var(--blanco);
-        padding: 10px;
-        max-height: 200px;   
+        background-color: var(--blanco); 
     }
     
     .agregar-carrito-der{
@@ -243,8 +233,7 @@ p.p-destacado{
     #boton-detalle{
         border-bottom: var(--negro);
         background-color: var(--naranja);
-        height: 5vh;
-        width: 80%;
+        width: 70%;
         margin-top: 3em;
     }
     
@@ -273,19 +262,14 @@ p.p-destacado{
         width: 60%;
     }
     
-    li {
-        padding-top: 2em;
+    div.texto-detalle ul li {
+        padding-top: 1em;
         padding-left: 2em;
     }
-    
-
-  div.texto-detalle ul li {
-    padding-top: 1em;
-    padding-left: 2em;
-}
 
     
     .destacado {
+        font-weight: 400;
         margin: 1em;
     }
     
@@ -298,27 +282,21 @@ p.p-destacado{
     }
     
     #comentarios {
-        font-size: 150%;
         align-items: center;
     }
     
     .botcomentario{
         border-bottom: var(--negro);
-        background-color: var(--naranja);
-        height: 5vh;
-        width: 10vh;  
+        background-color: var(--naranja); 
     }
 
-    
-    
     #comentarios {
-        font-size: 150%;
         align-items: center;
     }
     
     
     .comentarioletra{
-        color: white;
+        color: var(--blanco);
     }
 
 
@@ -338,35 +316,31 @@ p.p-destacado{
     .pantalla-dividida2{
         display: flex;
         width: 30%;
-        background-color: var(--blanco);
-        padding: 10px;
-        max-height: 100px;   
+        background-color: var(--blanco); 
     }
     
     .agregar-carrito-der{
         display: flex;
         flex: 100%;
-        max-height: 315px;
         text-align: center;
-        background-color: rgb(255, 255, 255);
+        background-color: var(--blanco);
         position: fixed;
     }
 
     #boton-detalle{
         border-bottom: var(--negro);
         background-color: var(--naranja);
-        height: 5vh;
-        width: 80%;
+        width: 60%;
         margin-top: 1rem;
     }
     
     
     .text-agr-car{
-        margin: 1rem 0 0.5rem 0;
+        margin: 0.5rem 0 0.5rem 0;
     }
     
     .text-agr-car2{
-        margin:  0.2rem 0 0.5rem 0;
+        margin:  0.5rem 0 0.5rem 0;
     }
 
 }
