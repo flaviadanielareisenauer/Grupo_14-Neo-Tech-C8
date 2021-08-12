@@ -12,9 +12,9 @@
 
 .main-LR {
     width:100%;
-    padding: 2rem;
+    padding: 20px;
     margin: auto;
-    margin-top: 10rem;
+    margin-top: 100px;
 }
 
 .contenedor__todo {
@@ -26,7 +26,7 @@
 
 .caja__trasera {
     width: 100%;
-    padding: 1rem 1.50rem;
+    padding: 10px 20px;
     display: flex;
     justify-content: center;
     backdrop-filter: blur(10px);
