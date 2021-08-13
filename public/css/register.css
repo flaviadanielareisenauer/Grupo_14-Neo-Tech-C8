@@ -125,7 +125,7 @@
 
 /* Responsive */
 @media screen and (max-width: 850px) {
-    main {
+    .main-LR {
         margin-top: 50px;
     }
     .caja__trasera {
