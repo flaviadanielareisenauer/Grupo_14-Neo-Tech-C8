@@ -29,7 +29,6 @@
 
 
 # Sprint 3: Retrospectiva
-
 ## Basandonos en ejercicio de la Estrella de Mar, obtuvimos las siguientes conclusiones:
 
 **Empezar a hacer:**
