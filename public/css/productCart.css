@@ -1,5 +1,5 @@
 .carrito {
-    background-color: #e5e5e5;
+    background-color: #E5E5E5;
     margin: 0;
 }
 
@@ -31,7 +31,7 @@
     margin-top: 7px;
     justify-content: center;
 }
- .carrito img {
+ .caja img {
     width: 120px;
     text-align: center;    
 }
@@ -110,8 +110,7 @@ justify-content: center;
 {
 .cart {
     flex-direction: row;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 50px;
     padding: 0 40px 0 40px;
 }
 
