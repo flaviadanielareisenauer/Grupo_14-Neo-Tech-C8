@@ -2,6 +2,18 @@
     background-color: var(--clarito);
 }
 
+/*---------------------scrollbar------------------*/
+
+.productDetail::-webkit-scrollbar {
+    width: 9px;
+}
+
+.productDetail::-webkit-scrollbar-thumb {
+    background-color: #070d2b;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+
 /*-------------fotos de producto-------------------*/
 
 .container1{
@@ -193,6 +205,72 @@ p.p-destacado{
 }
 
 
+/*----------------productos----------*/
+
+
+
+.general-products .producto .button {
+    width: 96%;
+    background-color: #fff;
+    border: 2px solid #ff6000;
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+    height: 40px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+.general-products .producto .button p {
+    padding: 10px 20px;
+    width: 100%;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+}
+
+
+
+section.general-products .producto div.button,
+section.general-products .producto2 div.button {
+   background-color: #fff;
+   border: 2px solid #ff6000;
+   border-radius: 3px;
+   width: 94%;
+   text-align: center;
+   align-items: center;
+   height: 46px;
+   display: flex;
+   margin: auto;
+   margin-bottom: 5px;
+   transition: all .5s;
+}
+section.general-products .producto div.button:hover,
+section.general-products .producto2 div.button:hover {
+   background-color: #ff6000;
+   transform: .5s;
+   opacity: 1;
+}
+
+section.general-products .producto div.button p,
+section.general-products .producto2 div.button p {
+   padding: 10px 20px;
+   width: 100%;
+   text-decoration: none;
+   color: #070d2b;
+   font-size: 1.2rem;
+}
+
+
+ section.general-products .producto div.button p:hover,
+ section.general-products .producto2 div.button p:hover {
+    color: white;
+}
+
+
+
+
 @media screen  and (min-width:782px) {
     
     .productDetail{
@@ -202,18 +280,19 @@ p.p-destacado{
     .mainDetalleProducto{
        display: flex;
         width: 90%;
+        margin-left: 50px;
     }
     
     .pantalla-dividida{
         display: flex;
-        width: 85%;
-        background-color: var(--gris);
+        width: 70%;
+        background-color: var(--azulOscuro);
         padding: 10px;
     }
     
     .pantalla-dividida2{
         display: flex;
-        width: 30%;
+        width: 20%;
         background-color: var(--blanco); 
     }
     
@@ -222,8 +301,6 @@ p.p-destacado{
         flex: 100%;
         text-align: center;
         background-color: var(--blanco);
-        position: fixed;
-        top:0;
     }
     
     .agregar-carrito{
@@ -324,23 +401,22 @@ p.p-destacado{
         flex: 100%;
         text-align: center;
         background-color: var(--blanco);
-        position: fixed;
     }
 
     #boton-detalle{
         border-bottom: var(--negro);
         background-color: var(--naranja);
         width: 60%;
-        margin-top: 1rem;
+        margin-top: 2.5rem;
     }
     
     
     .text-agr-car{
-        margin: 0.5rem 0 0.5rem 0;
+        margin: 2rem 0 2rem 0;
     }
     
     .text-agr-car2{
-        margin:  0.5rem 0 0.5rem 0;
+        margin:  2rem 0 2rem 0;
     }
 
 }
