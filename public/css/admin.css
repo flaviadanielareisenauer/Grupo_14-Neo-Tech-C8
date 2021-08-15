@@ -1,5 +1,5 @@
 
-.admin {
+.body__admin {
   background: linear-gradient(rgb(228, 228, 228), white);
   height: 100%; 
   padding: 6rem 1rem;
@@ -28,45 +28,15 @@ hr {
   padding: 1rem;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.form {
-  display: flex; /* Habilita el flex colocando un elemento al lado del otro*/
-  flex-direction: column; /* Coloca los elementos uno abajo del otro */
-  justify-content: center; /* Centra los elementos sobre el main axis */
-  align-items: center; /* Centra los elementos sobre el cross axis */
-} /* VEEEER */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.form__admin {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+} 
 
 /* FORM INPUT */
-.input-container,
+.input__container,
 .button-container {
   display: flex;
   flex-direction: column;
@@ -74,14 +44,7 @@ hr {
   width: 100%;
 }
 
-span.error-message {
-  color: red;
-  font-size: 0.8rem;
-  margin: 5px auto 0; /* 5 Para separarlo del input y del elemento que tenga abajo, auto a los costado para que se acomode al centro y 0 abajo */ /* Este error solo aparece al haber un error en el campo */
-  display: none; /* Para sacar los mensajes de error */
-}
-
-input.input-style {
+input.input__style {
   color: gray;
   border: none; /* Sacar el borde que tiene por defecto el input */
   border-radius: 1rem; /* Redondear esquinas */
@@ -89,12 +52,12 @@ input.input-style {
   padding: 0.5rem; /* Input - espacio para contenido */
 }
 
-input.input-style::placeholder {
+input.input__style::placeholder {
   /* ::placeholder se utiliza para cambiar el tipo de letra y el color del input */
   color: lightgray;
 }
 
-.input-file-container {
+.input__file-container {
   background-color: white;
   border-radius: 1rem;
   height: 2.5rem;
@@ -112,7 +75,7 @@ select.input-select {
   padding: 0.5rem;
 }
 
-input.input-style:focus,
+input.input__style:focus,
 select.input-select:focus {
   /* Cuando hace foco en el campo, no aparece el borde que sale por fuera y que viene por defecto en chrome */
   box-shadow: 0 0 6px white; /* Sombra - efecto luz */
@@ -197,7 +160,7 @@ label {
 /* MEDIA QUERIES */
 /* TABLET */
 @media screen and (min-width: 475px) {
-    .input-container, .button-container {
+    .input__container, .button-container {
         width: 90%;
     }
     .form-container {
@@ -206,7 +169,7 @@ label {
 }
 
 @media screen and (min-width: 768px) {
-    .input-container, .button-container {
+    .input__container, .button-container {
         width: 80%;
     } 
     .form-container {
@@ -228,46 +191,23 @@ label {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.profile .form-container {
+.profile .admin__product {
   width: 100%;
 }
 
-.profile-form {
+.admin__carga {
   display: flex;
   flex-direction: column;
 }
 
-.profile-box {
+.admin__box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.profile-box h4 {
+.admin__box h5 {
   margin-bottom: 1rem;
 }
 
@@ -279,7 +219,7 @@ label {
   gap: 10px;
 }
 
-.profile .avatar {
+.profile .imagen__admin {
   width: 10rem;
   height: 10rem;
   background-color: thistle;
@@ -291,13 +231,13 @@ label {
 /* TABLET */
 
 @media screen and (min-width: 475px) {
-  .profile .form-container {
+  .profile .admin__product {
       width: 90%;
   }
 }
 
 @media screen and (min-width: 768px) {
-  .profile .form-container {
+  .profile .admin__product {
       width: 80%;
   }
 }
@@ -305,13 +245,13 @@ label {
 /* DESKTOP */
 
 @media screen and (min-width: 992px) {
-  .profile .input-file-container {
+  .profile .input__file-container {
       max-width: 300px;
   }   
-  .profile .form-container {
+  .profile .admin__product {
       width: 90%;
   } 
-  .profile-form {
+  .admin__carga {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -323,26 +263,3 @@ label {
       justify-content: center;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
