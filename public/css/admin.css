@@ -1,0 +1,348 @@
+
+.admin {
+  background: linear-gradient(rgb(228, 228, 228), white);
+  height: 100%; 
+  padding: 6rem 1rem;
+}
+
+h4 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+hr {
+  background: linear-gradient(90deg, rgba(24, 24, 24),white); 
+  height: 3px; 
+  margin-bottom: 3rem;
+  width: 100%; 
+  border: none;
+}
+
+.admin__product {
+  background: linear-gradient(lightgrey, white);
+  border-radius: 10px;
+  margin: 0 auto; 
+  width: 100%;
+  height: fit-content; 
+  height: -moz-fit-content; 
+  padding: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.form {
+  display: flex; /* Habilita el flex colocando un elemento al lado del otro*/
+  flex-direction: column; /* Coloca los elementos uno abajo del otro */
+  justify-content: center; /* Centra los elementos sobre el main axis */
+  align-items: center; /* Centra los elementos sobre el cross axis */
+} /* VEEEER */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FORM INPUT */
+.input-container,
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem; /* Uno arriba y abajo, y otro a los costados */
+  width: 100%;
+}
+
+span.error-message {
+  color: red;
+  font-size: 0.8rem;
+  margin: 5px auto 0; /* 5 Para separarlo del input y del elemento que tenga abajo, auto a los costado para que se acomode al centro y 0 abajo */ /* Este error solo aparece al haber un error en el campo */
+  display: none; /* Para sacar los mensajes de error */
+}
+
+input.input-style {
+  color: gray;
+  border: none; /* Sacar el borde que tiene por defecto el input */
+  border-radius: 1rem; /* Redondear esquinas */
+  height: 2.5rem; /* Tamaño del input */
+  padding: 0.5rem; /* Input - espacio para contenido */
+}
+
+input.input-style::placeholder {
+  /* ::placeholder se utiliza para cambiar el tipo de letra y el color del input */
+  color: lightgray;
+}
+
+.input-file-container {
+  background-color: white;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+select.input-select {
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+input.input-style:focus,
+select.input-select:focus {
+  /* Cuando hace foco en el campo, no aparece el borde que sale por fuera y que viene por defecto en chrome */
+  box-shadow: 0 0 6px white; /* Sombra - efecto luz */
+  outline: none; /* Saca el borde por defecto */
+}
+
+label {
+  font-size: 0.9rem;
+}
+
+/* BOTONES */
+.button-container {
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer; /* Modifica el cursor (manito) */
+  height: 2.5rem;
+  text-transform: uppercase; /* Letra mayuscula */
+  width: 8rem;
+}
+
+.btn-submit {
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgb(39, 255, 232, 0.5) 50%); /* Color del boton */
+  color: rgb(75, 75, 75); /* Color de la fuente */
+  font-weight: bold; /* Grosor de la letra = Negrita */
+  transition: all 1s ease; /* Efecto de transicion */
+}
+
+.btn-submit:hover {
+  color: rgb(172, 172, 172);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(258deg, rgba(255,255,255,0.5) 0%, rgba(39,255,232,0.5) 50%);
+}
+
+.btn-reset {
+    background: linear-gradient(45deg, rgb(255,255,255.1) 0%, rgba(39,151,255,0.5) 50%);
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+    transition: all 1s ease;
+}
+
+.btn-reset:hover {
+    color: rgb(172, 172, 172);
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
+}
+
+.btn-edit {
+    background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
+    color: rgb(75, 75, 75);
+    font-weight: bold;
+    transition: all 1s ease;
+}
+
+.btn-edit:hover {
+    color: rgb(172, 172, 172);
+    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
+}
+
+/* CHECK */
+.check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.check label {
+    margin-right: 10px;    
+}
+
+.check input[type = "checkbox"] { /* El check pareciera estar un poco mas arriba y esto es para solucionarlo */
+    position: relative;
+    bottom: -1px; 
+}
+
+/* MEDIA QUERIES */
+/* TABLET */
+@media screen and (min-width: 475px) {
+    .input-container, .button-container {
+        width: 90%;
+    }
+    .form-container {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .input-container, .button-container {
+        width: 80%;
+    } 
+    .form-container {
+        width: 20rem;
+    }  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile .form-container {
+  width: 100%;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-box h4 {
+  margin-bottom: 1rem;
+}
+
+.profile .button-container {
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  gap: 10px;
+}
+
+.profile .avatar {
+  width: 10rem;
+  height: 10rem;
+  background-color: thistle;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+/* MEDIA QUERIES */
+/* TABLET */
+
+@media screen and (min-width: 475px) {
+  .profile .form-container {
+      width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .profile .form-container {
+      width: 80%;
+  }
+}
+
+/* DESKTOP */
+
+@media screen and (min-width: 992px) {
+  .profile .input-file-container {
+      max-width: 300px;
+  }   
+  .profile .form-container {
+      width: 90%;
+  } 
+  .profile-form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }
+  .profile .button-container {
+      flex-direction: row;
+      margin-top: 2rem;
+      gap: 20px;
+      justify-content: center;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
