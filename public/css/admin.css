@@ -81,40 +81,15 @@ hr {
   flex-direction: column;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.input-container,
-.button-container {
+.input__container,
+.button__container {
   display: flex;
   flex-direction: column;
   margin: 1rem 1rem;
   width: 100%;
 }
 
-input.input-style {
+input.input__style {
   color: grey;
   border: none;
   border-radius: 1rem;
@@ -122,30 +97,25 @@ input.input-style {
   padding: 0.5rem;
 }
 
-input.input-style::placeholder {
-  color: lightgray;
+input.input__style::placeholder, .textarea__adm {
+  color: black;
 }
 
-select.input-select {
+select.input__select {
   border: none;
   border-radius: 1rem;
   height: 2.5rem;
   padding: 0.5rem;
 }
 
-input.input-style:focus,
-select.input-select:focus {
+input.input__style:focus,
+select.input__select:focus {
   box-shadow: 0 0 6px white;
   outline: none;
 }
 
-label {
-  font-size: 0.9rem;
-}
-
-/* Botones */
-
-.button-container {
+/* BOTONES*/
+.button__container {
   align-items: center;
 }
 
@@ -157,50 +127,21 @@ label {
   text-transform: uppercase;
   width: 8rem;
 }
-
-.btn-submit {
-  background: linear-gradient(45deg, rgba(255,255,255,0.8)0%, rgba(39,255,232,0.5) 50%);
-  color: rgb(75,75,75);
+.btn__reset {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgb(255, 154, 39) 50%);
+  color: black;
   font-weight: bold;
   transition: all 1s ease;
 }
 
-.btn-submit:hover {
-  color: rgb(172, 172, 172);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39,255,232,0.5) 50%);
-}
-
-
-.btn-reset {
-  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(39, 151, 255, 0.5) 50%);
-  color: rgb(75, 75, 75);
+.btn__edit {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(255,154,39) 50%);
+  color: black;
   font-weight: bold;
   transition: all 1s ease;
 }
 
-.btn-reset:hover {
-  color: rgb(172, 172, 172);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
-}
-
-.btn-edit {
-  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
-  color: rgb(75, 75, 75);
-  font-weight: bold;
-  transition: all 1s ease;
-
-}
-
-.btn-edit:hover {
-  color: rgb(172, 172, 172);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
-}
-
-
-.body__admin .button-container {
+.body__admin .button__container {
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -208,14 +149,11 @@ label {
   gap: 10px;
 }
 
-
-
-/* Media queries */
+/* MEDIA QUERIES */
 /* Tablet */
-
 @media screen and (min-width: 475px) {
-  .input-container,
-  .button-container{
+  .input__container,
+  .button__container{
       width: 90%;
   }
   .admin__product {
@@ -231,9 +169,9 @@ label {
 }
 
 @media screen and (min-width: 768px) {
-  .input-container,
-  .button-container{
-      width: 80%;
+  .input__container,
+  .button__container{
+    width: 80%;
   }
   .admin__product {
     width: 90%; 
@@ -250,16 +188,13 @@ label {
   } 
   .body__admin .input__file-container {
     max-width: 300px;
-} 
+  } 
 }
-
-
-
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
   .body__admin .input__file-container {
-      max-width: 300px;
+    max-width: 300px;
   }
   .admin__product {
       width: 90%;
@@ -270,11 +205,11 @@ label {
     align-items: center;
     width: 90%;    
   }
-  .body__admin .button-container {
-      flex-direction: row;
-      margin-top: 2rem;
-      gap: 20px;
-      justify-content: center;
+  .body__admin .button__container {
+    flex-direction: row;
+    margin-top: 2rem;
+    gap: 20px;
+    justify-content: center;
   }
   .body__admin .imagen__admin {
     width: 90%;
