@@ -2,6 +2,7 @@
   background: linear-gradient(rgb(228, 228, 228), white);
   height: 100%; 
   padding: 6rem 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 h4 {
@@ -119,25 +120,17 @@ select.input__select:focus {
     background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(235,136,6,0.712) 50%);
 }
 
-/* MEDIA QUERIES */
-/* TABLET */
-@media screen and (min-width: 475px) {
-    .input__container, .button__container {
-        width: 90%;
-    }
-    .form-container {
-        width: 75%;
-    }
-}
 
-@media screen and (min-width: 768px) {
-    .input__container, .button__container {
-        width: 80%;
-    } 
-    .form-container {
-        width: 20rem;
-    }  
-}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -178,28 +171,29 @@ select.input__select:focus {
   height: 20rem;
   border-radius: 50%;
   margin-bottom: 1rem;
-}
-
+} 
+ 
 /* MEDIA QUERIES */
-/* TABLET */
-
+/* TABLET */ 
 @media screen and (min-width: 475px) {
-  .body__admin .admin__product {
+    .input__container, .button__container {
+        width: 90%;
+    }
+    .body__admin .admin__product {
       width: 90%;
-  }
+    }
 }
 
 @media screen and (min-width: 768px) {
-  .body__admin .admin__product {
-      width: 80%;
+    .input__container, .button__container, .body__admin .admin__product {
+        width: 80%;
+    }
   }
-}
 
-/* DESKTOP */
-
+  /* DESKTOP */
 @media screen and (min-width: 992px) {
   .body__admin .input__file-container {
-    max-width: 500px;
+    max-width: 600px;
   }   
   .body__admin .admin__product {
       width: 90%;
@@ -212,7 +206,14 @@ select.input__select:focus {
   .body__admin .button__container {
       flex-direction: row;
       margin-top: 2rem;
-      gap: 20px;
+      gap: 10px;
       justify-content: center;
+  }
+
+  .imagen__admin {
+    display: flex;
+    flex-direction: center;
+    justify-content: space-evenly;
+    align-items: center;
   }
 }
