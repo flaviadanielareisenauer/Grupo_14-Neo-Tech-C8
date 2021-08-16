@@ -51,7 +51,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-}  /* REVISAR ESTO */
+}
 
 .admin__box h5 {
   margin-bottom: 1rem;
