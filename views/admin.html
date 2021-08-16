@@ -99,44 +99,53 @@
           <div class="input__container">
             <input class="input__style" type="text" name="marca" placeholder="Marca">          
           </div>
-          
+
           <div class="input__container">
             <input class="input__style" type="number" name="precio" placeholder="Precio">
           </div>
         </div>
-        <div class="profile-box">
-          <h4 class="profile-subtitle">Datos de contacto</h4>
-          <div class="input-container">
-            <input class="input-style" type="tel" name="tel" placeholder="Teléfono">
+
+        <div class="admin__box">
+          <div class="input__container">
+            <input class="input__style" type="text" name="color" placeholder="Color">
           </div>
-          <div class="input-container">
-            <select name="provincia" class="input-select">
-              <option value="" hidden selected>Elija una provincia</option>
-              <option value="laRioja">La Rioja</option>
-              <option value="chaco">Chaco</option>
-              <option value="cordoba">Córdoba</option>
-              <option value="misiones">Misiones</option>
-              <option value="chubut">Chubut</option>
+          <div class="input__container">
+            <select name="caetgoria" class="input__select">
+              <option value="" hidden selected>Categorias</option>
+              <option value="ofertas">Ofertas</option>
+              <option value="notebook">Notebook</option>
+              <option value="computadoras">Computadoras</option>
+              <option value="celulares">Celulares</option>
+              <option value="accesorios">Accesorios</option>
+              <option value="televisores">Televisores</option>
+              <option value="consolas">Consolas</option>
+              <option value="combos">Combos</option>
+              <option value="tablet">Tablet</option>
+              <option value="impresoras">Impresoras</option>
             </select>
           </div>
-          <div class="input-container">
-            <select name="localidad" class="input-select">
-              <option value="" hidden selected>Elija una localidad</option>
-              <option value="localidad1">Localidad1</option>
-              <option value="localidad2">Localidad2</option>
-              <option value="localidad3">Localidad3</option>
-              <option value="localidad4">Localidad4</option>
-              <option value="localidad5">Localidad5</option>
+
+          <div class="input__container">
+            <select name="subcategoria" class="input__select">
+              <option value="" hidden selected>Descuento</option>
+              <option value="10">10%</option>
+              <option value="20">20%</option>
+              <option value="25">25%</option>
+              <option value="30">30%</option>
+              <option value="35">35%</option>
+              <option value="40">40%</option>
             </select>
           </div>
-          <div class="input-container">
-            <input class="input-style" type="text" name="domicilio" placeholder="DNI">
+
+          <div class="input__container">
+            <input class="input__style" type="text" name="codigo" placeholder="Código">
           </div>
-        </div>
+        </div>        
       </div>
-      <div class="button-container">
-        <button type="reset" class="btn btn-reset">Reset</button>
-        <button type="submit" class="btn btn-edit">Guardar</button>
+
+      <div class="button__container">
+        <button type="reset" class="btn btn__reset">Reset</button>
+        <button type="submit" class="btn btn__edit">Guardar</button>
       </div>
     </form>
   </div>

@@ -37,23 +37,22 @@ hr {
 
 /* FORM INPUT */
 .input__container,
-.button-container {
+.button__container {
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem; /* Uno arriba y abajo, y otro a los costados */
+  margin: 1rem 1rem; 
   width: 100%;
 }
 
 input.input__style {
   color: gray;
-  border: none; /* Sacar el borde que tiene por defecto el input */
-  border-radius: 1rem; /* Redondear esquinas */
-  height: 2.5rem; /* Tamaño del input */
-  padding: 0.5rem; /* Input - espacio para contenido */
+  border: none; 
+  border-radius: 1rem; 
+  height: 2.5rem; 
+  padding: 0.5rem; 
 }
 
 input.input__style::placeholder {
-  /* ::placeholder se utiliza para cambiar el tipo de letra y el color del input */
   color: lightgray;
 }
 
@@ -68,7 +67,7 @@ input.input__style::placeholder {
   width: 100%;
 }
 
-select.input-select {
+select.input__select {
   border: none;
   border-radius: 1rem;
   height: 2.5rem;
@@ -76,86 +75,51 @@ select.input-select {
 }
 
 input.input__style:focus,
-select.input-select:focus {
-  /* Cuando hace foco en el campo, no aparece el borde que sale por fuera y que viene por defecto en chrome */
-  box-shadow: 0 0 6px white; /* Sombra - efecto luz */
-  outline: none; /* Saca el borde por defecto */
-}
-
-label {
-  font-size: 0.9rem;
+select.input__select:focus {
+  box-shadow: 0 0 6px white; 
+  outline: none; 
 }
 
 /* BOTONES */
-.button-container {
+.button__container {
   align-items: center;
 }
 
 .btn {
   border: none;
   border-radius: 1rem;
-  cursor: pointer; /* Modifica el cursor (manito) */
+  cursor: pointer;
   height: 2.5rem;
-  text-transform: uppercase; /* Letra mayuscula */
+  text-transform: uppercase; 
   width: 8rem;
 }
 
-.btn-submit {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.8) 0%, rgb(39, 255, 232, 0.5) 50%); /* Color del boton */
-  color: rgb(75, 75, 75); /* Color de la fuente */
-  font-weight: bold; /* Grosor de la letra = Negrita */
-  transition: all 1s ease; /* Efecto de transicion */
-}
-
-.btn-submit:hover {
-  color: rgb(172, 172, 172);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(258deg, rgba(255,255,255,0.5) 0%, rgba(39,255,232,0.5) 50%);
-}
-
-.btn-reset {
+.btn__reset {
     background: linear-gradient(45deg, rgb(255,255,255.1) 0%, rgba(39,151,255,0.5) 50%);
     color: rgb(75, 75, 75);
     font-weight: bold;
     transition: all 1s ease;
 }
 
-.btn-reset:hover {
+.btn__reset:hover {
     color: rgb(172, 172, 172);
     box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
     background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
 }
 
-.btn-edit {
+.btn__edit {
     background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
     color: rgb(75, 75, 75);
     font-weight: bold;
     transition: all 1s ease;
 }
 
-.btn-edit:hover {
+.btn__edit:hover {
     color: rgb(172, 172, 172);
     box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
     background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
 }
 
-/* CHECK */
-.check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-    width: 80%;
-}
-
-.check label {
-    margin-right: 10px;    
-}
-
-.check input[type = "checkbox"] { /* El check pareciera estar un poco mas arriba y esto es para solucionarlo */
-    position: relative;
-    bottom: -1px; 
-}
 
 /* MEDIA QUERIES */
 /* TABLET */
