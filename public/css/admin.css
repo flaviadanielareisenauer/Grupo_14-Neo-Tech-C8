@@ -57,6 +57,29 @@ hr {
   margin-bottom: 1rem;
 }
 
+.body__admin .imagen__admin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+/* FORM INPUT */
+.input__file-container {
+  background-color: white;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.admin__carga {
+  display: flex;
+  flex-direction: column;
+}
 
 
 
@@ -81,7 +104,7 @@ hr {
 
 
 
-/* Form input */
+
 
 .input-container,
 .button-container {
@@ -101,17 +124,6 @@ input.input-style {
 
 input.input-style::placeholder {
   color: lightgray;
-}
-
-.input-file-container {
-  background-color: white;
-  border-radius: 1rem;
-  height: 2.5rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-  width: 100%;
 }
 
 select.input-select {
@@ -187,32 +199,6 @@ label {
   background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
 }
 
-/* Check */
-
-.check {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  width: 80%;
-}
-
-.check label {
-  margin-right: 10px;
-}
-
-.check input[type = "checkbox"] {
-  position: relative;
-  bottom: -1px;
-}
-
-
-.profile-form {
-  display: flex;
-  flex-direction: column;
-}
-
-
 
 .body__admin .button-container {
   flex-direction: row;
@@ -222,13 +208,7 @@ label {
   gap: 10px;
 }
 
-.body__admin .avatar {
-  width: 10rem;
-  height: 10rem;
-  background-color: thistle;
-  border-radius: 50%;
-  margin-bottom: 1rem;
-}
+
 
 /* Media queries */
 /* Tablet */
@@ -241,6 +221,13 @@ label {
   .admin__product {
       width: 75%;
   }
+  .body__admin .imagen__admin {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+  }  
 }
 
 @media screen and (min-width: 768px) {
@@ -254,27 +241,34 @@ label {
   .textarea__adm {
     width: 400px;
   }
+  .body__admin .imagen__admin {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    align-items: center;
+  } 
+  .body__admin .input__file-container {
+    max-width: 300px;
+} 
 }
-
-
-
-
 
 
 
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
-  .body__admin .input-file-container {
+  .body__admin .input__file-container {
       max-width: 300px;
   }
   .admin__product {
       width: 90%;
   }
-  .profile-form {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
+  .admin__carga {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;    
   }
   .body__admin .button-container {
       flex-direction: row;
@@ -282,4 +276,11 @@ label {
       gap: 20px;
       justify-content: center;
   }
+  .body__admin .imagen__admin {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    align-items: center;
+  }  
 }
