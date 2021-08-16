@@ -1,62 +1,109 @@
 .body__admin {
   background: linear-gradient(rgb(228, 228, 228), white);
-  height: 100%; 
-  padding: 6rem 1rem;
   font-family: 'Roboto', sans-serif;
+  height: 100%;
+  padding: 8rem  1rem;
+  width: 100%;
 }
 
 h4 {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   text-align: center;
 }
 
 hr {
-  background: linear-gradient(90deg, rgba(24, 24, 24),white); 
-  height: 3px; 
-  margin-bottom: 3rem;
-  width: 100%; 
+  background: linear-gradient(90deg, rgb(24,24,24), white);
+  height: 2px;
+  margin-bottom: 1.8rem;
+  width: 100%;
   border: none;
 }
 
 .admin__product {
   background: linear-gradient(lightgrey, white);
   border-radius: 10px;
-  margin: 0 auto; 
+  margin: 0 auto;
   width: 100%;
-  height: fit-content; 
-  height: -moz-fit-content; 
+  height: fit-content;
+  height: -moz-fit-content;
+  padding: 1rem;
+}
+
+.textarea__adm {
+  border-radius: 10px;
+  margin: 0;
+  width: 100%;
+  height: fit-content;
+  height: -moz-fit-content;
   padding: 1rem;
 }
 
 .form__admin {
   display: flex;
-  flex-direction: column; 
-  justify-content: center; 
-  align-items: center; 
-} 
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-/* FORM INPUT */
-.input__container,
-.button__container {
+.admin__box {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 1rem 1rem; 
+  align-items: center;
+}  /* REVISAR ESTO */
+
+.admin__box h5 {
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Form input */
+
+.input-container,
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
   width: 100%;
 }
 
-input.input__style {
-  color: gray;
-  border: none; 
-  border-radius: 1rem; 
-  height: 2.5rem; 
-  padding: 0.5rem; 
+input.input-style {
+  color: grey;
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
 }
 
-input.input__style::placeholder {
-  color: black;
+input.input-style::placeholder {
+  color: lightgray;
 }
 
-.input__file-container {
+.input-file-container {
   background-color: white;
   border-radius: 1rem;
   height: 2.5rem;
@@ -67,21 +114,26 @@ input.input__style::placeholder {
   width: 100%;
 }
 
-select.input__select {
+select.input-select {
   border: none;
   border-radius: 1rem;
   height: 2.5rem;
   padding: 0.5rem;
 }
 
-input.input__style:focus,
-select.input__select:focus {
-  box-shadow: 0 0 6px white; 
-  outline: none; 
+input.input-style:focus,
+select.input-select:focus {
+  box-shadow: 0 0 6px white;
+  outline: none;
 }
 
-/* BOTONES */
-.button__container {
+label {
+  font-size: 0.9rem;
+}
+
+/* Botones */
+
+.button-container {
   align-items: center;
 }
 
@@ -90,75 +142,79 @@ select.input__select:focus {
   border-radius: 1rem;
   cursor: pointer;
   height: 2.5rem;
-  text-transform: uppercase; 
+  text-transform: uppercase;
   width: 8rem;
 }
 
-.btn__reset {
-    background: linear-gradient(45deg, rgb(255,255,255.1) 0%,  rgba(214, 123, 5, 0.883) 50%);
-    color: rgb(75, 75, 75);
-    font-weight: bold;
-    transition: all 1s ease;
+.btn-submit {
+  background: linear-gradient(45deg, rgba(255,255,255,0.8)0%, rgba(39,255,232,0.5) 50%);
+  color: rgb(75,75,75);
+  font-weight: bold;
+  transition: all 1s ease;
 }
 
-.btn__reset:hover {
-    color: rgb(172, 172, 172);
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(235, 136, 6, 0.712) 50%);
-}
-
-.btn__edit {
-    background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(214,123,5,0.883) 50%);
-    color: rgb(75, 75, 75);
-    font-weight: bold;
-    transition: all 1s ease;
-}
-
-.btn__edit:hover {
-    color: rgb(172, 172, 172);
-    box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-    background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(235,136,6,0.712) 50%);
+.btn-submit:hover {
+  color: rgb(172, 172, 172);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39,255,232,0.5) 50%);
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.body__admin .admin__product {
-  width: 100%;
+.btn-reset {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(39, 151, 255, 0.5) 50%);
+  color: rgb(75, 75, 75);
+  font-weight: bold;
+  transition: all 1s ease;
 }
 
-.admin__carga {
+.btn-reset:hover {
+  color: rgb(172, 172, 172);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(39, 151, 255, 0.5) 50%);
+}
+
+.btn-edit {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(43, 236, 124, 0.5) 50%);
+  color: rgb(75, 75, 75);
+  font-weight: bold;
+  transition: all 1s ease;
+
+}
+
+.btn-edit:hover {
+  color: rgb(172, 172, 172);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(43, 236, 124, 0.5) 50%);
+}
+
+/* Check */
+
+.check {
   display: flex;
-  flex-direction: column;
-}
-
-.admin__box {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.admin__box h5 {
+  justify-content: center;
   margin-bottom: 1rem;
+  width: 80%;
 }
 
-.body__admin .button__container {
+.check label {
+  margin-right: 10px;
+}
+
+.check input[type = "checkbox"] {
+  position: relative;
+  bottom: -1px;
+}
+
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.body__admin .button-container {
   flex-direction: row;
   align-items: center;
   width: 100%;
@@ -166,54 +222,64 @@ select.input__select:focus {
   gap: 10px;
 }
 
-.body__admin .imagen__admin {
-  width: 20rem;
-  height: 20rem;
+.body__admin .avatar {
+  width: 10rem;
+  height: 10rem;
+  background-color: thistle;
   border-radius: 50%;
   margin-bottom: 1rem;
-} 
- 
-/* MEDIA QUERIES */
-/* TABLET */ 
+}
+
+/* Media queries */
+/* Tablet */
+
 @media screen and (min-width: 475px) {
-    .input__container, .button__container {
-        width: 90%;
-    }
-    .body__admin .admin__product {
+  .input-container,
+  .button-container{
       width: 90%;
-    }
+  }
+  .admin__product {
+      width: 75%;
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .input__container, .button__container, .body__admin .admin__product {
-        width: 80%;
-    }
+  .input-container,
+  .button-container{
+      width: 80%;
   }
+  .admin__product {
+    width: 90%; 
+  }
+  .textarea__adm {
+    width: 400px;
+  }
+}
 
-  /* DESKTOP */
-@media screen and (min-width: 992px) {
-  .body__admin .input__file-container {
-    max-width: 600px;
-  }   
-  .body__admin .admin__product {
+
+
+
+
+
+
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+  .body__admin .input-file-container {
+      max-width: 300px;
+  }
+  .admin__product {
       width: 90%;
-  } 
-  .admin__carga {
+  }
+  .profile-form {
       display: flex;
       flex-direction: row;
       align-items: center;
   }
-  .body__admin .button__container {
+  .body__admin .button-container {
       flex-direction: row;
       margin-top: 2rem;
-      gap: 10px;
+      gap: 20px;
       justify-content: center;
-  }
-
-  .imagen__admin {
-    display: flex;
-    flex-direction: center;
-    justify-content: space-evenly;
-    align-items: center;
   }
 }
