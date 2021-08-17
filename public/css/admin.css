@@ -39,7 +39,7 @@ hr {
   padding: 1rem;
 }
 
-.form__admin {
+.form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,7 +197,8 @@ select.input__select:focus {
     max-width: 300px;
   }
   .admin__product {
-      width: 90%;
+    width: 90%;
+    
   }
   .admin__carga {
     display: flex;
