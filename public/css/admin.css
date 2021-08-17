@@ -2,11 +2,11 @@
   background: linear-gradient(rgb(228, 228, 228), white);
   font-family: 'Roboto', sans-serif;
   height: 100%;
-  padding: 8rem  1rem;
+  padding: 0 1rem;
   width: 100%;
 }
 
-h4 {
+.ad {
   margin-bottom: 2rem;
   margin-top: 2rem;
   text-align: center;
@@ -51,10 +51,6 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.admin__box h5 {
-  margin-bottom: 1rem;
 }
 
 .body__admin .imagen__admin {
@@ -154,10 +150,10 @@ select.input__select:focus {
 @media screen and (min-width: 475px) {
   .input__container,
   .button__container{
-      width: 90%;
+    width: 90%;
   }
   .admin__product {
-      width: 75%;
+    width: 75%;
   }
   .body__admin .imagen__admin {
     width: 90%;
@@ -174,10 +170,10 @@ select.input__select:focus {
     width: 80%;
   }
   .admin__product {
-    width: 90%; 
+    width: 80%; 
   }
   .textarea__adm {
-    width: 400px;
+    width: 550px;
   }
   .body__admin .imagen__admin {
     width: 90%;
@@ -195,6 +191,7 @@ select.input__select:focus {
 @media screen and (min-width: 1200px) {
   .body__admin .input__file-container {
     max-width: 300px;
+    margin: 10px;
   }
   .admin__product {
     width: 90%;    
@@ -208,7 +205,14 @@ select.input__select:focus {
   .body__admin .button__container {
     flex-direction: row;
     margin-top: 2rem;
-    gap: 20px;
+    gap: 10px;
     justify-content: center;
+  }
+  .body__admin .imagen__admin {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    align-items: center;
   }
 }
