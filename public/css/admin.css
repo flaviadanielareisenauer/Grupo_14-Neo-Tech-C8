@@ -197,8 +197,7 @@ select.input__select:focus {
     max-width: 300px;
   }
   .admin__product {
-    width: 90%;
-    
+    width: 90%;    
   }
   .admin__carga {
     display: flex;
@@ -212,11 +211,4 @@ select.input__select:focus {
     gap: 20px;
     justify-content: center;
   }
-  .body__admin .imagen__admin {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    align-items: center;
-  }  
 }
