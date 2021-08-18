@@ -17,7 +17,9 @@
 
     <nav>
         <div class="menu-top ">
-            <label for=" " class="logo "><h1 class="neonText ">Neo tech</h1></label>
+            <label for=" " class="logo ">
+                <h1 class="neonText ">Neo tech</h1>
+            </label>
             <div class="search ">
                 <div class="search-bar ">
                     <p>Buscar productos, marcas, categorías...</p>
@@ -31,23 +33,24 @@
             </div>
             <div class="iconos "> <a href="/productCart " class="no-res "><i class="fas fa-shopping-cart uno "></i></a>
 
-                <a href="/register" class="no-res "><i class="far fa-user dos "></i></a></div>
+                <a href="/register" class="no-res "><i class="far fa-user dos "></i></a>
+            </div>
 
         </div>
         </div>
         <div class="menu-bottom ">
             <ul class="menu-items ">
                 <li class="active ">
-                    <a href="/">inicio</a>
+                    <a href="/">Inicio</a>
                 </li>
                 <li>
-                    <a href="# ">ofertas</a>
+                    <a href="/categorias">Ofertas</a>
                 </li>
                 <li>
-                    <a href="# "> formas de pago</a>
+                    <a href="/formas-de-pago"> Formas de pago</a>
                 </li>
                 <li>
-                    <a href="# ">todas las Categorias</a>
+                    <a href="/categorias">Todas las Categorias</a>
                 </li>
 
             </ul>
@@ -56,107 +59,133 @@
 
     </nav>
 
-    <div class="cart">
 
-        <div class="elemento">
+    <div class="elemento">
 
-            <div class="caja">
-                <img src="/imagenes/compu.jpg" alt="">
-                <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
-                <div class="cantidad">
-                    <button type="button">+</button>
-                    <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
-                    <button type="button">-</button>
-                </div>
-                <div class="precio">
-                    <p>$1000</p>
-                </div>
-                <i class="fas fa-trash-alt"></i>
-            </div>
-
-            <hr>
-
-            <div class="caja">
-                <img src="/imagenes/compu.jpg" width=" 100px">
-                <P>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</P>
-                <div class="cantidad">
-                    <button type="button">+</button>
-                    <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
-                    <button type="button">-</button>
-                </div>
-                <div class="precio">
-                    <p>$1000</p>
-                </div>
-                <i class="fas fa-trash-alt"></i>
-            </div>
+        <div id="bar-arcoiris">
+            <h1>. </h1>
         </div>
 
-        <div class="resumen">
-            <p parrafo>RESUMEN DEL PEDIDO</p>
-            <div class="pedido">
-                <p>TOTAL:</p>
-                <p>$0</p>
+
+        <div class="cart">
+            <div class="elemento">
+
+
+                <div class="caja">
+                    <img src="/imagenes/compu.jpg" alt="">
+                    <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
+                    <div class="cantidad">
+                        <button type="button">+</button>
+                        <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                        <button type="button">-</button>
+                    </div>
+                    <div class="precio">
+                        <p>$1000</p>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
+
+                <hr>
+
+                <div class="caja">
+                    <img src="/imagenes/compu.jpg" width=" 100px">
+                    <P>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</P>
+                    <div class="cantidad">
+                        <button type="button">+</button>
+                        <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                        <button type="button">-</button>
+                    </div>
+                    <div class="precio">
+                        <p>$1000</p>
+                    </div>
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
-            <label for="opciones">Cupon de descuento</label>
-            <select id="opciones">
+
+            <div class="resumen">
+                <p parrafo>RESUMEN DEL PEDIDO</p>
+                <div class="pedido">
+                    <p>TOTAL:</p>
+                    <p>$0</p>
+                </div>
+                <label for="opciones">Cupon de descuento</label>
+                <select id="opciones">
             <option value="" disabled selected>-- Seleccione --</option>
             <option value="">10% de descuento</option>
             <option value="">20% de descuento</option>
             <option value="">30% de descuento</option>
             <option value="">40% de descuento</option>
         </select>
-            <div>
-                <input type="submit" value="COMPRAR" class="btn-ingresar">
+                <div>
+                    <input type="submit" value="COMPRAR" class="btn-ingresar">
+                </div>
             </div>
         </div>
-    </div>
 
-    <footer>
-        <div class="footer">
-            <div class="list-container">
-                <div class="list">
-                    <h4>INFORMACIÓN
-                        <h4>
-                            <ul class="info">
-                                <li>Políticas de garantía</li>
-                                <li>Servicio al cliente</li>
-                                <li>Envíos</li>
-                                <li>preguntas frecuentes</li>
-                            </ul>
-                </div>
-                <div class="list">
-                    <h4>NOSOTROS
-                        <h4>
-                            <ul class="info">
-                                <li>Sobre nosotros</li>
-                                <li>Políticas de uso</li>
-                                <li>Cómo comprar</li>
-                                <li>Preguntas frecuentes</li>
+        <footer>
+            <div class="footer">
+                <div class="list-container">
+                    <div class="list">
+                        <h4>INFORMACIÓN
+                            <h4>
+                                <ul class="info">
+                                    <li>Políticas de garantía</li>
+                                    <li>Servicio al cliente</li>
+                                    <li>Envíos</li>
+                                    <li>preguntas frecuentes</li>
+                                </ul>
 
-                            </ul>
-                </div>
-                <div class="list">
-                    <h4>CONTACTO
-                        <h4>
-                            <ul class="info">
-                                <li>Contáctenos</li>
-                                <li>(+54)1122334455</li>
-                                <li>Instagram</li>
-                                <li>Facebook</li>
+                    </div>
 
-                            </ul>
-                </div>
-            </div>
+                    <footer>
+                        <div class="footer">
+                            <div class="list-container">
+                                <div class="list">
+                                    <h4>INFORMACIÓN
+                                        <h4>
+                                            <ul class="info">
+                                                <li>Políticas de garantía</li>
+                                                <li>Servicio al cliente</li>
+                                                <li>Envíos</li>
+                                                <li>preguntas frecuentes</li>
+                                            </ul>
+                                </div>
+                                <div class="list">
+                                    <h4>NOSOTROS
+                                        <h4>
+                                            <ul class="info">
+                                                <li>Sobre nosotros</li>
+                                                <li>Políticas de uso</li>
+                                                <li>Cómo comprar</li>
+                                                <li>Preguntas frecuentes</li>
 
-            <div class="footer-icon-container ">
-                <label for=" " class="logo "><h1 class="neonText ">Neo tech</h1></label>
-                <img src="/imagenes/iconos/facebook1.svg " alt=" " class="footer-icon ">
-                <img src="/imagenes/iconos/instagram.svg " alt=" " class="footer-icon ">
-                <img src="/imagenes/iconos/whatsapp.svg " alt=" " class="footer-icon ">
-                <img src="/imagenes/iconos/twitter-logo-2-1.png " alt=" " class="footer-icon ">
-            </div>
-        </div>
-    </footer>
+                                            </ul>
+                                </div>
+                                <div class="list">
+                                    <h4>CONTACTO
+                                        <h4>
+                                            <ul class="info">
+                                                <li>Contáctenos</li>
+                                                <li>(+54)1122334455</li>
+                                                <li>Instagram</li>
+                                                <li>Facebook</li>
+
+                                            </ul>
+                                </div>
+
+                            </div>
+
+                            <div class="footer-icon-container ">
+                                <label for=" " class="logo ">
+                        <h1 class="neonText ">Neo tech</h1>
+                    </label>
+                                <img src="/imagenes/iconos/facebook1.svg " alt=" " class="footer-icon ">
+                                <img src="/imagenes/iconos/instagram.svg " alt=" " class="footer-icon ">
+                                <img src="/imagenes/iconos/whatsapp.svg " alt=" " class="footer-icon ">
+                                <img src="/imagenes/iconos/twitter-logo-2-1.png " alt=" " class="footer-icon ">
+                            </div>
+                        </div>
+                    </footer>
 
 </body>
 
