@@ -32,7 +32,7 @@ Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commer
 La audiencia objetivo serán personas de todas las edades.
 
 
-## Segundo Sprint (05/08)
+## Tercer Sprint (20/08)
 ### [Tablero](https://trello.com/b/g994yINA/prototipo)
 
 
