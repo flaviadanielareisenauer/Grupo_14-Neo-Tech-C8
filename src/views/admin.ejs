@@ -1,101 +1,46 @@
-<!DOCTYPE html>
-<html lang="es">
+<%- include('./partials/head')%>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Neo-Tech</title>
-  <!-- Font Awesome-->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css " rel="stylesheet " />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <link rel="stylesheet " href="/css/styles.css">
-</head>
+    <body class="body__admin">
+        <!----------------------------------------------------->
+        <%- include('./partials/header')%>
+            <!------------------------------------------------------->
 
-<body class="body__admin">
-  <!----------------------------------------------------->
-  <nav>
-    <div class="menu-top ">
-      <label for=" " class="logo ">
-        <h1 class="neonText ">Neo tech</h1>
-      </label>
-      <div class="search ">
-        <div class="search-bar ">
-          <p>Buscar productos, marcas, categorías...</p>
-        </div>
-        <div class="search-icon">
-          <a href="# "> <i class="fas fa-search bus "></i></a>
-        </div>
-        <span class="btn-menu ">
-          <i class="fa fa-bars "></i>
-        </span>
-      </div>
-      <div class="iconos "> <a href="/productCart " class="no-res "><i class="fas fa-shopping-cart uno "></i></a>
-        <a href="/register" class="no-res "><i class="far fa-user dos "></i></a>
-      </div>
-    </div>
-    </div>
-    <div class="menu-bottom ">
-      <ul class="menu-items ">
-        <li class="active ">
-          <a href="/">Inicio</a>
-        </li>
-        <li>
-          <a href="/categorias">Ofertas</a>
-        </li>
-        <li>
-          <a href="/formas-de-pago">Formas de pago</a>
-        </li>
-        <li>
-          <a href="/categorias">Todas las Categorias</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <!------------------------------------------------------->
+            <div class="admin__product">
+                <h4 class="ad">Administración de productos</h4>
+                <hr>
+                <form action="" method="">
 
-  <div id="bar-arcoiris">
-    <h1>. </h1>
-  </div>
-  <!------------------------------------------------------->
+                    <div class="admin__box">
+                        <div class="imagen__admin">
+                            <div class="input__file-container">
+                                <input type="file" name="" id="">
+                            </div>
+                            <div class="input__file-container">
+                                <input type="file" name="" id="">
+                            </div>
+                            <div class="input__file-container">
+                                <input type="file" name="" id="">
+                            </div>
+                            <div class="input__file-container">
+                                <input type="file" name="" id="">
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="admin__product">
-    <h4 class="ad">Administración de productos</h4>
-    <hr>
-    <form action="" method="">
-         
-      <div class="admin__box">
-        <div class="imagen__admin">
-          <div class="input__file-container">
-            <input type="file" name="" id="">
-          </div>
-          <div class="input__file-container">
-            <input type="file" name="" id="">
-          </div>
-          <div class="input__file-container">
-            <input type="file" name="" id="">
-          </div>
-          <div class="input__file-container">
-            <input type="file" name="" id="">
-          </div>
-        </div>
-      </div>
+                    <div class="admin__carga">
+                        <div class="admin__box">
+                            <div class="input__container">
+                                <input class="input__style" type="text" name="name" placeholder="Producto">
+                            </div>
 
-      <div class="admin__carga">
-        <div class="admin__box">
-          <div class="input__container">
-            <input class="input__style" type="text" name="name" placeholder="Producto">
-          </div>
+                            <div class="input__container">
+                                <textarea class="textarea__adm" name="textarea" rows="15" cols="50">Descripción del producto</textarea>
+                            </div>
+                        </div>
 
-          <div class="input__container">
-            <textarea class="textarea__adm" name="textarea" rows="15" cols="50">Descripción del producto</textarea>
-          </div>       
-        </div>
-
-        <div class="admin__box">
-          <div class="input__container">
-            <select name="caetgoria" class="input__select">
+                        <div class="admin__box">
+                            <div class="input__container">
+                                <select name="caetgoria" class="input__select">
               <option value="" hidden selected>Categorias</option>
               <option value="ofertas">Ofertas</option>
               <option value="notebook">Notebook</option>
@@ -108,10 +53,10 @@
               <option value="tablet">Tablet</option>
               <option value="impresoras">Impresoras</option>
             </select>
-          </div>
+                            </div>
 
-          <div class="input__container">
-            <select name="subcategoria" class="input__select">
+                            <div class="input__container">
+                                <select name="subcategoria" class="input__select">
               <option value="" hidden selected>Descuento</option>
               <option value="10">10%</option>
               <option value="20">20%</option>
@@ -120,76 +65,34 @@
               <option value="35">35%</option>
               <option value="40">40%</option>
             </select>
-          </div>
+                            </div>
 
-          <div class="input__container">
-            <input class="input__style" type="text" name="marca" placeholder="Marca">
-          </div>
+                            <div class="input__container">
+                                <input class="input__style" type="text" name="marca" placeholder="Marca">
+                            </div>
 
-          <div class="input__container">
-            <input class="input__style" type="text" name="codigo" placeholder="Código">
-          </div>
+                            <div class="input__container">
+                                <input class="input__style" type="text" name="codigo" placeholder="Código">
+                            </div>
 
-          <div class="input__container">
-            <input class="input__style" type="text" name="color" placeholder="Color">
-          </div>
-          <div class="input__container">
-            <input class="input__style" type="number" name="precio" placeholder="Precio">
-          </div>
-        </div>
-      </div>
+                            <div class="input__container">
+                                <input class="input__style" type="text" name="color" placeholder="Color">
+                            </div>
+                            <div class="input__container">
+                                <input class="input__style" type="number" name="precio" placeholder="Precio">
+                            </div>
+                        </div>
+                    </div>
 
-      <div class="button__container">
-        <button type="reset" class="btn btn__reset">Reset</button>
-        <button type="submit" class="btn btn__edit">Guardar</button>
-      </div>
-    </form>
-  </div>
+                    <div class="button__container">
+                        <button type="reset" class="btn btn__reset">Reset</button>
+                        <button type="submit" class="btn btn__edit">Guardar</button>
+                    </div>
+                </form>
+            </div>
 
-  <footer>
-    <div class="footer">
-      <div class="list-container">
-        <div class="list">
-          <h4>INFORMACIÓN<h4>
-              <ul class="info">
-                <li>Políticas de garantía</li>
-                <li>Servicio al cliente</li>
-                <li>Envíos</li>
-                <li>preguntas frecuentes</li>
-              </ul>
-        </div>
-        <div class="list">
-          <h4>NOSOTROS<h4>
-              <ul class="info">
-                <li>Sobre nosotros</li>
-                <li>Políticas de uso</li>
-                <li>Cómo comprar</li>
-                <li>Preguntas frecuentes</li>
-              </ul>
-        </div>
-        <div class="list">
-          <h4>CONTACTO<h4>
-              <ul class="info">
-                <li>Contáctenos</li>
-                <li>(+54)1122334455</li>
-                <li>Instagram</li>
-                <li>Facebook</li>
-              </ul>
-        </div>
-      </div>
+            <%- include('./partials/footer')%>
 
-      <div class="footer-icon-container ">
-        <label for=" " class="logo ">
-          <h1 class="neonText ">Neo tech</h1>
-        </label>
-        <img src="/imagenes/iconos/facebook1.svg " alt=" " class="footer-icon ">
-        <img src="/imagenes/iconos/instagram.svg " alt=" " class="footer-icon ">
-        <img src="/imagenes/iconos/whatsapp.svg " alt=" " class="footer-icon ">
-        <img src="/imagenes/iconos/twitter-logo-2-1.png " alt=" " class="footer-icon ">
-      </div>
-    </div>
-  </footer>
+    </body>
 
-</body>
-
-</html>
+    </html>
