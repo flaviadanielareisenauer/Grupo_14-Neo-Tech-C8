@@ -1,42 +1,21 @@
 .body__admin {
   background: linear-gradient(rgb(228, 228, 228), white);
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   height: 100%;
-  padding: 0 1rem;
-  width: 100%;
+  padding: 1rem  1rem;
 }
 
-.ad {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+.h2-adm {
+  margin-bottom: 1rem;
   text-align: center;
 }
 
 hr {
   background: linear-gradient(90deg, rgb(24,24,24), white);
   height: 2px;
-  margin-bottom: 1.8rem;
+  margin-bottom: 3rem;
   width: 100%;
   border: none;
-}
-
-.admin__product {
-  background: linear-gradient(lightgrey, white);
-  border-radius: 10px;
-  margin: 0 auto;
-  width: 100%;
-  height: fit-content;
-  height: -moz-fit-content;
-  padding: 1rem;
-}
-
-.textarea__adm {
-  border-radius: 10px;
-  margin: 0;
-  width: 100%;
-  height: fit-content;
-  height: -moz-fit-content;
-  padding: 1rem;
 }
 
 .form {
@@ -46,22 +25,67 @@ hr {
   align-items: center;
 }
 
-.admin__box {
+.form_container {
+  background: linear-gradient(lightgrey, white);
+  border-radius: 10px;
+  margin: 0 auto;
+  width: 100%;
+  height: fit-content;
+  height: -moz-fit-content;
+  padding: 1rem;
+}
+
+
+.body__admin .form_container {
+  width: 100%;
+}
+
+.carga__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.box {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.body__admin .imagen__admin {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+.box h4 {
   margin-bottom: 1rem;
 }
 
+.body__admin .buttoncontainer {
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  gap: 10px;
+}
+
 /* FORM INPUT */
-.input__file-container {
+.inputcontainer,
+.buttoncontainer {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
+  width: 100%;
+}
+
+input.inputstyle {
+  color: grey;
+  border: none;
+  border-radius: 1rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+}
+
+input.inputstyle::placeholder {
+  color: black;
+}
+
+.input-file-container {
   background-color: white;
   border-radius: 1rem;
   height: 2.5rem;
@@ -72,46 +96,28 @@ hr {
   width: 100%;
 }
 
-.admin__carga {
-  display: flex;
-  flex-direction: column;
+.textarea__adm {
+  border-radius: 7px;
+  height: 11rem;
+  padding: 0.5rem;  
+  border: none;
 }
 
-.input__container,
-.button__container {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem 1rem;
-  width: 100%;
-}
-
-input.input__style {
-  color: grey;
+select.inputselect {
   border: none;
   border-radius: 1rem;
   height: 2.5rem;
   padding: 0.5rem;
 }
 
-input.input__style::placeholder, .textarea__adm {
-  color: black;
-}
-
-select.input__select {
-  border: none;
-  border-radius: 1rem;
-  height: 2.5rem;
-  padding: 0.5rem;
-}
-
-input.input__style:focus,
-select.input__select:focus {
+input.inputstyle:focus,
+select.inputselect:focus {
   box-shadow: 0 0 6px white;
   outline: none;
 }
 
-/* BOTONES*/
-.button__container {
+/* BOTONES */
+.buttoncontainer {
   align-items: center;
 }
 
@@ -123,96 +129,97 @@ select.input__select:focus {
   text-transform: uppercase;
   width: 8rem;
 }
-.btn__reset {
-  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgb(255, 154, 39) 50%);
+
+.btn-submit {
+  background: linear-gradient(45deg, rgba(255,255,255,0.8)0%, rgba(255, 161, 39, 0.993) 50%);
   color: black;
   font-weight: bold;
   transition: all 1s ease;
 }
 
-.btn__edit {
-  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(255,154,39) 50%);
+.btn-submit:hover {
+  color: rgba(172, 172, 172, 0.616);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%, rgba(230, 137, 15, 0.993) 50%);
+}
+
+.btn-editar {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(255, 161, 39, 0.993) 50%);
   color: black;
   font-weight: bold;
   transition: all 1s ease;
 }
 
-.body__admin .button__container {
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  gap: 10px;
+.btn-editar:hover {
+  color: rgba(172, 172, 172, 0.616);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(230, 137, 15, 0.993) 50%);
 }
 
-/* MEDIA QUERIES */
+.btn-eliminar {
+  background:  linear-gradient(45deg, rgba(255,255,255,1) 0%,  rgba(255, 161, 39, 0.993) 50%);
+  color: black;
+  font-weight: bold;
+  transition: all 1s ease;
+}
+
+.btn-eliminar:hover {
+  color: rgba(172, 172, 172, 0.616);
+  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
+  background: linear-gradient(285deg, rgba(255,255,255,0.5) 0%,  rgba(230, 137, 15, 0.993) 50%);
+}
+
+/* Media queries */
 /* Tablet */
+
 @media screen and (min-width: 475px) {
-  .input__container,
-  .button__container{
-    width: 90%;
+  .inputcontainer,
+  .buttoncontainer{
+      width: 90%;
   }
-  .admin__product {
-    width: 75%;
+  .form_container {
+      width: 75%;
   }
-  .body__admin .imagen__admin {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 1rem;
-  }  
+  .body__admin .form_container {
+      width: 90%;
+  } 
 }
 
 @media screen and (min-width: 768px) {
-  .input__container,
-  .button__container{
-    width: 80%;
+  .inputcontainer,
+  .buttoncontainer{
+      width: 80%;
   }
-  .admin__product {
-    width: 80%; 
+  .form_container {
+      width: 20rem;
   }
-  .textarea__adm {
-    width: 550px;
+  .body__admin .form_container {
+      width: 80%;
   }
-  .body__admin .imagen__admin {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    align-items: center;
-  } 
-  .body__admin .input__file-container {
-    max-width: 300px;
-  } 
 }
 
-/* Desktop */
-@media screen and (min-width: 1200px) {
-  .body__admin .input__file-container {
-    max-width: 300px;
-    margin: 10px;
+@media screen and (min-width: 1024px) {
+  .body__admin .input-file-container {
+      max-width: 300px;
+  }  
+  .body__admin .form_container {
+      width: 90%;
   }
-  .admin__product {
-    width: 90%;    
+  .carga__form {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
   }
-  .admin__carga {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 90%;    
-  }
-  .body__admin .button__container {
-    flex-direction: row;
-    margin-top: 2rem;
-    gap: 10px;
-    justify-content: center;
-  }
-  .body__admin .imagen__admin {
-    width: 90%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1rem;
-    align-items: center;
-  }
+  .body__admin .buttoncontainer {
+      flex-direction: row;
+      margin-top: 2rem;
+      gap: 20px;
+      justify-content: center;
+  }    
+  .imagenes_ad {
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+      gap: 2rem;     
+  }    
 }
