@@ -1,0 +1,37 @@
+[
+    {
+        "firsname": "Alejandro",
+        "lastName": "Lopez",
+        "email": "mailfalso123@gmail.com",
+        "password": "contraseña123",
+        "category": "",
+        "image": "profile-pict.jpg"
+    },
+
+    {
+        "firsname": "Mariana",
+        "lastName": "Rodriguez",
+        "email": "mailfalso456@gmail.com",
+        "password": "contraseña456",
+        "category": "",
+        "image": "profile-pict.jpg"
+    },
+
+    {
+        "firsname": "Esteban",
+        "lastName": "Sosa",
+        "email": "mailfalso789@gmail.com",
+        "password": "contraseña789",
+        "category": "",
+        "image": "profile-pict.jpg"
+    },
+
+    {
+        "firsname": "Ricardo",
+        "lastName": "Melgar",
+        "email": "mailfalso123@gmail.com",
+        "password": "contraseña",
+        "category": "",
+        "image": "profile-pict.jpg"
+    }
+]

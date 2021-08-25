@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Macbook Pro",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
+        "image": "compu.jpg",
+        "category": "Neetbooks",
+        "price": "4000",
+        "discount": "75"
+    },
+    {
+        "id": 2,
+        "name": "Moto g6 GB-vista1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
+        "image": "Moto g6 GB-vista1.jpg",
+        "category": "Celulares",
+        "price": "1000",
+        "discount": "20"
+    },
+    {
+        "id": 3,
+        "name": "Televisor Pantalla Ancha",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
+        "image": "Tele1-Vista2.jpg",
+        "category": "Televisores",
+        "price": "2500",
+        "discount": "50"
+    },
+    {
+        "id": 4,
+        "name": "Ipad pro11",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
+        "image": "ipad pro11-vista1.jpg",
+        "category": "Tablets",
+        "price": "3000",
+        "discount": "25"
+    }
+]
