@@ -6,7 +6,9 @@
         "image": "compu.jpg",
         "category": "Neetbooks",
         "price": "4000",
-        "discount": "75"
+        "discount": "10",
+        "color": "Azul",
+        "code": "34567"
     },
     {
         "id": 2,
@@ -15,7 +17,9 @@
         "image": "Moto g6 GB-vista1.jpg",
         "category": "Celulares",
         "price": "1000",
-        "discount": "20"
+        "discount": "30",
+        "color": "Rojo",
+        "code": "90123"
     },
     {
         "id": 3,
@@ -24,7 +28,10 @@
         "image": "Tele1-Vista2.jpg",
         "category": "Televisores",
         "price": "2500",
-        "discount": "50"
+        "discount": "40",
+        "color": "Negro",
+        "code": "56789"
+
     },
     {
         "id": 4,
@@ -33,6 +40,8 @@
         "image": "ipad pro11-vista1.jpg",
         "category": "Tablets",
         "price": "3000",
-        "discount": "25"
+        "discount": "20",
+        "color": "Blanco",
+        "code": "12345"
     }
 ]
