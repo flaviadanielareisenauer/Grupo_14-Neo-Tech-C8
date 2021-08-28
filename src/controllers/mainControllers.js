@@ -1,37 +1,41 @@
-const controller ={
-    index:(req,res) => {
-       return res.render('index')
+const controller = {
+    index: (req, res) => {
+        return res.render('index')
     },
-    
-admin: (req,res) => {
-    return res.render ('admin')
-},
 
-categorias: (req,res) => {
-    return res.render ('categorias')
-},
+    admin: (req, res) => {
+        return res.render('admin-carga')
+    },
 
-perfil: (req,res) => {
-    return res.render ('config-perfil')
+    categorias: (req, res) => {
+        return res.render('categorias')
+    },
 
-},
+    perfil: (req, res) => {
+        return res.render('config-perfil')
 
-pago: (req,res) => {
-    return res.render ('formas-de-pago')
-},
+    },
 
-productCart: (req,res) => {
-    return res.render ('ProductCart')
-},
+    pago: (req, res) => {
+        return res.render('formas-de-pago')
+    },
 
-productDetail: (req,res) => {
-    return res.render ('productDetail')
-},
+    productCart: (req, res) => {
+        return res.render('ProductCart')
+    },
 
-register: (req,res) => {
-    return res.render ('register')
+    productDetail: (req, res) => {
+        return res.render('productDetail')
+    },
+
+    register: (req, res) => {
+        return res.render('register')
+    },
+
+    edit: (req, res) => {
+        return res.render('admin-edit')
+    }
+
 }
 
-}
-
-module.exports=controller;
+module.exports = controller;

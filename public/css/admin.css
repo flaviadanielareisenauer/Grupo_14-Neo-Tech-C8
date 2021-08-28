@@ -8,6 +8,11 @@
 .h2-adm {
   margin-bottom: 1rem;
   text-align: center;
+  font-size: 2.1rem;
+}
+
+.h4-adm {
+  font-size: 1.5;
 }
 
 hr {
