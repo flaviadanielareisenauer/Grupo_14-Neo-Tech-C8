@@ -63,9 +63,7 @@
 
 **Seguir haciendo:**
 - Reuniones por zoom para asignación de tareas.
-- Comunicación diaria de los avances o problemas que surgen.
 - Pensar la dificultad de las tareas.
-- Revisar el código para solucionar errores.
 - Respetar las reuniones y sus horarios.
 - Compartirnos nuestro código mediante Discord y Whatsapp.
 
