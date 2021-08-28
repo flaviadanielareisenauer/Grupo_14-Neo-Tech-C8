@@ -1,0 +1,81 @@
+<%- include('./partials/head')%>
+
+    <body class="body__admin">
+        <!----------------------------------------------------->
+        <%- include('./partials/header')%>
+            <!------------------------------------------------------->
+
+            <div class="form_container">
+                <h2 class="h2-adm">Administración de productos</h2>
+                <hr>
+                <form action="" method="">
+                    <div class="box">
+                        <h4 class="h4-adm">Editar imagenes</h4>            
+                        <div class="imagenes_ad">
+                            <div class="input-file-container">
+                                <input type="file" name="" id="">
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="carga__form">            
+                        <div class="box">
+                            <h4 class="h4-adm">Editar de productos</h4>
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="name" placeholder="Producto">
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <textarea class="textarea__adm" name="textarea" rows="15"
+                                    cols="50">Descripción del producto</textarea>
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="categoria" placeholder="Categoria">
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="descuento" placeholder="Descuento">
+                            </div>
+                        </div>
+                        
+                        <div class="box">
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="marca" placeholder="Marca">
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="codigo" placeholder="Código">
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="text" name="color" placeholder="Color">
+                            </div>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="number" name="precio" placeholder="Precio">
+                            </div>
+            
+                            <h4 class="h4-adm">Buscar Producto:</h4>
+            
+                            <div class="inputcontainer">
+                                <input class="inputstyle" type="search" name="busquedacodigo" size="20" maxlength="20"
+                                    placeholder="Escribe el codigo aqui...">
+                                <input class="inputstyle" type="submit" value="Buscar">
+                            </div>
+                        </div>
+            
+                    </div>
+                    <div class="buttoncontainer">
+                        <button type="editar" class="btn btn-editar">Editar</button>
+                        <button type="eliminar" class="btn btn-eliminar">Eliminar</button>
+                        <button type="submit" class="btn btn-submit">Guardar</button>
+                    </div>
+                </form>
+            </div>
+
+            <%- include('./partials/footer')%>
+
+    </body>
+
+    </html>
