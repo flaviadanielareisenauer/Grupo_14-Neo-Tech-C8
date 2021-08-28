@@ -22,5 +22,7 @@ router.get('/register', mainController.register);
 
 router.get('/admin-edit', mainController.edit);
 
+router.get('/adminLogin', mainController.adminLogin);
+
 
 module.exports = router
