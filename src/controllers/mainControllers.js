@@ -34,8 +34,11 @@ const controller = {
 
     edit: (req, res) => {
         return res.render('admin-edit')
-    }
+    },
 
+    adminLogin: (req, res) => {
+        return res.render('adminLogin')
+    }
 }
 
 module.exports = controller;

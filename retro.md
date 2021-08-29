@@ -52,3 +52,23 @@
 
 **Hacer menos:**
 - Prolongar el tiempo de discusión para elecciones grupales y postergar las mismas.
+
+# Sprint 4: Retrospectiva
+**Empezar a hacer:**
+- Establecer plazos de entrega en Trello para las tareas sencillas y poder tener un mejor seguimiento. 
+
+**Hacer mas:**
+- Comentar las funcionalidades en los archivos de la aplicación
+- Trabajar en ramas paralelas al master con GIT 
+
+**Seguir haciendo:**
+- Reuniones por zoom para asignación de tareas.
+- Pensar la dificultad de las tareas.
+- Respetar las reuniones y sus horarios.
+- Compartirnos nuestro código mediante Discord y Whatsapp.
+
+**Dejar de hacer:**
+- 
+
+**Hacer menos:**
+- Prolongar el tiempo de discusión para elecciones grupales y postergar las mismas.
