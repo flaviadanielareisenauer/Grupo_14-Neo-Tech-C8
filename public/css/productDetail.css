@@ -204,6 +204,11 @@ p.p-destacado{
   margin:1em;
 }
 
+.textcomentario{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
 
 /*----------------productos----------*/
 
