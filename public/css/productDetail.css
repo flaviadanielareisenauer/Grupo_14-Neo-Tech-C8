@@ -22,18 +22,19 @@
     background-color: var(--blanco);
     width: 100%;
     display: flex;
+    height: 500px;
 }
 
 ul.fotoMiniatura {
     position: relative;
-    width: auto;
-    height: auto
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 ul.fotoMiniatura li {
     position: absolute;
-    left: 0px;
-    top: 0px;
     opacity: 0;
     transition: opacity 0.5s;
     background: var(--blanco);
@@ -41,7 +42,8 @@ ul.fotoMiniatura li {
 
 ul.fotoMiniatura li img {
     width: 100%;
-    object-fit: cover;
+    height: 100%;
+    object-fit: contain;
 }
 
 ul.fotoMiniatura li:first-child {
@@ -52,29 +54,41 @@ ul.fotoMiniatura li:target {
     opacity: 1;
 }
 
-.fotoProducto li {
+.fotoProducto {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.fotoProducto .foto2 {
     display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.fotoProducto .foto {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .fotoProducto li a img {
-    width: 80%;
-    height: 60%;
-    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
-.fotoProducto {
-    flex: 10%
-}
-
-.fotoMiniatura {
-    flex: 60%
-}
-
-ul.fotoProducto li,
 ul.fotoMiniatura li {
     padding: 10px;
     margin: 0;
     list-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+ul.fotoProducto li {
+    width: 100%;
+    height: 25%;
 }
 
 
