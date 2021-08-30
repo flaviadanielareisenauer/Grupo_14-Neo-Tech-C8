@@ -6,7 +6,8 @@
         "image": [
             "Televisores/Tele1.jpg",
             "Televisores/Tele1-Vista2.jpg",
-            "Televisores/Tele1-Vista3.jpg"
+            "Televisores/Tele1-Vista3.jpg",
+            "Televisores/Tele1-Vista4.jpg"
         ],
         "category": "Televisores",
         "price": 40000,
@@ -21,7 +22,8 @@
         "image": [
             "Televisores/Tele2.jpg",
             "Televisores/Tele2-Vista2.jpg",
-            "Televisores/Tele2-Vista3.jpg"
+            "Televisores/Tele2-Vista3.jpg",
+            "Televisores/Tele2-Vista4.jpg"
         ],
         "category": "Televisores",
         "price": 55000,
@@ -34,8 +36,10 @@
         "name": "Xiaomi Redmi Note 8t",
         "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
         "image": [
+            "Celulares/RedmiNote8t-vista1.jpg",
             "Celulares/RedmiNote8t-vista2.jpg",
-            "Celulares/RedmiNote8t-vista3.jpg"
+            "Celulares/RedmiNote8t-vista3.jpg",
+            "Celulares/RedmiNote8t-vista4.jpg"
         ],
         "category": "Celulares",
         "price": 46000,
