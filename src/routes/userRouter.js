@@ -2,7 +2,7 @@ let express = require('express');
 
 let router = express.Router();
 
-let { register, perfil, detail, categorias, productCart, productDetail } = require('../controllers/userController')
+let { register, perfil, categorias, productCart, } = require('../controllers/userController')
 
 router.get('/register', register)
 
@@ -12,7 +12,7 @@ router.get('/categorias', categorias)
 
 router.get('/productCart', productCart)
 
-router.get('/productDetail', productDetail)
+
 
 
 
