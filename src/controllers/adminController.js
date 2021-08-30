@@ -6,16 +6,16 @@ module.exports = {
     },
 
     carga: (req, res) => {
-        res.render('admin-carga')
+        res.render('admin/admin-carga')
     },
 
     edit: (req, res) => {
-        res.render('admin-edit')
+        res.render('admin/admin-edit')
     },
 
 
     adminLogin: (req, res) => {
-        res.render('adminLogin')
+        res.render('admin/adminLogin')
     }
 
 }
