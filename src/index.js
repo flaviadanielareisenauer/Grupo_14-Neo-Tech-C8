@@ -5,13 +5,16 @@ const port = 3500;
 
 /*-------ENRUTADORES--------*/
 
-let adminRouter =require('./routes/admin')
-let indexRouter =require('./routes/indexRouter')
-let userRouter =require('./routes/user')
+let adminRouter = require('./routes/adminRouter')
+let indexRouter = require('./routes/indexRouter')
+let userRouter = require('./routes/userRouter')
+let productsRouter = require('./routes/productsRouter')
 
 
 /* Middleware */
 app.use(express.static('./public'));
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json())
 
 /*--------VIEWS---------*/
 
@@ -22,7 +25,8 @@ app.set('view engine', 'ejs');
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
-app.use('/user',userRouter);
+app.use('/user', userRouter);
+app.use('/products', productsRouter)
 
 
 /* Servidor */
