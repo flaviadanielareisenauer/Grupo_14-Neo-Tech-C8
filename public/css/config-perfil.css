@@ -60,7 +60,7 @@
      font-weight: bold;
  }
  
- .hr {
+ .divitionConfig {
      width: 100%;
      background-color: grey;
      margin: auto;
@@ -123,7 +123,7 @@
      margin-bottom: 1rem;
  }
  
- .input-file-container {
+ .input-file-containerConfig {
      padding-bottom: 10px;
  }
  

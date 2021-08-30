@@ -1,6 +1,7 @@
-.productDetail{
+.productDetail {
     background-color: var(--clarito);
 }
+
 
 /*---------------------scrollbar------------------*/
 
@@ -14,20 +15,21 @@
     border: 1px solid white;
 }
 
+
 /*-------------fotos de producto-------------------*/
 
-.container1{
+.container1 {
     background-color: var(--blanco);
     width: 100%;
-    display:flex;
+    display: flex;
 }
-   
-ul.fotoMiniatura{
+
+ul.fotoMiniatura {
     position: relative;
-    width:auto;
-    height:auto
+    width: auto;
+    height: auto
 }
-    
+
 ul.fotoMiniatura li {
     position: absolute;
     left: 0px;
@@ -36,40 +38,40 @@ ul.fotoMiniatura li {
     transition: opacity 0.5s;
     background: var(--blanco);
 }
-    
-ul.fotoMiniatura li img{
+
+ul.fotoMiniatura li img {
     width: 100%;
     object-fit: cover;
 }
-    
-    
+
 ul.fotoMiniatura li:first-child {
-    opacity: 0; 
+    opacity: 0;
 }
-    
+
 ul.fotoMiniatura li:target {
-    opacity: 1; 
+    opacity: 1;
 }
-      
-.fotoProducto li{
+
+.fotoProducto li {
     display: inline-block;
 }
-    
-.fotoProducto li a img{
+
+.fotoProducto li a img {
     width: 80%;
-    height:60%;
+    height: 60%;
     object-fit: cover;
 }
-    
-.fotoProducto{
-    flex:10%
+
+.fotoProducto {
+    flex: 10%
 }
-    
-.fotoMiniatura{
-    flex:60%
+
+.fotoMiniatura {
+    flex: 60%
 }
-    
-ul.fotoProducto li, ul.fotoMiniatura li {
+
+ul.fotoProducto li,
+ul.fotoMiniatura li {
     padding: 10px;
     margin: 0;
     list-style: none;
@@ -77,13 +79,14 @@ ul.fotoProducto li, ul.fotoMiniatura li {
 
 
 /*-------agregar al carrito-----*/
-.agregar-carrito-der{
+
+.agregar-carrito-der {
     text-align: center;
     background-color: var(--blanco);
     padding: 3px;
 }
 
-#boton-detalle{
+#boton-detalle {
     border-bottom: var(--negro);
     background-color: var(--naranja);
     height: 40px;
@@ -91,18 +94,18 @@ ul.fotoProducto li, ul.fotoMiniatura li {
     margin-top: 2rem;
 }
 
-a.text-agr-car{
-  display:block;
+a.text-agr-car {
+    display: block;
     text-decoration: none;
     color: blue;
 }
 
-.text-agr-car{
+.text-agr-car {
     margin: 0 0 0.5em 0;
 }
 
-.text-agr-car2{
-    margin:  2em 0 2em 0;
+.text-agr-car2 {
+    margin: 2em 0 2em 0;
     font-weight: 500;
 }
 
@@ -111,9 +114,10 @@ a.text-agr-car{
     color: var(--blanco);
 }
 
+
 /*-----descripción producto-----*/
 
-.detalle-producto1{
+.detalle-producto1 {
     width: 80%;
 }
 
@@ -126,13 +130,14 @@ div.texto-detalle ul li {
     margin: 0.5em;
 }
 
-p.p-destacado{
+p.p-destacado {
     margin-left: 0.5rem;
     text-align: left;
 }
 
 
 /*----------------hacer comentarios--------*/
+
 .comentarios {
     width: 90%;
     margin: 1em;
@@ -145,19 +150,18 @@ p.p-destacado{
     margin: 0 0 1rem 0;
 }
 
-.botcomentario{
+.botcomentario {
     border-bottom: var(--negro);
     background-color: var(--naranja);
     height: 3rem;
     width: 5rem;
 }
 
-.comentarioletra{
+.comentarioletra {
     color: var(--blanco);
-
 }
 
-#mensaje{
+#mensaje {
     width: 70%;
     height: 40px;
 }
@@ -166,53 +170,51 @@ p.p-destacado{
     align-items: center;
 }
 
-
-.comentarioletra{
+.comentarioletra {
     color: var(--blanco);
 }
 
 
 /*--------comentarios destacados-------*/
 
-.seccioncomentarios{
-  border: solid 2px var(--gris) ;
-  background-color: var(--blanco);
-  width: 90%;
-  max-height: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
+.seccioncomentarios {
+    border: solid 2px var(--gris);
+    background-color: var(--blanco);
+    width: 90%;
+    max-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
-.comentariosuser{
-  border-bottom: solid 0.5px darkgrey;
-  width: 100%;
-  display: flex;
-  height: 50px;
+.comentariosuser {
+    border-bottom: solid 0.5px darkgrey;
+    width: 100%;
+    display: flex;
+    height: 50px;
 }
 
 .user {
-  width: 10%;
-  display: flex;
-  padding: 0.5em;
+    width: 10%;
+    display: flex;
+    padding: 0.5em;
 }
 
-.usercom{
-  width: 90%;
-  display: flex;
-  text-align: center;
-  margin:1em;
+.usercom {
+    width: 90%;
+    display: flex;
+    text-align: center;
+    margin: 1em;
 }
 
-.textcomentario{
+.textcomentario {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
+
 /*----------------productos----------*/
-
-
 
 .general-products .producto .button {
     width: 96%;
@@ -235,193 +237,148 @@ p.p-destacado{
     font-size: 1rem;
 }
 
-
-
-section.general-products .producto div.button,
-section.general-products .producto2 div.button {
-   background-color: #fff;
-   border: 2px solid #ff6000;
-   border-radius: 3px;
-   width: 94%;
-   text-align: center;
-   align-items: center;
-   height: 46px;
-   display: flex;
-   margin: auto;
-   margin-bottom: 5px;
-   transition: all .5s;
-}
-section.general-products .producto div.button:hover,
-section.general-products .producto2 div.button:hover {
-   background-color: #ff6000;
-   transform: .5s;
-   opacity: 1;
+section.general-products .producto div.button {
+    background-color: #fff;
+    border: 2px solid #ff6000;
+    border-radius: 3px;
+    width: 94%;
+    text-align: center;
+    align-items: center;
+    height: 46px;
+    display: flex;
+    margin: auto;
+    margin-bottom: 5px;
+    transition: all .5s;
 }
 
-section.general-products .producto div.button p,
-section.general-products .producto2 div.button p {
-   padding: 10px 20px;
-   width: 100%;
-   text-decoration: none;
-   color: #070d2b;
-   font-size: 1.2rem;
+section.general-products .producto div.button:hover {
+    background-color: #ff6000;
+    transform: .5s;
+    opacity: 1;
 }
 
+section.general-products .producto div.button p {
+    padding: 10px 20px;
+    width: 100%;
+    text-decoration: none;
+    color: #070d2b;
+    font-size: 1.2rem;
+}
 
- section.general-products .producto div.button p:hover,
- section.general-products .producto2 div.button p:hover {
+section.general-products .producto div.button p:hover,
+section.general-products .producto2 div.button p:hover {
     color: white;
 }
 
-
-
-
-@media screen  and (min-width:782px) {
-    
-    .productDetail{
+@media screen and (min-width:782px) {
+    .productDetail {
         background-color: var(--clarito);
     }
-    
-    .mainDetalleProducto{
-       display: flex;
+    .mainDetalleProducto {
+        display: flex;
         width: 90%;
         margin-left: 50px;
     }
-    
-    .pantalla-dividida{
+    .pantalla-dividida {
         display: flex;
         width: 70%;
         background-color: var(--azulOscuro);
         padding: 10px;
     }
-    
-    .pantalla-dividida2{
+    .pantalla-dividida2 {
         display: flex;
         width: 20%;
-        background-color: var(--blanco); 
+        background-color: var(--blanco);
     }
-    
-    .agregar-carrito-der{
+    .agregar-carrito-der {
         display: flex;
         flex: 100%;
         text-align: center;
         background-color: var(--blanco);
     }
-    
-    .agregar-carrito{
+    .agregar-carrito {
         flex: 100%;
     }
-    
-    #boton-detalle{
+    #boton-detalle {
         border-bottom: var(--negro);
         background-color: var(--naranja);
         width: 70%;
         margin-top: 3em;
     }
-    
-    a{
+    a {
         text-decoration: none;
         color: blue
     }
-    
-    .text-agr-car{
+    .text-agr-car {
         margin: 2rem 0 2rem 0;
     }
-    
-    .text-agr-car2{
-        margin:  1rem 0 1rem 0;
+    .text-agr-car2 {
+        margin: 1rem 0 1rem 0;
     }
-    
     .boton-d {
         text-decoration: none;
         color: var(--blanco);
     }
-    
-
     /*--------descripcion de producto--------*/
-    
-    .detalle-producto1{
+    .detalle-producto1 {
         width: 60%;
     }
-    
     div.texto-detalle ul li {
         padding-top: 1em;
         padding-left: 2em;
     }
-
-    
     .destacado {
         font-weight: 400;
         margin: 1em;
     }
-    
-    p.p-destacado{
+    p.p-destacado {
         margin-left: 2rem;
     }
-    
     .comentarios {
         width: 70%;
     }
-    
     #comentarios {
         align-items: center;
     }
-    
-    .botcomentario{
+    .botcomentario {
         border-bottom: var(--negro);
-        background-color: var(--naranja); 
+        background-color: var(--naranja);
     }
-
     #comentarios {
         align-items: center;
     }
-    
-    
-    .comentarioletra{
+    .comentarioletra {
         color: var(--blanco);
     }
-
-
     /*comentarios de usuarios*/
-
-    .seccioncomentarios{
+    .seccioncomentarios {
         width: 75%;
         margin: 0 0 0 1em;
     }
-
 }
 
-
-
-@media screen  and (min-width:1024px) {
-
-    .pantalla-dividida2{
+@media screen and (min-width:1024px) {
+    .pantalla-dividida2 {
         display: flex;
         width: 30%;
-        background-color: var(--blanco); 
+        background-color: var(--blanco);
     }
-    
-    .agregar-carrito-der{
+    .agregar-carrito-der {
         display: flex;
         flex: 100%;
         text-align: center;
         background-color: var(--blanco);
     }
-
-    #boton-detalle{
+    #boton-detalle {
         border-bottom: var(--negro);
         background-color: var(--naranja);
         width: 60%;
         margin-top: 2.5rem;
     }
-    
-    
-    .text-agr-car{
+    .text-agr-car {
         margin: 2rem 0 2rem 0;
     }
-    
-    .text-agr-car2{
-        margin:  2rem 0 2rem 0;
+    .text-agr-car2 {
+        margin: 2rem 0 2rem 0;
     }
-
 }
