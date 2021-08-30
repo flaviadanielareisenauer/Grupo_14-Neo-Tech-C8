@@ -2,12 +2,11 @@ let express = require('express');
 
 let router = express.Router();
 
-let { register, perfil, detail, categorias, productCart, productDetail } = require('../controllers/userController')
+let { register, perfil, categorias, productCart, productDetail } = require('../controllers/userController')
 
 router.get('/register', register)
 
 router.get('/config-perfil', perfil)
-
 
 router.get('/categorias', categorias)
 
