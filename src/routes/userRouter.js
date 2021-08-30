@@ -8,7 +8,6 @@ router.get('/register', register)
 
 router.get('/config-perfil', perfil)
 
-
 router.get('/categorias', categorias)
 
 router.get('/productCart', productCart)

@@ -3,6 +3,17 @@
     <!-- Product Slider -->
 
     <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }'>
+        <style>
+            .flickity-prev-next-button.next {
+                right: -20px;
+                background: hsla(0, 0%, 100%, 1);
+            }
+            
+            .flickity-prev-next-button.previous {
+                left: -20px;
+                background: hsla(0, 0%, 100%, 1);
+            }
+        </style>
         <% productsSlider.forEach(product => {%>
             <article class="producto ">
                 <%if (product.discount > 0) {%>
