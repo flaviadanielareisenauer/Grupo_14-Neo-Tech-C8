@@ -47,9 +47,7 @@ module.exports = {
             titleSlider: "Productos relacionados",
             product,
             productsSlider
-            /*  productsSlider,
-             product */
-            /*  bannerSlides: carousel */
+
         })
     }
 

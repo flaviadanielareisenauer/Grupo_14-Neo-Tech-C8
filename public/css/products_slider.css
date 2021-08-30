@@ -3,7 +3,7 @@
 }
 
 .special-offers {
-    width: 90%;
+    width: 80%;
     margin: auto;
     background-color: none;
     max-width: 1150px;
@@ -34,6 +34,9 @@
     .productSlide {
         width: 20%;
         height: 300px;
+    }
+    .special-offers {
+        width: 90%;
     }
 }
 
