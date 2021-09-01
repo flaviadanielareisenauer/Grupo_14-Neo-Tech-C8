@@ -317,11 +317,11 @@ p {
     color: #070d2b;
 }
 
-.container section.general-products .producto p {
+section.general-products .producto p {
     font-size: .8rem;
 }
 
-.container .general-products .producto .button {
+.general-products .producto .button {
     width: 96%;
     background-color: #fff;
     border: 2px solid #ff6000;
@@ -340,6 +340,13 @@ p {
     text-decoration: none;
     color: #000;
     font-size: 1rem;
+}
+
+.products-title {
+    font-size: 2em;
+    font-weight: 400;
+    color: gray;
+    padding: 20px 20px;
 }
 
 @media screen and (min-width:764px) {
@@ -618,8 +625,7 @@ p {
         margin-bottom: 30px;
         display: flex;
     }
-    .producto,
-    .producto2 {
+    .producto {
         width: 100%;
         max-width: 210px;
         height: 320px;
@@ -628,8 +634,7 @@ p {
         box-shadow: 0px 3px 2px #c4c4c4;
         margin: 15px 25px 0;
     }
-    .producto:hover,
-    .producto2:hover {
+    .producto:hover {
         transform: translateY(-8px);
         border: 1px solid #ff6000;
         box-shadow: 0 0 1px #ff6000, 0 0 2px #ff6000, 0 0 2px #ff6000;
@@ -714,8 +719,7 @@ p {
         /*  box-shadow: 0 0 1px #ff6000, 0 0 2px #ff6000, 0 0 2px #ff6000; */
         transition-delay: .10s;
     }
-    .container section.general-products .producto div.button,
-    .container section.general-products .producto2 div.button {
+    section.general-products .producto div.button {
         background-color: #fff;
         border: 2px solid #ff6000;
         border-radius: 3px;
@@ -728,22 +732,19 @@ p {
         margin-bottom: 5px;
         transition: all .5s;
     }
-    .container section.general-products .producto div.button:hover,
-    .container section.general-products .producto2 div.button:hover {
+    section.general-products .producto div.button:hover {
         background-color: #ff6000;
         transform: .5s;
         opacity: 1;
     }
-    .container section.general-products .producto div.button p,
-    .container section.general-products .producto2 div.button p {
+    section.general-products .producto div.button p {
         padding: 10px 20px;
         width: 100%;
         text-decoration: none;
         color: #070d2b;
         font-size: 1.2rem;
     }
-    .container section.general-products .producto div.button p:hover,
-    .container section.general-products .producto2 div.button p:hover {
+    section.general-products .producto div.button p:hover {
         color: white;
     }
     .item-category a {

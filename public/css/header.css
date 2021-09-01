@@ -16,13 +16,18 @@
 
 .search-bar {
     margin-right: 5px;
-    width: 91%;
+    width: 98%;
     height: 50px;
     border-radius: 3px;
     background-color: #f9f9f9;
     display: flex;
     align-items: center;
     border: none;
+}
+
+form {
+    width: 100%;
+    height: 100%;
 }
 
 .search-bar:focus {

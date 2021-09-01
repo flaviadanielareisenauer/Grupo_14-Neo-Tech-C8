@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+let methodOverride = require('method-override')
 const port = 3500;
 
 /*-------ENRUTADORES--------*/
@@ -15,7 +16,7 @@ let productsRouter = require('./routes/productsRouter')
 app.use(express.static('./public'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json())
-
+app.use(methodOverride('_method'));
 /*--------VIEWS---------*/
 
 app.set('views', path.join(__dirname, 'views'));

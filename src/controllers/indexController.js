@@ -12,6 +12,17 @@ module.exports = {
     pago: (req, res) => {
         res.render('formas-de-pago')
     },
-
+    search: (req, res) => {
+        let results = [];
+        products.forEach(product => {
+            if (product.name.toLowerCase().includes(req.query.search)) {
+                return results.push(product)
+            }
+        })
+        res.render('results', {
+            results,
+            search: req.query.search
+        })
+    },
 
 }

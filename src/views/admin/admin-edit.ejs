@@ -8,12 +8,12 @@
             <div class="form_container">
                 <h2 class="h2-adm">Administración de productos</h2>
                 <hr>
-                <form action="" method="POST">
+                <form action="/products/edit?_method=PUT" method="POST">
                     <div class="box">
                         <h4 class="h4-adm">Editar imagenes</h4>
                         <div class="imagenes_ad">
                             <div class="input-file-container">
-                                <input type="file" name="" id="">
+                                <input type="file" name="image" id="" value="<%- product.image%>">
                             </div>
                         </div>
                     </div>
@@ -22,19 +22,19 @@
                         <div class="box">
                             <h4 class="h4-adm">Editar de productos</h4>
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="name" placeholder="Producto">
+                                <input class="inputstyle" type="text" name="name" placeholder="Producto" value="<%- product.name%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <textarea class="textarea__adm" name="textarea" rows="15" cols="50">Descripción del producto</textarea>
+                                <textarea class="textarea__adm" name="textarea" rows="15" cols="50" value="<%- product.description%>"></textarea>
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="categoria" placeholder="Categoria">
+                                <input class="inputstyle" type="text" name="categoria" placeholder="Categoria" value="<%- product.category%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="descuento" placeholder="Descuento">
+                                <input class="inputstyle" type="text" name="descuento" placeholder="Descuento" value="<%- product.subcategory%>">
                             </div>
                         </div>
 
@@ -44,15 +44,15 @@
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="codigo" placeholder="Código">
+                                <input class="inputstyle" type="text" name="codigo" placeholder="Código" value="<%- product.code%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="color" placeholder="Color">
+                                <input class="inputstyle" type="text" name="color" placeholder="Color" value="<%- product.color%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="number" name="precio" placeholder="Precio">
+                                <input class="inputstyle" type="number" name="precio" placeholder="Precio" value="<%- product.price%>">
                             </div>
 
                             <h4 class="h4-adm">Buscar Producto:</h4>
