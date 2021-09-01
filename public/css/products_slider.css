@@ -1,62 +1,60 @@
 .productSlider {
-    font-family: var(--font_poppins);
+  font-family: var(--font_poppins);
 }
 
 .special-offers {
-    width: 80%;
-    margin: auto;
-    background-color: none;
-    max-width: 1150px;
+  width: 80%;
+  margin: auto;
+  background-color: none;
+  max-width: 1150px;
 }
 
 .productDiscount {
-    position: absolute;
-    top: 0;
-    right: 0px;
-    padding: 5px;
-    background-color: var(--dark-blue);
-    color: #ff6000;
-    border-radius: 0px 10px 0px 10px;
-    font-size: 15px;
-    background: rgba(51, 255, 112, 0.267);
+  position: absolute;
+  top: 0;
+  right: 0px;
+  padding: 5px;
+  background-color: var(--dark-blue);
+  color: #ff6000;
+  border-radius: 0px 10px 0px 10px;
+  font-size: 15px;
+  background: rgba(51, 255, 112, 0.267);
 }
 
 .productSlide .productPrice:hover {
-    color: crimson;
-    font-size: 3rem;
+  color: crimson;
+  font-size: 3rem;
 }
 
 .flickity-page-dots {
-    display: none;
+  display: none;
 }
 
 @media screen and (min-width: 1024px) {
-    .productSlide {
-        width: 20%;
-        height: 300px;
-    }
-    .special-offers {
-        width: 90%;
-    }
+  .productSlide {
+    width: 20%;
+    height: 300px;
+  }
+  .special-offers {
+    width: 90%;
+  }
 }
 
 .section__title {
-    font-family: var(--font_baloo);
-    margin-bottom: 25px;
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
+  font-family: var(--font_baloo);
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
-    .section__title {
-        margin-bottom: 35px;
-        font-size: 2rem;
-    }
+  .section__title {
+    margin-bottom: 35px;
+    font-size: 2rem;
+  }
 }
 
-
 /* Carousel container */
-
 
 /* Botones de anterior y siguiente */

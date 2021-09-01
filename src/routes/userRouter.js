@@ -13,7 +13,4 @@ router.get('/categorias', categorias)
 router.get('/productCart', productCart)
 
 
-
-
-
 module.exports = router;

@@ -2,13 +2,9 @@ let express = require('express')
 
 let router = express.Router()
 
-let { perfil, carga, edit, adminLogin } = require('../controllers/adminController')
+let { perfil, adminLogin } = require('../controllers/adminController')
 
 router.get('/config-perfil', perfil)
-
-
-
-
 
 router.get('/adminLogin', adminLogin);
 
