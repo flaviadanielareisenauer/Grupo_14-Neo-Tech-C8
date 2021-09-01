@@ -63,30 +63,31 @@ module.exports = {
 
         let {
             name,
-            price,
-            discount,
-            category,
-            description
+            precio,
+            descuento,
+            categoria,
+            textarea,
+            codigo
         } = req.body;
 
         products.forEach(product => {
-            if (product.id === +req.params.id) {
-                product.id = product.id,
-                    product.image = image,
+            let param = +req.params.id;
+            if (product.id === param) {
+                console.log(product.id = product.id),
                     product.name = name,
-                    product.price = price,
-                    product.discount = discount,
-                    product.category = category,
-                    product.description = description,
-                    product.marca = marca,
-                    product.codigo = codigo,
-                    product.color = color
+                    product.price = precio,
+                    product.discount = descuento,
+                    product.category = categoria,
+                    product.description = textarea,
+                    product.code = codigo
+
             }
+
         })
 
         writeJson(products);
 
-        res.send(`Has editado el producto ${name}`)
+
         res.redirect('/products')
     },
     eliminarProducto: (req, res) => {
