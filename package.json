@@ -1,29 +1,29 @@
 {
-  "name": "grupo_14-neo-tech",
-  "version": "1.0.0",
-  "description": "- 23 años\r - Estudiante de Programación Web",
-  "main": "./src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/issues"
-  },
-  "homepage": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8#readme",
-  "dependencies": {
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "method": "^2.0.0",
-    "method-override": "^3.0.0",
-    "multer": "^1.4.3",
-    "nodemon": "^2.0.12",
-    "override": "0.0.1"
-  }
+    "name": "grupo_14-neo-tech",
+    "version": "1.0.0",
+    "description": "- 23 años\r - Estudiante de Programación Web",
+    "main": "./src/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/issues"
+    },
+    "homepage": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8#readme",
+    "dependencies": {
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "method": "^2.0.0",
+        "method-override": "^3.0.0",
+        "multer": "^1.4.3",
+        "nodemon": "^2.0.12",
+        "override": "0.0.1"
+    }
 }
