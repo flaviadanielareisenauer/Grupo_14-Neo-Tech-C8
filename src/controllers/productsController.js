@@ -67,20 +67,23 @@ module.exports = {
             price,
             discount,
             category,
-            description
+            description,
+            marca,
+            código,
+            color
         } = req.body;
 
         products.forEach(product => {
             if (product.id === +req.params.id) {
                 product.id = product.id,
-                    product.image = image,
+                    product.image = req.file ? req.file.filename : product.imagen,
                     product.name = name,
                     product.price = price,
                     product.discount = discount,
                     product.category = category,
                     product.description = description,
                     product.marca = marca,
-                    product.codigo = codigo,
+                    product.código = código,
                     product.color = color
             }
         })
