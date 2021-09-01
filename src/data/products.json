@@ -1,17 +1,10 @@
 [
     {
         "id": 3,
-        "name": "Xiaomi Redmi Note 8t",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?",
-        "image": [
-            "Celulares/RedmiNote8t-vista2.jpg",
-            "Celulares/RedmiNote8t-vista3.jpg"
-        ],
-        "category": "Celulares",
-        "price": 46000,
-        "discount": 10,
-        "color": "Negro",
-        "code": 46789
+        "name": "Xiaomi Redmi Note 8tqwee",
+        "color": "Negroeffew",
+        "code": 46789,
+        "marca": ""
     },
     {
         "id": 4,
