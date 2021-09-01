@@ -49,6 +49,15 @@ module.exports = {
             productsSlider
 
         })
+    },
+    eliminarProducto: (req, res) => {
+        products.forEach(product => {
+            if(product.id === +req.params.id){
+                let productoAEliminar = products.indexOf(product);
+                products.splice(productoAEliminar, 1)
+            }
+        })
+        writeJson(products);
+        res.redirect('/products');
     }
-
 }
