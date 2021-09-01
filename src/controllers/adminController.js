@@ -13,9 +13,7 @@ module.exports = {
         res.render('admin/admin-edit')
     },
 
-
     adminLogin: (req, res) => {
         res.render('admin/adminLogin')
     }
-
 }

@@ -17,17 +17,18 @@ module.exports = {
                 lastId = product.id
             }
         });
-        let { name, price, discount, category, subcategory, description, code } = req.body
+
         let productoNuevo = {
             id: lastId + 1,
-            name,
-            price,
-            discount,
-            category,
-            subcategory,
-            description,
-            code,
-            image: req.file ? ["nuevos/" + req.file.filename] : "default-image"
+            image: req.body.image,
+            name: req.body.name,
+            description: req.body.description,
+            category: req.body.categoria,
+            subCategory: req.body.subcategoria,
+            marca: req.body.marca,
+            código: req.body.codigo,
+            color: req.body.color,
+            precio: req.body.precio
         }
 
         products.push(productoNuevo);
@@ -91,7 +92,7 @@ module.exports = {
     },
     eliminarProducto: (req, res) => {
         products.forEach(product => {
-            if (product.id === +req.params.id) {
+            if(product.id === +req.params.id){
                 let productoAEliminar = products.indexOf(product);
                 products.splice(productoAEliminar, 1)
             }
@@ -99,6 +100,4 @@ module.exports = {
         writeJson(products);
         res.redirect('/products');
     }
-
-
 }

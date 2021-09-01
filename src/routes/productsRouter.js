@@ -2,10 +2,9 @@ let express = require('express')
 
 let router = express.Router()
 
-let { productsList, agregarProducto, crearProducto, detail, edit, update } = require('../controllers/productsController');
-
 let upLoadFile = require('../middlewre/cargaImagen')
-let { productsList, agregarProducto, crearProducto, detail, eliminarProducto } = require('../controllers/productsController');
+
+let { productsList, agregarProducto, crearProducto, detail, edit, update, eliminarProducto } = require('../controllers/productsController');
 
 router.get('/', productsList);
 
