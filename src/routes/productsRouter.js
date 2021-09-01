@@ -13,10 +13,10 @@ router.get('/create', agregarProducto)
 router.post('/create', upLoadFile.single("image"), crearProducto)
 router.get('/detail/:id', detail)
 
-router.delete('/delete/:id', eliminarProducto)
-
 router.get('/edit/:id', edit);
 router.put('/edit/:id', update);
+
+router.delete('/delete/:id', eliminarProducto)
 
 
 module.exports = router;
