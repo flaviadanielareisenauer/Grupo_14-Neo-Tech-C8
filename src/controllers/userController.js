@@ -9,7 +9,13 @@ module.exports = {
     },
 
     categorias: (req, res) => {
-        res.render('categorias')
+        let productsSlider = products.filter(product => product.discount >= 0)
+
+        res.render('categorias', {
+            titleSlider: "categorias",
+            productsSlider
+
+        })
     },
 
     productCart: (req, res) => {
