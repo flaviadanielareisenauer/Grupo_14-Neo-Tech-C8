@@ -16,7 +16,7 @@ router.get('/detail/:id', detail)
 router.delete('/delete/:id', eliminarProducto)
 
 router.get('/edit/:id', edit);
-router.put('/edit', update);
+router.put('/edit/:id', update);
 
 
 module.exports = router;
