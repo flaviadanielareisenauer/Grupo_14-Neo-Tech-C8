@@ -8,7 +8,7 @@
             <div class="form_container">
                 <h2 class="h2-adm">Administración de productos</h2>
                 <hr>
-                <form action="/products/create" method="POST">
+                <form action="/products/create" method="POST" enctype="multipart/form-data">
                     <div class="box ">
                         <h4 class="h4-adm ">Cargar imagenes</h4>
                         <div class="imagenes_ad ">
@@ -26,11 +26,11 @@
                             </div>
 
                             <div class="inputcontainer ">
-                                <textarea class="textarea__adm " name="textarea" rows="15 " cols="50 ">Descripción del producto</textarea>
+                                <textarea class="textarea__adm " name="description" rows="15 " cols="50 ">Descripción del producto</textarea>
                             </div>
 
                             <div class="inputcontainer ">
-                                <select name="categoria" class="inputselect ">
+                                <select name="category" class="inputselect ">
                                     <option value=" " hidden selected>Categorias</option>
                                     <option value="ofertas ">Ofertas</option>
                                     <option value="notebook ">Notebook</option>
@@ -46,7 +46,7 @@
                             </div>
 
                             <div class="inputcontainer ">
-                                <select name="subcategoria" class="inputselect ">
+                                <select name="subcategory" class="inputselect ">
                                     <option value=" " hidden selected>Descuento</option>
                                     <option value="10 ">10%</option>
                                     <option value="20 ">20%</option>
@@ -60,11 +60,11 @@
 
                         <div class="box ">
                             <div class="inputcontainer ">
-                                <input class="inputstyle " type="text " name="marca" placeholder="Marca ">
+                                <input class="inputstyle " type="text " name="mark" placeholder="Marca ">
                             </div>
 
                             <div class="inputcontainer ">
-                                <input class="inputstyle " type="text " name="codigo" placeholder="Código ">
+                                <input class="inputstyle " type="text " name="code" placeholder="Código ">
                             </div>
 
                             <div class="inputcontainer ">
@@ -72,7 +72,7 @@
                             </div>
 
                             <div class="inputcontainer ">
-                                <input class="inputstyle " type="number " name="precio" placeholder="Precio ">
+                                <input class="inputstyle " type="number " name="price" placeholder="Precio ">
                             </div>
 
                             <h4 class="h4-adm ">Buscar Producto:</h4>

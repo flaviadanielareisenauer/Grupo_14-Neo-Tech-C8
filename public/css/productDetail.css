@@ -230,60 +230,6 @@ p.p-destacado {
 
 /*----------------productos----------*/
 
-.general-products .producto .button {
-    width: 96%;
-    background-color: #fff;
-    border: 2px solid #ff6000;
-    border-radius: 3px;
-    text-align: center;
-    align-items: center;
-    height: 40px;
-    display: flex;
-    margin: auto;
-    margin-bottom: 5px;
-}
-
-.general-products .producto .button p {
-    padding: 10px 20px;
-    width: 100%;
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-}
-
-section.general-products .producto div.button {
-    background-color: #fff;
-    border: 2px solid #ff6000;
-    border-radius: 3px;
-    width: 94%;
-    text-align: center;
-    align-items: center;
-    height: 46px;
-    display: flex;
-    margin: auto;
-    margin-bottom: 5px;
-    transition: all .5s;
-}
-
-section.general-products .producto div.button:hover {
-    background-color: #ff6000;
-    transform: .5s;
-    opacity: 1;
-}
-
-section.general-products .producto div.button p {
-    padding: 10px 20px;
-    width: 100%;
-    text-decoration: none;
-    color: #070d2b;
-    font-size: 1.2rem;
-}
-
-section.general-products .producto div.button p:hover,
-section.general-products .producto2 div.button p:hover {
-    color: white;
-}
-
 @media screen and (min-width:782px) {
     .productDetail {
         background-color: var(--clarito);
