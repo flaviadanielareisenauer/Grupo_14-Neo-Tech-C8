@@ -95,7 +95,7 @@ module.exports = {
     },
     eliminarProducto: (req, res) => {
         products.forEach(product => {
-            if(product.id === +req.params.id){
+            if (product.id === +req.params.id) {
                 let productoAEliminar = products.indexOf(product);
                 products.splice(productoAEliminar, 1)
             }
