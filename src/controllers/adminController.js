@@ -33,10 +33,15 @@ module.exports = {
                 lastId = product.id
             }
         });
+        let arrayImages = [];
+        if (req.files) {
+            req.files.forEach(image => {
+                arrayImages.push("nuevos/" + image.filename)
+            })
+        }
 
         let productoNuevo = {
             id: lastId + 1,
-            image: req.body.image,
             name: req.body.name,
             description: req.body.description,
             category: req.body.categoria,
@@ -44,7 +49,9 @@ module.exports = {
             marca: req.body.marca,
             código: req.body.codigo,
             color: req.body.color,
-            precio: req.body.precio
+            precio: req.body.precio,
+            image: arrayImages.length > 0 ?
+                arrayImages : "default-image.png"
         }
 
         products.push(productoNuevo);
@@ -76,11 +83,15 @@ module.exports = {
             color,
             image
         } = req.body;
-
+        let arrayImages = [];
+        if (req.files) {
+            req.files.forEach(image => {
+                arrayImages.push("nuevos/" + image.filename)
+            })
+        }
         products.forEach(product => {
             if (product.id === +req.params.id) {
                 product.id = product.id,
-                    product.image = req.file ? req.file.filename : product.image,
                     product.name = name,
                     product.price = price,
                     product.discount = discount,
@@ -88,7 +99,9 @@ module.exports = {
                     product.description = description,
                     product.marca = marca,
                     product.código = código,
-                    product.color = color
+                    product.color = color,
+                    product.image = arrayImages.length > 0 ?
+                    arrayImages : product.image
             }
 
         })

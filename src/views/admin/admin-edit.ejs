@@ -8,12 +8,12 @@
             <div class="form_container">
                 <h2 class="h2-adm">Administración de productos</h2>
                 <hr>
-                <form action="/admin/products/<%=product.id%>?_method=PUT" method="POST">
+                <form action="/admin/products/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="box">
                         <h4 class="h4-adm">Editar imagenes</h4>
                         <div class="imagenes_ad">
                             <div class="input-file-container">
-                                <input type="file" name="image" id="" value="<%- product.image%>">
+                                <input type="file" name="image" id="" value="<%- product.image%> " multiple>
                             </div>
                         </div>
                     </div>
