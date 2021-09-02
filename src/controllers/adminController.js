@@ -51,7 +51,7 @@ module.exports = {
             color: req.body.color,
             precio: req.body.precio,
             image: arrayImages.length > 0 ?
-                arrayImages : "default-image.png"
+                arrayImages : ["nuevos/img-default.jpg"] 
         }
 
         products.push(productoNuevo);
@@ -80,8 +80,7 @@ module.exports = {
             description,
             marca,
             código,
-            color,
-            image
+            color
         } = req.body;
         let arrayImages = [];
         if (req.files) {
