@@ -4,7 +4,7 @@ module.exports = {
         let productsSlider = products.filter(product => product.discount >= 0)
 
         res.render('index', {
-            titleSlider: "Para los amantes del café.",
+            titleSlider: "productos",
             productsSlider
 
         })

@@ -17,7 +17,7 @@ router.post('/products/create', upLoadFile.single("image"), crearProducto)
 
 //edita un producto existente
 router.get('/products/:id/edit', edit);
-router.put('/products/:id/edit', upLoadFile.single("image"), update);
+router.put('/products/:id', upLoadFile.single("image"), update);
 
 //elimina el producto seleccionado
 router.delete('/products/delete/:id', eliminarProducto);
