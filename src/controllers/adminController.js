@@ -73,13 +73,14 @@ module.exports = {
             description,
             marca,
             código,
-            color
+            color,
+            image
         } = req.body;
 
         products.forEach(product => {
             if (product.id === +req.params.id) {
                 product.id = product.id,
-                    product.image = req.file ? req.file.filename : product.imagen,
+                    product.image = req.file ? req.file.filename : product.image,
                     product.name = name,
                     product.price = price,
                     product.discount = discount,
@@ -93,7 +94,7 @@ module.exports = {
         })
 
         writeJson(products);
-        res.redirect('admin/products')
+        res.redirect('/admin/products')
     },
     eliminarProducto: (req, res) => {
         products.forEach(product => {
