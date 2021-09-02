@@ -13,11 +13,11 @@ router.get('/adminLogin', adminLogin);
 
 //crea un nuevo producto
 router.get('/products/create', agregarProducto)
-router.post('/products/create', upLoadFile.single("image"), crearProducto)
+router.post('/products/create', upLoadFile.array("image"), crearProducto)
 
 //edita un producto existente
 router.get('/products/:id/edit', edit);
-router.put('/products/:id', upLoadFile.single("image"), update);
+router.put('/products/:id', upLoadFile.array("image"), update);
 
 //elimina el producto seleccionado
 router.delete('/products/delete/:id', eliminarProducto);
