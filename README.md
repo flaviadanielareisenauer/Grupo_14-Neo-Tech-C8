@@ -4,26 +4,25 @@
 
 ## Integrantes
 
-
 ### Gonzalez, Daiana
+
 - 23 años
 - Estudiante de Programación Web
 
-
 ### Juarez, Lautaro
+
 - 19 años
 - Estudiante de Programación Web
 
-
 ### Reisenauer, Flavia
+
 - 31 años
 - Estudiante de Programación Web
 
-
 ### Zamora, Marcos
+
 - 19 años
 - Estudiante de Programación Web
-
 
 ## Temática de la web y audiencia objetivo
 
@@ -31,10 +30,9 @@ Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commer
 
 La audiencia objetivo serán personas de todas las edades.
 
-
 ## Tercer Sprint (20/08)
-### [Tablero](https://trello.com/b/g994yINA/prototipo)
 
+### [Tablero](https://trello.com/b/g994yINA/prototipo)
 
 ## Páginas de referencia
 

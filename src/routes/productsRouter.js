@@ -4,11 +4,11 @@ let router = express.Router()
 
 
 
-let { detail, productsList } = require('../controllers/productsController');
+let { detail } = require('../controllers/productsController');
 
 
 
 
-router.get('/:id', detail)
+router.get('/detail/:id', detail)
 
 module.exports = router;

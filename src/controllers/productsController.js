@@ -12,6 +12,16 @@ module.exports = {
             productsSlider
 
         })
+    },
+    edit: (req, res) => {
+        let productID = +req.params.id;
+        let product = products.find(product => product.id === productID);
+
+
+        res.render('admin/admin-edit', {
+            titleSlider: "Productos relacionados",
+            product
+        })
     }
 
 }
