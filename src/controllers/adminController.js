@@ -116,6 +116,6 @@ module.exports = {
             }
         })
         writeJson(products);
-        res.redirect('admin/products');
+        res.redirect('/admin/products');
     }
 }
