@@ -45,11 +45,11 @@ module.exports = {
             name: req.body.name,
             description: req.body.description,
             category: req.body.categoria,
-            subCategory: req.body.subcategoria,
-            marca: req.body.marca,
-            código: req.body.codigo,
+            discount: req.body.discount,
+            mark: req.body.mark,
+            code: req.body.codeo,
             color: req.body.color,
-            precio: req.body.precio,
+            price: req.body.price,
             image: arrayImages.length > 0 ?
                 arrayImages : ["nuevos/img-default.jpg"] 
         }
@@ -78,8 +78,8 @@ module.exports = {
             discount,
             category,
             description,
-            marca,
-            código,
+            mark,
+            code,
             color
         } = req.body;
         let arrayImages = [];
@@ -96,8 +96,8 @@ module.exports = {
                     product.discount = discount,
                     product.category = category,
                     product.description = description,
-                    product.marca = marca,
-                    product.código = código,
+                    product.mark = mark,
+                    product.code = code,
                     product.color = color,
                     product.image = arrayImages.length > 0 ?
                     arrayImages : product.image
