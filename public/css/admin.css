@@ -121,7 +121,6 @@ select.inputselect:focus {
 }
 
 /* BOTONES */
-
 .buttoncontainer {
   align-items: center;
 }
@@ -156,50 +155,7 @@ select.inputselect:focus {
   );
 }
 
-.btn-editar {
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 161, 39, 0.993) 50%
-  );
-  color: black;
-  font-weight: bold;
-  transition: all 1s ease;
-}
-
-.btn-editar:hover {
-  color: rgba(172, 172, 172, 0.616);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(
-    285deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(230, 137, 15, 0.993) 50%
-  );
-}
-
-.btn-eliminar {
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 161, 39, 0.993) 50%
-  );
-  color: black;
-  font-weight: bold;
-  transition: all 1s ease;
-}
-
-.btn-eliminar:hover {
-  color: rgba(172, 172, 172, 0.616);
-  box-shadow: -5px -5px 10px rgb(255, 255, 255, 0.7);
-  background: linear-gradient(
-    285deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(230, 137, 15, 0.993) 50%
-  );
-}
-
 /* Media queries */
-
 /* Tablet */
 
 @media screen and (min-width: 475px) {
