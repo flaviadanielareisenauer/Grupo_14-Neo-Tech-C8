@@ -1,10 +1,10 @@
 const { products } = require('../data/dataBase')
 module.exports = {
     register: (req, res) => {
-        res.render('register')
+        res.render('users/register')
     },
     perfil: (req, res) => {
-        res.render('config-perfil')
+        res.render('users/config-perfil')
 
     },
 
