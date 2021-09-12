@@ -16,15 +16,17 @@ module.exports = {
     adminLogin: (req, res) => {
         res.render('admin/adminLogin')
     },
+
     productsList: (req, res) => {
         res.render('admin/productsList', {
             products: products
-
         })
     },
+
     agregarProducto: (req, res) => {
         res.render('admin/admin-carga')
     },
+
     crearProducto: (req, res) => {
         let lastId = 1;
 
@@ -33,7 +35,9 @@ module.exports = {
                 lastId = product.id
             }
         });
+
         let arrayImages = [];
+        
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push("nuevos/" + image.filename)
@@ -47,11 +51,11 @@ module.exports = {
             category: req.body.categoria,
             discount: req.body.discount,
             mark: req.body.mark,
-            code: req.body.codeo,
+            code: req.body.code,
             color: req.body.color,
             price: req.body.price,
             image: arrayImages.length > 0 ?
-                arrayImages : ["nuevos/img-default.jpg"] 
+                arrayImages : ["nuevos/img-default.jpg"]
         }
 
         products.push(productoNuevo);
@@ -60,6 +64,7 @@ module.exports = {
 
         res.redirect('/admin/products')
     },
+
     edit: (req, res) => {
         let productID = +req.params.id;
         let product = products.find(product => product.id === productID);
@@ -70,6 +75,7 @@ module.exports = {
             product
         })
     },
+
     update: (req, res) => {
 
         let {
@@ -82,7 +88,9 @@ module.exports = {
             code,
             color
         } = req.body;
+
         let arrayImages = [];
+
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push("nuevos/" + image.filename)
@@ -100,14 +108,14 @@ module.exports = {
                     product.code = code,
                     product.color = color,
                     product.image = arrayImages.length > 0 ?
-                    arrayImages : product.image
+                        arrayImages : product.image
             }
-
         })
 
         writeJson(products);
         res.redirect('/admin/products')
     },
+
     eliminarProducto: (req, res) => {
         products.forEach(product => {
             if (product.id === +req.params.id) {

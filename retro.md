@@ -27,9 +27,7 @@
 
 **Dejar de hacer:**
 
--
-
-**Hacer menos:**
+- **Hacer menos:**
 
 - Prolongar el tiempo de discusión para elecciones grupales y postergar las mismas.
 
@@ -58,9 +56,7 @@
 
 **Dejar de hacer:**
 
--
-
-**Hacer menos:**
+- **Hacer menos:**
 
 - Prolongar el tiempo de discusión para elecciones grupales y postergar las mismas.
 
@@ -84,9 +80,7 @@
 
 **Dejar de hacer:**
 
--
-
-**Hacer menos:**
+- **Hacer menos:**
 
 - Prolongar el tiempo de discusión para elecciones grupales y postergar las mismas.
 
@@ -112,8 +106,6 @@
 
 **Dejar de hacer:**
 
+- **Hacer menos:**
+
 -
-
-**Hacer menos:**
-
-- 
