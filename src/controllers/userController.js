@@ -11,7 +11,7 @@ module.exports = {
         let errors = validationResult(req)
 
         if (erros.isEmpty()) {
-            let lastId = 0;
+            let lastId = 1;
 
             users.forEach(user => {
                 if (user.id > lastId) {
@@ -49,10 +49,10 @@ module.exports = {
 
             writeUsersJSON(users)
 
-            res.redirect('/users/login')
+            res.redirect('users/login')
 
         } else {
-            res.render('register', {
+            res.render('users/register', {
                 category, 
                 errors: errors.mapped(),
                 old : req.body

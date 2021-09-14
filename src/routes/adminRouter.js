@@ -1,6 +1,6 @@
 const express = require('express')
 const router = express.Router()
-const upLoadFile = require('../middlewre/cargaImagen')
+const upLoadFile = require('../middlewares/cargaImagen')
 
 const { perfil, crearProducto, edit, adminLogin, agregarProducto, eliminarProducto, update, productsList } = require('../controllers/adminController')
 

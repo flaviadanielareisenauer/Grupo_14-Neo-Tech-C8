@@ -19,8 +19,8 @@ router.post('/register', registerValidator, processRegister);
 
 
 /* GET - USER PROFILE */
-router.get('/profile', profile)
-router.put('/profile-edit', userAvatars.single('avatar'), profileEdit)
+router.get('/profile-edit/:id', profile)
+router.put('/profile-edit/:id', userAvatars.single('avatar'), profileEdit)
 
 router.get('/categorias', categorias)
 
