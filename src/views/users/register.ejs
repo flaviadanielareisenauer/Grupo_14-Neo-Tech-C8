@@ -5,9 +5,6 @@
         <%- include('../partials/header')%>
             <!------------------------------------------------------->
 
-
-            <!------------------------------------------------------->
-
             <main class="main-LR">
 
                 <div class="contenedor__todo">
@@ -38,23 +35,43 @@
                             <button>Iniciar sesión</button>
                         </form>
                         <!-- Register -->
-                        <form action="" class="form__register">
+                        <form action="/user/register" method="POST" enctype="multipart/form-data" 
+                            class="form__register">
                             <h2>Regístrarse</h2>
-                            <input type="text" placeholder="Nombre y apellido">
-                            <input type="e-mail" placeholder="Correo electrónico">
-                            <input type="password" placeholder="Contraseña">
-                            <input type="password" placeholder="Confirmar contraseña">
+                            <input type="text" name="first_name" placeholder="Nombre" value="<%= locals.old && old.first_name %>">
+                                <% if (locals.errors && errors.first_name) { %>
+                                    <small class="text-danger"><%- errors.first_name.msg %></small>
+                                    <% } %>
 
-                            <button>Regístrarse</button>
+                            <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
+                                <% if (locals.errors && errors.last_name) { %>
+                                    <small class="text-danger"><%= errors.last_name.msg %></small>
+                                    <% } %>
+
+                            <input type="email" name="email" placeholder="Correo electrónico">
+                                <% if (locals.errors && errors.email) { %> 
+                                    <small class="text-danger"><%= errors.email.msg %></small>
+                                    <% } %>
+
+                            <input type="password" name="password1" placeholder="Contraseña">
+                                <% if (locals.errors && errors.password1) { %>
+                                    <small class="text-danger"><%= errors.password1.msg %></small>
+                                    <% } %>
+
+                            <input type="password" name="password2" placeholder="Confirmar contraseña">
+                                <% if (locals.errors && errors.password2) { %>
+                                    <small class="text-danger"><%= errors.password2.msg %></small>
+                                    <% } %>
+
+                             <button>Regístrarse</button>
                         </form>
                     </div>
                 </div>
 
-
             </main>
             <%- include('../partials/footer')%>
 
-                <script src="/js/script.js"></script>
+                <script src="/js/script-register.js"></script>
     </body>
 
     </html>

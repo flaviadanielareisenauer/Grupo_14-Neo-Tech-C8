@@ -9,9 +9,11 @@ module.exports = {
 
         })
     },
+
     pago: (req, res) => {
         res.render('formas-de-pago')
     },
+
     search: (req, res) => {
         let results = [];
         products.forEach(product => {
@@ -24,6 +26,4 @@ module.exports = {
             search: req.query.search
         })
     },
-
-
 }
