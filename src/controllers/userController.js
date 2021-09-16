@@ -1,17 +1,19 @@
-const { products, users } = require('../data/dataBase');
+const { products, users, writeUsersJSON } = require('../data/dataBase');
 const { validationResult } = require('express-validator');
+let bcrypt = require('bcryptjs')
 
 module.exports = {
     register: (req, res) => {
-        res.render('users/register'       
-        )
+        res.render('users/register', {
+            session: req.session
+        })
     },
 
     processRegister: (req, res) => {
         let errors = validationResult(req)
 
-        if (erros.isEmpty()) {
-            let lastId = 1;
+        if (errors.isEmpty()) {
+            let lastId = 0;
 
             users.forEach(user => {
                 if (user.id > lastId) {
@@ -19,11 +21,20 @@ module.exports = {
                 }
             })
 
+            let arrayImages = [];
+
+            if (req.files) {
+                req.files.forEach(image => {
+                    arrayImages.push("nuevos/" + image.filename)
+                })
+            }
+
             let {
                 first_name,
                 last_name,
                 email,
                 password1,
+                password2,
             } = req.body
 
             let newUser = {
@@ -31,41 +42,53 @@ module.exports = {
                 first_name,
                 last_name,
                 email,
-                password : password1,
-                DNI,
-                number_phone,
-                street_name,
-                street_number, 
-                dto,
-                postal_code,
-                province,
-                localidad,
-                category,
-                avatar : req.file ? req.file.filename : "default-image.png",
-                rol: "ROL_USER"
+                password1: bcrypt.hashSync(password1, 10),
+                password2: bcrypt.hashSync(password2, 10),
+                DNI: "",
+                number_phone: "",
+                street_name: "",
+                street_number: "",
+                dto: "",
+                postal_code: "",
+                province: "",
+                localidad: "",
+                category: "",
+                avatar: arrayImages.length > 0 ?
+                    arrayImages : ["nuevos/default-image.jpg"],
+                rol: "ROL_USER",
             };
-            
-            users.push(newUser)
+
+            users.push(newUser);
 
             writeUsersJSON(users)
 
-            res.redirect('users/login')
+            res.redirect('/')
 
         } else {
             res.render('users/register', {
-                category, 
                 errors: errors.mapped(),
-                old : req.body
+                old: req.body,
+                session: req.session
             })
         }
     },
 
     profile: (req, res) => {
-        res.render('users/profile')
+        let user = users.find(user => user.id === req.session.user.id)
+
+        res.render('users/profile', {
+            user,
+            session: req.session
+        })
     },
 
     profileEdit: (req, res) => {
-        res.render('users/profile-edit')
+        let user = users.find(user => user.id === +req.params.id)
+
+        res.render('users/profileEdit', {
+            user,
+            session: req.session
+        })
     },
 
     categorias: (req, res) => {
