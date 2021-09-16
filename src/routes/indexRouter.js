@@ -1,8 +1,7 @@
-let express = require('express')
+const express = require('express')
+const router = express.Router()
 
-let router = express.Router()
-
-let { index, pago, search } = require('../controllers/indexController')
+const { index, pago, search } = require('../controllers/indexController')
 
 router.get('/', index)
 

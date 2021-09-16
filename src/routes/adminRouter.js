@@ -1,8 +1,8 @@
-let express = require('express')
+const express = require('express')
+const router = express.Router()
+const upLoadFile = require('../middlewares/cargaImagen')
 
-let router = express.Router()
-let upLoadFile = require('../middlewre/cargaImagen')
-let { perfil, crearProducto, edit, adminLogin, agregarProducto, eliminarProducto, update, productsList } = require('../controllers/adminController')
+const { perfil, crearProducto, edit, adminLogin, agregarProducto, eliminarProducto, update, productsList } = require('../controllers/adminController')
 
 //Muestra la lista de productos desde el admin
 router.get('/products', productsList);
@@ -21,5 +21,6 @@ router.put('/products/:id', upLoadFile.array("image"), update);
 
 //elimina el producto seleccionado
 router.delete('/products/delete/:id', eliminarProducto);
+
 
 module.exports = router;
