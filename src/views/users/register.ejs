@@ -35,12 +35,12 @@
                             <button>Iniciar sesión</button>
                         </form>
                         <!-- Register -->
-                        <form action="/user/register" method="GET" enctype="multipart/form-data"
+                        <form action="/user/register" method="POST" enctype="multipart/form-data" 
                             class="form__register">
                             <h2>Regístrarse</h2>
-                            <input type="text" name="first_name" placeholder="Nombre" value="<%= locals.old && old.name %>">
-                                <% if (locals.errors && errors.name) { %>
-                                    <small class="text-danger"><%= errors.first_name.msg %></small>
+                            <input type="text" name="first_name" placeholder="Nombre" value="<%= locals.old && old.first_name %>">
+                                <% if (locals.errors && errors.first_name) { %>
+                                    <small class="text-danger"><%- errors.first_name.msg %></small>
                                     <% } %>
 
                             <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
@@ -48,7 +48,7 @@
                                     <small class="text-danger"><%= errors.last_name.msg %></small>
                                     <% } %>
 
-                            <input type="e-mail" name="email" placeholder="Correo electrónico">
+                            <input type="email" name="email" placeholder="Correo electrónico">
                                 <% if (locals.errors && errors.email) { %> 
                                     <small class="text-danger"><%= errors.email.msg %></small>
                                     <% } %>

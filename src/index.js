@@ -3,6 +3,8 @@ const app = express();
 const path = require('path');
 const port = 3500;
 const methodOverride = require('method-override');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 /*-------ENRUTADORES--------*/
 
@@ -17,6 +19,13 @@ app.use(express.static('./public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
+app.use(cookieParser());
+app.use(session({
+    secret: "NeoTech",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+}))
 
 /*--------VIEWS---------*/
 
