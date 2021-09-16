@@ -62,7 +62,7 @@ module.exports = {
 
             writeUsersJSON(users)
 
-            res.redirect('/')
+            res.redirect('register')
 
         } else {
             res.render('users/register', {
