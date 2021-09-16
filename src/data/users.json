@@ -1,23 +1,6 @@
 [
     {
         "id": 1,
-        "first_name": "Karilynn",
-        "last_name": "Gromley",
-        "email": "kgromley0@ustream.tv",
-        "password1": "RDqz1P",
-        "DNI": 2011345391,
-        "number_phone": 9516863180,
-        "street_name": "Florence",
-        "street_number": 191,
-        "dto": 2,
-        "postal_code": 1696,
-        "province": "La Rioja",
-        "localidad": "Localidad1",
-        "category": null,
-        "image": "usuario.svg"
-    },
-    {
-        "id": 2,
         "first_name": "Flavia",
         "last_name": "Reisenauer",
         "email": "flavia@gmail.com",
@@ -38,12 +21,33 @@
         "rol": "ROL_USER"
     },
     {
-        "id": 3,
+        "id": 2,
         "first_name": "Babb",
         "last_name": "Vlasenkov",
         "email": "bvlasenkovx@tinyurl.com",
         "password1": "$2a$10$a./8NpbVRzbEuDUM8bQ7tuAwQKMX8DzzpmTpIr4I2qITXqCIX/f7q",
         "password2": "$2a$10$nrbe/CAc0A9oNaqMIz2bO.6FyJ3r1N4LyHfMC9hm7MP0fEu4k28iK",
+        "DNI": "",
+        "number_phone": "",
+        "street_name": "",
+        "street_number": "",
+        "dto": "",
+        "postal_code": "",
+        "province": "",
+        "localidad": "",
+        "category": "",
+        "avatar": [
+            "nuevos/default-image.jpg"
+        ],
+        "rol": "ROL_USER"
+    },
+    {
+        "id": 3,
+        "first_name": "sara",
+        "last_name": "jndjkr",
+        "email": "iuhniuhbui@hotmail.com",
+        "password1": "$2a$10$FcC1vwQGiqPxAQNVi/wlX.ZzeI/SBCpNgOy4vFOVxb.Bfb/VhBnIi",
+        "password2": "$2a$10$dDQV4IaobxXfAWXS.j2Cs.hlFwJlZp4L09PJFszMpCaTSFjd5DJBe",
         "DNI": "",
         "number_phone": "",
         "street_name": "",
