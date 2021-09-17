@@ -2,71 +2,68 @@
 <html lang="es">
 <!-- Include Head -->
 
-<%- include('./partials/head',{title: 'Resultados de tu búsqueda'})%>
+<%- include('./partials/head',{title: 'Resultados de tu búsqueda' })%>
 
     <body>
         <!-- Header -->
         <%- include('./partials/header') %>
             <!-- /Header -->
+            <main class="results-container">
+                <!-- Banner -->
+                <div class="banner"></div>
+                <!-- /Banner -->
 
-            <!-- Banner -->
-            <div class="banner"></div>
-            <!-- /Banner -->
-
-            <!-- todos los productos -->
-            <div class="col-12">
-                <h2 class="products-title">Resultados de la búsqueda:
-                    <%- search %>
-                </h2>
-            </div>
-            <section class="special-offers" id="slider_offers">
-
-                <!-- Product Slider -->
-
-                <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }'>
-                    <div class="container products-wrapper">
-
-
-                        <section class="special-offers" id="slider_offers" style="height: 350px; ">
-
-                            <% if (results.length > 0){%>
-                                <% results.forEach(product => {%>
-                                    <article class="producto ">
-                                        <%if (product.discount > 0) {%>
-                                            <div class="productDiscount">
-                                                <%- product.discount %>% OFF</div>
-
-                                            <%}%>
-
-                                                <div class="img-container"><img src="/imagenes/<%= product.image[0]%>" alt=" "></div>
-                                                <p>
-                                                    <%= product.description %>
-                                                </p>
-                                                <h4>
-                                                    $
-                                                    <%=product.price%>
-                                                </h4>
-                                                <a href="/products/detail/<%- product.id%>">
-                                                    <div class="button ">
-                                                        <p>COMPRAR YA</p>
-                                                    </div>
-                                                </a>
-                                    </article>
-                                    <% }) %>
-
-                                        <%} else {%>
-                                            <div class="col-12">
-                                                <h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
-                                            </div>
-                                            <%}%>
-
-
-
-                    </div>
-                    </section>
+                <!-- todos los productos -->
+                <div class="col-12">
+                    <h2 class="products-title">Resultados de la búsqueda:
+                        <%- search %>
+                    </h2>
                 </div>
-                </div>
-            </section>
+                <section class="special-offers" id="slider_offers">
+
+                    <!-- Product Slider -->
+                    <% if (results.length> 0){%>
+                        <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }'>
+                            <div class="container products-wrapper">
+                                <div class="general-products">
+
+                                    <% results.forEach(product=> {%>
+                                        <article class="producto">
+                                            <%if (product.discount> 0) {%>
+                                                <div class="productDiscount">
+                                                    <%- product.discount %>% OFF
+                                                </div>
+
+                                                <%}%>
+
+                                                    <div class="img-container"><img src="/imagenes/<%= product.image[0]%>" alt=" "></div>
+                                                    <p>
+                                                        <%= product.description %>
+                                                    </p>
+                                                    <h4>
+                                                        $
+                                                        <%=product.price%>
+                                                    </h4>
+                                                    <a href="/products/detail/<%- product.id%>">
+                                                        <div class="button ">
+                                                            <p>COMPRAR YA</p>
+                                                        </div>
+                                                    </a>
+                                        </article>
+                                        <% }) %>
+
+                                            <%} else {%>
+                                                <div class="col-12">
+                                                    <h2 class="products-title" style="color: tomato;">No hay productos que coincidan con esa búsqueda</h2>
+                                                </div>
+                                                <%}%>
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+                </section>
+            </main>
             <!-- /todos los productos -->
 
             <!-- footer -->

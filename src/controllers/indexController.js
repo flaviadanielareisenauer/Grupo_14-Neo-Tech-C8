@@ -5,15 +5,15 @@ module.exports = {
 
         res.render('index', {
             titleSlider: "productos",
-            productsSlider
+            productsSlider,
+            session: req.session
 
         })
-    },
 
+    },
     pago: (req, res) => {
-        res.render('formas-de-pago')
+        res.render('formas-de-pago', { session: req.session })
     },
-
     search: (req, res) => {
         let results = [];
         products.forEach(product => {
@@ -23,7 +23,8 @@ module.exports = {
         })
         res.render('results', {
             results,
-            search: req.query.search
+            search: req.query.search,
+            session: req.session
         })
-    },
+    }
 }

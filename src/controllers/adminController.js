@@ -2,31 +2,42 @@ const { products, writeJson } = require('../data/dataBase')
 module.exports = {
 
     perfil: (req, res) => {
-        res.render('config-perfil')
+        res.render('users/config-perfil', {
+            session: req.session
+
+        })
+
     },
 
     carga: (req, res) => {
-        res.render('admin/admin-carga')
-    },
-
-    edit: (req, res) => {
-        res.render('admin/admin-edit')
-    },
-
-    adminLogin: (req, res) => {
-        res.render('admin/adminLogin')
-    },
-
-    productsList: (req, res) => {
-        res.render('admin/productsList', {
-            products: products
+        res.render('admin/admin-carga', {
+            session: req.session
         })
     },
 
-    agregarProducto: (req, res) => {
-        res.render('admin/admin-carga')
+    edit: (req, res) => {
+        res.render('admin/admin-edit', {
+            session: req.session
+        })
     },
 
+    adminLogin: (req, res) => {
+        res.render('admin/adminLogin', {
+            session: req.session
+        })
+    },
+    productsList: (req, res) => {
+        res.render('admin/productsList', {
+            products: products,
+            session: req.session
+
+        })
+    },
+    agregarProducto: (req, res) => {
+        res.render('admin/admin-carga', {
+            session: req.session
+        })
+    },
     crearProducto: (req, res) => {
         let lastId = 1;
 
@@ -35,9 +46,7 @@ module.exports = {
                 lastId = product.id
             }
         });
-
         let arrayImages = [];
-        
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push("nuevos/" + image.filename)
@@ -51,7 +60,7 @@ module.exports = {
             category: req.body.categoria,
             discount: req.body.discount,
             mark: req.body.mark,
-            code: req.body.code,
+            code: req.body.codeo,
             color: req.body.color,
             price: req.body.price,
             image: arrayImages.length > 0 ?
@@ -64,17 +73,17 @@ module.exports = {
 
         res.redirect('/admin/products')
     },
-
     edit: (req, res) => {
         let productID = +req.params.id;
         let product = products.find(product => product.id === productID);
 
+
         res.render('admin/admin-edit', {
             titleSlider: "Productos relacionados",
-            product
+            product,
+            session: req.session
         })
     },
-
     update: (req, res) => {
 
         let {
@@ -87,9 +96,7 @@ module.exports = {
             code,
             color
         } = req.body;
-
         let arrayImages = [];
-
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push("nuevos/" + image.filename)
@@ -107,14 +114,14 @@ module.exports = {
                     product.code = code,
                     product.color = color,
                     product.image = arrayImages.length > 0 ?
-                        arrayImages : product.image
+                    arrayImages : product.image
             }
+
         })
 
         writeJson(products);
         res.redirect('/admin/products')
     },
-
     eliminarProducto: (req, res) => {
         products.forEach(product => {
             if (product.id === +req.params.id) {
