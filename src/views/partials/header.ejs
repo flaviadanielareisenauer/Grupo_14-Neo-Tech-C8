@@ -7,19 +7,37 @@
 
         </div>
         <div class="search ">
-            <form class="form_header" ction="/search" method="GET">
+            <form class="form_header" action="/search" method="GET">
                 <input type="text" class=" search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
             </form>
             <div class=" search-icon ">
                 <a href="# "> <i class="fas fa-search bus "></i></a>
             </div>
+
             <span class="btn-menu ">
                 <i class="fa fa-bars "></i>
             </span>
         </div>
         <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno "></i></a>
 
-            <a href="/user/register " class="no-res1 "><i class="far fa-user dos "></i></a></div>
+            <div class="user-container"><i class="far fa-user dos "></i>
+                <ul class="list">
+
+                    <%if(typeof session.user != "undefined"){%>
+
+                        <li class="item-list"><a href="/user/profile/<%- session.user.id%>"> Editar Perfil</a></li>
+                        <li class="item-list"><a href="/user/logout"> cerrar session</a></li>
+                        <%console.log(session.user)%>
+                            <%if(session.user.rol === "admin_user"){%>
+                                <li class="item-list"><a href="/admin/products"> Productos</a></li>
+                                <%}%>
+                                    <%}else{%>
+                                        <li class="item-list"><a href="/user/register">Ingresar</a> </li>
+                                        <li class="item-list"><a href="/user/register">Registrarse</a> </li>
+                                        <%}%>
+                </ul>
+            </div>
+        </div>
 
     </div>
     </div>
@@ -47,3 +65,4 @@
     </div>
 
 </nav>
+<script src="/header.js"></script>
