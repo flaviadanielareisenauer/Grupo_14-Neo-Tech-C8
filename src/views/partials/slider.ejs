@@ -17,8 +17,7 @@
         <% productsSlider.forEach(product => {%>
             <article class="producto ">
                 <%if (product.discount > 0) {%>
-                    <div class="productDiscount">
-                        <%- product.discount %>% OFF</div>
+
 
                     <%}%>
 
@@ -29,6 +28,8 @@
                         <h4>
                             $
                             <%=product.price%>
+                                <div class="productDiscount">
+                                    <%- product.discount %>% OFF</div>
                         </h4>
                         <a href="/products/detail/<%- product.id%>">
                             <div class="button ">

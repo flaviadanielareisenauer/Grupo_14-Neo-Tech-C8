@@ -2,28 +2,41 @@ const { products, writeJson } = require('../data/dataBase')
 module.exports = {
 
     perfil: (req, res) => {
-        res.render('config-perfil')
+        res.render('users/config-perfil', {
+            session: req.session
+
+        })
+
     },
 
     carga: (req, res) => {
-        res.render('admin/admin-carga')
+        res.render('admin/admin-carga', {
+            session: req.session
+        })
     },
 
     edit: (req, res) => {
-        res.render('admin/admin-edit')
+        res.render('admin/admin-edit', {
+            session: req.session
+        })
     },
 
     adminLogin: (req, res) => {
-        res.render('admin/adminLogin')
+        res.render('admin/adminLogin', {
+            session: req.session
+        })
     },
     productsList: (req, res) => {
         res.render('admin/productsList', {
-            products: products
+            products: products,
+            session: req.session
 
         })
     },
     agregarProducto: (req, res) => {
-        res.render('admin/admin-carga')
+        res.render('admin/admin-carga', {
+            session: req.session
+        })
     },
     crearProducto: (req, res) => {
         let lastId = 1;
@@ -51,7 +64,7 @@ module.exports = {
             color: req.body.color,
             price: req.body.price,
             image: arrayImages.length > 0 ?
-                arrayImages : ["nuevos/img-default.jpg"] 
+                arrayImages : ["nuevos/img-default.jpg"]
         }
 
         products.push(productoNuevo);
@@ -67,7 +80,8 @@ module.exports = {
 
         res.render('admin/admin-edit', {
             titleSlider: "Productos relacionados",
-            product
+            product,
+            session: req.session
         })
     },
     update: (req, res) => {

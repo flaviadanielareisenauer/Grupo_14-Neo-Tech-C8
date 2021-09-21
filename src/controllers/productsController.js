@@ -9,7 +9,8 @@ module.exports = {
         res.render('productDetail', {
             titleSlider: "Productos relacionados",
             product,
-            productsSlider
+            productsSlider,
+            session: req.session
 
         })
     },
@@ -20,7 +21,8 @@ module.exports = {
 
         res.render('admin/admin-edit', {
             titleSlider: "Productos relacionados",
-            product
+            product,
+            session: req.session
         })
     }
 

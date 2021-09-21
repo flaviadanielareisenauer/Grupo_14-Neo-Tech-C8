@@ -1,0 +1,81 @@
+<%- include('../partials/head')%>
+
+    <body>
+        <%- include('../partials/header')%>
+            <main>
+                <form action="/user/profile-edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="container-avatar">
+                        <div class="profile-box">
+                            <h4 class="profile-subtitle">Avatar</h4>
+                            <div class="avatar">
+                                <img src="/imagenes/userAvatars/<%=user.avatar%>" alt="" id="avatarProfile">
+                                <div id="preview">
+
+                                </div>
+
+                            </div>
+                            <input type="file" name="avatar" id="file" accept=".jpg,.png.jpeg">
+                        </div>
+                        <div class="form-container">
+                            <section class="form-register">
+                                <h4>Datos de la cuenta</h4>
+
+                                <hr class="divitionConfig">
+                                <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email%>">
+                                <input class="controls" type="password" name="password" placeholder="Contraseña ">
+                            </section>
+                            <section class="form-register">
+                                <h4>Datos personales</h4>
+
+                                <hr class="divitionConfig">
+                                <input class="controls" type=" text " name="first_name" placeholder="Nombre " value="<%- user.first_name%>">
+                                <input class="controls" type="text " name="last_name" placeholder="Apellido " value="<%- user.last_name%>">
+                                <input class="controls" type="number" name="DNI" placeholder="Documento " value="<%- user.DNI%>">
+                                <input class="controls " type="number " name="number_phone" placeholder="Telefono " value="<%- user.number_phone%>">
+                            </section>
+                            <section class="form-register ">
+                                <h4>Datos de envío</h4>
+                                <hr class="divitionConfig">
+                                <input class="controls " type=" text " name="street_name" placeholder="Calle " value="<%- user.street_name%>">
+                                <input class="controls " type="number " name="street_number" placeholder="Numero" value="<%- user.street_number%>">
+                                <input class="controls " type="text " name="dto" placeholder="Dpto" value="<%- user.dto%>">
+                                <input class="controls " type="number " name="postal_code" placeholder="Código Postal" value="<%- user.postal_code%>">
+                                <div class=" input-container ">
+                                    <select name="province" class="input-select ">
+                                        <option value=" " hidden selected>Seleccione una provincia</option>
+                                        <option value="laRioja ">La Rioja</option>
+                                        <option value="chaco ">Chaco</option>
+                                        <option value="cordoba ">Córdoba</option>
+                                        <option value="misiones ">Misiones</option>
+                                        <option value="chubut ">Chubut</option>
+                                        <option value="laRioja ">Salta</option>
+                                        <option value="chaco ">Santa Cruz</option>
+                                        <option value="cordoba ">Entre Ríos</option>
+                                        <option value="misiones ">Buenos Aires</option>
+                                        <option value="chubut ">Santa Fé</option>
+                                    </select>
+                                </div>
+                                <div class="input-container ">
+                                    <select name="localidad" class="input-select ">
+                                        <option value=" " hidden selected>Elija una localidad</option>
+                                        <option value="localidad1 ">Localidad1</option>
+                                        <option value="localidad2 ">Localidad2</option>
+                                        <option value="localidad3 ">Localidad3</option>
+                                        <option value="localidad4 ">Localidad4</option>
+                                        <option value="localidad5 ">Localidad5</option>
+                                    </select>
+                                </div>
+                            </section>
+                        </div>
+
+
+                        <div class="button-container ">
+                            <button type="submit" class="button-profile">Guardar</button>
+                        </div>
+                </form>
+
+            </main>
+            <%- include('../partials/footer')%>
+
+    </body>
+    <script src="/public/js/prev.js"></script>
