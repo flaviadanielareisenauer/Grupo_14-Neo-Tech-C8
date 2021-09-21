@@ -130,6 +130,17 @@
     font-size: .9rem;
 }
 
+/* Recordar al usuario */
+
+input#check{
+    width: 10%;
+}
+
+.form-ad-input_check label {
+    opacity: 0.5;
+    font-size: 14px;
+    font-weight: 600;
+}
 
 /* Responsive */
 
