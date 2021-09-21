@@ -173,6 +173,54 @@ module.exports = {
         res.redirect('/')
     },
 
+    profileEdit: (req, res) => {
+
+
+        let {
+            nombreUser,
+            password,
+            firts_name,
+            last_name,
+            DNI,
+            tel,
+            calle,
+            postal_code
+        } = req.body;
+        let arrayImages = [];
+        if (req.files) {
+            req.files.forEach(image => {
+                arrayImages.push("nuevos/" + image.filename)
+            })
+        }
+        users.forEach(user => {
+            if (user.id === +req.params.id) {
+                user.id = user.id,
+                    user.user_name = nombreUser,
+                    user.password = password,
+                    user.firts_name = firts_name,
+                    user.last_name = last_name,
+                    user.DNI = DNI,
+                    user.number_phone = tel,
+                    user.street_name = calle,
+                    user.postal_code = postal_code,
+                    user.image = arrayImages.length > 0 ?
+                    arrayImages : user.image
+            }
+
+        })
+
+        writeUsersJSON(users)
+    },
+    logout: (req, res) => {
+        req.session.destroy()
+        if (req.cookies.NeoTech) {
+            res.cookie('NeoTech', '', { maxAge: -1 })
+        }
+
+        res.redirect('/')
+    },
+
+
     categorias: (req, res) => {
         let productsSlider = products.filter(product => product.discount >= 0)
 
