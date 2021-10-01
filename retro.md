@@ -108,4 +108,29 @@
 
 - **Hacer menos:**
 
+- 
+
+# Sprint 6: Retrospectiva
+
+**Empezar a hacer:**
+
+- Establecer plazos de entrega en Trello para las tareas sencillas y poder tener un mejor seguimiento.
+- Ir adelantando algunos trabajos conforme las herramientas que nos otorga el Sprint.
+
+**Hacer mas:**
+
+- Prepararnos mejor antes del comienzo de un nuevo Sprint.
+
+**Seguir haciendo:**
+
+- Reuniones por zoom para asignación de tareas.
+- Resolver priomero las tareas que requieran atención inmediata.
+- Pensar la dificultad de las tareas.
+- Comentar las funcionalidades en los archivos de la aplicación.
+- Agregar funcionalidades extras a medida que las vamos aprendiendo.
+
+**Dejar de hacer:**
+
+- **Hacer menos:**
+
 -
