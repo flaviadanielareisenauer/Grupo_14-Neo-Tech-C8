@@ -25,7 +25,7 @@ module.exports = {
             }
 
             if (req.body.remember) {
-                res.cookie("NeoTech", req.session.user, { expires: new Date(Date.now() + 1000000), httpOnly: true })
+                res.cookie("userNeoTech", req.session.user, { expires: new Date(Date.now() + 1000000), httpOnly: true })
             }
 
             res.locals.user = req.session.user
@@ -164,15 +164,6 @@ module.exports = {
         res.redirect('/user/profile/' + user.id)
     },
 
-    logout: (req, res) => {
-        req.session.destroy()
-        if (req.cookies.NeoTech) {
-            res.cookie('NeoTech', '', { maxAge: -1 })
-        }
-
-        res.redirect('/')
-    },
-
     profileEdit: (req, res) => {
 
 
@@ -213,8 +204,8 @@ module.exports = {
     },
     logout: (req, res) => {
         req.session.destroy()
-        if (req.cookies.NeoTech) {
-            res.cookie('NeoTech', '', { maxAge: -1 })
+        if (req.cookies.userNeoTech) {
+            res.cookie('userNeoTech', '', { maxAge: -1 })
         }
 
         res.redirect('/')

@@ -5,6 +5,7 @@ const port = 3500;
 const methodOverride = require('method-override');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const localsCheck = require('./middlewares/localsCheck');
 
 /*-------ENRUTADORES--------*/
 
@@ -24,8 +25,8 @@ app.use(session({
     secret: "NeoTech",
     resave: false,
     saveUninitialized: true,
-    cookie: { maxAge: 60000 }
 }))
+app.use(localsCheck)
 
 /*--------VIEWS---------*/
 
