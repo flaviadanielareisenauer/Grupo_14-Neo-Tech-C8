@@ -1,4 +1,8 @@
+const dataBase = require('../data/dataBase')
+const db = require('../database/models')
 const { products, writeJson } = require('../data/dataBase')
+
+
 module.exports = {
 
     perfil: (req, res) => {
@@ -9,127 +13,162 @@ module.exports = {
 
     },
 
-    carga: (req, res) => {
-        res.render('admin/admin-carga', {
-            session: req.session
-        })
-    },
-
-    edit: (req, res) => {
-        res.render('admin/admin-edit', {
-            session: req.session
-        })
-    },
-
     adminLogin: (req, res) => {
         res.render('admin/adminLogin', {
             session: req.session
         })
     },
     productsList: (req, res) => {
-        res.render('admin/productsList', {
-            products: products,
-            session: req.session
+        db.Products.findAll({
+            include: [{ association: "productsimage" }],
+            raw: true,
+            nest: true
+        })
 
+        .then((products) => {
+
+            res.render('admin/productsList', {
+                products: products,
+                session: req.session,
+            })
         })
     },
     agregarProducto: (req, res) => {
-        res.render('admin/admin-carga', {
-            session: req.session
-        })
-    },
-    crearProducto: (req, res) => {
-        let lastId = 1;
+        db.Categories.findAll()
 
-        products.forEach(product => {
-            if (product.id > lastId) {
-                lastId = product.id
-            }
-        });
+        .then(categorias => {
+                console.log(categorias)
+                res.render('admin/admin-carga', {
+                    session: req.session,
+                    categorias
+                })
+            })
+            .catch(error => { console.log(error) })
+    },
+
+    crear: (req, res) => {
         let arrayImages = [];
         if (req.files) {
             req.files.forEach(image => {
                 arrayImages.push("nuevos/" + image.filename)
             })
         }
-
-        let productoNuevo = {
-            id: lastId + 1,
-            name: req.body.name,
-            description: req.body.description,
-            category: req.body.categoria,
-            discount: req.body.discount,
-            mark: req.body.mark,
-            code: req.body.codeo,
-            color: req.body.color,
-            price: req.body.price,
-            image: arrayImages.length > 0 ?
-                arrayImages : ["nuevos/img-default.jpg"]
-        }
-
-        products.push(productoNuevo);
-
-        writeJson(products)
-
-        res.redirect('/admin/products')
-    },
-    edit: (req, res) => {
-        let productID = +req.params.id;
-        let product = products.find(product => product.id === productID);
-
-
-        res.render('admin/admin-edit', {
-            titleSlider: "Productos relacionados",
-            product,
-            session: req.session
-        })
-    },
-    update: (req, res) => {
-
         let {
             name,
-            price,
-            discount,
-            category,
             description,
-            mark,
+            discount,
+            price,
+            color,
             code,
-            color
-        } = req.body;
-        let arrayImages = [];
-        if (req.files) {
-            req.files.forEach(image => {
-                arrayImages.push("nuevos/" + image.filename)
-            })
-        }
-        products.forEach(product => {
-            if (product.id === +req.params.id) {
-                product.id = product.id,
-                    product.name = name,
-                    product.price = price,
-                    product.discount = discount,
-                    product.category = category,
-                    product.description = description,
-                    product.mark = mark,
-                    product.code = code,
-                    product.color = color,
-                    product.image = arrayImages.length > 0 ?
-                    arrayImages : product.image
-            }
+            category
 
+        } = req.body
+
+        db.Products.create({
+                name,
+                description,
+                discount,
+                price,
+                color,
+                categoryId: category,
+                code
+            })
+            .then(product => {
+
+                if (arrayImages.length > 0) {
+                    let productsImage = arrayImages.map(image => {
+                        return {
+                            name: image,
+                            productId: product.id
+                        }
+                    })
+                    db.ProductsImage.bulkCreate(productsImage)
+                }
+            })
+
+        res.redirect('/admin/products')
+
+    },
+    edit: (req, res) => {
+        let categories = db.Categories.findAll()
+        let Product = db.Products.findByPk(req.params.id)
+        let Image = db.ProductsImage.findOne({
+            where: { productId: req.params.id }
         })
 
-        writeJson(products);
+
+        Promise.all([categories, Product, Image])
+            .then(([category, Product, Image]) => {
+
+                console.log(category.id = Product.categoryId)
+                res.render("admin/admin-edit", {
+                    Product,
+                    Image,
+                    category,
+                    session: req.session,
+                });
+
+            });
+    },
+
+    update: (req, res) => {
+        let {
+            name,
+            description,
+            discount,
+            price,
+            color,
+            code,
+            categoryId
+        } = req.body
+
+        db.Products.update({
+            name,
+            description,
+            discount,
+            price,
+            color,
+            code,
+            categoryId
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }).catch(err => { console.log(err) })
+
+        let images = "";
+        if (req.files) {
+            req.files.forEach(image => {
+                images = ("nuevos/" + image.filename)
+            })
+        }
+        console.log(images)
+        db.ProductsImage.update({
+            name: images,
+            productId: req.params.id
+
+        }, {
+            where: {
+                productId: req.params.id
+            }
+        })
         res.redirect('/admin/products')
     },
     eliminarProducto: (req, res) => {
-        products.forEach(product => {
-            if (product.id === +req.params.id) {
-                let productoAEliminar = products.indexOf(product);
-                products.splice(productoAEliminar, 1)
-            }
-        })
-        writeJson(products);
-        res.redirect('/admin/products');
+        db.ProductsImage.destroy({
+                where: { productId: req.params.id }
+            })
+            .then(() => {
+                db.Products.destroy({
+                        where: {
+                            id: req.params.id
+                        }
+                    })
+                    .then(() => {
+                        res.redirect('/admin/products')
+                    })
+
+            })
+            .catch(error => console.log(error))
     }
 }

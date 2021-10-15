@@ -2,7 +2,7 @@ const express = require('express')
 
 const router = express.Router()
 
-const { perfil, crearProducto, edit, adminLogin, agregarProducto, eliminarProducto, update, productsList } = require('../controllers/adminController')
+const { perfil, edit, adminLogin, agregarProducto, eliminarProducto, update, productsList, crear } = require('../controllers/adminController')
 const upLoadFile = require('../middlewares/cargaImagen')
 const checkLogAdmin = require('../middlewares/checkLogUserAdmin')
 
@@ -15,10 +15,12 @@ router.get('/adminLogin', checkLogAdmin, adminLogin);
 
 //crea un nuevo producto
 router.get('/products/create', checkLogAdmin, agregarProducto)
-router.post('/products/create', upLoadFile.array("image"), crearProducto)
+
+router.post('/products/create', upLoadFile.array("image"), crear)
 
 //edita un producto existente
 router.get('/products/:id/edit', checkLogAdmin, edit);
+
 router.put('/products/:id', upLoadFile.array("image"), update);
 
 //elimina el producto seleccionado

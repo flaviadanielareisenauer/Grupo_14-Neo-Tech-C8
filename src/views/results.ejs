@@ -22,12 +22,12 @@
                 <section class="special-offers" id="slider_offers">
 
                     <!-- Product Slider -->
-                    <% if (results.length> 0){%>
+                    <% if (result.length> 0){%>
                         <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }'>
                             <div class="container products-wrapper">
                                 <div class="general-products">
 
-                                    <% results.forEach(product=> {%>
+                                    <% result.forEach(product=> {%>
                                         <article class="producto">
                                             <%if (product.discount> 0) {%>
                                                 <div class="productDiscount">
@@ -36,7 +36,7 @@
 
                                                 <%}%>
 
-                                                    <div class="img-container"><img src="/imagenes/<%= product.image[0]%>" alt=" "></div>
+                                                    <div class="img-container"><img src="/imagenes/<%= product.productsimage.name%>" alt=" "></div>
                                                     <p>
                                                         <%= product.description %>
                                                     </p>

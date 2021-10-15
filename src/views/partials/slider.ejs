@@ -14,24 +14,25 @@
                 background: hsla(0, 0%, 100%, 1);
             }
         </style>
-        <% productsSlider.forEach(product => {%>
+
+        <% Product.forEach(Product => {%>
             <article class="producto ">
-                <%if (product.discount > 0) {%>
+                <%if (Product.discount > 0) {%>
 
 
                     <%}%>
 
-                        <div class="img-container"><img src="/imagenes/<%= product.image[0]%>" alt=" "></div>
+                        <div class="img-container"><img src="/imagenes/<%- Product.productsimage.name%>" alt=" "></div>
                         <p>
-                            <%= product.description %>
+                            <%= Product.description %>
                         </p>
                         <h4>
                             $
-                            <%=product.price%>
-                                <div class="productDiscount">
-                                    <%- product.discount %>% OFF</div>
+                            <%=Product.price%>
+                                <div class="productDiscount ">
+                                    <%- Product.discount %>% OFF</div>
                         </h4>
-                        <a href="/products/detail/<%- product.id%>">
+                        <a href="/products/detail/<%- Product.id%>">
                             <div class="button ">
                                 <p>COMPRAR YA</p>
                             </div>
