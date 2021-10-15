@@ -53,32 +53,32 @@
                         <!-- Register -->
                         <form action="/user/register" method="POST" enctype="multipart/form-data" class="form__register">
                             <h2>Regístrarse</h2>
-                            <input type="text" name="first_name" placeholder="Nombre" value="<%= locals.old && old.first_name %>">
-                            <% if (locals.errors && errors.first_name) { %>
-                                <small class="text-validation"><%- errors.first_name.msg %></small>
+                            <input type="text" name="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName %>">
+                            <% if (locals.errors && errors.firstName) { %>
+                                <small class="text-validation"><%- errors.firstName.msg %></small>
                                 <% } %>
 
-                                    <input type="text" name="last_name" placeholder="Apellido" value="<%= locals.old && old.last_name %>">
-                                    <% if (locals.errors && errors.last_name) { %>
-                                        <small class="text-validation"><%= errors.last_name.msg %></small>
-                                        <% } %>
+                            <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName %>">
+                            <% if (locals.errors && errors.lastName) { %>
+                                <small class="text-validation"><%= errors.lastName.msg %></small>
+                                <% } %>
 
-                                            <input type="email" name="email" placeholder="Correo electrónico">
-                                            <% if (locals.errors && errors.email) { %>
-                                                <small class="text-validation"><%= errors.email.msg %></small>
-                                                <% } %>
+                            <input type="email" name="email" placeholder="Correo electrónico">
+                            <% if (locals.errors && errors.email) { %>
+                                <small class="text-validation"><%= errors.email.msg %></small>
+                                <% } %>
 
-                                                    <input type="password" name="password1" placeholder="Contraseña">
-                                                    <% if (locals.errors && errors.password1) { %>
-                                                        <small class="text-validation"><%= errors.password1.msg %></small>
-                                                        <% } %>
+                            <input type="password" name="password1" placeholder="Contraseña">
+                            <% if (locals.errors && errors.password1) { %>
+                                <small class="text-validation"><%= errors.password1.msg %></small>
+                                <% } %>
 
-                                                            <input type="password" name="password2" placeholder="Confirmar contraseña">
-                                                            <% if (locals.errors && errors.password2) { %>
-                                                                <small class="text-validation"><%= errors.password2.msg %></small>
-                                                                <% } %>
+                            <input type="password" name="password2" placeholder="Confirmar contraseña">
+                            <% if (locals.errors && errors.password2) { %>
+                                <small class="text-validation"><%= errors.password2.msg %></small>
+                                <% } %>
 
-                                                                    <button>Regístrarse</button>
+                            <button>Regístrarse</button>
                         </form>
                     </div>
                 </div>
