@@ -8,21 +8,23 @@
             <div class="form_container">
                 <h2 class="h2-adm">Administración de productos</h2>
                 <hr>
-                <form action="/admin/products/<%=product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form action="/admin/products/<%=Product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="box">
                         <h4 class="h4-adm">Editar imagenes</h4>
                         <div class="imagenes_ad">
                             <div class="input-file-container">
-                                <input type="file" name="image" id="" value="<%- product.image%> " multiple>
+                                <input type="file" name="image" id="" value="<%-Image.name%>" multiple>
                             </div>
+
                         </div>
+
                     </div>
 
                     <div class="carga__form">
                         <div class="box">
                             <h4 class="h4-adm">Editar de productos</h4>
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="name" placeholder="Producto" value="<%- product.name%>">
+                                <input class="inputstyle" type="text" name="name" placeholder="Producto" value="<%- Product.name%>">
                             </div>
 
                             <div class="inputcontainer">
@@ -30,11 +32,18 @@
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="category" placeholder="Categoria" value="<%- product.category%>">
+                                <select name="categoryId" class="inputselect ">
+                                    <% category.forEach(category => {%>
+                                        <option hidden selected><%- category.id = Product.categoryId ? category.name : null %></option>
+                                            <option>
+                                                <%- category.name %></option>
+                                            <%})%>
+                                    </select>
+
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="discount" placeholder="Descuento" value="<%- product.discount%>">
+                                <input class="inputstyle" type="text" name="discount" placeholder="Descuento" value="<%- Product.discount%>">
                             </div>
                         </div>
 
@@ -44,15 +53,15 @@
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="code" placeholder="Código" value="<%- product.code%>">
+                                <input class="inputstyle" type="text" name="code" placeholder="Código" value="<%- Product.code%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="color" placeholder="Color" value="<%- product.color%>">
+                                <input class="inputstyle" type="text" name="color" placeholder="Color" value="<%- Product.color%>">
                             </div>
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="number" name="price" placeholder="Precio" value="<%= product.price%>">
+                                <input class="inputstyle" type="number" name="price" placeholder="Precio" value="<%= Product.price%>">
                             </div>
 
                             <h4 class="h4-adm">Buscar Producto:</h4>

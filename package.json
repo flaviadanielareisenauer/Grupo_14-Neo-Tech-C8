@@ -17,6 +17,9 @@
         "url": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8/issues"
     },
     "homepage": "https://github.com/flaviadanielareisenauer/Grupo_14-Neo-Tech-C8#readme",
+    "nodemonConfig": {
+        "ignore": "src/data/*.json"
+    },
     "dependencies": {
         "bcryptjs": "^2.4.3",
         "cookie-parser": "^1.4.5",
@@ -27,7 +30,9 @@
         "method": "^2.0.0",
         "method-override": "^3.0.0",
         "multer": "^1.4.3",
+        "mysql2": "^2.3.0",
         "nodemon": "^2.0.12",
-        "override": "0.0.1"
+        "override": "0.0.1",
+        "sequelize": "^6.6.5"
     }
 }

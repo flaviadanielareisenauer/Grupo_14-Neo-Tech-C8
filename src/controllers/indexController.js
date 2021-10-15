@@ -1,30 +1,60 @@
 const { products } = require('../data/dataBase')
+const db = require('../database/models')
+const { Op } = require('sequelize')
+const User = require('../database/models/User')
+
+
 module.exports = {
     index: (req, res) => {
-        let productsSlider = products.filter(product => product.discount >= 0)
 
-        res.render('index', {
-            titleSlider: "productos",
-            productsSlider,
-            session: req.session
+        db.Products.findAll({
+                where: {
+                    discount: {
+                        [Op.gte]: 0
+                    }
+                },
+                include: [{ association: "productsimage" }],
+                raw: true,
+                nest: true
+            })
+            /*   Promise.all([productsImage, Product]) */
+            .then(Product => {
+                console.log(Product)
+                res.render('index', {
+                    titleSlider: "productos",
+                    session: req.session,
+                    Product
 
-        })
+                })
+            })
+            .catch(err => { console.log(err) })
 
     },
     pago: (req, res) => {
         res.render('formas-de-pago', { session: req.session })
     },
     search: (req, res) => {
-        let results = [];
-        products.forEach(product => {
-            if (product.name.toLowerCase().includes(req.query.search)) {
-                return results.push(product)
-            }
-        })
-        res.render('results', {
-            results,
-            search: req.query.search,
-            session: req.session
-        })
+
+        let search = req.query.search.toLowerCase();
+        db.Products.findAll({
+                where: {
+                    name: {
+                        [Op.substring]: search
+                    }
+                },
+                include: [
+                    { association: 'productsimage' }
+                ],
+                raw: true,
+                nest: true
+            })
+            .then((result) => {
+
+                res.render('results', {
+                    session: req.session,
+                    result,
+                    search: search
+                })
+            })
     }
 }

@@ -30,19 +30,14 @@
                             </div>
 
                             <div class="inputcontainer ">
+
                                 <select name="category" class="inputselect ">
-                                    <option value=" " hidden selected>Categorias</option>
-                                    <option value="ofertas ">Ofertas</option>
-                                    <option value="notebook ">Notebook</option>
-                                    <option value="computadoras ">Computadoras</option>
-                                    <option value="celulares ">Celulares</option>
-                                    <option value="accesorios ">Accesorios</option>
-                                    <option value="televisores ">Televisores</option>
-                                    <option value="consolas ">Consolas</option>
-                                    <option value="combos ">Combos</option>
-                                    <option value="tablet ">Tablet</option>
-                                    <option value="impresoras ">Impresoras</option>
-                                </select>
+                                    <% categorias.forEach(categoria => {%>
+                                        <option hidden>Categorías</option>
+                                            <option value="<%= categoria.id %>" > <%- categoria.name %></option>
+                                            <%})%>
+                                    </select>
+
                             </div>
 
                             <div class="inputcontainer ">

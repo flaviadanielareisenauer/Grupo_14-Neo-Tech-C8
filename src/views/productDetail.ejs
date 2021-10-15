@@ -24,34 +24,13 @@
 
                         <ul class="fotoProducto">
                             <li>
-                                <a href="#img1" class="foto">   <img src="/imagenes/<%=product.image[0]%>" alt=""></a>
+                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage.name%>" alt=""></a>
                             </li>
-                            <li>
-                                <a href="#img2" class="foto"><img src="/imagenes/<%=product.image[1]%>" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#img3" class="foto"><img src="/imagenes/<%=product.image[2]%>" alt=""></a>
-                            </li>
-                            <li>
-                                <a href="#img4" class="foto"><img src="/imagenes/<%=product.image[3]%>" alt=""></a>
-                            </li>
+
                         </ul>
 
 
-                        <ul class="fotoMiniatura">
-                            <li id="img1" class="foto2">
-                                <img src="/imagenes/<%=product.image[0]%>" alt="">
-                            </li>
-                            <li id="img2" class="foto2">
-                                <img src="/imagenes/<%=product.image[1]%>" alt="">
-                            </li>
-                            <li id="img3" class="foto2">
-                                <img src="/imagenes/<%=product.image[2]%>" alt="">
-                            </li>
-                            <li id="img4" class="foto2">
-                                <img src="/imagenes/<%=product.image[3]%>" alt="">
-                            </li>
-                        </ul>
+
 
 
                     </div>
@@ -62,12 +41,12 @@
                     <div class="agregar-carrito-der">
                         <div class="agregar-carrito">
                             <h4 class="text-agr-car">
-                                <%-product.name%>
+                                <%-ProductD.name%>
                             </h4>
 
                             <h4 class="text-agr-car">
                                 $
-                                <%-product.price%>
+                                <%-ProductD.price%>
                             </h4>
 
                             <a class="text-agr-car" href="formas-de-pago">Ver los medios de pago</a>
