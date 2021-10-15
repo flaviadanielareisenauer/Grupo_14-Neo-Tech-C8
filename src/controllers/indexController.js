@@ -19,7 +19,7 @@ module.exports = {
             })
             /*   Promise.all([productsImage, Product]) */
             .then(Product => {
-                console.log(Product)
+                
                 res.render('index', {
                     titleSlider: "productos",
                     session: req.session,
