@@ -6,14 +6,17 @@ addEventListener('DOMContentLoaded', () => {
             menu_items.classList.toggle('show')
         })
     }
+
 })
 
 addEventListener('DOMContentLoaded', () => {
-    const btn_user = document.querySelector('.user-container');
+    const btn_user = document.querySelector('.user-containe');
+
     if (btn_user) {
+
         btn_user.addEventListener('click', () => {
             const btn_list = document.querySelector('.list')
-            btn_list.style.display == "none" ? btn_list.style.display = "block" : btn_list.style.display = "none"
+            btn_list.style.display == "block" ? btn_list.style.display = "none" : btn_list.style.display = "block"
         })
     }
 })

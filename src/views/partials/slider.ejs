@@ -18,7 +18,8 @@
         <% Product.forEach(Product => {%>
             <article class="producto ">
                 <%if (Product.discount > 0) {%>
-
+                    <div class="productDiscount ">
+                        <%- Product.discount %>% OFF</div>
 
                     <%}%>
 
@@ -28,12 +29,11 @@
                         </p>
                         <h4>
                             $
-                            <%=Product.price%>
-                                <div class="productDiscount ">
-                                    <%- Product.discount %>% OFF</div>
+                            <%=toThousand(Product.price)%>
+
                         </h4>
                         <a href="/products/detail/<%- Product.id%>">
-                            <div class="button ">
+                            <div class="button">
                                 <p>COMPRAR YA</p>
                             </div>
                         </a>
