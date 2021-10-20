@@ -20,9 +20,7 @@ module.exports = {
     },
     productsList: (req, res) => {
         db.Products.findAll({
-            include: [{ association: "productsimage" }],
-            raw: true,
-            nest: true
+            include: [{ association: "productsimage" }]
         })
 
         .then((products) => {

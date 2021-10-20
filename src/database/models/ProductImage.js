@@ -11,17 +11,16 @@ module.exports = (sequelize, dataTypes) => {
         },
         name: {
             type: dataTypes.STRING(100),
-            allowNull: true
+            allowNull: false
         },
         productId: {
             type: dataTypes.INTEGER(10),
-            foreignKey: true,
             allowNull: true
         }
     };
 
     const config = {
-        tableName: "productsImage",
+        tableName: "productsimage",
         timestamps: false
     };
 
