@@ -108,7 +108,7 @@
 
 - **Hacer menos:**
 
-- 
+-
 
 # Sprint 6: Retrospectiva
 

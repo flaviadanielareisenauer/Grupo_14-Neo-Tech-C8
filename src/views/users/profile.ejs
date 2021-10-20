@@ -3,118 +3,76 @@
     <body>
         <%- include('../partials/header')%>
             <main>
-                <form action="/user/profile-edit/<%= user.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                
+                <form action="/user/profile-edit/<%= user.id%>">
+                        <div class="container-avatar">
                     <div class="container-avatar">
                         <div class="profile-box">
                             <h4 class="profile-subtitle">Avatar</h4>
                             <div class="avatar">
-                                <img src="/imagenes/userAvatars/<%= user.avatar%>" alt="" id="avatarProfile">
+                                <img src="/imagenes/userAvatars/<%=user.avatar%>" alt="" id="avatarProfile">
                                 <div id="preview">
 
                                 </div>
-
                             </div>
+                            <input type="file" name="avatar" id="file" accept=".jpg.png.jpeg">
                         </div>
                         <div class="form-container">
                             <section class="form-register">
-                                <h4>Datos de la cuenta</h4>
-                                <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
-                                <hr class="divitionConfig">
-                                <div class="controls" type="email" name="nombres " placeholder="Usuario ">
-                                    <p class="userInformation">
-                                        <%- user.email%>
-                                    </p>
-                                    <p class="userDescription">Correo</p>
-                                </div>
-                                <div class="controls" type="password" name="correo " placeholder="Contraseña ">
-                                    <p class="userInformation">
+                                <h4>Datos de la cuenta</h4>     
 
-                                    </p>
-                                    <p class="userDescription">Contraseña</p>
-                                </div>
+                                <hr class="divitionConfig">
+                                <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email%>">
+                                <input class="controls" type="password" name="password" placeholder="Contraseña ">
                             </section>
                             <section class="form-register">
                                 <h4>Datos personales</h4>
-                                <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
-
                                 <hr class="divitionConfig">
-                                <div class="controls" type=" text " name="nombres " placeholder="Nombre ">
-                                    <p class="userInformation">
-                                        <%- user.first_name%>
-                                    </p>
-                                    <p class="userDescription">Nombre</p>
-                                </div>
-                                <div class="controls" type="text " name="apellido " placeholder="Apellido ">
-                                    <p class="userInformation">
-                                        <%- user.last_name%>
-                                    </p>
-                                    <p class="userDescription">Apellido</p>
-                                </div>
-                                <div class="controls" type="number" name="correo " placeholder="Documento ">
-                                    <p class="userInformation">
-                                        <%- user.DNI%>
-                                    </p>
-                                    <p class="userDescription">Documento</p>
-                                </div>
-                                <div class="controls " type="number " name="correo " placeholder="Telefono ">
-                                    <p class="userInformation">
-                                        <%- user.number_phone%>
-                                    </p>
-                                    <p class="userDescription">Celular</p>
-                                </div>
+                                <input class="controls" type=" text " name="firstName" placeholder="Nombre " value="<%- user.firstName%>">
+                                <input class="controls" type="text " name="lastName" placeholder="Apellido " value="<%- user.lastName%>">
+                                <input class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni%>">
+                                <input class="controls " type="number " name="numberPhone" placeholder="Telefono " value="<%- user.numberPhone%>">
                             </section>
                             <section class="form-register ">
                                 <h4>Datos de envío</h4>
-                                <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
                                 <hr class="divitionConfig">
-                                <div class="controls " type=" text " name="calle " placeholder="Calle ">
-                                    <p class="userInformation">
-                                        <%- user.street_name%>
-                                    </p>
-                                    <p class="userDescription">Calle</p>
-                                </div>
-                                <div class="controls " type="number" name="number" placeholder="Numero">
-                                    <p class="userInformation">
-                                        <%- user.street_number%>
-                                    </p>
-                                    <p class="userDescription">Número</p>
-                                </div>
-                                <div class="controls " type="text " name="datos " placeholder="Piso ">
-                                    <p class="userInformation">Piso</p>
-                                    <p class="userDescription">Piso</p>
-                                </div>
-                                <div class="controls " type="text " name="datos " placeholder="Dpto ">
-                                    <p class="userInformation">
-                                        <%- user.dto%>
-                                    </p>
-                                    <p class="userDescription">Dpto</p>
-                                </div>
-                                <div class="controls " type="number " name="dirección " placeholder="Código Postal ">
-                                    <p class="userInformation">
-                                        <%- user.postal_code%>
-                                    </p>
-                                    <p class="userDescription">Código Postal</p>
-                                </div>
-                                <div class=" input-container ">
-                                    <div class="controls " type="number " name="dirección " placeholder="Código Postal ">
-                                        <p class="userInformation">
-                                            <%- user.province%>
-                                        </p>
-                                        <p class="userDescription">Provincia</p>
+                                
+                                    <input class="controls " type=" text " name="streetName" placeholder="Direccion ">
+                                    <input class="controls " type="number " name="streetNumber" placeholder="Numero">
+                                    <input class="controls " type="text " name="dto" placeholder="Dpto" >
+                                    <input class="controls " type="number " name="postalCode" placeholder="Código Postal" >
+                                    <div class=" input-container ">
+                                        <select name="province" class="input-select ">
+                                            <option value=" " hidden selected>Seleccione una provincia</option>
+                                            <option value="laRioja ">La Rioja</option>
+                                            <option value="chaco ">Chaco</option>
+                                            <option value="cordoba ">Córdoba</option>
+                                            <option value="misiones ">Misiones</option>
+                                            <option value="chubut ">Chubut</option>
+                                            <option value="laRioja ">Salta</option>
+                                            <option value="chaco ">Santa Cruz</option>
+                                            <option value="cordoba ">Entre Ríos</option>
+                                            <option value="misiones ">Buenos Aires</option>
+                                            <option value="chubut ">Santa Fé</option>
+                                        </select>
                                     </div>
-                                </div>
-                                <div class="input-container ">
-                                    <div class="controls " type="number " name="dirección " placeholder="Código Postal ">
-                                        <p class="userInformation">
-                                            <%- user.localidad%>
-                                        </p>
-                                        <p class="userDescription">Localidad</p>
+                                    <div class="input-container ">
+                                        <select name="location" class="input-select ">
+                                            <option value=" " hidden selected>Elija una localidad</option>
+                                            <option value="localidad1 ">Localidad1</option>
+                                            <option value="localidad2 ">Localidad2</option>
+                                            <option value="localidad3 ">Localidad3</option>
+                                            <option value="localidad4 ">Localidad4</option>
+                                            <option value="localidad5 ">Localidad5</option>
+                                        </select>
                                     </div>
-                                </div>
+                               
                             </section>
                         </div>
 
-
+                        <div class="button-container ">
+                            <button type="submit" class="button-profile">Editar datos</button>
+                        </div>
                 </form>
 
             </main>
