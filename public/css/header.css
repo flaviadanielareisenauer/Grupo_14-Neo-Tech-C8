@@ -143,10 +143,10 @@
     position: absolute;
     top: 130px;
     right: 30px;
-    background-color: whitesmoke;
+    background-color: white;
     z-index: 999;
     border-radius: 5px;
-    padding: 15px;
+    padding: 15px 10px;
     transition: all 2s;
 }
 

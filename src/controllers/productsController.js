@@ -12,9 +12,7 @@ module.exports = {
             },
             include: [{
                 association: "productsimage",
-            }],
-            raw: true,
-            nest: true
+            }]
         })
 
         .then((ProductD) => {
@@ -24,9 +22,7 @@ module.exports = {
                             [Op.gte]: 0
                         }
                     },
-                    include: [{ association: "productsimage" }],
-                    raw: true,
-                    nest: true
+                    include: [{ association: "productsimage" }]
                 })
                 .then(Product => {
                     res.render("productDetail", {

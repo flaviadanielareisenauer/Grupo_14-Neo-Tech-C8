@@ -1,7 +1,8 @@
 const { validationResult } = require('express-validator');
 let bcrypt = require('bcryptjs')
 const db = require('../database/models');
-const { Op } = require('sequelize')
+const { Op } = require('sequelize');
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
     register: (req, res) => {
@@ -171,15 +172,14 @@ module.exports = {
                         [Op.gte]: 0
                     }
                 },
-                include: [{ association: "productsimage" }],
-                raw: true,
-                nest: true
+                include: [{ association: "productsimage" }]
             })
             .then(Product => {
                 res.render('categorias', {
                     titleSlider: "productos",
                     session: req.session,
-                    Product
+                    Product,
+                    toThousand
 
                 })
             })

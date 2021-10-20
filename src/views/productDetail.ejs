@@ -24,9 +24,14 @@
 
                         <ul class="fotoProducto">
                             <li>
-                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage.name%>" alt=""></a>
+                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage[0].name%>" alt=""></a>
                             </li>
-
+                            <li>
+                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[1].name : 'null' %>" alt=""></a>
+                            </li>
+                            <li>
+                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[2].name : 'null'%>" alt=""></a>
+                            </li>
                         </ul>
 
 
