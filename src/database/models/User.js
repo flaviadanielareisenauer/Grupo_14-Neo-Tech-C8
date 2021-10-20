@@ -1,54 +1,52 @@
 module.exports = (sequelize, dataTypes) => {
-
-    const alias = "User";
-
-    const cols = {
+    let alias = "User";
+    let cols = {
         id: {
-            type: dataTypes.INTEGER(11),
+            type: dataTypes.INTEGER(11).UNSIGNED,
             primaryKey: true,
             autoIncrement: true,
-            allowNull: true
+            allowNull: false
         },
         firstName: {
             type: dataTypes.STRING(40),
-            allowNull: true
+            allowNull: false
         },
         lastName: {
             type: dataTypes.STRING(40),
-            allowNull: true
+            allowNull: false
         },
         email: {
             type: dataTypes.STRING(40),
-            allowNull: true
+            allowNull: false,
+            unique: true
         },
         password: {
             type: dataTypes.STRING(75),
-            allowNull: true
+            allowNull: false
         },
         dni: {
             type: dataTypes.STRING(20)
         },
         numberPhone: {
-            type: dataTypes.INTEGER(20)
+            type: dataTypes.INTEGER(30)
         },
         location: {
             type: dataTypes.STRING(60)
         },
         rol: {
-            type: dataTypes.INTEGER(2),
-            allowNull: true
+            type: dataTypes.INTEGER(2).UNSIGNED,
+            allowNull: false
         },
         avatar: {
             type: dataTypes.STRING(60)
-        }
-    };
-
-    const config = {
+        },
+    }
+    let config = {
         tableName: "users",
         timestamps: false
-    };
+    }
 
-    const User = sequelize.define(alias, cols, config);
+    const User = sequelize.define(alias, cols, config)
 
     User.associate = models => {
         User.hasMany(models.Address, {
@@ -56,6 +54,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "userId"
         })
     }
-    return User
 
+    return User;
 }

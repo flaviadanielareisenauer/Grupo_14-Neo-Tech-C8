@@ -37,7 +37,6 @@ module.exports = {
         db.Categories.findAll()
 
         .then(categorias => {
-
                 res.render('admin/admin-carga', {
                     session: req.session,
                     categorias
@@ -100,7 +99,6 @@ module.exports = {
         Promise.all([categories, Product, Image])
             .then(([category, Product, Image]) => {
 
-
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
@@ -142,7 +140,6 @@ module.exports = {
                 images = ("nuevos/" + image.filename)
             })
         }
-
         db.ProductsImage.update({
             name: images,
             productId: req.params.id
