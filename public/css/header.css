@@ -1,3 +1,8 @@
+.prueba {
+    width: 100%;
+    height: 130px;
+}
+
 .menu-top {
     background-color: #070d2b;
     height: 90px;
@@ -5,6 +10,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    position: fixed;
+    z-index: 999;
+    margin-bottom: 60px;
+}
+
+.menu-top2 {
+    height: 88px;
 }
 
 .search {
@@ -68,6 +81,7 @@
 .iconos i {
     color: white;
     font-size: 2.5rem;
+    cursor: pointer;
 }
 
 .iconos i:hover {
@@ -126,10 +140,6 @@
 .user-container .list {
     display: none;
     width: 120px;
-    height: 140px;
-}
-
-.user-container .list {
     position: absolute;
     top: 130px;
     right: 30px;
@@ -137,7 +147,7 @@
     z-index: 999;
     border-radius: 5px;
     padding: 15px;
-    transition: .5s;
+    transition: all 2s;
 }
 
 .user-container .list .item-list {
@@ -149,9 +159,13 @@
     height: 30%;
     margin: auto;
     text-align: center;
-    border-bottom: 1px solid #c3c3c3;
     font-size: 1rem;
-    padding-bottom: 2px;
+    padding: 10px 0 10px 0;
+}
+
+.user-container .list .item-list a {
+    width: 100%;
+    border-bottom: 1px solid #c4c4c4;
 }
 
 #bar-arcoiris h1 {
@@ -189,6 +203,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    bottom: 0px
 }
 
 .menu-items {
@@ -245,6 +260,9 @@ ul.show {
 }
 
 @media screen and (max-width: 926px) {
+    .prueba {
+        height: 0;
+    }
     .menu-top {
         height: 80px;
     }
@@ -283,6 +301,14 @@ ul.show {
     .dos {
         display: none;
     }
+    .prueba {
+        height: 67px;
+    }
+    .search-bar {
+        width: 60px;
+        margin: 40px auto;
+        z-index: 999;
+    }
     .no-res1 {
         position: relative;
         right: 70px;
@@ -294,6 +320,10 @@ ul.show {
     }
     .menu-bottom {
         height: 0;
+        display: none;
+    }
+    .menu-top2 {
+        height: 65px;
     }
     .btn-menu {
         display: inline-flex;

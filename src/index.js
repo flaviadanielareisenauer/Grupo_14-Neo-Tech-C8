@@ -28,6 +28,7 @@ app.use(session({
 }))
 app.use(localsCheck)
 
+
 /*--------VIEWS---------*/
 
 app.set('views', path.join(__dirname, 'views'));
@@ -39,6 +40,13 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/user', userRouter);
 app.use('/products', productsRouter);
+app.use((req, res) => {
+    if (req.params.query == undefined) {
+        res.status(404).render('404NotFound', {
+            session: req.session
+        })
+    }
+})
 
 /* Servidor */
 app.listen(port, () => console.log(`Servidor corriendo en el puerto ${port}\n http://localhost:${port}`));

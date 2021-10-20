@@ -1,6 +1,8 @@
 const { products, writeJson } = require('../data/dataBase')
 const db = require('../database/models')
 const { Op } = require('sequelize')
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+
 module.exports = {
     detail: (req, res) => {
         let productsSlider = products.filter(product => product.discount >= 0)
@@ -30,7 +32,8 @@ module.exports = {
                     res.render("productDetail", {
                         ProductD,
                         session: req.session,
-                        Product
+                        Product,
+                        toThousand
                     });
                 })
         });

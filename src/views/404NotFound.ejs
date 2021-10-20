@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<%- include('./partials/head')%>
+
+    <body class="body404">
+        <div class="container404">
+            <div class="content">
+                <div for=" " class="logo " style="width: 100%; height: 100px;">
+                    <h1 class="neonText " style=" font-size: 5rem;"> Neo tech</h1>
+
+                </div>
+                <h2>404</h2>
+                <h4>Opps! page not found</h4>
+                <p>Parece que este sitio no está en nuestro servidor :(</p>
+                <a href="/">Volver al inicio</a>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            var container = document.querySelector('.container404');
+            window.onmousemove = function(e) {
+                var x = -e.clientX / 5,
+                    y = -e.clientY / 5;
+                container.style.backgroundPositionX = x + 'px';
+                container.style.backgroundPositionY = y + 'px';
+            }
+        </script>
+    </body>
+
+</html>

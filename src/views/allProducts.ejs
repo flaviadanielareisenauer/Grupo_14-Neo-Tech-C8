@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
-<!-- Include Head -->
-
-<%- include('./partials/head',{title: 'Resultados de tu búsqueda' })%>
+<%- include("./partials/head")%>
+    <html lang="es">
 
     <body class="body-containerP">
         <%- include("./partials/header")%>
             <div class="products-general">
                 <div class="products-category-container">
+                    <input type="text" class="searchAll">
+                    <h4 class="h4-category">Categorías
+                    </h4>
+                    <%Category.forEach(category => {%>
+                        <p class="product-category-item">
+                            <%- category.name%>
+                        </p>
 
+                        <%})%>
                 </div>
 
                 <div class="products-container">
-                    <%result.forEach(product=> {%>
+                    <%Product.forEach(product=> {%>
 
                         <div class="products-cartAll">
                             <a href="/products/detail/<%- product.id%>">
@@ -55,5 +61,4 @@
             <%- include("./partials/footer")%>
     </body>
 
-
-</html>
+    </html>

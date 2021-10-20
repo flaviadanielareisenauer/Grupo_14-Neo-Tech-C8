@@ -1,7 +1,7 @@
 /**** Barra de Scroll ****/
 
 .body {
-    background-color: #f1f1f1;
+    background-color: #f9f9f9;
 }
 
 .body::-webkit-scrollbar {
@@ -198,7 +198,7 @@ p {
     text-align: center;
     width: 90%;
     height: 50px;
-    border: 1px solid black;
+    border: 1px solid #c4c4c4;
     border-radius: 1px;
     display: flex;
     justify-content: space-evenly;
@@ -210,6 +210,7 @@ p {
 .icon p {
     font-size: .7rem;
     width: 100%;
+    padding: 0;
 }
 
 .icon .text {
@@ -331,11 +332,11 @@ p {
     color: #070d2b;
 }
 
-section.general-products .producto p {
+.producto p {
     font-size: .8rem;
 }
 
-.general-products .producto .button {
+.producto .button {
     width: 96%;
     background-color: #fff;
     border: 2px solid #ff6000;
@@ -348,7 +349,7 @@ section.general-products .producto p {
     margin-bottom: 5px;
 }
 
-.container .general-products .producto .button p {
+.producto .button p {
     padding: 10px 20px;
     width: 100%;
     text-decoration: none;
@@ -465,8 +466,7 @@ section.general-products .producto p {
         object-fit: contain;
         box-shadow: none;
     }
-    .container section.general-products .producto div.button,
-    .container section.general-products .producto2 div.button {
+    .producto .button {
         width: 90%;
         background-color: #fff;
         border: 1px solid #ff6000;
@@ -478,8 +478,7 @@ section.general-products .producto p {
         margin: auto;
         margin-bottom: 5px;
     }
-    .container section.general-products .producto div.button p,
-    .container section.general-products .producto2 div.button p {
+    .producto .button p {
         padding: 10px 20px;
         width: 100%;
         text-decoration: none;
@@ -617,11 +616,16 @@ section.general-products .producto p {
         font-size: 1rem;
         width: 100%;
     }
+    .icon li:last-child .container-text {
+        padding-left: 6px;
+    }
     .icon li:nth-child(2n) {
         display: inherit;
     }
-    .icon li:last-child i {
-        width: 47.2px;
+    .icon li a.pago-container {
+        margin-right: 10px;
+        width: 100%;
+        height: 100%;
     }
     .icon .desktop {
         display: inherit;
@@ -640,7 +644,7 @@ section.general-products .producto p {
     }
     .producto {
         width: 100%;
-        max-width: 210px;
+        max-width: 225px;
         height: 320px;
         cursor: pointer;
         justify-content: space-evenly;
@@ -664,14 +668,14 @@ section.general-products .producto p {
         object-fit: contain;
         box-shadow: none;
     }
-    .container section.general-products .producto p,
-    .container section.general-products .producto2 p {
+    .producto p {
         font-size: 1rem;
     }
     .producto h4,
     .producto2 h4 {
         font-size: 2rem;
         margin: 15px 0 15px;
+        text-align: center;
     }
     .producto2:last-child {
         margin-right: 0;
@@ -732,9 +736,9 @@ section.general-products .producto p {
         /*  box-shadow: 0 0 1px #ff6000, 0 0 2px #ff6000, 0 0 2px #ff6000; */
         transition-delay: .10s;
     }
-    section.general-products .producto div.button {
+    .producto .button {
         background-color: #fff;
-        border: 2px solid #ff6000;
+        border: 1px solid #ff6000;
         border-radius: 3px;
         width: 94%;
         text-align: center;
@@ -745,19 +749,19 @@ section.general-products .producto p {
         margin-bottom: 5px;
         transition: all .5s;
     }
-    section.general-products .producto div.button:hover {
+    .producto .button:hover {
         background-color: #ff6000;
         transform: .5s;
         opacity: 1;
     }
-    section.general-products .producto div.button p {
+    .producto .button p {
         padding: 10px 20px;
         width: 100%;
         text-decoration: none;
         color: #070d2b;
         font-size: 1.2rem;
     }
-    section.general-products .producto div.button p:hover {
+    .producto .button p:hover {
         color: white;
     }
     .item-category a {

@@ -1,33 +1,33 @@
 <nav class="prueba">
-    <div class="menu-top ">
-        <div for=" " class="logo ">
-            <a href="/">
-                <h1 class="neonText "> Neo tech</h1>
-            </a>
+    <div class="menu-top2">
+        <div class="menu-top ">
+            <div for=" " class="logo ">
+                <a href="/">
+                    <h1 class="neonText "> Neo tech</h1>
+                </a>
 
-        </div>
-        <div class="search ">
-            <form class="form_header" action="/search" method="GET">
-                <input type="text" class=" search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
-            </form>
-            <div class=" search-icon ">
-                <a href="# "> <i class="fas fa-search bus "></i></a>
             </div>
+            <div class="search ">
+                <form class="form_header" action="/search" method="GET">
+                    <input type="text" class="search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
+                </form>
+                <div class=" search-icon ">
+                    <a href="# "> <i class="fas fa-search bus "></i></a>
+                </div>
 
-            <span class="btn-menu ">
+                <span class="btn-menu ">
                 <i class="fa fa-bars "></i>
             </span>
-        </div>
-        <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno "></i></a>
+            </div>
+            <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
 
-            <div class="user-container"><i class="far fa-user dos "></i>
-                <ul class="list">
 
-                    <%if(typeof session.user != "undefined"){%>
-
-                        <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
-                        <li class="item-list"><a href="/user/logout"> Cerrar session</a></li>
-                        <%console.log(session.user)%>
+                <div class="user-container">
+                    <span class="user-containe"> <i class="far fa-user dos "></i> </span>
+                    <ul class="list">
+                        <%if(typeof session.user != "undefined"){%>
+                            <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
+                            <li class="item-list"><a href="/user/logout"> Cerrar session</a></li>
                             <%if(session.user.rol === "admin_user"){%>
                                 <li class="item-list"><a href="/admin/products"> Productos</a></li>
                                 <%}%>
@@ -35,14 +35,18 @@
                                         <li class="item-list"><a href="/user/register">Ingresar</a> </li>
                                         <li class="item-list"><a href="/user/register">Registrarse</a> </li>
                                         <%}%>
-                </ul>
+                    </ul>
+                </div>
+
             </div>
+
         </div>
 
     </div>
     </div>
     <div class="menu-bottom ">
         <ul class="menu-items ">
+
             <li class="active ">
                 <a href="/ ">Inicio</a>
             </li>
