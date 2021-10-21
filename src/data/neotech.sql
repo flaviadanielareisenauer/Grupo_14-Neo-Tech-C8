@@ -21,25 +21,46 @@ CREATE TABLE `products` (
 
 INSERT INTO products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Silla Gamer', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 15, 7399, 'black', '56934', '2021-10-13 17:19:27', '2021-10-13 17:19:27', 11);
-INSERT INTO products
+VALUES(41, 'MONITOR 24" SAMSUNG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 35, 22999, 'Negro', '100', '2021-10-20 18:21:12', '2021-10-20 18:21:12', 10);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Parlante Bluetooth', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 25, 1700, 'black', '90123', '2021-10-13 17:20:34', '2021-10-13 17:20:34', 11);
-INSERT INTO products
+VALUES(42, 'MONITOR 28" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 32999, 'Negro', '101', '2021-10-20 18:29:13', '2021-10-20 18:29:13', 10);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Mouse', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 10, 800, 'white', '12346', '2021-10-13 17:21:10', '2021-10-13 17:21:10', 11);
-INSERT INTO products
+VALUES(43, 'MONITOR 27" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 30, 45999, 'Negro', '102', '2021-10-20 18:31:40', '2021-10-20 18:31:40', 10);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Teclado', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 10, 1000, 'blue', '123223', '2021-10-13 17:21:46', '2021-10-13 17:21:46', 11);
-INSERT INTO products
+VALUES(44, 'MONITOR 25 LG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 15999, 'Negro', '103', '2021-10-20 18:34:55', '2021-10-20 18:34:55', 11);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Auricular Noga', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 15, 4000, 'black', '61231', '2021-10-13 20:13:32', '2021-10-13 20:13:32', 11);
-INSERT INTO products
+VALUES(45, 'MONITOR GAMER 27"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 36000, 'Negro', '105', '2021-10-20 18:37:40', '2021-10-20 18:37:40', 11);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Samsung Galaxy S21 GA-vista1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 15, 29000, 'black', '21311', '2021-10-13 20:18:37', '2021-10-13 20:18:37', 6);
-INSERT INTO products
+VALUES(47, 'TV 50" TCL SMART UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 28000, 'Negro', '108', '2021-10-20 19:09:07', '2021-10-20 19:09:07', 10);
+INSERT INTO neotech.products
 (id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(default, 'Mouse', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, tempora?', 0, 800, 'white', '12345', '2021-10-13 20:22:19', '2021-10-13 20:22:19', 11);
+VALUES(48, 'TV SAMSUNG 65" UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 135000, 'Negro', '200', '2021-10-20 19:13:32', '2021-10-20 19:13:32', 10);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(49, 'SAMSUNG TV LED 50 SMART', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 85000, 'Negro', '139', '2021-10-20 19:16:19', '2021-10-20 19:16:19', 10);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(50, 'NOTEBOOK CX 2EN1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 42200, 'BLANCO', '200', '2021-10-20 19:25:43', '2021-10-20 19:25:43', 4);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(51, 'NOTEBOOK HP 14" G8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 51000, 'Negro', '201', '2021-10-20 19:34:59', '2021-10-20 19:34:59', 4);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(52, 'NOTEBOOK HP 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 45000, 'Negro', '205', '2021-10-20 19:37:08', '2021-10-20 19:37:08', 4);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(53, 'NOTEBOOK DELL 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 45000, 'GRIS', '208', '2021-10-20 19:49:04', '2021-10-20 19:49:04', 4);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(54, 'NOTEBOOK KELYX 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 78000, 'Negro', '209', '2021-10-20 19:51:28', '2021-10-20 19:51:28', 4);
+INSERT INTO neotech.products
+(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
+VALUES(55, 'NOTEBOOK ASPIRE 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 69000, 'Negro', '209', '2021-10-20 19:55:14', '2021-10-20 19:55:14', 4);
 
 
 
@@ -99,25 +120,173 @@ CREATE TABLE `productsimage` (
 
 INSERT INTO productsimage
 (id, name, productId)
-VALUES(default, 'Sillas/silla-vista1.jpg', 8);
-INSERT into productsimage
+VALUES(65, 'nuevos/1634764870171_img_.jpg', 41);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'parlantes/parlante1-vista2.jpg', 9);
-INSERT INTO productsimage
+VALUES(66, 'nuevos/1634764871782_img_.jpg', 41);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'MouseTeclados/mouse3-vista1.jpg', 10);
-INSERT INTO productsimage
+VALUES(67, 'nuevos/1634764871836_img_.jpg', 41);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'MouseTeclados/teclado1-vista1.jpg', 11);
-INSERT INTO productsimage
+VALUES(68, 'nuevos/1634764871979_img_.jpg', 41);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'Auriculares/auri2-vista1.jpg', 12);
-INSERT INTO productsimage
+VALUES(69, 'nuevos/1634765353251_img_.jpg', 42);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'celulares/Samsung S21 GA-vista1.jpg', 13);
-INSERT INTO productsimage
+VALUES(70, 'nuevos/1634765353255_img_.jpg', 42);
+INSERT INTO neotech.productsimage
 (id, name, productId)
-VALUES(default, 'MouseTeclados/mouse2-vista1.jpg', 14);
+VALUES(71, 'nuevos/1634765353259_img_.jpg', 42);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(72, 'nuevos/1634765353261_img_.jpg', 42);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(73, 'nuevos/1634765500817_img_.jpg', 43);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(74, 'nuevos/1634765500830_img_.jpg', 43);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(75, 'nuevos/1634765500834_img_.jpg', 43);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(76, 'nuevos/1634765500844_img_.jpg', 43);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(77, 'nuevos/1634765695212_img_.jpg', 44);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(78, 'nuevos/1634765695220_img_.jpg', 44);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(79, 'nuevos/1634765695225_img_.jpg', 44);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(80, 'nuevos/1634765695227_img_.jpg', 44);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(81, 'nuevos/1634765860031_img_.jpg', 45);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(82, 'nuevos/1634765860215_img_.jpg', 45);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(83, 'nuevos/1634765860328_img_.jpg', 45);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(84, 'nuevos/1634765860387_img_.jpg', 45);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(88, 'nuevos/1634767747918_img_.jpg', 47);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(89, 'nuevos/1634767747921_img_.jpg', 47);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(90, 'nuevos/1634767747922_img_.jpg', 47);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(91, 'nuevos/1634767747924_img_.jpg', 47);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(92, 'nuevos/1634768011841_img_.jpg', 48);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(93, 'nuevos/1634768011994_img_.jpg', 48);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(94, 'nuevos/1634768012065_img_.jpg', 48);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(95, 'nuevos/1634768012108_img_.jpg', 48);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(96, 'nuevos/1634768179542_img_.jpg', 49);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(97, 'nuevos/1634768179620_img_.jpg', 49);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(98, 'nuevos/1634768179650_img_.jpg', 49);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(99, 'nuevos/1634768179671_img_.jpg', 49);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(100, 'nuevos/1634768743023_img_.jpg', 50);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(101, 'nuevos/1634768743132_img_.jpg', 50);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(102, 'nuevos/1634768743215_img_.jpg', 50);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(103, 'nuevos/1634768743249_img_.jpg', 50);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(104, 'nuevos/1634769299526_img_.jpg', 51);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(105, 'nuevos/1634769299528_img_.jpg', 51);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(106, 'nuevos/1634769299529_img_.jpg', 51);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(107, 'nuevos/1634769299530_img_.jpg', 51);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(108, 'nuevos/1634769428383_img_.jpg', 52);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(109, 'nuevos/1634769428386_img_.jpg', 52);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(110, 'nuevos/1634769428387_img_.jpg', 52);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(111, 'nuevos/1634769428388_img_.jpg', 52);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(112, 'nuevos/1634770144830_img_.jpg', 53);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(113, 'nuevos/1634770144833_img_.jpg', 53);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(114, 'nuevos/1634770144834_img_.jpg', 53);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(115, 'nuevos/1634770144837_img_.jpg', 53);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(116, 'nuevos/1634770288617_img_.jpg', 54);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(117, 'nuevos/1634770288618_img_.jpg', 54);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(118, 'nuevos/1634770288620_img_.jpg', 54);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(119, 'nuevos/1634770288621_img_.jpg', 54);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(120, 'nuevos/1634770514220_img_.jpg', 55);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(121, 'nuevos/1634770514222_img_.jpg', 55);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(122, 'nuevos/1634770514257_img_.jpg', 55);
+INSERT INTO neotech.productsimage
+(id, name, productId)
+VALUES(123, 'nuevos/1634770514277_img_.jpg', 55);
+
 
 -- neotech.users definition
 
