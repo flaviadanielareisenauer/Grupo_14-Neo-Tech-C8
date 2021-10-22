@@ -16,10 +16,10 @@ module.exports = {
 
         if (errors.isEmpty()) {
             db.User.findOne({
-                    where: {
-                        email: emailLog
-                    },
-                })
+                where: {
+                    email: emailLog
+                },
+            })
                 .then(user => {
                     req.session.user = {
                         id: user.id,
@@ -106,32 +106,32 @@ module.exports = {
             let { firstName, lastName, dni, numberPhone, streetName, streetNumber, dto, postalCode, province, location } = req.body;
 
             db.User.update({
-                    firstName,
-                    lastName,
-                    dni,
-                    numberPhone,
-                    avatar: req.file ? req.file.filename : req.session.user.avatar
-                }, {
-                    where: {
-                        id: req.params.id
-                    }
-                },
+                firstName,
+                lastName,
+                dni,
+                numberPhone,
+                avatar: req.file ? req.file.filename : req.session.user.avatar
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            },
                 options
-            ).then(async() => {
+            ).then(async () => {
                 if (await db.Address.findOne({ where: { id: req.params.id } })) {
                     db.Address.update({
-                            streetName,
-                            streetNumber,
-                            dto,
-                            postalCode,
-                            province,
-                            location,
-                            userId: req.params.id
-                        }, {
-                            where: {
-                                id: req.params.id
-                            }
-                        },
+                        streetName,
+                        streetNumber,
+                        dto,
+                        postalCode,
+                        province,
+                        location,
+                        userId: req.params.id
+                    }, {
+                        where: {
+                            id: req.params.id
+                        }
+                    },
                         options
                     ).then(() => {
                         res.redirect('/user/profile/' + req.params.id)
@@ -167,28 +167,24 @@ module.exports = {
     },
     categorias: (req, res) => {
         db.Products.findAll({
-                where: {
-                    discount: {
-                        [Op.gte]: 0
-                    }
-                },
-                include: [{ association: "productsimage" }]
-            })
+            where: {
+                discount: {
+                    [Op.gte]: 0
+                }
+            },
+            include: [{ association: "productsimage" }]
+        })
             .then(Product => {
                 res.render('categorias', {
                     titleSlider: "productos",
                     session: req.session,
                     Product,
                     toThousand
-
                 })
             })
-            .catch(err => { console.log(err) })
-
-
+            .catch(err => { console.log(err)})
     },
     productCart: (req, res) => {
         res.render('productCart', { session: req.session })
-
     }
 }

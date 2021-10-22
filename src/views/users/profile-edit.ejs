@@ -9,11 +9,9 @@
                             <h4 class="profile-subtitle">Avatar</h4>
                             <div class="avatar">
                                 <img src="/imagenes/userAvatars/<%=user.avatar%>" alt="" id="avatarProfile">
-                                <div id="preview">
-
-                                </div>
-
+                                <div id="preview"></div>
                             </div>
+
                             <input type="file" name="avatar" id="file" accept=".jpg,.png.jpeg">
                         </div>
                         <div class="form-container">
@@ -21,25 +19,32 @@
                                 <h4>Datos de la cuenta</h4>
 
                                 <hr class="divitionConfig">
-                                <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email%>">
-                                <input class="controls" type="password" name="password" placeholder="Contraseña ">
+                                <input class="controls" type="email" name="email" placeholder="Usuario" readonly value="<%= user.email %>">
+                                <input class="controls" type="password" name="password" placeholder="Contraseña">
                             </section>
                             <section class="form-register">
                                 <h4>Datos personales</h4>
 
                                 <hr class="divitionConfig">
-                                <input class="controls" type=" text " name="firstName" placeholder="Nombre " value="<%- user.first_name%>">
-                                <input class="controls" type="text " name="lastName" placeholder="Apellido " value="<%- user.last_name%>">
-                                <input class="controls" type="number" name="dni" placeholder="Documento " value="<%- user.DNI%>">
-                                <input class="controls " type="number " name="number_phone" placeholder="Telefono " value="<%- user.number_phone%>">
+                                <input class="controls" type="text" name="firstName" placeholder="Nombre" value="<%= locals.old ? old.firstName : user.firstName %>">
+                                <% if (locals.errors && errors.firstName) { %>
+                                    <small class="text-danger"><%= errors.firstName.msg %></small>
+                                <% } %>
+                                <input class="controls" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old ? old.lastName : user.lastName %>">
+                                <% if (locals.errors && errors.lastName) { %>
+                                    <small class="text-danger"><%= errors.lastName.msg %></small>
+                                <% } %>
+                                <input class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni%>">
+                                <input class="controls " type="number " name="numberPhone" placeholder="Telefono " value="<%- user.numberPhone || ""%>">
+
                             </section>
                             <section class="form-register ">
                                 <h4>Datos de envío</h4>
                                 <hr class="divitionConfig">
-                                <input class="controls " type=" text " name="streetName" placeholder="Calle " value="<%- user.street_name%>">
-                                <input class="controls " type="number " name="streetNumber" placeholder="Numero" value="<%- user.street_number%>">
-                                <input class="controls " type="text " name="dto" placeholder="Dpto" value="<%- user.dto%>">
-                                <input class="controls " type="number " name="postalCode" placeholder="Código Postal" value="<%- user.postal_code%>">
+                                <input class="controls " type="text" name="streetName" placeholder="Direccion" value="<%= user.addresses[0] ? user.addresses[0].streetName : "" %>">
+                                <input class="controls " type="number" name="streetNumber" placeholder="Numero" value="<%= user.addresses[0] ? user.addresses[0].streetNumber : "" %>">
+                                <input class="controls " type="text" name="dto" placeholder="Dpto" value="<%- user.dto%>">
+                                <input class="controls " type="number" name="postalCode" placeholder="Código Postal" value="<%- user.postal_code%>">
                                 <div class=" input-container ">
                                     <select name="province" class="input-select ">
                                         <option value=" " hidden selected>Seleccione una provincia</option>
@@ -56,7 +61,7 @@
                                     </select>
                                 </div>
                                 <div class="input-container ">
-                                    <select name="localidad" class="input-select ">
+                                    <select name="location" class="input-select ">
                                         <option value=" " hidden selected>Elija una localidad</option>
                                         <option value="localidad1 ">Localidad1</option>
                                         <option value="localidad2 ">Localidad2</option>
@@ -68,9 +73,8 @@
                             </section>
                         </div>
 
-
                         <div class="button-container ">
-                            <button type="submit" class="button-profile">Guardar</button>
+                            <button type="submit" class="button-all">Guardar</button>
                         </div>
                 </form>
 
