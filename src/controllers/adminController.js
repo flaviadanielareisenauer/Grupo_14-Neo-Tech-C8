@@ -1,6 +1,6 @@
-const dataBase = require('../data/dataBase')
+//const dataBase = require('../data/dataBase')
 const db = require('../database/models')
-const { products, writeJson } = require('../data/dataBase')
+//const { products, writeJson } = require('../data/dataBase')
 
 
 module.exports = {

@@ -1,4 +1,4 @@
-const fs = require('fs');
+/*const fs = require('fs');
 const path = require('path');
 
 module.exports = {
@@ -11,4 +11,4 @@ module.exports = {
     writeUsersJSON: (dataBase) => {
         fs.writeFileSync(path.join(__dirname, "/users.json"), JSON.stringify(dataBase), "utf-8")
     }
-}
+}*/
