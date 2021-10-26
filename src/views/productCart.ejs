@@ -2,62 +2,71 @@
 
     <body class="carrito">
         <%- include('./partials/header')%>
-                <div class="cart">
-                    <div class="elemento">
+            <div class="cart">
+                <div class="elemento">
 
 
-                        <div class="caja">
-                            <img src="/imagenes/compu.jpg" alt="">
-                            <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
-                            <div class="cantidad">
-                                <button type="button">+</button>
-                                <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
-                                <button type="button">-</button>
-                            </div>
-                            <div class="precio">
-                                <p>$1000</p>
-                            </div>
-                            <i class="fas fa-trash-alt"></i>
+                    <div class="caja">
+                        <img src="/imagenes/compu.jpg" alt="">
+                        <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
+                        <div class="cantidad">
+                            <button type="button">+</button>
+                            <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                            <button type="button">-</button>
                         </div>
-
-                        <hr>
-
-                        <div class="caja">
-                            <img src="/imagenes/compu.jpg" width=" 100px">
-                            <P>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</P>
-                            <div class="cantidad">
-                                <button type="button">+</button>
-                                <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
-                                <button type="button">-</button>
-                            </div>
-                            <div class="precio">
-                                <p>$1000</p>
-                            </div>
-                            <i class="fas fa-trash-alt"></i>
+                        <div class="precio">
+                            <p>$1000</p>
                         </div>
+                        <i class="fas fa-trash-alt"></i>
                     </div>
 
-                    <div class="resumen">
-                        <p parrafo>RESUMEN DEL PEDIDO</p>
-                        <div class="pedido">
-                            <p>TOTAL:</p>
-                            <p>$0</p>
+                    <hr>
+
+                    <div class="caja">
+                        <img src="/imagenes/Televisores/Tele3-Vista2.jpg" width=" 100px">
+                        <P>Televisor Smart TV de 30" con Sistema Oprativo y Control Remoto con Voz</p>
+                        <div class="cantidad">
+                            <button type="button">+</button>
+                            <input type="number" name="cantidad" id="cantidad" min="1" max="10" step="2">
+                            <button type="button">-</button>
                         </div>
-                        <label for="opciones">Cupon de descuento</label>
-                        <select id="opciones">
-            <option value="" disabled selected>-- Seleccione --</option>
-            <option value="">10% de descuento</option>
-            <option value="">20% de descuento</option>
-            <option value="">30% de descuento</option>
-            <option value="">40% de descuento</option>
-        </select>
-                        <div>
-                            <input type="submit" value="COMPRAR" class="btn-ingresar">
+                        <div class="precio">
+                            <p>$1000</p>
                         </div>
+                        <i class="fas fa-trash-alt"></i>
                     </div>
                 </div>
 
-                <%- include('./partials/footer')%>
+                <div class="resumen">
+                    <p parrafo>RESUMEN DEL PEDIDO</p>
+                    <div class="pedido">
+                        <p>TOTAL:</p>
+                        <p>$0</p>
+                    </div>
+                    <label for="opciones">Cupon de descuento</label>
+                    <select id="opciones">
+                        <option value="" disabled selected>-- Seleccione --</option>
+                        <option value="">10% de descuento</option>
+                        <option value="">15% de descuento</option>
+                        <option value="">25% de descuento</option>
+                    </select>
+                    <div>
+                        <input type="submit" value="COMPRAR" class="btn-ingresar">
+                    </div>
+                    <section class="modal ">
+                        <div class="modal__container">
+                            <h2 class="modal__tittle">¡Compra Realizada!</h2>
+                            <p class="modal__paragraph">Gracias por comprar, no te olvides de seguir revisando nuestra
+                                pagina para encontrar
+                                mas productos de tu interes.</p>
+                            <a href="#" class="modal__close">LISTO</a>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <script src="/js/ventana.js"></script>
+
+            <%- include('./partials/footer')%>
     </body>
 
     </html>

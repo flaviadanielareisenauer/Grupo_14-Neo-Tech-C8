@@ -62,6 +62,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 
 .cantidad,
@@ -80,6 +81,7 @@
 
 .caja i {
     justify-content: center;
+    cursor: pointer;
 }
 
 .precio {
@@ -87,14 +89,93 @@
     font-weight: 700;
 }
 
-.btn-ingresar {
-    border: 2px solid;
-    background-color: #ff6000;
-    padding: 10px;
-    margin: 10px;
+.modal  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111111bd;
+    display: flex;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh);
+    --transition: transform .8s;
+}
+
+.modal--show {
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s;
+    --transform: translateY(0);
+}
+
+.modal__container {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    display: grid;
+    gap: 1em;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: var(--transition);
+}
+
+.modal__tittle{
+    font-size: 2.5rem;
+    width: 100%;
+    background-color: #070d2b;
     color: white;
-    font-weight: 700;
-    float: right;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px 0px 10px 0px;
+}
+
+.modal__paragraph{
+    margin-bottom: 10px;
+}
+
+.btn-ingresar {
+    border: 1px solid #ff6000;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    width: 70%;
+    height: 46px;
+    margin-bottom: 5px;
+    background-color: white;
+    padding: 10px;
+    margin: 20px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.btn-ingresar:hover{
+    color: white;
+    background-color: #ff6000;
+}
+
+.modal__close{
+    border: 1px solid #ff6000;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    width: 40%;
+    height: 46px;
+    margin-bottom: 20px;
+    background-color: white;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    display: inline-block;
+    transition: background-color .3s;
+}
+
+.modal__close:hover{
+    color: white;
+    background-color: #ff6000;
 }
 
 #opciones {

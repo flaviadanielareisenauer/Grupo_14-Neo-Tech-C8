@@ -23,7 +23,7 @@
 
 
                 <div class="user-container">
-                    <span class="user-containe"> <i class="far fa-user dos "></i> </span>
+                    <span class="user-containe"> <i class="far fa-user dos "><%if(typeof session.user != "undefined"){%><span class="session"></span><%}%></i> </span>
                     <ul class="list">
                         <%if(typeof session.user != "undefined"){%>
                             <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
