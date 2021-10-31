@@ -51,33 +51,34 @@
                         </form>
 
                         <!-- Register -->
-                        <form action="/user/register" method="POST" enctype="multipart/form-data" class="form__register">
+                        <form id="formRegister" action="/user/register" method="POST" enctype="multipart/form-data" class="form__register">
                             <h2>Regístrarse</h2>
-                            <input type="text" name="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName %>">
+                            <input id="firstName" type="text" name="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName %>">
                             <% if (locals.errors && errors.firstName) { %>
-                                <small class="text-validation"><%- errors.firstName.msg %></small>
+                                <small id="firstNameErrors" class="text-validation"><%- errors.firstName.msg %></small>
                                 <% } %>
 
-                            <input type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName %>">
+                            <input id="lastName" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName %>">
                             <% if (locals.errors && errors.lastName) { %>
-                                <small class="text-validation"><%= errors.lastName.msg %></small>
+                                <small id="lastNameErrors" class="text-validation"><%= errors.lastName.msg %></small>
                                 <% } %>
 
-                            <input type="email" name="email" placeholder="Correo electrónico">
+                            <input id="email" type="email" name="email" placeholder="Correo electrónico">
                             <% if (locals.errors && errors.email) { %>
-                                <small class="text-validation"><%= errors.email.msg %></small>
+                                <small id="emailErrors" class="text-validation"><%= errors.email.msg %></small>
                                 <% } %>
 
-                            <input type="password" name="password1" placeholder="Contraseña">
+                            <input id="password1Errors" type="password" name="password1" placeholder="Contraseña">
                             <% if (locals.errors && errors.password1) { %>
-                                <small class="text-validation"><%= errors.password1.msg %></small>
+                                <small id="pas" class="text-validation"><%= errors.password1.msg %></small>
                                 <% } %>
 
-                            <input type="password" name="password2" placeholder="Confirmar contraseña">
+                            <input id="password2" type="password" name="password2" placeholder="Confirmar contraseña">
                             <% if (locals.errors && errors.password2) { %>
-                                <small class="text-validation"><%= errors.password2.msg %></small>
-                                <% } %>
-
+                                <small id="password2Errors" class="text-validation"><%= errors.password2.msg %></small>
+                                <% } %>                           
+                            
+                            <span id="submitErrors"></span>
                             <button>Regístrarse</button>
                         </form>
                     </div>
@@ -87,6 +88,7 @@
             <%- include('../partials/footer')%>
 
                 <script src="/js/script-register.js"></script>
+                <script src="/js/registerValidator.js"></script>
     </body>
 
     </html>

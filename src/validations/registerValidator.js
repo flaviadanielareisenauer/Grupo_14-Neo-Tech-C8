@@ -2,16 +2,16 @@ const { check, body } = require("express-validator");
 const db = require("../database/models");
 
 module.exports = [
-  check("firstName").notEmpty().withMessage("Debes escribir tu nombre"),
+  check("firstName").notEmpty().withMessage("El campo nombre es obligatorio"),
 
-  check("lastName").notEmpty().withMessage("Debes escribir tu apellido"),
+  check("lastName").notEmpty().withMessage("El campo apellido es obligatorio"),
 
   check("email")
     .notEmpty()
-    .withMessage("Debes escribir un email")
+    .withMessage("El campo email es obligatorio")
     .bail()
     .isEmail()
-    .withMessage("Debes escribir un email válido"),
+    .withMessage("Debes ingresar un email válido"),
 
   body("email").custom((value) => {
     return db.User.findOne({
@@ -27,12 +27,12 @@ module.exports = [
 
   check("password1")
     .notEmpty()
-    .withMessage("Debes escribir tu contraseña")
+    .withMessage("El campo contraseña es obligatorio")
     .isLength({
       min: 6,
       max: 12,
     })
-    .withMessage("La contraseña debe tener entre 6 y 12 caracteres"),
+    .withMessage("La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número"),
 
   body("password2")
     .custom((value, { req }) => (value !== req.body.password1 ? false : true))
