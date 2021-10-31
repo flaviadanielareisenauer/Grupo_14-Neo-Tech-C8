@@ -114,14 +114,11 @@ window.addEventListener("load", function () {
     let error = false;
     event.preventDefault();
     console.log($formRegister.elements);
-    let elementosForm = this.elements;
+    let elementForm = this.elements;
 
-    for (let index = 0; index < elementosForm.length - 1; index++) {
-      if (
-        elementosForm[index].value == "" &&
-        elementosForm[index].name !== "archivo"
-      ) {
-        elementosForm[index].classList.add("is-invalid");
+    for (let index = 0; index < elementForm.length - 1; index++) {
+      if (elementForm[index].value == "") {
+        elementForm[index].classList.add("is-invalid");
         submitErrors.innerHTML = "Los campos señalados son obligatorios";
         error = true;
       }
