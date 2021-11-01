@@ -168,3 +168,7 @@ input#check{
         position: relative;
     }
 }
+
+.mensajeError {
+    color: red;
+}
