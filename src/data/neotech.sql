@@ -321,3 +321,15 @@ CREATE TABLE `addresses` (
   CONSTRAINT `addresses_FK` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
+-- neotech.cart definition
+
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `productId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `cart_FK` (`productId`),
+  KEY `cart_FK_1` (`userId`),
+  CONSTRAINT `cart_FK` FOREIGN KEY (`productId`) REFERENCES `cart` (`id`),
+  CONSTRAINT `cart_FK_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
