@@ -54,28 +54,33 @@
                         <form id="formRegister" action="/user/register" method="POST" enctype="multipart/form-data" class="form__register">
                             <h2>Regístrarse</h2>
                             <input id="firstName" type="text" name="firstName" placeholder="Nombre" value="<%= locals.old && old.firstName %>">
+                            <span id="firstNameErrors"></span>
                             <% if (locals.errors && errors.firstName) { %>
-                                <small id="firstNameErrors" class="text-validation"><%- errors.firstName.msg %></small>
+                                <small class="text-validation"><%- errors.firstName.msg %></small>
                                 <% } %>
 
                             <input id="lastName" type="text" name="lastName" placeholder="Apellido" value="<%= locals.old && old.lastName %>">
+                            <span id="lastNameErrors"></span>
                             <% if (locals.errors && errors.lastName) { %>
-                                <small id="lastNameErrors" class="text-validation"><%= errors.lastName.msg %></small>
+                                <small class="text-validation"><%= errors.lastName.msg %></small>
                                 <% } %>
 
                             <input id="email" type="email" name="email" placeholder="Correo electrónico">
+                            <span id="emailErrors"></span>
                             <% if (locals.errors && errors.email) { %>
-                                <small id="emailErrors" class="text-validation"><%= errors.email.msg %></small>
+                                <small class="text-validation"><%= errors.email.msg %></small>
                                 <% } %>
 
-                            <input id="password1Errors" type="password" name="password1" placeholder="Contraseña">
+                            <input id="password1" type="password" name="password1" placeholder="Contraseña">
+                            <span id="password1Errors"></span>
                             <% if (locals.errors && errors.password1) { %>
-                                <small id="pas" class="text-validation"><%= errors.password1.msg %></small>
+                                <small class="text-validation"><%= errors.password1.msg %></small>
                                 <% } %>
 
                             <input id="password2" type="password" name="password2" placeholder="Confirmar contraseña">
+                            <span id="password2Errors"></span>
                             <% if (locals.errors && errors.password2) { %>
-                                <small id="password2Errors" class="text-validation"><%= errors.password2.msg %></small>
+                                <small class="text-validation"><%= errors.password2.msg %></small>
                                 <% } %>                           
                             
                             <span id="submitErrors"></span>
@@ -87,8 +92,8 @@
             </main>
             <%- include('../partials/footer')%>
             
+            <script src="/js/registerValidatorFront.js"></script>
             <script src="/js/script-register.js"></script>
-            <script src="/js/registerValidator.js"></script>
     </body>
 
     </html>

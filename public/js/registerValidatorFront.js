@@ -3,31 +3,31 @@ function qs(element) {
 }
 
 window.addEventListener("load", function () {
-  let $inputfirstName = qs("#firstName"),
-    $firstNameErrors = qs("#firstNameErrors"),
-    $inputLastName = qs("#lastName"),
-    $lastNameErrors = qs("#lastNameErrors"),
-    $formRegister = qs("#formRegister"),
-    $email = qs("#email"),
-    $emailErrors = qs("#emailErrors"),
-    $password1 = qs("#password1"),
-    $password1Errors = qs("#password1Errors"),
-    $password2 = qs("#password2"),
-    $password2Errors = qs("#password2Errors"),
-    regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/,
-    regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i,
-    regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
+  let $inputfirstName = qs("#firstName");
+  $firstNameErrors = qs("#firstNameErrors");
+  $inputlastName = qs("#lastName");
+  $lastNameErrors = qs("#lastNameErrors");
+  $formRegister = qs("#formRegister");
+  $email = qs("#email");
+  $emailErrors = qs("#emailErrors");
+  $password1 = qs("#password1");
+  $password1Errors = qs("#password1Errors");
+  $password2 = qs("#password2");
+  $password2Errors = qs("#password2Errors");
+  regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
+  regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
+  regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-  $inputfirstName.addEventListener("blur", function () {
+  $inputfirstName.addEventListener("blur", function () {    
     switch (true) {
       case !$inputfirstName.value.trim():
         $firstNameErrors.innerHTML = "Debes escribir tu nombre";
         $inputfirstName.classList.add("is-invalid");
         break;
-      /*case !regExAlpha.test($inputfirstName.value):
+      case !regExAlpha.test($inputfirstName.value):
         $firstNameErrors.innerHTML = "Debes ingresar un nombre válido";
         $inputfirstName.classList.add("is-invalid");
-        break;*/
+        break;
       default:
         $inputfirstName.classList.remove("is-invalid");
         $inputfirstName.classList.add("is-valid");
@@ -36,20 +36,20 @@ window.addEventListener("load", function () {
     }
   });
 
-  $inputLastName.addEventListener("blur", function () {
+  $inputlastName.addEventListener("blur", function () {
     console.log("hola");
     switch (true) {
-      case !$inputLastName.value.trim():
+      case !$inputlastName.value.trim():
         $lastNameErrors.innerHTML = "Debes escribir tu apellido";
-        $inputLastName.classList.add("is-invalid");
+        $inputlastName.classList.add("is-invalid");
         break;
-      /*case !regExAlpha.test($inputLastName.value):
+      case !regExAlpha.test($inputlastName.value):
         $lastNameErrors.innerHTML = "Debes ingresar un apellido válido";
-        $inputLastName.classList.add("is-invalid");
-        break;*/
+        $inputlastName.classList.add("is-invalid");
+        break;
       default:
-        $inputLastName.classList.remove("is-invalid");
-        $inputLastName.classList.add("is-valid");
+        $inputlastName.classList.remove("is-invalid");
+        $inputlastName.classList.add("is-valid");
         $lastNameErrors.innerHTML = "";
         break;
     }
@@ -123,7 +123,6 @@ window.addEventListener("load", function () {
         error = true;
       }
     }
-
     if (!error) {
       console.log("Todo bien");
       $formRegister.submit();
