@@ -128,59 +128,180 @@ a.text-agr-car {
 /*-----descripción producto-----*/
 
 .detalle-producto1 {
-  width: 80%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
 }
 
-div.texto-detalle ul li {
-  padding-top: 1em;
-  padding-left: 1em;
+div.texto-detalle {
+  
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+        width: 100%;
+
+
+      margin: 10px;
+
+
+        border: 5px solid var(--azulOscuro);
+       
+        background: #ffffff;
+
+     
+
 }
 
 .destacado {
   margin: 0.5em;
 }
 
-p.p-destacado {
-  margin-left: 0.5rem;
-  text-align: left;
+
+div.texto-detalle ul li {
+  padding-top: 0;
+  padding-bottom: 0.5em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }
+
+
+/*-------descuentos y horarios----------------*/
+
+
+.cuadrodesc{
+	/*width: 1100px;
+	margin: 50px auto;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;*/
+   display: flex;
+  /* flex-direction: column;*/
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+}
+
+.tarjeta-cuadrodesc{
+	margin: 10px;
+	-webkit-perspective: 800;
+	perspective: 800;
+    
+}
+
+.tarjeta{
+	width: 260px;
+	height: 260px;
+    
+	background: var(--naranja);
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: .7s ease;
+	transition: .7s ease;
+	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    
+}
+
+.adelante , .atras{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+
+}
+
+.adelante{
+	width: 100%;
+  
+   text-align: center;
+   
+}
+
+.atras{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+
+
+	color: #fff;
+	
+  background: var(--naranja);
+}
+
+.tarjeta-cuadrodesc:hover .tarjeta{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+
+
+
+
+
+.imgbox{
+ 
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  padding-top: 10px;
+}
+
+
+
 
 /*----------------hacer comentarios--------*/
 
-.comentarios {
-  width: 90%;
-  margin: 1em;
-}
 
-#comentarios1 {
-  font-weight: 700;
+
+
+
+
+
+.botonComentar{
+  background-color: #fff;
+  border: 1px solid #ff6000;
+  border-radius: 3px;
+  width: 110px;
+  text-decoration: none;
+  text-align: center;
   align-items: center;
+  height: 36px;
   display: flex;
-  margin: 0 0 1rem 0;
+  margin: auto;
+  transition: all .5s;
+  font-weight: normal;
+  margin-bottom: 5px;
+  padding: 5px;
+  cursor: pointer;
+  
 }
 
-.botcomentario {
-  border-bottom: var(--negro);
-  background-color: var(--naranja);
-  height: 3rem;
-  width: 5rem;
-}
 
-.comentarioletra {
-  color: var(--blanco);
-}
-
-#mensaje {
-  width: 70%;
-  height: 40px;
-}
-
-#comentarios {
-  align-items: center;
-}
-
-.comentarioletra {
-  color: var(--blanco);
+.botonComentar:hover {
+  background-color: #ff4500;
+  color: white;
+  transform: .5s;
+  opacity: 1;
 }
 
 /*--------comentarios destacados-------*/
@@ -212,7 +333,7 @@ p.p-destacado {
   width: 90%;
   display: flex;
   text-align: center;
-  margin: 1em;
+ 
 }
 
 .textcomentario {
@@ -221,8 +342,75 @@ p.p-destacado {
   align-items: center;
 }
 
-/*----------------productos----------*/
 
+/*------------*/
+
+#txtIdResultado{
+  width: 100%;
+  display: flex;
+  height: 50px;
+  border:none;
+
+}
+
+
+
+
+.mensajedecomentario{
+  display: none;
+  text-align: center;
+}
+
+
+.userESP {
+  width: 10%;
+  display: flex;
+  padding: 0.5em;
+}
+
+
+.seccioncomentariosESP{
+  border: solid 2px darkgrey ;
+  background-color: white;
+  width: 90%;
+  max-height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+
+  display:none;
+}
+
+
+
+.comentariosuserESP{
+  border-bottom: solid 0.5px darkgrey;
+  width: 100%;
+  display: flex;
+  height: 50px;
+  background-color: #fff;
+}
+
+
+
+#txtIdcomentar{
+  width: 70%;
+  display: flex;
+  height: 36px;
+ 
+  margin: 5px;
+ 
+}
+
+.comentarios{
+ 
+  display: flex;
+  padding: 10px; 
+  align-items: center;
+}
+
+
+/*--------------*/
 @media screen and (min-width: 782px) {
   .productDetail {
     background-color: var(--clarito);
@@ -230,7 +418,9 @@ p.p-destacado {
   .mainDetalleProducto {
     display: flex;
     width: 90%;
-    margin-left: 50px;
+    margin: auto;
+    
+    /*margin-left: 50px;*/
   }
   .pantalla-dividida {
     display: flex;
@@ -242,26 +432,24 @@ p.p-destacado {
     display: flex;
     width: 20%;
     background-color: var(--blanco);
+   
   }
   .agregar-carrito-der {
-    display: flex;
-    flex: 100%;
+   
+   
     text-align: center;
     background-color: var(--blanco);
   }
-  .agregar-carrito {
-    flex: 100%;
-  }
+  
   #boton-detalle {
     border-bottom: var(--negro);
     background-color: var(--naranja);
     width: 70%;
     margin-top: 3em;
   }
-  a {
-    text-decoration: none;
-    color: blue;
-  }
+
+ 
+
   .text-agr-car {
     margin: 2rem 0 2rem 0;
   }
@@ -273,42 +461,78 @@ p.p-destacado {
     color: var(--blanco);
   }
   /*--------descripcion de producto--------*/
-  .detalle-producto1 {
-    width: 60%;
-  }
+
+
+div.texto-detalle{
+
+  width: 100%;
+
+  margin: 10px;
+
+  border: 10px solid var(--azulOscuro);
+
+  display: flex;
+
+  flex-wrap:inherit;
+         
+  background: #ffffff;
+
+}
+
   div.texto-detalle ul li {
     padding-top: 1em;
-    padding-left: 2em;
+    padding-left: 1em;
   }
+
   .destacado {
-    font-weight: 400;
+    
     margin: 1em;
   }
-  p.p-destacado {
-    margin-left: 2rem;
-  }
+  
+/*-------descuentos y ahorros--------------*/
+
+
+.tarjeta{
+  width: 300px;
+  height: 300px;
+}
+
+
+
+
+/*-------comentarios----*/
+
   .comentarios {
+    width: 90%;
+  }
+ 
+ 
+  #txtIdcomentar{
     width: 70%;
+    display: flex;
+    height: 50px;
+    border:none;
+    margin: auto;
   }
-  #comentarios {
-    align-items: center;
+
+
+  .botonComentar{
+    width: 150px;
+    height: 46px;
   }
-  .botcomentario {
-    border-bottom: var(--negro);
-    background-color: var(--naranja);
-  }
-  #comentarios {
-    align-items: center;
-  }
+ 
   .comentarioletra {
     color: var(--blanco);
   }
   /*comentarios de usuarios*/
   .seccioncomentarios {
-    width: 75%;
-    margin: 0 0 0 1em;
+    width: 90%;
+    
   }
 }
+
+
+
 
 @media screen and (min-width: 1024px) {
   .pantalla-dividida2 {
@@ -317,8 +541,7 @@ p.p-destacado {
     background-color: var(--blanco);
   }
   .agregar-carrito-der {
-    display: flex;
-    flex: 100%;
+   
     text-align: center;
     background-color: var(--blanco);
   }
@@ -334,4 +557,46 @@ p.p-destacado {
   .text-agr-car2 {
     margin: 2rem 0 2rem 0;
   }
+
+/*---------descripcion y caracteristicas ----*/
+
+.detalle-producto1 {
+  width: 100%;
+  display: flex;
+  /*align-items:flex-start;
+  justify-content: flex-start;*/
+
+ 
+}
+
+div.texto-detalle{
+
+width: 80%;
+
+margin: 10px;
+
+  border: 10px solid var(--azulOscuro);
+
+/*margin-left: 4%;*/
+  display: flex;
+
+  flex-wrap:inherit;
+
+ background: var(--blanco);
+
+}
+
+/*--------descuentos y ahorros-------------------*/
+.tarjeta{
+  width: 260px;
+height: 260px;
+}
+
+
+/*-------comentarios----*/
+
+.comentarios {
+  width: 100%;
+}
+
 }

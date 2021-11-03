@@ -22,39 +22,39 @@
 
                     <div class="container1">
 
-
                         <ul class="fotoProducto">
                             <li>
-                                <a href="#img1" class="foto">   <img src="/imagenes/<%=ProductD.productsimage[0].name%>" alt=""></a>
+                                <a href="#img1" class="foto"> <img src="/imagenes/<%=ProductD.productsimage[0].name%>"
+                                        alt=""></a>
                             </li>
                             <li>
-                                <a href="#img2" class="foto"><img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[1].name : 'null'%>" alt=""></a>
+                                <a href="#img2" class="foto"><img src="/imagenes/<%=ProductD.productsimage[1]?.name %>"
+                                        alt=""></a>
                             </li>
                             <li>
-                                <a href="#img3" class="foto"><img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[2].name : 'null'%>" alt=""></a>
+                                <a href="#img3" class="foto"><img src="/imagenes/<%=ProductD.productsimage[2]?.name %>"
+                                        alt=""></a>
                             </li>
-                            <li>
-                                <a href="#img4" class="foto"><img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[3].name : 'null'%>" alt=""></a>
-                            </li>
+                           <li>
+                                <a href="#img4" class="foto"><img src="/imagenes/<%=ProductD.productsimage[3]?.name %>"
+                                        alt=""></a>
+                            </li> 
                         </ul>
-
 
                         <ul class="fotoMiniatura">
                             <li id="img1" class="foto2">
                                 <img src="/imagenes/<%=ProductD.productsimage[0].name%>" alt="">
                             </li>
                             <li id="img2" class="foto2">
-                                <img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[1].name : 'null'%>" alt="">
+                                <img src="/imagenes/<%=ProductD.productsimage[1]?.name %>" alt="">
                             </li>
-                            <li id="img3" class="foto2">
-                                <img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[2].name : 'null'%>" alt="">
+                       <li id="img3" class="foto2">
+                                <img src="/imagenes/<%=ProductD.productsimage[2]?.name %>" alt="">
                             </li>
-                            <li id="img4" class="foto2">
-                                <img src="/imagenes/<%=ProductD.productsimage[1] ? ProductD.productsimage[3].name : 'null'%>" alt="">
-                            </li>
+                              <li id="img4" class="foto2">
+                                <img src="/imagenes/<%=ProductD.productsimage[3]?.name %>" alt="">
+                            </li>  
                         </ul>
-
-
 
                     </div>
                 </section>
@@ -62,24 +62,26 @@
 
                 <section class="pantalla-divida2">
                     <div class="agregar-carrito-der">
-                        <div class="agregar-carrito">
+                     
                             <h4 class="text-agr-car">
                                 <%-ProductD.name%>
                             </h4>
 
                             <h4 class="text-agr-car">
                                 $
-                                <%-ProductD.price%>
+                                <%=toThousand(ProductD.price)%>
                             </h4>
 
-                            <a class="text-agr-car" href="formas-de-pago">Ver los medios de pago</a>
+                            <a class="text-agr-car" href="/formas-de-pago">Ver los medios de pago</a>
 
-                            <button id="boton-detalle"><a class="boton-d" href="productCart">COMPRAR AHORA</a></button>
+                            <button id="boton-detalle"><a class="boton-d" href="/user/productCart">COMPRAR
+                                    AHORA</a></button>
 
-                            <button id="boton-detalle"><a class="boton-d" href="">AGREGAR AL CARRITO</a></button>
+                            <button id="boton-detalle"><a class="boton-d" href="/user/productCart">AGREGAR AL
+                                    CARRITO</a></button>
                             <h5 class="text-agr-car2">Garantía de la tienda: 1 mes</h5>
                             <h5 class="text-agr-car2">Garantía de la fábrica: 12 meses</h5>
-                        </div>
+                        
                     </div>
                 </section>
             </main>
@@ -87,54 +89,137 @@
             <!------------Descripcion producto---------------->
             <section class="detalle-producto1">
                 <div class="texto-detalle">
-                    <h4 class="destacado">Caracteristicas</h4>
-                    <ul>
-                        <li>Tipo de impresora: Multifunción</li>
-                        <li>Tipo de impresión: Color</li>
-                        <li>Con WI-Fi : Sí</li>
-                        <li>Tecnología de impresión: Inyección de tinta</li>
-                        <li>Funciones de la impresora: Impresión, Copia, Escaneo</li>
-                    </ul>
-                    <h4 class="destacado">Especificaciones</h4>
-                    <p class="p-destacado">Lo que tenés que saber de este producto</p>
-                    <p class="p-destacado">Imprime, escanea y hace copias.</p>
-                    <p class="p-destacado"> Tecnología de impresión: inyección de tinta.</p>
-                    <p class="p-destacado"> Tiene entrada USB.</p>
-                    <p class="p-destacado">Cuenta con 2 bandejas.</p>
-                    <p class="p-destacado">Capacidad máxima de 350 hojas.</p>
-                    <p class="p-destacado">Soporta papel tamaño 3.5 x 3.5", 4 x 4 ", 4 x 6 ", 5 x 5 ", 5 x 7 ", 7 x 10 ", 8 x 10 ", Carta 8.5 x 11 ", Legal 8.5 x 14 ", Sobre U.S. Núm. 10.</p>
-                    <p class="p-destacado">Incluye accesorios.</p>
-                    <p class="p-destacado">Práctica y funcional tanto para uso personal como profesional.</p>
-                </div>
-            </section>
-            <!-------------------hacer comentarios------------------------->
-            <section class="comentarios">
-                <div>
-                    <label id="comentarios1" for="mensaje">Comentarios</label>
-                </div>
-                <div class="textcomentario">
-                    <textarea name="mensaje" placeholder="Su mensaje aquí" id="mensaje" cols="40" rows="1"></textarea>
-                    <button class="botcomentario"><a class="comentarioletra" href="">Enviar</a></button>
+
+                    <div>
+
+                        <h4 class="destacado">Caracteristicas</h4>
+                        <ul>
+                            <li>
+                                <%-ProductD.name%>
+                            </li>
+                            <li>Diponible en color <%-ProductD.color%>
+                            </li>
+                            <li>Este producto tiene garantia oficial con la marca <%-ProductD.marca%> </li>
+                            <li>Descripcion del producto: <%-ProductD.description%>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+
+                        <h4 class="destacado">Especificaciones</h4>
+                        <ul>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero</li>
+                            <li>Lorem ipsum dolor sit amet.</li>
+                            <li>Neotech ofrece varios modelos, para satisfacer las diversas necesidades de los clientes
+                            </li>
+                            <li>Elija el que mejor se adapte a sus necesidades</li>
+                        </ul>
+                    </div>
+
                 </div>
             </section>
 
-            <!------------------comentarios destacados------------------------>
+
+            <!----------------descuentos y horarios ------------------------------>
+
+
+
+            <div class="cuadrodesc">
+                <div class="tarjeta-cuadrodesc">
+                    <div class="tarjeta">
+                        <div class="adelante">
+                            <img class="imgbox" src="/imagenes/horarios.png" alt="">
+                            <h4>HORARIOS</h4>
+                        </div>
+                        <div class="atras">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
+                                suscipit, aspernatur!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tarjeta-cuadrodesc">
+                    <div class="tarjeta">
+                        <div class="adelante">
+
+                            <img class="imgbox" src="/imagenes/envio-gratis.png" alt="">
+                            <h4>ENVIO GRATIS</h4>
+                        </div>
+                        <div class="atras">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
+                                suscipit, aspernatur!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="tarjeta-cuadrodesc">
+                    <div class="tarjeta">
+                        <div class="adelante">
+                            <img class="imgbox" src="/imagenes/pago.png" alt="">
+                            <h4>CUOTAS</h4>
+                        </div>
+                        <div class="atras">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
+                                suscipit, aspernatur!</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tarjeta-cuadrodesc">
+                    <div class="tarjeta">
+                        <div class="adelante">
+                            <img class="imgbox" src="/imagenes/tarjetas.png" alt="">
+                            <h4>FORMAS DE PAGO</h4>
+                        </div>
+                        <div class="atras">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ex velit beatae. Illum,
+                                suscipit, aspernatur!</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!---------------------------prueba2---------------------------->
+            <h5>comentarios</h5>
+            
+            <div class="comentarios">
+
+                    <input type="text" placeholder="ingrese comentario" id="txtIdcomentar">
+
+                    <a class="botonComentar" onclick="comentar()" id="txtmostrar">PUBLICAR COMENTARIO</a>
+
+                    
+                </div>
+                
+                <h5 class="mensajedecomentario">Tu comentario fue publicado!</h5>
+
+                <!------------------comentarios destacados------------------------>
+                <div class="seccioncomentariosESP">
+                    <div class="comentariosuserESP">
+
+                        <img class="userESP" src="/imagenes/usuaria.svg" alt="">
+
+                        <input type="text" readonly placeholder="" id="txtIdResultado">
+                    </div>
+                </div>
+            
+
+    
+
             <div class="seccioncomentarios">
                 <div class="comentariosuser">
+                    <img class="user" src="/imagenes/usuario.svg" alt="">
+                    <p class="usercom">Lorem ipsum dolor sit amet consectetur.</p>
+                </div>
+                <div class="comentariosuser">
                     <img class="user" src="/imagenes/usuaria.svg" alt="">
                     <p class="usercom">Lorem ipsum dolor sit amet.</p>
                 </div>
                 <div class="comentariosuser">
                     <img class="user" src="/imagenes/usuario.svg" alt="">
-                    <p class="usercom">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="comentariosuser">
-                    <img class="user" src="/imagenes/usuaria.svg" alt="">
-                    <p class="usercom">Lorem ipsum dolor sit amet.</p>
-                </div>
-                <div class="comentariosuser">
-                    <img class="user" src="/imagenes/usuario.svg" alt="">
-                    <p class="usercom">Lorem ipsum dolor sit amet.</p>
+                    <p class="usercom">Lorem ipsum dolor sit amet consectetur.</p>
                 </div>
 
                 <div class="comentariosuser">
@@ -143,12 +228,12 @@
                 </div>
                 <div class="comentariosuser">
                     <img class="user" src="/imagenes/usuario.svg" alt="">
-                    <p class="usercom">Lorem ipsum dolor sit amet.</p>
+                    <p class="usercom">Lorem ipsum dolor sit amet consectetur.</p>
                 </div>
             </div>
 
 
-
+            </div>
 
             <!------------------------------productos--------------------------------->
             <section class="general-products " style="margin: 60px auto ;">
@@ -160,6 +245,7 @@
             <%- include('./partials/footer')%>
 
     </body>
+    <script src="/js/comentario.js" defer></script>
     <script src="/js/product-slider.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
