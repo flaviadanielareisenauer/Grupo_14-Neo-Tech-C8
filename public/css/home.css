@@ -5,17 +5,18 @@
 }
 
 .body::-webkit-scrollbar {
-    width: 9px;
+    width: 11px;
 }
 
 .body::-webkit-scrollbar-thumb {
     background-color: #070d2b;
     border-radius: 5px;
-    border: 1px solid white;
+    border: 2px solid white;
 }
 
 .back-home-container {
     position: relative;
+    display: none;
 }
 
 .back-home {
@@ -199,7 +200,7 @@ p {
     width: 90%;
     height: 50px;
     border: 1px solid #c4c4c4;
-    border-radius: 1px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -392,6 +393,8 @@ p {
         margin: 15px auto 0;
         width: 80%;
         height: 60px;
+        border: 1px solid #c4c4c4;
+        border-radius: 5px;
     }
     .icon li:nth-child(2n) {
         display: none;
@@ -449,7 +452,7 @@ p {
     .producto2 {
         display: block;
         width: 160px;
-        height: 270px;
+        height: 280px;
         justify-content: space-between;
         box-shadow: 0px 3px 2px #c4c4c4;
         transition: all .5s ease;
@@ -645,19 +648,23 @@ p {
     .producto {
         width: 100%;
         max-width: 225px;
-        height: 320px;
+        height: 380px;
         cursor: pointer;
         justify-content: space-evenly;
         box-shadow: 0px 3px 2px #c4c4c4;
-        margin: 15px 25px 0;
+        margin: 15px 15px 0;
+        transition: .6s;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
     .producto:hover {
-        transform: translateY(-8px);
+        transform: translateY(-1px);
         border: 1px solid #ff6000;
         box-shadow: 0 0 1px #ff6000, 0 0 2px #ff6000, 0 0 2px #ff6000;
     }
     .img-container {
-        height: 120px;
+        height: 180px;
         width: 100%;
         margin-bottom: 20px;
     }
@@ -670,12 +677,6 @@ p {
     }
     .producto p {
         font-size: 1rem;
-    }
-    .producto h4,
-    .producto2 h4 {
-        font-size: 2rem;
-        margin: 15px 0 15px;
-        text-align: center;
     }
     .producto2:last-child {
         margin-right: 0;

@@ -1,0 +1,10 @@
+#products-results .products-cartAll {
+    width: 90%;
+    height: 160px;
+    background-color: white;
+    margin: auto;
+    margin: 2px auto;
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+}

@@ -43,7 +43,7 @@ body::-webkit-scrollbar-thumb {
     height: 60px;
     padding: 10px;
     border-radius: 4px;
-    margin-bottom: 16px;
+    margin-top: 16px;
     border: 1px solid #d9d9d9;
     color: black;
     display: flex;
@@ -79,6 +79,12 @@ i.pencil {
     right: 30px;
 }
 
+.errorMessage {
+    font-size: .8rem;
+    color: red;
+    line-height: 2px;
+}
+
 .profile-box {
     margin: auto;
     width: 100%;
@@ -110,6 +116,7 @@ i.pencil {
     border: 1px solid #d9d9d9;
     border-radius: 4px;
     color: grey;
+    margin-top: 16px;
 }
 
 .input-container option {
@@ -192,7 +199,7 @@ i.pencil {
 
 #avatarProfile {
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: 50%;
 }
 
@@ -210,6 +217,9 @@ i.pencil {
 @media screen and (max-width:856px) {
     .input-container {
         height: 40px;
+    }
+    .profile-box {
+        margin-top: 40px;
     }
     .controls {
         width: 100%;

@@ -8,10 +8,31 @@
         <%- include("./partials/header")%>
             <div class="products-general">
                 <div class="products-category-container">
+                    <div class="searchAll-container"> <input type="text" class="searchAll"></div>
 
+                    <h4 class="h4-category">Categorías
+                    </h4>
+                    <%Category.forEach(category => {%>
+                        <p class="product-category-item">
+                            <a href="/allProducts/<%-category.id%>" class="category-select">
+                                <% if(category.id == req){%>
+                                    <p class="dark-select">
+                                        <%- category.name%>
+                                    </p>
+
+                                    <%}else{%>
+                                        <%- category.name%>
+                                            <%}%>
+
+
+                            </a>
+
+                        </p>
+
+                        <%})%>
                 </div>
 
-                <div class="products-container">
+                <div class="products-container" id="products-results">
                     <%result.forEach(product=> {%>
 
                         <div class="products-cartAll">
@@ -28,12 +49,7 @@
                                         <%- product.discount%>
                                     </p>
                                     <div class="button-all-container">
-                                        <div class="button-all">
-                                            <a href="">
-                                                <p>Comprar</p>
-                                            </a>
 
-                                        </div>
                                         <div class="button2-all">
                                             <a href="/user/productCart">
                                                 <p>

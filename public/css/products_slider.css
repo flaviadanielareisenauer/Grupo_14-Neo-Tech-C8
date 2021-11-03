@@ -30,6 +30,40 @@
     display: none;
 }
 
+.description-product-cart {
+    width: 100%;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.price-product-slider {
+    font-weight: 400;
+}
+
+.price-product-slider span.price-no-discount {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+p.price-no-discount {
+    text-decoration: none;
+}
+
+.slider-priceanddiscount-container {
+    padding-left: 5px;
+}
+
+.real-price-slider {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.discount-slider {
+    color: #ff6000;
+}
+
 @media screen and (min-width: 1024px) {
     .productSlide {
         width: 20%;

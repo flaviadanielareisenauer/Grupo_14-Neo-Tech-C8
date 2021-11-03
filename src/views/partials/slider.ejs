@@ -17,26 +17,27 @@
 
         <% Product.forEach(Product => {%>
             <article class="producto ">
-                <%if (Product.discount > 0) {%>
-                    <div class="productDiscount ">
-                        <%- Product.discount %>% OFF</div>
 
-                    <%}%>
 
-                        <div class="img-container"><img src="/imagenes/<%-Product.productsimage[0].name %>" alt=" "></div>
-                        <p>
-                            <%= Product.description %>
-                        </p>
-                        <h4>
-                            $
-                            <%=toThousand(Product.price)%>
+                <div class="img-container"><img src="/imagenes/<%-Product.productsimage[0].name %>" alt=" "></div>
+                <p class="description-product-cart">
+                    <%= Product.description %>
+                </p>
+                <h4 class="price-product-slider">
+                    $
+                    <%-toThousand(Math.round(Product.price - Product.price * Product.discount /100))  %>
+                </h4>
+                <div class="slider-priceanddiscount-container"> <span class="real-price-slider"> $<%-toThousand(Product.price)%></span>
+                    <%if (Product.discount > 0) {%>
+                        <span class="discount-slider"><%- Product.discount %>% OFF</span>
+                        <%}%>
+                </div>
 
-                        </h4>
-                        <a href="/products/detail/<%- Product.id%>">
-                            <div class="button">
-                                <p>COMPRAR YA</p>
-                            </div>
-                        </a>
+                <a href="/products/detail/<%- Product.id%>">
+                    <div class="button">
+                        <p>COMPRAR YA</p>
+                    </div>
+                </a>
             </article>
             <% }) %>
 

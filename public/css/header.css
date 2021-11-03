@@ -261,9 +261,12 @@ ul.show {
 
 @media screen and (max-width: 926px) {
     .prueba {
-        height: 0;
+        height: 67px;
     }
     .menu-top {
+        height: 80px;
+    }
+    .menu-top2 {
         height: 80px;
     }
     .menu-bottom {
@@ -334,7 +337,7 @@ ul.show {
         font-size: 2.5rem;
     }
     .menu-items {
-        position: absolute;
+        position: fixed;
         width: 100vw;
         height: 60%;
         background-color: #070d2b;
@@ -343,7 +346,7 @@ ul.show {
         transition: all 0.4s;
         flex-direction: column;
         margin: 0;
-        z-index: 999;
+        z-index: 1200;
     }
     .menu-items li {
         display: flex;
