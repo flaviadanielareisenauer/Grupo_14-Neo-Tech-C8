@@ -12,55 +12,56 @@ CREATE TABLE `products` (
   `price` int(11) NOT NULL,
   `color` varchar(60) DEFAULT NULL,
   `code` varchar(60) NOT NULL,
+  `marca` varchar(40) DEFAULT NULL,
   `createdAt` timestamp NULL DEFAULT NULL,
   `updatedAt` timestamp NULL DEFAULT NULL,
-   `categoryId` int(11) NOT NULL,
+  `categoryId` int(11) NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `products_id_IDX` (`id`,`name`,`description`,`discount`,`price`,`color`,`code`) USING BTREE
+  KEY `products_id_IDX` (`id`,`name`,`description`,`discount`,`price`,`color`,`code`,`marca`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 INSERT INTO products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(41, 'MONITOR 24" SAMSUNG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 35, 22999, 'Negro', '100', '2021-10-20 18:21:12', '2021-10-20 18:21:12', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(41, 'MONITOR 24" SAMSUNG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 35, 22999, 'Negro', '100', 'SAMSUNG', '2021-10-20 18:21:12', '2021-10-20 18:21:12', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(42, 'MONITOR 28" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 32999, 'Negro', '101', '2021-10-20 18:29:13', '2021-10-20 18:29:13', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(42, 'MONITOR 28" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 32999, 'Negro', '101', 'SAMSUNG', '2021-10-20 18:29:13', '2021-10-20 18:29:13', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(43, 'MONITOR 27" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 30, 45999, 'Negro', '102', '2021-10-20 18:31:40', '2021-10-20 18:31:40', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(43, 'MONITOR 27" SAMSUNG ULTRA HD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 30, 45999, 'Negro', '102', 'SAMSUNG', '2021-10-20 18:31:40', '2021-10-20 18:31:40', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(44, 'MONITOR 25 LG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 15999, 'Negro', '103', '2021-10-20 18:34:55', '2021-10-20 18:34:55', 11);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(44, 'MONITOR 25 LG', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 15999, 'Negro', '103', 'LG', '2021-10-20 18:34:55', '2021-10-20 18:34:55', 11);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(45, 'MONITOR GAMER 27"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 36000, 'Negro', '105', '2021-10-20 18:37:40', '2021-10-20 18:37:40', 11);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(45, 'MONITOR GAMER 27"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 36000, 'Negro', '105', NULL, '2021-10-20 18:37:40', '2021-10-20 18:37:40', 11);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(47, 'TV 50" TCL SMART UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 28000, 'Negro', '108', '2021-10-20 19:09:07', '2021-10-20 19:09:07', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(47, 'TV 50" TCL SMART UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 28000, 'Negro', '108', 'TCL', '2021-10-20 19:09:07', '2021-10-20 19:09:07', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(48, 'TV SAMSUNG 65" UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 135000, 'Negro', '200', '2021-10-20 19:13:32', '2021-10-20 19:13:32', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(48, 'TV SAMSUNG 65" UHD', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 135000, 'Negro', '200', 'SAMSUNG', '2021-10-20 19:13:32', '2021-10-20 19:13:32', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(49, 'SAMSUNG TV LED 50 SMART', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 85000, 'Negro', '139', '2021-10-20 19:16:19', '2021-10-20 19:16:19', 10);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(49, 'SAMSUNG TV LED 50 SMART', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 85000, 'Negro', '139', 'SAMSUNG', '2021-10-20 19:16:19', '2021-10-20 19:16:19', 10);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(50, 'NOTEBOOK CX 2EN1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 42200, 'BLANCO', '200', '2021-10-20 19:25:43', '2021-10-20 19:25:43', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(50, 'NOTEBOOK CX 2EN1', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 42200, 'BLANCO', '200', NULL, '2021-10-20 19:25:43', '2021-10-20 19:25:43', 4);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(51, 'NOTEBOOK HP 14" G8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 51000, 'Negro', '201', '2021-10-20 19:34:59', '2021-10-20 19:34:59', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(51, 'NOTEBOOK HP 14" G8', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 10, 51000, 'Negro', '201', 'HP', '2021-10-20 19:34:59', '2021-10-20 19:34:59', 4);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(52, 'NOTEBOOK HP 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 45000, 'Negro', '205', '2021-10-20 19:37:08', '2021-10-20 19:37:08', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(52, 'NOTEBOOK HP 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 45000, 'Negro', '205', 'HP', '2021-10-20 19:37:08', '2021-10-20 19:37:08', 4);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(53, 'NOTEBOOK DELL 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 45000, 'GRIS', '208', '2021-10-20 19:49:04', '2021-10-20 19:49:04', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(53, 'NOTEBOOK DELL 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 45000, 'GRIS', '208', 'DELL', '2021-10-20 19:49:04', '2021-10-20 19:49:04', 4);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(54, 'NOTEBOOK KELYX 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 78000, 'Negro', '209', '2021-10-20 19:51:28', '2021-10-20 19:51:28', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(54, 'NOTEBOOK KELYX 14"', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 25, 78000, 'Negro', '209', 'KELLYX', '2021-10-20 19:51:28', '2021-10-20 19:51:28', 4);
 INSERT INTO neotech.products
-(id, name, description, discount, price, color, code, createdAt, updatedAt, categoryId)
-VALUES(55, 'NOTEBOOK ASPIRE 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 69000, 'Negro', '209', '2021-10-20 19:55:14', '2021-10-20 19:55:14', 4);
+(id, name, description, discount, price, color, code, marca, createdAt, updatedAt, categoryId)
+VALUES(55, 'NOTEBOOK ASPIRE 3', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, nobis?', 20, 69000, 'Negro', '209', 'ASPIRE', '2021-10-20 19:55:14', '2021-10-20 19:55:14', 4);
 
 
 

@@ -33,7 +33,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: true,
         },
         marca: {
-            type: dataTypes.STRING(100),
+            type: dataTypes.STRING(40),
             allowNull: true
         }
 
