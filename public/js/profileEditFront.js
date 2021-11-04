@@ -19,7 +19,7 @@ window.addEventListener("load", function() {
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
 
-    console.log("putoooooooo")
+
     $email.addEventListener("blur", function() {
         switch (true) {
             case !$email.value.trim():
