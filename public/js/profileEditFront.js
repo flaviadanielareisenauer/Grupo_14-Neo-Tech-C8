@@ -78,25 +78,6 @@ window.addEventListener("load", function() {
         }
     });
 
-
-    /*    $profileEditForm.addEventListener('submit', function(event) {
-           let error = false;
-           event.preventDefault()
-
-           let elementosForm = this.elements
-
-           for (let index = 0; index < elementosForm.length - 1; index++) {
-               if (elementosForm[index].value == "") {
-                   elementosForm[index].classList.add('is-invalid');
-                   $submitErrors.innerHTML = "Los campos señalados son obligatorios";
-                   error = true;
-               }
-           }
-
-       }) */
-
-
-
     fetch('https://apis.datos.gob.ar/georef/api/provincias')
         // fetch('https://apis.datos.gob.ar/georef/api/municipios?provincia=22&campos=id,nombre&max=100')
 
