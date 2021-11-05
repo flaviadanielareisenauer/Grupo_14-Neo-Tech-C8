@@ -1,6 +1,6 @@
-//const dataBase = require('../data/dataBase')
+const { validationResult } = require('express-validator')
 const db = require("../database/models");
-//const { products, writeJson } = require('../data/dataBase')
+
 
 module.exports = {
     perfil: (req, res) => {
@@ -40,6 +40,11 @@ module.exports = {
     },
 
     crear: (req, res) => {
+
+        let errors = validationResult(req)
+        if (errors.isEmpty()) {
+
+
         let arrayImages = [];
         if (req.files) {
             req.files.forEach((image) => {
@@ -71,6 +76,23 @@ module.exports = {
         });
 
         res.redirect("/admin/products");
+
+    } else {
+
+        db.Categories.findAll()
+            .then((categorias) => {
+                res.render("admin/admin-carga", {
+                    errors: errors.mapped(),
+                    old:req.body,
+                    session: req.session,
+                    categorias
+                })
+            })
+
+    }
+
+
+
     },
     edit: (req, res) => {
         let categories = db.Categories.findAll();
@@ -95,6 +117,11 @@ module.exports = {
     },
 
     update: (req, res) => {
+
+        let errors = validationResult(req)
+
+        if (errors.isEmpty()) {
+
         let { name, description, discount, price, color, code, categoryId, marca } =
         req.body;
 
@@ -137,7 +164,28 @@ module.exports = {
         });
         res.redirect("/admin/products");
 
+        } else {
+            const categories = db.Categories.findAll();
+            const product = db.Products.findOne({
+                where: { id: req.params.id },
 
+                include: [{ association:"categories"}]
+
+            })
+            Promise.all([categories, product])
+
+            .then(([category, Product]) => {
+                console.log(category)
+                res.render("admin/admin-edit", {
+                    errors: errors.mapped(),
+                    old: req.body,
+                    session: req.session,
+                    Product,
+                    category
+                })
+            }).catch(error => { console.log(error) })
+        }
+    
 
 
     },
