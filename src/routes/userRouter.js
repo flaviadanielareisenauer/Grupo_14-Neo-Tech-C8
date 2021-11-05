@@ -31,7 +31,7 @@ router.post(
 );
 
 /* GET - LOGIN */
-router.get("/login", validationLogin, checkUserLogin, profileLogin);
+router.get("/login", checkUserLogin, validationLogin, profileLogin);
 router.post("/login", validationLogin, profileLogin);
 router.get("/logout", checkLog, logout);
 

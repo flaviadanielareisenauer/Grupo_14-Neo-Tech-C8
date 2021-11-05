@@ -78,6 +78,7 @@ window.addEventListener("load", function() {
         }
     });
 
+
     fetch('https://apis.datos.gob.ar/georef/api/provincias')
         // fetch('https://apis.datos.gob.ar/georef/api/municipios?provincia=22&campos=id,nombre&max=100')
 

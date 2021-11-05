@@ -30,15 +30,15 @@
                         <form action="/user/login" method="POST" class="form__login">
                             <h2>Iniciar sesión</h2>
                             <div id="emailValidContain">
-                                <input type="e-mail" placeholder="Ingrese su correo o nombre de ususario" name="emailLog" id="email">
-                                <span class="errorMessage" id="emailErrors"></span>
+                                <input type="e-mail" placeholder="Ingrese su correo o nombre de ususario" name="emailLog" id="emailLog">
+                                <span class="mensajeError" id="emailErrorsLog"></span>
                                 <% if (locals.errors && errors.emailLog) { %>
                                     <small class="text-validation"><%= errors.emailLog.msg %> </small>
                                     <% } %>
                             </div>
                             <div>
                                 <input type="password" placeholder="Contraseña" name="passLog" id="passwordLog">
-                                <span class="errorMessage" id="passwordErrorsLog"></span>
+                                <span class="mensajeError" id="passwordErrorsLog"></span>
                                 <% if (locals.errors && errors.passLog) { %>
                                     <small class="text-validation"><%= errors.passLog.msg %> </small>
                                     <% } %>
