@@ -99,7 +99,7 @@
                                 <div class=" input-container ">
                                     <div class="controls" type="text" name="province" placeholder="Provincia">
                                         <p class="userInformation">
-                                            <%- user.addresses[0].province%>
+                                            <%- user.addresses[0] ? user.addresses[0].province: "" %>
                                         </p>
                                         <p class="userDescription">Provincia</p>
                                     </div>
@@ -107,7 +107,7 @@
                                 <div class="input-container ">
                                     <div class="controls" type="text" name="location" placeholder="Localidad">
                                         <p class="userInformation">
-                                            <%- user.addresses[0].location%>
+                                            <%- user.addresses[0] ? user.addresses[0].location : ""%>
                                         </p>
                                         <p class="userDescription">Localidad</p>
                                     </div>

@@ -1,8 +1,7 @@
 module.exports = (req, res, next) => {
     if (req.session.user) {
-        next();
+        res.redirect("/");
     } else {
-        res.redirect("/user/register");
+        next();
     }
-
 };

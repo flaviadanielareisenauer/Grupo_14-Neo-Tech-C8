@@ -79,8 +79,11 @@ module.exports = {
             where: { productId: req.params.id },
         });
 
-        Promise.all([categories, Product, Image]).then(
+        Promise.all([categories, Product, Image])
+
+        .then(
             ([category, Product, Image]) => {
+                console.log(Image.name)
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
@@ -111,8 +114,14 @@ module.exports = {
         }).catch((err) => {
             console.log(err);
         });
+        let images = [];
+        db.ProductsImage.findOne({
+                where: { productId: req.params.id }
+            })
+            .then((image) => {
+                images = image.name
+            })
 
-        let images = "";
         if (req.files) {
             req.files.forEach((image) => {
                 images = "nuevos/" + image.filename;
@@ -127,6 +136,10 @@ module.exports = {
             },
         });
         res.redirect("/admin/products");
+
+
+
+
     },
     eliminarProducto: (req, res) => {
         db.ProductsImage.destroy({

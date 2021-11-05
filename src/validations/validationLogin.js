@@ -3,27 +3,48 @@ let bcrypt = require("bcryptjs");
 const db = require("../database/models");
 
 module.exports = [
-  check("emailLog")
+    check('emailLog')
     .notEmpty()
-    .withMessage("Debes ingresar una dirección de correo")
-    .bail()
-    .isEmail()
-    .withMessage("Debes ingresar un correo válido"),
+    .withMessage('Debes ingresar una dirección de correo').bail().isEmail()
+    .withMessage('Debes ingresar un correo válido'),
+    body('emailLog')
+    .custom((value, { req }) => {
+        return db.User.findOne({
+                where: {
+                    email: req.body.emailLog
+                }
+            })
+            .then((email) => {
+                if (email) {
+                    return true
 
-  body("custom").custom((value, { req }) => {
-    const { emailLog, passLog } = JSON.parse(JSON.stringify(req.body));
-    return db.User.findOne({
-      where: {
-        email: emailLog,
-      },
+                } else {
+                    return Promise.reject("Este correo aún no ha sido registrado")
+                }
+            })
+
+    }),
+
+
+    check('passLog')
+    .notEmpty()
+    .withMessage('Debes ingresar una contraseña'),
+
+    body('passLog')
+    .custom((value, { req }) => {
+        return db.User.findOne({
+                where: {
+                    email: req.body.emailLog
+                }
+            })
+            .then(user => {
+                if (!bcrypt.compareSync(req.body.passLog, user.dataValues.password)) {
+                    return Promise.reject()
+                }
+            })
+            .catch((err) => {
+                return Promise.reject("Email o contraseña incorrectos")
+            })
     })
-      .then((user) => {
-        if (!bcrypt.compareSync(passLog, user.dataValues.password)) {
-          return Promise.reject();
-        }
-      })
-      .catch((error) => {
-        return Promise.reject("Email o contraseña incorrecta");
-      });
-  }),
-];
+
+]

@@ -12,24 +12,22 @@ window.addEventListener("load", function() {
     const $profileEditForm = qs('#profileEditForm');
     const $submitErrors = qs('#submitErrors');
     const $inputSelectProvince = qs('#inputSelectProvince');
-
     const $inputSelectCity = qs('#inputSelectCity');
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
     regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
 
-
     $email.addEventListener("blur", function() {
         switch (true) {
             case !$email.value.trim():
                 $email.style.border = "1px solid red"
-                $emailErrors.innerHTML = "*Debes ingresar un email";
+                $emailErrors.innerHTML = "El campo email no puede ir vacío";
                 $email.classList.add("is-invalid");
                 break;
             case !regExEmail.test($email.value):
                 $email.style.border = "1px solid red"
-                $emailErrors.innerHTML = "*Debes ingresar un email válido";
+                $emailErrors.innerHTML = "Debes ingresar un email válido";
                 $email.classList.add("is-invalid");
                 break;
             default:
@@ -44,12 +42,12 @@ window.addEventListener("load", function() {
         switch (true) {
             case !$firstName.value.trim():
                 $firstName.style.border = "1px solid red"
-                $firstNameErrors.innerHTML = "*Debes escribir tu apellido";
+                $firstNameErrors.innerHTML = "El campo nombre no puede ir vacío";
                 $firstName.classList.add("is-invalid");
                 break;
             case !regExAlpha.test($inputfirstName.value):
                 $firstName.style.border = "1px solid red"
-                $firstNameErrors.innerHTML = "*Debes ingresar un apellido válido";
+                $firstNameErrors.innerHTML = "Debes ingresar un nombre válido";
                 $firstName.classList.add("is-invalid");
                 break;
             default:
@@ -64,12 +62,12 @@ window.addEventListener("load", function() {
         switch (true) {
             case !$lastName.value.trim():
                 $lastName.style.border = "1px solid red"
-                $lastNameErrors.innerHTML = "*Debes escribir tu nombre";
+                $lastNameErrors.innerHTML = "El campo apellido no puede ir vacío";
                 $lastName.classList.add("is-invalid");
                 break;
-            case !regExAlpha.test($inputfirstName.value):
+            case !regExAlpha.test($inputlastName.value):
                 $lastName.style.border = "1px solid red"
-                $lastNameErrors.innerHTML = "*Debes ingresar un nombre válido";
+                $lastNameErrors.innerHTML = "Debes ingresar un apellido válido";
                 $lastName.classList.add("is-invalid");
                 break;
             default:
@@ -80,25 +78,22 @@ window.addEventListener("load", function() {
         }
     });
 
-    /* 
-        $profileEditForm.addEventListener("submit", function(event) {
-            let error = false;
-            event.preventDefault();
-            console.log($profileEditForm.elements);
-            let elementForm = this.elements;
 
-            for (let i = 0; i < elementForm.length - 1; i++) {
-                if (elementForm[i].value == "") {
-                    elementForm[i].classList.add("is-invalid");
-                    $submitErrors.innerHTML = "Los campos señalados son obligatorios";
-                    error = true;
-                }
-            }
-            if (!error) {
+    /*    $profileEditForm.addEventListener('submit', function(event) {
+           let error = false;
+           event.preventDefault()
 
-                $profileEditForm.submit();
-            }
-        }); */
+           let elementosForm = this.elements
+
+           for (let index = 0; index < elementosForm.length - 1; index++) {
+               if (elementosForm[index].value == "") {
+                   elementosForm[index].classList.add('is-invalid');
+                   $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                   error = true;
+               }
+           }
+
+       }) */
 
 
 
