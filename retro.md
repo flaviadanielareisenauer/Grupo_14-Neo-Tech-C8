@@ -134,3 +134,25 @@
 - **Hacer menos:**
 
 -
+
+# Sprint 7: Retrospectiva
+
+**Empezar a hacer:**
+
+- Ir adelantando algunos trabajos conforme las herramientas que nos otorga el Sprint.
+
+**Hacer mas:**
+
+- Prepararnos mejor antes del comienzo de un nuevo Sprint.
+- Ser mas sinceros con los trabajos a la hora de cumplirlos (un caso en específico).
+
+**Seguir haciendo:**
+
+- Resolver priomero las tareas que requieran atención inmediata.
+- Agregar funcionalidades extras a medida que las vamos aprendiendo.
+
+**Dejar de hacer:**
+
+- **Hacer menos:**
+
+-

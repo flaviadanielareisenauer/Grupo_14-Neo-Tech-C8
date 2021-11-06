@@ -67,6 +67,11 @@
   gap: 10px;
 }
 
+.imagenes_ad .mensajeError {
+  margin-bottom: 15px;
+}
+
+
 /* FORM INPUT */
 
 .inputcontainer,
@@ -206,6 +211,7 @@ select.inputselect:focus {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
-    gap: 2rem;
+    flex-direction: column;
+    align-items: center
   }
 }
