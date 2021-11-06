@@ -25,35 +25,35 @@
                         <div class="box">
                             <h4 class="h4-adm">Editar de productos</h4>
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="name" placeholder="Nombre Producto" value="<%=locals.old? old.name: Product.name%>">
+                                <input class="inputstyle" type="text" name="name" placeholder="Nombre Producto" value="<%=Product.name%>">
                             </div>
                             <% if(locals.errors && errors.name){ %>
-                                <small class="text-validation"><%= errors.name.msg  %> </small>
-                             <% } %>   
+                                <small class="text-validation"><%= errors.name.msg%> </small>
+                                <% } %>
 
 
 
-                            <div class="inputcontainer">
-                                <textarea class="textarea__adm " name="description" rows="15 " cols="50 "><% Product.description %> </textarea>
-                            </div>
+                                    <div class="inputcontainer">
+                                        <textarea class="textarea__adm " name="description" rows="15 " cols="50 "><%-Product.description %> </textarea>
+                                    </div>
+                                    <% if(locals.errors && errors.description){ %>
+                                        <small class="text-validation"><%= errors.description.msg%> </small>
+                                        <% } %>
 
-                            <div class="inputcontainer">
-                                <select name="categoryId" class="inputselect ">
-                                    <% category.forEach(category => {%>
-                                        <option hidden selected></option>
-                                            <option value="<% category.id %>">
-                                                <%- category.name %></option>
-                                            <%})%>
+                                            <div class="inputcontainer">
+                                                <select name="categoryId" class="inputselect">
+                                                    <% category.forEach(category => {%>
+                                                        <option hidden selected><%- category.id = Product.categoryId ? Product.categories.name : null %></option>
+                                                            <option value="<%-category.id%>">
+                                                                <%- category.name %></option>
+                                                            <%})%>
                                     </select>
 
-                            </div>
-                            <% if(locals.errors && errors.categoryId){ %>
-                                <small class="text-validation"><%= errors.categoryId.msg  %> </small>
-                             <% } %> 
+                                            </div>
 
-                            
-                            <div class="inputcontainer">
-                                <select name="discount" class="inputselect ">
+
+                                            <div class="inputcontainer">
+                                                <select name="discount" class="inputselect ">
                                     <option value="<%- Product.discount%> " hidden selected>Descuento</option>
                                     <option value="10 ">10%</option>
                                     <option value="20 ">20%</option>
@@ -62,39 +62,41 @@
                                     <option value="35 ">35%</option>
                                     <option value="40 ">40%</option>
                                 </select>
-                            </div>
-                            
+                                            </div>
+
                         </div>
 
                         <div class="box">
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="marca" placeholder="Marca" value=" <%=locals.old? old.marca: Product.marca%>">
+                                <input class="inputstyle" type="text" name="marca" placeholder="Marca" value="<%=Product.marca%>">
+
                             </div>
 
+
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="code" placeholder="Código" value="<%=locals.old? old.code: Product.code%>">
+                                <input class="inputstyle" type="text" name="code" placeholder="Código" value="<%= Product.code%>">
                             </div>
                             <% if(locals.errors && errors.code){ %>
-                                <small class="text-validation"><%= errors.code.msg  %> </small>
-                             <% } %>   
+                                <small class="text-validation"><%= errors.code.msg%> </small>
+                                <% } %>
+                                    <div class="inputcontainer">
+                                        <input class="inputstyle" type="text" name="color" placeholder="Color" value=" <%= Product.color%> ">
+                                    </div>
 
-                            <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="color" placeholder="Color" value=" <%=locals.old? old.color : Product.color%> ">
-                            </div>
+                                    <div class="inputcontainer">
+                                        <input class="inputstyle" type="number" name="price" placeholder="Precio" value="<%=Product.price%>">
 
-                            <% if(locals.errors && errors.price){ %>
-                                <small class="text-validation"><%= errors.price.msg  %> </small>
-                             <% } %>   
-                            <div class="inputcontainer">
-                                <input class="inputstyle" type="number" name="price" placeholder="Precio" value="<%=locals.old? old.price: Product.price%>">
-                            </div>
+                                    </div>
+                                    <% if(locals.errors && errors.price){ %>
+                                        <small class="text-validation"><%= errors.price.msg%> </small>
+                                        <% } %>
 
-                            <h4 class="h4-adm">Buscar Producto:</h4>
+                                            <h4 class="h4-adm">Buscar Producto:</h4>
 
-                            <div class="inputcontainer">
-                                <input class="inputstyle" type="search" name="busquedacodigo" size="20" maxlength="20" placeholder="Escribe el codigo aqui...">
-                                <input class="inputstyle" type="submit" value="Buscar">
-                            </div>
+                                            <div class="inputcontainer">
+                                                <input class="inputstyle" type="search" name="busquedacodigo" size="20" maxlength="20" placeholder="Escribe el codigo aqui...">
+                                                <input class="inputstyle" type="submit" value="Buscar">
+                                            </div>
                         </div>
 
                     </div>

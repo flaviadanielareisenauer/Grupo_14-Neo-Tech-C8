@@ -1,4 +1,4 @@
-
+//const { products } = require('../data/dataBase')
 const db = require("../database/models");
 const { Op, where } = require("sequelize");
 const User = require("../database/models/User");
