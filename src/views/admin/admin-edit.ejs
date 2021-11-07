@@ -8,7 +8,7 @@
             <div class="form_container">
                 <h2 class="h2-adm">Administración de productos</h2>
                 <hr>
-                <form action="/admin/products/<%=Product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+                <form id="formCarga" action="/admin/products/<%=Product.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                     <div class="box">
                         <h4 class="h4-adm">Editar imagenes</h4>
                         <div class="imagenes_ad">
@@ -25,29 +25,31 @@
                         <div class="box">
                             <h4 class="h4-adm">Editar de productos</h4>
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="name" placeholder="Nombre Producto" value="<%=Product.name%>">
+                                <input id="productName" class="inputstyle" type="text" name="name" placeholder="Nombre Producto" value="<%=Product.name%>">
                             </div>
+                            <span class="mensajeError" id="productNameErrors"></span>
                             <% if(locals.errors && errors.name){ %>
                                 <small class="text-validation"><%= errors.name.msg%> </small>
                                 <% } %>
 
-
-
                                     <div class="inputcontainer">
                                         <textarea class="textarea__adm " name="description" rows="15 " cols="50 "><%-Product.description %> </textarea>
                                     </div>
+                                    <span class="mensajeError" id="categoriasErrors"></span>
                                     <% if(locals.errors && errors.description){ %>
                                         <small class="text-validation"><%= errors.description.msg%> </small>
                                         <% } %>
 
+
                                             <div class="inputcontainer">
-                                                <select name="categoryId" class="inputselect">
+                                                <select id="productCategorias"  name="categoryId" class="inputselect">
                                                     <% category.forEach(category => {%>
                                                         <option hidden selected><%- category.id = Product.categoryId ? Product.categories.name : null %></option>
                                                             <option value="<%-category.id%>">
                                                                 <%- category.name %></option>
                                                             <%})%>
                                     </select>
+
 
                                             </div>
 
@@ -74,8 +76,9 @@
 
 
                             <div class="inputcontainer">
-                                <input class="inputstyle" type="text" name="code" placeholder="Código" value="<%= Product.code%>">
+                                <input id="productCode" class="inputstyle" type="text" name="code" placeholder="Código" value="<%= Product.code%>">
                             </div>
+                            <span class="mensajeError" id="productCodeErrors"></span>
                             <% if(locals.errors && errors.code){ %>
                                 <small class="text-validation"><%= errors.code.msg%> </small>
                                 <% } %>
@@ -84,27 +87,26 @@
                                     </div>
 
                                     <div class="inputcontainer">
-                                        <input class="inputstyle" type="number" name="price" placeholder="Precio" value="<%=Product.price%>">
+                                        <input id="productPrice" class="inputstyle" type="number" name="price" placeholder="Precio" value="<%=Product.price%>">
 
                                     </div>
                                     <% if(locals.errors && errors.price){ %>
                                         <small class="text-validation"><%= errors.price.msg%> </small>
                                         <% } %>
+                                        <span class="mensajeError" id="productPriceErrors"></span>
 
-                                            <h4 class="h4-adm">Buscar Producto:</h4>
-
-                                            <div class="inputcontainer">
-                                                <input class="inputstyle" type="search" name="busquedacodigo" size="20" maxlength="20" placeholder="Escribe el codigo aqui...">
-                                                <input class="inputstyle" type="submit" value="Buscar">
-                                            </div>
+                    
                         </div>
 
                     </div>
+                    <span class="mensajeError" id="submitErrors"></span>
+
                     <div class="buttoncontainer">
                         <button type="submit" class="btn btn-submit">Guardar</button>
                     </div>
                 </form>
             </div>
+            <script src="/js/ProductEditValidator.js" ></script>
 
             <%- include('../partials/footer')%>
 
