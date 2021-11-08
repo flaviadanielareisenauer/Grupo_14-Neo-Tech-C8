@@ -36,6 +36,7 @@
   width: 25%;
   height: 15rem;
   align-items: flex-start;
+  margin-top: 4rem;
 }
 .resumen select {
   padding: 1px;
@@ -48,9 +49,8 @@
 .pedido {
   background: rgb(221, 220, 220);
   width: 100%;
-}
-.pedido span {
-  margin-left: 20rem;
+  display:flex;
+  justify-content: space-between;
 }
 
 .elemento {
@@ -65,20 +65,11 @@
   width: 3rem;
   height: 2.5rem;
   text-align: center;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .precio {
   margin-left: -1rem;
-}
-
-@media (min-width: 768px) {
-  .btn-cart {
-    width: auto;
-  }
-  .max-width-30 {
-    max-width: 30rem;
-  }
 }
 
 /* Ventana modal */
@@ -220,4 +211,32 @@
   border: 1px solid #e1e1e1;
   padding: 1rem;
   margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .btn-cart {
+    width: auto;
+  }
+  .cart {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 95%;
+  }
+  .caja { 
+    width: 100%;
+  }
+  .precio {
+    margin-left: 1rem;
+  }
+  .resumen {
+    width: 90%;
+    align-self: center;
+    margin-left: 2rem;
+  }  
+  .formulario {
+    width: 95%;
+  }   
 }
