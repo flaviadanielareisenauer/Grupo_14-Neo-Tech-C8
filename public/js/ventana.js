@@ -1,13 +1,13 @@
-const openModal = document.querySelector('.btn-ingresar');
-const modal = document.querySelector('.modal');
-const closeModal = document.querySelector('.modal__close');
+const openModal = document.querySelector(".btn-cart");
+const modal = document.querySelector(".modal");
+const closeModal = document.querySelector(".modal__close");
 
-openModal.addEventListener('click', (e)=>{
+openModal.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.classList.add('modal--show');
+    modal.classList.add("modal--show");
 });
 
-closeModal.addEventListener('click', (e)=>{
+closeModal.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.classList.remove('modal--show');
+    modal.classList.remove("modal--show");
 });
