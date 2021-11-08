@@ -15,63 +15,67 @@
                         <div class="avatar">
                             <div id="preview"> <img src="/imagenes/userAvatars/<%= user.avatar%>" alt="" id="avatarProfile"></div>
                         </div>
-                        <input type="file" name="avatar" id="file" accept=".jpg,.png.jpeg">
+                        <input type="file" name="avatar" id="cambiarImagen" accept=".jpg,.png.jpeg">
                     </div>
-                    <div class="form-container">
-                        <section class="form-register">
-                            <h4>Datos de la cuenta</h4>
+                    <% if(locals.errors && errors.image){ %>
+                        <small class="text-validation"><%=errors.image.msg%> </small>
+                        <% } %>
+                            <span class="mensajeError" id="fileErrors"></span>
+                            <div class="form-container">
+                                <section class="form-register">
+                                    <h4>Datos de la cuenta</h4>
 
-                            <hr class="divitionConfig">
-                            <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email %>" id="email">
-                            <span class="errorMessage" id="emailErrors"></span>
-                            <% if (locals.errors && errors.email) { %>
-                                <small class="text-validation"><%= errors.email.msg %> </small>
-                                <% } %>
-                                    <input class="controls" type="password" name="password" placeholder="Contraseña">
-                        </section>
-                        <section class="form-register">
-                            <h4>Datos personales</h4>
-
-                            <hr class="divitionConfig">
-                            <input class="controls" type="text" name="firstName" placeholder="Nombre" value="<%- user.firstName %>" id="firstName">
-                            <span class="errorMessage" id="firstNameErrors"></span>
-                            <% if (locals.errors && errors.firstName) { %>
-                                <small class="text-validation"><%= errors.firstName.msg %></small>
-                                <% } %>
-                                    <input class="controls" type="text" name="lastName" placeholder="Apellido" value="<%- user.lastName %>" id="lastName">
-                                    <span class="errorMessage" id="lastNameErrors"></span>
-                                    <% if (locals.errors && errors.lastName) { %>
-                                        <small class="text-validation"><%= errors.lastName.msg %></small>
+                                    <hr class="divitionConfig">
+                                    <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email %>" id="email">
+                                    <span class="errorMessage" id="emailErrors"></span>
+                                    <% if (locals.errors && errors.email) { %>
+                                        <small class="text-validation"><%= errors.email.msg %> </small>
                                         <% } %>
-                                            <input class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni %>">
-                                            <input class="controls " type="number " name="numberPhone" placeholder="Telefono " value="<%- user.numberPhone %>">
-                                            <input class="controls" type="date" name="dateBorn" placeholder="fecha de nacimiento" value="<%- user.dateBorn %>">
-                        </section>
-                        <section class="form-register ">
-                            <h4>Datos de envío</h4>
-                            <hr class="divitionConfig">
-                            <input class="controls " type="text" name="streetName" placeholder="Direccion" value="<%- user.addresses[0]?user.addresses[0].streetName: '' %>">
-                            <input class="controls " type="number" name="streetNumber" placeholder="Numero" value="<%- user.addresses[0]? user.addresses[0].streetNumber:'' %>">
-                            <input class="controls " type="text " name="dto " placeholder="Dpto " value="<%- user.addresses[0]?user.addresses[0].dto: '' %>">
-                            <input class="controls " type="number" name="postalCode" placeholder="Código Postal" value="<%- user.addresses[0]?user.addresses[0].postalCode:'' %>">
-                            <div class=" input-container ">
-                                <select name="province" class="input-select" id="inputSelectProvince">
+                                            <input class="controls" type="password" name="password" placeholder="Contraseña">
+                                </section>
+                                <section class="form-register">
+                                    <h4>Datos personales</h4>
+
+                                    <hr class="divitionConfig">
+                                    <input class="controls" type="text" name="firstName" placeholder="Nombre" value="<%- user.firstName %>" id="firstName">
+                                    <span class="errorMessage" id="firstNameErrors"></span>
+                                    <% if (locals.errors && errors.firstName) { %>
+                                        <small class="text-validation"><%= errors.firstName.msg %></small>
+                                        <% } %>
+                                            <input class="controls" type="text" name="lastName" placeholder="Apellido" value="<%- user.lastName %>" id="lastName">
+                                            <span class="errorMessage" id="lastNameErrors"></span>
+                                            <% if (locals.errors && errors.lastName) { %>
+                                                <small class="text-validation"><%= errors.lastName.msg %></small>
+                                                <% } %>
+                                                    <input class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni %>">
+                                                    <input class="controls " type="number " name="numberPhone" placeholder="Telefono " value="<%- user.numberPhone %>">
+                                                    <input class="controls" type="date" name="dateBorn" placeholder="fecha de nacimiento" value="<%- user.dateBorn %>">
+                                </section>
+                                <section class="form-register ">
+                                    <h4>Datos de envío</h4>
+                                    <hr class="divitionConfig">
+                                    <input class="controls " type="text" name="streetName" placeholder="Direccion" value="<%- user.addresses[0]?user.addresses[0].streetName: '' %>">
+                                    <input class="controls " type="number" name="streetNumber" placeholder="Numero" value="<%- user.addresses[0]? user.addresses[0].streetNumber:'' %>">
+                                    <input class="controls " type="text " name="dto " placeholder="Dpto " value="<%- user.addresses[0]?user.addresses[0].dto: '' %>">
+                                    <input class="controls " type="number" name="postalCode" placeholder="Código Postal" value="<%- user.addresses[0]?user.addresses[0].postalCode:'' %>">
+                                    <div class=" input-container ">
+                                        <select name="province" class="input-select" id="inputSelectProvince">
                                     <option value="<%-user.addresses.province%>" hidden></option>
                                     </select>
-                            </div>
-                            <div class="input-container ">
-                                <select name="location" class="input-select" id="inputSelectCity">
+                                    </div>
+                                    <div class="input-container ">
+                                        <select name="location" class="input-select" id="inputSelectCity">
                                     <option value="<%-user.addresses.location%>" hidden></option>
                                      
                                     </select>
+                                    </div>
+                                </section>
                             </div>
-                        </section>
-                    </div>
 
-                    <span id="submitErrors" class="errorMessage"></span>
-                    <div class="button-container ">
-                        <button type="submit" class="button-all">Guardar</button>
-                    </div>
+                            <span id="submitErrors" class="errorMessage"></span>
+                            <div class="button-container ">
+                                <button type="submit" class="button-all">Guardar</button>
+                            </div>
             </form>
 
             </main>

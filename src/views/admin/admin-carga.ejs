@@ -15,7 +15,10 @@
                             <div class="input-file-container ">
                                 <input type="file" name="image" id="cambiarImagen" multiple>
                             </div>
-                            <span class="mensajeError" id="fileErrors"></span>
+                            <% if(locals.errors && errors.image){ %>
+                                <small class="text-validation"><%=errors.image.msg%> </small>
+                                <% } %>
+                                    <span class="mensajeError" id="fileErrors"></span>
                         </div>
                     </div>
 

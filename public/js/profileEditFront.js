@@ -119,13 +119,27 @@ window.addEventListener("load", function() {
                     cities.forEach(city => {
                         $inputSelectCity.innerHTML += ` <option value="${city.nombre}">${city.nombre}</option>`
                     })
-
                 })
-
         }
-
         fetchCities(idProvince)
     })
 
+    $profileEditForm.addEventListener("submit", function(event) {
+        let error = false;
+        event.preventDefault();
+        console.log($profileEditForm.elements);
+        let elementForm = this.elements;
 
+        for (let index = 0; index < elementForm.length - 4; index++) {
+            if (elementForm[index].value == "") {
+                elementForm[index].classList.add("is-invalid");
+                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                error = true;
+            }
+        }
+        if (!error) {
+            console.log("Todo bien");
+            $profileEditForm.submit();
+        }
+    });
 })

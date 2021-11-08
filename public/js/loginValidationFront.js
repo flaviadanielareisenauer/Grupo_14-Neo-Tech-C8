@@ -17,16 +17,15 @@ window.addEventListener("load", () => {
             case !$emailLog.value.trim():
                 $emailLog.style.border = "1px solid red"
                 $emailErrorsLog.innerHTML = "Debes ingresar un email";
-                $emailLog.classList.add("is-invalid");
+
                 break;
-            case !regExEmailLog.test($email.value):
+            case !regExEmail.test($emailLog.value):
                 $emailLog.style.border = "1px solid red"
                 $emailErrorsLog.innerHTML = "Debes ingresar un email válido";
-                $emailLog.classList.add("is-invalid");
+
                 break;
             default:
-                $emailLog.classList.remove("is-invalid");
-                $emailLog.classList.add("is-valid");
+                $emailLog.style.border = "none"
                 $emailErrorsLog.innerHTML = "";
                 break;
         }
@@ -37,9 +36,13 @@ window.addEventListener("load", () => {
             case !$passwordLog.value.trim():
                 $passwordLog.style.border = "1px solid red"
                 $passwordErrorsLog.innerHTML = "Debes ingresar una contraseña"
-                $passwordLog.classList.add("is-invalid");
                 break;
 
+
+            default:
+                $passwordLog.style.border = "none"
+                $passwordErrorsLog.innerHTML = ""
+                break;
         }
     });
 
