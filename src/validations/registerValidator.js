@@ -2,9 +2,13 @@ const { check, body } = require("express-validator");
 const db = require("../database/models");
 
 module.exports = [
-  check("firstName").notEmpty().withMessage("El campo nombre es obligatorio"),
+  check("firstName").notEmpty().withMessage("El campo nombre es obligatorio")
+  .isAlpha()
+  .withMessage('Debes agregar un nombre valido que no contenga numeros'),
 
-  check("lastName").notEmpty().withMessage("El campo apellido es obligatorio"),
+  check("lastName").notEmpty().withMessage("El campo apellido es obligatorio")
+  .isAlpha()
+  .withMessage('Debes agregar un nombre valido que no contenga numeros'),
 
   check("email")
     .notEmpty()
