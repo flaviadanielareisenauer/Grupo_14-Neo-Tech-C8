@@ -68,10 +68,6 @@
   cursor: pointer;
 }
 
-.precio {
-  margin-left: -1rem;
-}
-
 /* Ventana modal */
 .modal {
   position: fixed;
@@ -227,9 +223,6 @@
   }
   .caja { 
     width: 100%;
-  }
-  .precio {
-    margin-left: 1rem;
   }
   .resumen {
     width: 90%;
