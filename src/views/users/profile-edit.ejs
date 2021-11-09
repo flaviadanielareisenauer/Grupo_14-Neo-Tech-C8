@@ -15,7 +15,7 @@
                         <div class="avatar">
                             <div id="preview"> <img src="/imagenes/userAvatars/<%= user.avatar%>" alt="" id="avatarProfile"></div>
                         </div>
-                        <input type="file" name="avatar" id="cambiarImagen" accept=".jpg,.png.jpeg">
+                        <input type="file" name="avatar" id="cambiarImagen" accept=".jpg,.png.jpeg" value="<%= user.avatar%>">
                     </div>
                     <% if(locals.errors && errors.image){ %>
                         <small class="text-validation"><%=errors.image.msg%> </small>
@@ -27,7 +27,7 @@
 
                                     <hr class="divitionConfig">
                                     <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email %>" id="email">
-                                    <span class="errorMessage" id="emailErrors"></span>
+                                    <span class="mensajeError" id="emailErrors"></span>
                                     <% if (locals.errors && errors.email) { %>
                                         <small class="text-validation"><%= errors.email.msg %> </small>
                                         <% } %>
@@ -38,12 +38,12 @@
 
                                     <hr class="divitionConfig ">
                                     <input class="controls " type="text" name="firstName" placeholder="Nombre" value="<%-user.firstName%>" id="firstName">
-                                    <span class="errorMessage" id="firstNameErrors"></span>
+                                    <span class="mensajeError" id="firstNameErrors"></span>
                                     <% if (locals.errors && errors.firstName) { %>
                                         <small class="text-validation"><%= errors.firstName.msg %></small>
                                         <% } %>
                                             <input class="controls" type="text" name="lastName" placeholder="Apellido" value="<%- user.lastName %>" id="lastName">
-                                            <span class="errorMessage" id="lastNameErrors"></span>
+                                            <span class="mensajeError" id="lastNameErrors"></span>
                                             <% if (locals.errors && errors.lastName) { %>
                                                 <small class="text-validation"><%= errors.lastName.msg %></small>
                                                 <% } %>
@@ -72,7 +72,7 @@
                                 </section>
                             </div>
 
-                            <span id="submitErrors" class="errorMessage"></span>
+                            <p class="errorMessage-container"><span id="submitErrors" class="mensajeError"></span></p>
                             <div class="button-container ">
                                 <button type="submit" class="button-all">Guardar</button>
                             </div>

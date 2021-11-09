@@ -1,243 +1,235 @@
-.carrito {
-    background-color: #f9f9f9;
-    margin: 0;
+.productCart {
+  background-color: #f9f9f9;
+  margin: 0;
 }
 
-.cart,
+.cart {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+}
+
+.caja {
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+.caja img {
+  width: 120px;
+  text-align: center;
+}
+.caja i {
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
 .resumen {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 15px;
+  border-style: double;
+  margin-top: 15px;
+  width: 25%;
+  height: 15rem;
+  align-items: flex-start;
+  margin-top: 4rem;
+}
+.resumen select {
+  padding: 1px;
+  width: 70%;
+  margin-top: 7px;
+  height: 2rem;
+  border-radius: 5px;
+}
+
+.pedido {
+  background: rgb(221, 220, 220);
+  width: 100%;
+  display:flex;
+  justify-content: space-between;
 }
 
 .elemento {
-    background-color: white;
-    padding-bottom: 10px;
-    border: 1px solid darkgray;
+  background-color: white;
+  padding-bottom: 10px;
+  border: 1px solid darkgray;
+  margin-left: 2rem;
+  margin-top: 2rem;
 }
 
-.resumen {
-    display: flex;
-    padding: 15px;
-    border-style: double;
-    background-color: white;
-    margin-top: 15px;
-}
-
-.resumen select {
-    padding: 1px;
-    width: 50%;
-    flex-direction: column;
-    align-content: center;
-    margin-top: 7px;
-    justify-content: center;
-}
-
-.caja img {
-    width: 120px;
-    text-align: center;
-}
-
-.carrito p {
-    font-size: 1rem;
-}
-
-.cantidad {
-    max-width: 5%;
-    margin: auto;
-    justify-content: center;
-}
-
-.cantidad button:first-child {
-    border-radius: 5px 0 0 5px;
-}
-
-.cantidad button {
-    border-radius: 0 5px 5px 0;
-    background-color: lightgray;
-    border: none;
-    font-size: 10px;
-    padding: 8px 10px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.cantidad,
-.cantidad button {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.cantidad button,
 .cantidad input {
-    height: 30px;
-    width: 30px;
-    margin: 0;
+  width: 3rem;
+  height: 2.5rem;
+  text-align: center;
+  cursor: pointer;
 }
 
-.caja i {
-    justify-content: center;
-    cursor: pointer;
-}
-
-.precio {
-    text-align: center;
-    font-weight: 700;
-}
-
-.modal  {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #111111bd;
-    display: flex;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .6s;
-    --transform: translateY(-100vh);
-    --transition: transform .8s;
+/* Ventana modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bd;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s;
+  --transform: translateY(-100vh);
+  --transition: transform 0.8s;
 }
 
 .modal--show {
-    opacity: 1;
-    pointer-events: unset;
-    transition: opacity .6s;
-    --transform: translateY(0);
+  opacity: 1;
+  pointer-events: unset;
+  transition: opacity 0.6s;
+  --transform: translateY(0);
 }
 
 .modal__container {
-    margin: auto;
-    width: 90%;
-    max-width: 600px;
-    max-height: 90%;
-    background-color: #fff;
-    border-radius: 10px;
-    display: grid;
-    gap: 1em;
-    place-items: center;
-    grid-auto-columns: 100%;
-    transform: var(--transform);
-    transition: var(--transition);
+  margin: auto;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90%;
+  background-color: #fff;
+  border-radius: 10px;
+  display: grid;
+  gap: 1em;
+  place-items: center;
+  grid-auto-columns: 100%;
+  transform: var(--transform);
+  transition: var(--transition);
 }
 
-.modal__tittle{
-    font-size: 2.5rem;
-    width: 100%;
-    background-color: #070d2b;
-    color: white;
-    border-radius: 10px 10px 0px 0px;
-    padding: 10px 0px 10px 0px;
+.modal__tittle {
+  font-size: 2.5rem;
+  width: 100%;
+  background-color: #070d2b;
+  color: white;
+  border-radius: 10px 10px 0px 0px;
+  padding: 10px 0px 10px 0px;
 }
 
-.modal__paragraph{
-    margin-bottom: 10px;
+.modal__paragraph {
+  margin-bottom: 10px;
 }
 
-.btn-ingresar {
-    border: 1px solid #ff6000;
-    font-size: 1.2rem;
-    border-radius: 3px;
-    width: 70%;
-    height: 46px;
-    margin-bottom: 5px;
-    background-color: white;
-    padding: 10px;
-    margin: 20px;
-    cursor: pointer;
-    transition: background-color .3s;
+/* BUTTON */
+.btn-cart {
+  border: 1px solid #ff6000;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  width: 70%;
+  height: 46px;
+  margin-bottom: 5px;
+  background-color: white;
+  padding: 10px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-.btn-ingresar:hover{
-    color: white;
-    background-color: #ff6000;
+.btn-cart:hover {
+  color: white;
+  background-color: #ff6000;
 }
 
-.modal__close{
-    border: 1px solid #ff6000;
-    font-size: 1.2rem;
-    border-radius: 3px;
-    width: 40%;
-    height: 46px;
-    margin-bottom: 20px;
-    background-color: white;
-    padding: 10px;
-    color: black;
-    cursor: pointer;
-    display: inline-block;
-    transition: background-color .3s;
+.modal__close {
+  border: 1px solid #ff6000;
+  font-size: 1.2rem;
+  border-radius: 3px;
+  width: 40%;
+  height: 46px;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 10px;
+  color: black;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s;
 }
 
-.modal__close:hover{
-    color: white;
-    background-color: #ff6000;
+.modal__close:hover {
+  color: white;
+  background-color: #ff6000;
 }
 
 #opciones {
+  align-self: center;
+}
+
+/* Formulario */
+.formulario {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.formulario button {
+  width: 30%;
+  align-self: center;
+}
+.formulario fieldset {
+  border: 2px solid black;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+.formulario legend {
+  background-color: #070d2b;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 900;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.campo {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.campo label {
+  flex-basis: 10rem;
+  margin-left: 1rem;
+}
+.campo input:not([type="radio"]),
+.campo select {
+  flex: 1;
+  border: 1px solid #e1e1e1;
+  padding: 1rem;
+  margin-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .btn-cart {
+    width: auto;
+  }
+  .cart {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 95%;
+  }
+  .caja { 
+    width: 100%;
+  }
+  .resumen {
+    width: 90%;
     align-self: center;
-}
-
-@media screen and (min-width: 564px) {
-    .cart {
-        padding: 20px 10%;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .cart {
-        flex-direction: row;
-        margin-top: 50px;
-        padding: 0 40px 0 40px;
-    }
-    .cantidad {
-        margin: auto;
-    }
-    .elemento {
-        margin-left: auto;
-    }
-    .caja {
-        text-align: center;
-        display: flex;
-        padding: 20px;
-    }
-    .caja p {
-        align-items: center;
-        white-space: pre-wrap;
-        max-width: 30%;
-        justify-content: center;
-        margin: auto;
-    }
-    .caja img {
-        width: 100px;
-        margin: auto;
-    }
-    hr {
-        width: 90%;
-    }
-    .pedido {
-        display: flex;
-        justify-content: space-between;
-        background: lightgrey;
-        margin: 30px 0px 10px 0px;
-        padding: 0px 10px 0px 10px;
-        font-weight: 800;
-    }
-    .caja i {
-        margin: auto;
-    }
-    .precio {
-        margin: auto;
-    }
-    .resumen {
-        padding: 0;
-        margin-right: auto;
-        margin-left: 40px;
-        width: 450px;
-        margin-top: 0;
-    }
+    margin-left: 2rem;
+  }  
+  .formulario {
+    width: 95%;
+  }   
 }

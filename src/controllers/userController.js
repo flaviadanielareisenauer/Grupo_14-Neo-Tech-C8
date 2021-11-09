@@ -117,6 +117,7 @@ module.exports = {
                 postalCode,
                 province,
                 location,
+                avatar
             } = req.body;
 
             db.User.update({
@@ -124,7 +125,7 @@ module.exports = {
                     lastName,
                     dni,
                     numberPhone,
-                    avatar: req.file ? req.file.filename : "default-image.png",
+                    avatar: req.file ? req.file.filename : avatar ? "default-image.png" : avatar,
                 }, {
                     where: {
                         id: req.params.id,

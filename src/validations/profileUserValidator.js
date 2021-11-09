@@ -12,10 +12,14 @@ module.exports = [
 
     check('firstName')
     .notEmpty()
-    .withMessage('El campo nombre no puede ir vacío'),
+    .withMessage('El campo nombre no puede ir vacío')
+    .isAlpha()
+    .withMessage('Este campo no puede llevar caracteres numéricos'),
 
     check('lastName')
     .notEmpty()
-    .withMessage('El campo apellido no puede ir vacío'),
+    .withMessage('El campo apellido no puede ir vacío')
+    .isAlpha()
+    .withMessage('Este campo no puede llevar caracteres numéricos'),
 
 ]

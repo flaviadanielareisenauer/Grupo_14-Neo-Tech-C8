@@ -82,8 +82,8 @@ $formCarga.addEventListener('submit',function(event){
     console.log($formCarga.elements)
     let elementosForm = this.elements
     
-    for (let index = 1; index < elementosForm.length-5; index++) {
-        if(elementosForm[index].value == "" && elementosForm[index].name !== "archivo"){
+    for (let index = 0; index < elementosForm.length-5; index++) {
+        if(elementosForm[index].value == "" && elementosForm[index].name !== "image"){
             elementosForm[index].style.border = "1px solid red"
             submitErrors.innerHTML = "Los campos señalados son obligatorios";
             error = true;
