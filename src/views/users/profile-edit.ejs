@@ -20,7 +20,7 @@
                     <% if(locals.errors && errors.image){ %>
                         <small class="text-validation"><%=errors.image.msg%> </small>
                         <% } %>
-                            <span class="mensajeError" id="fileErrors"></span>
+                            <p class="errorMessage-container"><span class="mensajeError" id="fileErrors"></span></p>
                             <div class="form-container">
                                 <section class="form-register">
                                     <h4>Datos de la cuenta</h4>
@@ -33,11 +33,11 @@
                                         <% } %>
                                             <input class="controls" type="password" name="password" placeholder="Contraseña">
                                 </section>
-                                <section class="form-register">
+                                <section class=" form-register ">
                                     <h4>Datos personales</h4>
 
-                                    <hr class="divitionConfig">
-                                    <input class="controls" type="text" name="firstName" placeholder="Nombre" value="<%- user.firstName %>" id="firstName">
+                                    <hr class="divitionConfig ">
+                                    <input class="controls " type="text" name="firstName" placeholder="Nombre" value="<%-user.firstName%>" id="firstName">
                                     <span class="errorMessage" id="firstNameErrors"></span>
                                     <% if (locals.errors && errors.firstName) { %>
                                         <small class="text-validation"><%= errors.firstName.msg %></small>

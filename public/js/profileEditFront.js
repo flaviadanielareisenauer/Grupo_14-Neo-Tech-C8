@@ -23,16 +23,13 @@ window.addEventListener("load", function() {
             case !$email.value.trim():
                 $email.style.border = "1px solid red"
                 $emailErrors.innerHTML = "El campo email no puede ir vacío";
-                $email.classList.add("is-invalid");
                 break;
             case !regExEmail.test($email.value):
-                $email.style.border = "1px solid red"
+                $email.style.border = "1px solid red";
                 $emailErrors.innerHTML = "Debes ingresar un email válido";
-                $email.classList.add("is-invalid");
                 break;
             default:
-                $email.classList.remove("is-invalid");
-                $email.classList.add("is-valid");
+                $email.style.border = "1px solid #d9d9d9";
                 $emailErrors.innerHTML = "";
                 break;
         }
@@ -43,16 +40,13 @@ window.addEventListener("load", function() {
             case !$firstName.value.trim():
                 $firstName.style.border = "1px solid red"
                 $firstNameErrors.innerHTML = "El campo nombre no puede ir vacío";
-                $firstName.classList.add("is-invalid");
                 break;
-            case !regExAlpha.test($inputfirstName.value):
+            case !regExAlpha.test($firstName.value):
                 $firstName.style.border = "1px solid red"
                 $firstNameErrors.innerHTML = "Debes ingresar un nombre válido";
-                $firstName.classList.add("is-invalid");
                 break;
             default:
-                $firstName.classList.remove("is-invalid");
-                $firstName.classList.add("is-valid");
+                $firstName.style.border = "1px solid #d9d9d9";
                 $firstNameErrors.innerHTML = "";
                 break;
         }
@@ -63,16 +57,13 @@ window.addEventListener("load", function() {
             case !$lastName.value.trim():
                 $lastName.style.border = "1px solid red"
                 $lastNameErrors.innerHTML = "El campo apellido no puede ir vacío";
-                $lastName.classList.add("is-invalid");
                 break;
-            case !regExAlpha.test($inputlastName.value):
+            case !regExAlpha.test($lastName.value):
                 $lastName.style.border = "1px solid red"
                 $lastNameErrors.innerHTML = "Debes ingresar un apellido válido";
-                $lastName.classList.add("is-invalid");
                 break;
             default:
-                $lastName.classList.remove("is-invalid");
-                $lastName.classList.add("is-valid");
+                $lastName.style.border = "1px solid #d9d9d9"
                 $lastNameErrors.innerHTML = "";
                 break;
         }
@@ -130,9 +121,8 @@ window.addEventListener("load", function() {
         console.log($profileEditForm.elements);
         let elementForm = this.elements;
 
-        for (let index = 0; index < elementForm.length - 4; index++) {
-            if (elementForm[index].value == "") {
-                elementForm[index].classList.add("is-invalid");
+        for (let i = 0; i < elementForm.length - 10; i++) {
+            if (elementForm[i].value == "" && elementForm[i].name !== "avatar" && elementForm[i].name !== "password") {
                 $submitErrors.innerHTML = "Los campos señalados son obligatorios";
                 error = true;
             }
