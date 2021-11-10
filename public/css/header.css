@@ -259,10 +259,7 @@ ul.show {
     right: 0px;
 }
 
-@media screen and (max-width: 926px) {
-    .prueba {
-        height: 67px;
-    }
+@media screen and (max-width: 864px) {
     .menu-top {
         height: 80px;
     }
