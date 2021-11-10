@@ -324,14 +324,14 @@ CREATE TABLE `addresses` (
 
 -- neotech.cart definition
 
-CREATE TABLE neotech.carts (
-	id INT(11) auto_increment NOT NULL,
-	productId INT(11) NOT NULL,
-	userId INT(11) NOT NULL,
-	CONSTRAINT carts_pk PRIMARY KEY (id),
-	CONSTRAINT carts_FK FOREIGN KEY (productId) REFERENCES neotech.products(id),
-	CONSTRAINT carts_FK_1 FOREIGN KEY (userId) REFERENCES neotech.users(id)
-)
-ENGINE=InnoDB
-DEFAULT CHARSET=utf8mb4
-COLLATE=utf8mb4_general_ci;
+
+CREATE TABLE `carts` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `productId` int(11) NOT NULL,
+  `userId` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `carts_FK` (`productId`),
+  KEY `carts_FK_1` (`userId`),
+  CONSTRAINT `carts_FK` FOREIGN KEY (`productId`) REFERENCES `products` (`id`),
+  CONSTRAINT `carts_FK_1` FOREIGN KEY (`userId`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
