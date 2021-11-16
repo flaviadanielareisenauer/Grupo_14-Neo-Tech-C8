@@ -1,0 +1,46 @@
+<%- include('../partials/head')%>
+
+    <body class="body-AL">
+        <!----------------------------------------------------->
+        <%- include('../partials/header')%>
+            <!------------------------------------------------------->
+        <%-include('../partials/backHome')%>
+        
+        <main class="admin-login">
+        <form class="form_adm_log">
+            <h4 class="h4_AL">Regístrate</h4>    
+            <div class="contenedor__AL">
+                <div class="input-contenedor_al">
+                    <i class="fas fa-user icon"></i>
+                    <input type="text" placeholder="Nombre y apellido">                
+                </div>
+    
+                <div class="input-contenedor">
+                    <i class="fas fa-envelope icon"></i>
+                    <input type="e-mail" placeholder="Correo electrónico">               
+                </div>
+    
+                <div class="input-contenedor">
+                    <i class="fas fa-key icon"></i>
+                    <input type="password" placeholder="Contraseña">              
+                </div>
+                
+                <div class="input-contenedor">
+                    <i class="fas fa-unlock-alt icon"></i>
+                    <input type="password" placeholder="Confirmar contraseña">              
+                </div> 
+    
+                <input type="submit" value="Registrarme" class="button">
+    
+                   
+                <a class="button" href="/views/admin/adminRegister.ejs">Iniciar sesión</a>
+            </div>
+        </form>
+
+    </main>
+        
+
+            <%- include('../partials/footer')%>
+            <script src="/js/registerValidatorFront.js"></script>
+</body>
+</html>

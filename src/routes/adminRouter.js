@@ -6,6 +6,7 @@ const {
     perfil,
     edit,
     adminLogin,
+    //adminRegister,
     agregarProducto,
     eliminarProducto,
     update,
@@ -23,6 +24,7 @@ router.get("/products", checkLogAdmin, productsList);
 //configuración del admin y login
 router.get("/config-perfil", checkLogAdmin, perfil);
 router.get("/adminLogin", checkLogAdmin, adminLogin);
+//router.get("/adminRegister", adminRegister);
 
 //crea un nuevo producto
 router.get("/products/create", checkLogAdmin, agregarProducto);
