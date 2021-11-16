@@ -32,9 +32,9 @@ anchoPagina();
 function iniciarSesion() {
   // Si el ancho del W es mayor a 850 se ejecuta el codigo.
   if (window.innerWidth > 850) {
-    form_register.style.display = "none";
-    contenedor_login_register.style.left = "10px";
     form_login.style.display = "block";
+    contenedor_login_register.style.left = "10px";
+    form_register.style.display = "none";
     caja_trasera_register.style.opacity = "1";
     caja_trasera_login.style.opacity = "0";
   } else {
@@ -42,7 +42,7 @@ function iniciarSesion() {
     form_register.style.display = "none";
     contenedor_login_register.style.left = "0px";
     form_login.style.display = "block";
-    caja_trasera_register.style.opacity = "block";
+    caja_trasera_register.style.display = "block";
     caja_trasera_login.style.display = "none";
   }
 }
@@ -58,8 +58,8 @@ function register() {
     form_register.style.display = "block";
     contenedor_login_register.style.left = "0px";
     form_login.style.display = "none";
-    caja_trasera_register.style.opacity = "none";
-    caja_trasera_login.style.opacity = "block";
+    caja_trasera_register.style.display = "none";
+    caja_trasera_login.style.display = "block";
     caja_trasera_login.style.opacity = "1";
   }
 }
