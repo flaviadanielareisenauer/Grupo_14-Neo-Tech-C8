@@ -29,7 +29,7 @@ function backHome() {
     const icon = document.querySelector('.back-home-container');
     const btn_list = document.querySelector('.list');
 
-    if (scroll > 100) {
+    if (scroll > 50) {
         icon.style.display = "block";
         bar_arcoiris_container.style.position = "fixed";
         bar_arcoiris_container.style.marginTop = "-38px";

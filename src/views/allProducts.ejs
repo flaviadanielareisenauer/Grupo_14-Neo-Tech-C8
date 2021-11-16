@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <%- include("./partials/head")%>
     <html lang="es">
-    <a href="#" class="back-home-container">
-        <div class="back-home">
-            <i class="fas fa-chevron-up"></i>
+    <%-include('./partials/backHome')%>
 
-        </div>
-    </a>
+        <body class="body-containerP">
+            <%- include("./partials/header")%>
+                <div class="products-general">
+                    <div class="products-category-container">
+                        <div class="searchAll-container"> <input type="text" class="searchAll"></div>
 
-    <body class="body-containerP">
-        <%- include("./partials/header")%>
-            <div class="products-general">
-                <div class="products-category-container">
-                    <div class="searchAll-container"> <input type="text" class="searchAll"></div>
+                        <h4 class="h4-category">Categorías
+                        </h4>
+                        <%Category.forEach(category => {%>
+                            <p class="product-category-item">
+                                <a href="/allProducts/<%-category.id%>" class="category-select">
+                                    <% if(category.id == req){%>
+                                        <p class="dark-select">
+                                            <%- category.name%>
+                                        </p>
 
-                    <h4 class="h4-category">Categorías
-                    </h4>
-                    <%Category.forEach(category => {%>
-                        <p class="product-category-item">
-                            <a href="/allProducts/<%-category.id%>" class="category-select">
-                                <% if(category.id == req){%>
-                                    <p class="dark-select">
-                                        <%- category.name%>
-                                    </p>
+                                        <%}else{%>
+                                            <%- category.name%>
+                                                <%}%>
 
-                                    <%}else{%>
-                                        <%- category.name%>
+
+                                </a>
+
+                            </p>
+
+                            <%})%>
+                    </div>
+
+                    <div class="products-container">
+                        <%Product.forEach(product=> {%>
+
+                            <div class="products-cartAll">
+                                <a href="/products/detail/<%- product.id%>">
+                                    <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
+
+                                    </div>
+                                    <div class="detail-container-all">
+                                        <h2 class="name-all">
+                                            <%- product.name%>
+                                        </h2>
+                                        <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> </span>
+                                        <span class="price-no-discount">$<%- product.price%></span>
+                                        <%if(product.discount > 0){%>
+                                            <p class="discount-allProduct-container"> <span class="discount-allProducts"><%- product.discount%>%Off</span></p>
                                             <%}%>
 
 
-                            </a>
 
-                        </p>
+                                                <div class="button-all-container">
 
-                        <%})%>
-                </div>
+                                                    <div class="button2-all">
+                                                        <a href="/user/productCart">
+                                                            <p>
+                                                                Agregar al carrito
+                                                            </p>
+                                                        </a>
 
-                <div class="products-container">
-                    <%Product.forEach(product=> {%>
-
-                        <div class="products-cartAll">
-                            <a href="/products/detail/<%- product.id%>">
-                                <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
-
-                                </div>
-                                <div class="detail-container-all">
-                                    <h2 class="name-all">
-                                        <%- product.name%>
-                                    </h2>
-                                    <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> </span>
-                                    <span class="price-no-discount">$<%- product.price%></span>
-                                    <%if(product.discount > 0){%>
-                                        <p class="discount-allProduct-container"> <span class="discount-allProducts"><%- product.discount%>%Off</span></p>
-                                        <%}%>
-
-
-
-                                            <div class="button-all-container">
-
-                                                <div class="button2-all">
-                                                    <a href="/user/productCart">
-                                                        <p>
-                                                            Agregar al carrito
-                                                        </p>
-                                                    </a>
+                                                    </div>
 
                                                 </div>
+                                </a>
+                                </div>
 
-                                            </div>
-                            </a>
+
                             </div>
-
-
-                        </div>
-                        <%})%>
+                            <%})%>
+                    </div>
                 </div>
-            </div>
-            <%- include("./partials/footer")%>
-    </body>
+                <%- include("./partials/footer")%>
+        </body>
 
     </html>

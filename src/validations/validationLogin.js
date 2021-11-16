@@ -5,8 +5,8 @@ const db = require("../database/models");
 module.exports = [
     check('emailLog')
     .notEmpty()
-    .withMessage('Debes ingresar una dirección de correo').bail().isEmail()
-    .withMessage('Debes ingresar un correo válido'),
+    .withMessage('Debes ingresar un email').bail().isEmail()
+    .withMessage('Debes ingresar un email válido'),
     body('emailLog')
     .custom((value, { req }) => {
         return db.User.findOne({

@@ -66,7 +66,7 @@ module.exports = {
                     lastName,
                     email,
                     password: bcrypt.hashSync(password1, 12),
-                    avatar: arrayImages.length > 0 ? arrayImages : "nuevos/default-image.jpg",
+                    avatar: arrayImages.length > 0 ? arrayImages : "default-image.png",
                     rol: 0,
                 })
                 .then(() => {
@@ -107,6 +107,7 @@ module.exports = {
 
         if (errors.isEmpty()) {
             let {
+                email,
                 firstName,
                 lastName,
                 dni,
@@ -121,6 +122,7 @@ module.exports = {
             } = req.body;
 
             db.User.update({
+                    email,
                     firstName,
                     lastName,
                     dni,

@@ -3,73 +3,74 @@
 <!-- Include Head -->
 
 <%- include('./partials/head',{title: 'Resultados de tu búsqueda' })%>
+    <%-include('./partials/backHome')%>
 
-    <body class="body-containerP">
-        <%- include("./partials/header")%>
-            <div class="products-general">
-                <div class="products-category-container">
-                    <div class="searchAll-container"> <input type="text" class="searchAll"></div>
+        <body class="body-containerP">
+            <%- include("./partials/header")%>
+                <div class="products-general">
+                    <div class="products-category-container">
+                        <div class="searchAll-container"> <input type="text" class="searchAll"></div>
 
-                    <h4 class="h4-category">Categorías
-                    </h4>
-                    <%Category.forEach(category => {%>
-                        <p class="product-category-item">
-                            <a href="/allProducts/<%-category.id%>" class="category-select">
-                                <% if(category.id == req){%>
-                                    <p class="dark-select">
-                                        <%- category.name%>
-                                    </p>
+                        <h4 class="h4-category">Categorías
+                        </h4>
+                        <%Category.forEach(category => {%>
+                            <p class="product-category-item">
+                                <a href="/allProducts/<%-category.id%>" class="category-select">
+                                    <% if(category.id == req){%>
+                                        <p class="dark-select">
+                                            <%- category.name%>
+                                        </p>
 
-                                    <%}else{%>
-                                        <%- category.name%>
-                                            <%}%>
+                                        <%}else{%>
+                                            <%- category.name%>
+                                                <%}%>
 
 
-                            </a>
+                                </a>
 
-                        </p>
+                            </p>
 
-                        <%})%>
-                </div>
+                            <%})%>
+                    </div>
 
-                <div class="products-container" id="products-results">
-                    <%result.forEach(product=> {%>
+                    <div class="products-container" id="products-results">
+                        <%result.forEach(product=> {%>
 
-                        <div class="products-cartAll">
-                            <a href="/products/detail/<%- product.id%>">
-                                <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
-
-                                </div>
-                                <div class="detail-container-all">
-                                    <h2 class="name-all">
-                                        <%- product.name%>
-                                    </h2>
-                                    <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> $<%- product.price%></span>
-                                    <p class="discount-all">
-                                        <%- product.discount%>
-                                    </p>
-                                    <div class="button-all-container">
-
-                                        <div class="button2-all">
-                                            <a href="/user/productCart">
-                                                <p>
-                                                    Agregar al carrito
-                                                </p>
-                                            </a>
-
-                                        </div>
+                            <div class="products-cartAll">
+                                <a href="/products/detail/<%- product.id%>">
+                                    <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
 
                                     </div>
-                            </a>
+                                    <div class="detail-container-all">
+                                        <h2 class="name-all">
+                                            <%- product.name%>
+                                        </h2>
+                                        <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> $<%- product.price%></span>
+                                        <p class="discount-all">
+                                            <%- product.discount%>
+                                        </p>
+                                        <div class="button-all-container">
+
+                                            <div class="button2-all">
+                                                <a href="/user/productCart">
+                                                    <p>
+                                                        Agregar al carrito
+                                                    </p>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+                                </a>
+                                </div>
+
+
                             </div>
-
-
-                        </div>
-                        <%})%>
+                            <%})%>
+                    </div>
                 </div>
-            </div>
-            <%- include("./partials/footer")%>
-    </body>
+                <%- include("./partials/footer")%>
+        </body>
 
 
 </html>

@@ -9,189 +9,185 @@
 
             <!------------------------------------------------------->
 
-            <a href="#" class="back-home-container">
-                <div class="back-home">
-                    <i class="fas fa-chevron-up"></i>
-                </div>
-            </a>
+            <%-include('./partials/backHome')%>
 
-            <!------------------------------------------------------->
+                <!------------------------------------------------------->
 
-            <main>
+                <main>
 
-                <div class="icon-category-bar">
+                    <div class="icon-category-bar">
 
 
-                    <a href='#ofertasNT' class='accesorios-tc'>
+                        <a href='#ofertasNT' class='accesorios-tc'>
                         Ofertas<i class="fas fa-fire-alt"></i>
                     </a>
 
 
-                    <a href='#notebookNT' class='accesorios-tc'>
+                        <a href='#notebookNT' class='accesorios-tc'>
                         Notebook<i class="fas fa-laptop "></i>
                     </a>
 
-                    <a href='#computadorasNT' class='accesorios-tc'>
+                        <a href='#computadorasNT' class='accesorios-tc'>
                         Computadoras<i class="fas fa-desktop "></i>
                     </a>
 
-                    <a href='#celularesNT' class='accesorios-tc'>
+                        <a href='#celularesNT' class='accesorios-tc'>
                         Celulares<i class="fas fa-mobile-alt"></i>
                     </a>
 
-                    <a href='#accesoriosNT' class='accesorios-tc'>
+                        <a href='#accesoriosNT' class='accesorios-tc'>
                         Accesorios<i class="fas fa-headphones-alt "></i>
                     </a>
 
-                    <a href='#televisoresNT' class='accesorios-tc'>
+                        <a href='#televisoresNT' class='accesorios-tc'>
                         Televisores<i class="fas fa-tv "></i>
                     </a>
 
-                    <a href='#consolasNT' class='accesorios-tc'>
+                        <a href='#consolasNT' class='accesorios-tc'>
                         Consolas <i class="fas fa-gamepad"></i>
                     </a>
 
-                    <a href='#combosNT' class='accesorios-tc'>
+                        <a href='#combosNT' class='accesorios-tc'>
                         Combos<i class="far fa-keyboard"></i>
                     </a>
 
-                    <a href='#tabletNT' class='accesorios-tc'>
+                        <a href='#tabletNT' class='accesorios-tc'>
                         Tablet<i class="fas fa-tablet-alt "></i>
                     </a>
 
-                    <a href='#impresorasNT' class='accesorios-tc'>
+                        <a href='#impresorasNT' class='accesorios-tc'>
                         Impresoras<i class="fas fa-print"></i>
                     </a>
 
-                </div>
+                    </div>
 
-                <!------------------------------productos 1--------------------------------->
-                <div id="ofertasNT">
+                    <!------------------------------productos 1--------------------------------->
+                    <div id="ofertasNT">
 
-                    <p class="secciones">Ofertas</p>
+                        <p class="secciones">Ofertas</p>
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                    </section>
-
-
-                </div>
-
-                <!------------------------------productos 2--------------------------------->
-                <div id="notebookNT">
-
-                    <p class="secciones">Notebook</p>
-
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
-
-                    </section>
-
-                </div>
-
-                <!------------------------------productos 3--------------------------------->
-                <div id="computadorasNT">
-
-                    <p class="secciones">Computadoras</p>
-
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
-
-                    </section>
-
-                </div>
-
-                <!------------------------------productos 4--------------------------------->
-                <div id="celularesNT">
-
-                    <p class="secciones">Celulares</p>
-
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
-
-                    </section>
-
-                </div>
+                        </section>
 
 
-                <!------------------------------productos 5--------------------------------->
-                <div id="accesoriosNT">
+                    </div>
 
-                    <p class="secciones">Accesorios</p>
+                    <!------------------------------productos 2--------------------------------->
+                    <div id="notebookNT">
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <p class="secciones">Notebook</p>
 
-                    </section>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                </div>
+                        </section>
 
-                <!------------------------------productos 6--------------------------------->
-                <div id="televisoresNT">
+                    </div>
 
-                    <p class="secciones">Televisores</p>
+                    <!------------------------------productos 3--------------------------------->
+                    <div id="computadorasNT">
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <p class="secciones">Computadoras</p>
 
-                    </section>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                </div>
+                        </section>
 
-                <!------------------------------productos 7--------------------------------->
-                <div id="consolasNT">
+                    </div>
 
-                    <p class="secciones">Consolas</p>
+                    <!------------------------------productos 4--------------------------------->
+                    <div id="celularesNT">
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <p class="secciones">Celulares</p>
 
-                    </section>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                </div>
+                        </section>
 
-                <!------------------------------productos 8--------------------------------->
-                <div id="combosNT">
-
-                    <p class="secciones">Combos</p>
-
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
-
-                    </section>
-
-                </div>
+                    </div>
 
 
-                <!------------------------------productos 9--------------------------------->
-                <div id="tabletNT">
+                    <!------------------------------productos 5--------------------------------->
+                    <div id="accesoriosNT">
 
-                    <p class="secciones">Tablet</p>
+                        <p class="secciones">Accesorios</p>
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                    </section>
+                        </section>
 
-                </div>
+                    </div>
 
-                <!------------------------------productos 10--------------------------------->
-                <div id="impresorasNT">
+                    <!------------------------------productos 6--------------------------------->
+                    <div id="televisoresNT">
 
-                    <p class="secciones">Impresoras</p>
+                        <p class="secciones">Televisores</p>
 
-                    <section class="general-products ">
-                        <%- include('partials/slider.ejs') %>
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
 
-                    </section>
-                </div>
+                        </section>
+
+                    </div>
+
+                    <!------------------------------productos 7--------------------------------->
+                    <div id="consolasNT">
+
+                        <p class="secciones">Consolas</p>
+
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
+
+                        </section>
+
+                    </div>
+
+                    <!------------------------------productos 8--------------------------------->
+                    <div id="combosNT">
+
+                        <p class="secciones">Combos</p>
+
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
+
+                        </section>
+
+                    </div>
 
 
-            </main>
+                    <!------------------------------productos 9--------------------------------->
+                    <div id="tabletNT">
 
-            <!-------------------------------------------------------------------------->
-            <%- include('./partials/footer')%>
+                        <p class="secciones">Tablet</p>
+
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
+
+                        </section>
+
+                    </div>
+
+                    <!------------------------------productos 10--------------------------------->
+                    <div id="impresorasNT">
+
+                        <p class="secciones">Impresoras</p>
+
+                        <section class="general-products ">
+                            <%- include('partials/slider.ejs') %>
+
+                        </section>
+                    </div>
+
+
+                </main>
+
+                <!-------------------------------------------------------------------------->
+                <%- include('./partials/footer')%>
     </body>
     <script src="/js/product-slider.js"></script>
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>

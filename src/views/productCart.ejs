@@ -1,42 +1,44 @@
 <%- include('./partials/head')%>
-<body class="productCart">
-    <%- include('./partials/header')%>
 
-    <main class="contenido-principal">
-        <div class="cart">
-            <div class="elemento">
-                <div class="caja">
-                    <img src="/imagenes/compu.jpg" alt="">
-                    <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
-                    <div class="cantidad">
-                        <input type="number" name="cantidad" min="1" max="10" step="1">
-                    </div>
-                    <p class="precio">$1000</p>
-                    <i class="fas fa-trash-alt"></i>
-                </div>
-                
-                <hr>
+    <body class="productCart">
+        <%- include('./partials/header')%>
+            <%-include('./partials/backHome')%>
 
-                <div class="caja">
-                    <img src="/imagenes/Televisores/Tele3-Vista2.jpg" width=" 100px">
-                    <P>Televisor Smart TV de 30" con Sistema Oprativo y Control Remoto con Voz</p>
-                <div class="cantidad">
-                    <input type="number" name="cantidad" min="1" max="10" step="1">
-                </div>
-                <p class="precio">$1000</p>
-                <i class="fas fa-trash-alt"></i>
-                </div>
-            </div>
+                <main class="contenido-principal">
+                    <div class="cart">
+                        <div class="elemento">
+                            <div class="caja">
+                                <img src="/imagenes/compu.jpg" alt="">
+                                <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
+                                <div class="cantidad">
+                                    <input type="number" name="cantidad" min="1" max="10" step="1">
+                                </div>
+                                <p class="precio">$1000</p>
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+
+                            <hr>
+
+                            <div class="caja">
+                                <img src="/imagenes/Televisores/Tele3-Vista2.jpg" width=" 100px">
+                                <P>Televisor Smart TV de 30" con Sistema Oprativo y Control Remoto con Voz</p>
+                                <div class="cantidad">
+                                    <input type="number" name="cantidad" min="1" max="10" step="1">
+                                </div>
+                                <p class="precio">$1000</p>
+                                <i class="fas fa-trash-alt"></i>
+                            </div>
+                        </div>
 
 
-        <div class="resumen">
-            <h5>RESUMEN DEL PEDIDO</h5>
-            <div class="pedido">
-                <p>TOTAL:</p>
-                <p>$0</p>
-            </div>
-            
-            <select id="opciones">
+                        <div class="resumen">
+                            <h5>RESUMEN DEL PEDIDO</h5>
+                            <div class="pedido">
+                                <p>TOTAL:</p>
+                                <p>$0</p>
+                            </div>
+
+                            <select id="opciones">
               <option value="" disabled selected>-- Cupón de descuento --</option>
               <option value="10 ">10%</option>
               <option value="20 ">20%</option>
@@ -46,89 +48,90 @@
               <option value="40 ">40%</option>
             </select>
 
-            <section class="modal ">
-                <div class="modal__container">
-                    <h2 class="modal__tittle">¡Compra Realizada!</h2>
-                    <p class="modal__paragraph">Gracias por comprar, no te olvides de seguir revisando nuestra página para encontrar más productos de tu interes.</p>
-                    <a href="#" class="modal__close">LISTO</a>
-                </div>
-            </section>
-            </div>
-        </div>
+                            <section class="modal ">
+                                <div class="modal__container">
+                                    <h2 class="modal__tittle">¡Compra Realizada!</h2>
+                                    <p class="modal__paragraph">Gracias por comprar, no te olvides de seguir revisando nuestra página para encontrar más productos de tu interes.</p>
+                                    <a href="#" class="modal__close">LISTO</a>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
 
 
-        <form class="formulario">
-            <fieldset>
-                <legend>Información Personal</legend>
-                <div class="campo">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" placeholder="Nombre">
-                </div>
-                <div class="campo">
-                    <label for="apellido">Apellido:</label>
-                    <input type="text" id="apellido" placeholder="Apellido">
-                </div>
-                <div class="campo">
-                    <label for="direccion">Direccion:</label>
-                    <input type="text" id="direccion" placeholder="Dirección">
-                </div>
-                <div class="campo">
-                    <label for="ciudad">Nombre:</label>
-                    <input type="text" id="ciudad" placeholder="Ciudad">
-                </div>
-                <div class="campo">
-                    <label for="codigoPostal">Codigo postal:</label>
-                    <input type="number" id="codigoPostal" placeholder="Código postal">
-                </div>
-                <div class="campo">
-                    <label for="provincia">Provincia:</label>
-                    <input type="text" id="´provincia" placeholder="Provincia">
-                </div>
-            </fieldset>
-  
-  
-            <fieldset>
-                <legend>Formas de pago</legend>
-                <div class="campo">
-                    <label for="opciones">Opciones de pago</label>
-                    <select id="">
+                    <form class="formulario">
+                        <fieldset>
+                            <legend>Información Personal</legend>
+                            <div class="campo">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" placeholder="Nombre">
+                            </div>
+                            <div class="campo">
+                                <label for="apellido">Apellido:</label>
+                                <input type="text" id="apellido" placeholder="Apellido">
+                            </div>
+                            <div class="campo">
+                                <label for="direccion">Direccion:</label>
+                                <input type="text" id="direccion" placeholder="Dirección">
+                            </div>
+                            <div class="campo">
+                                <label for="ciudad">Nombre:</label>
+                                <input type="text" id="ciudad" placeholder="Ciudad">
+                            </div>
+                            <div class="campo">
+                                <label for="codigoPostal">Codigo postal:</label>
+                                <input type="number" id="codigoPostal" placeholder="Código postal">
+                            </div>
+                            <div class="campo">
+                                <label for="provincia">Provincia:</label>
+                                <input type="text" id="´provincia" placeholder="Provincia">
+                            </div>
+                        </fieldset>
+
+
+                        <fieldset>
+                            <legend>Formas de pago</legend>
+                            <div class="campo">
+                                <label for="opciones">Opciones de pago</label>
+                                <select id="">
                         <option value="">-- Seleccione --</option>                      
                         <option value="">Crédito</option>
                         <option value="">Débito</option>
                         <option value="">Mercado pago</option>
                     </select>
-                </div>
-            </fieldset>
-  
-  
-            <fieldset>
-                <legend>Datos de la tarjeta</legend>
-                <div class="campo">
-                    <label for="numero">Número de tarjeta</label>
-                    <input type="number" id="numero" name="numero">
-                </div>
-                <div class="campo">
-                    <label for="nombre">Nombre del titular</label>
-                    <input type="text" id="nombre" name="nombre">
-                </div>
-                <div class="campo">
-                    <label for="vencimiento">Fecha de vencimiento</label>
-                    <input type="number" id="vencimiento" name="vencimiento">
-                </div>
-                <div class="campo">
-                    <label for="codigo">Código de seguridad</label>
-                    <input type="password" name="codigo" id="codigo">
-                </div>
-            </fieldset>
-            
-  
-            <button class="btn-cart" type="submit">Finalizar compra</button>
-        </form>
+                            </div>
+                        </fieldset>
 
-    </main>
-  
-    <script src="/js/ventana.js"></script>
-  
-        <%- include('./partials/footer')%>
+
+                        <fieldset>
+                            <legend>Datos de la tarjeta</legend>
+                            <div class="campo">
+                                <label for="numero">Número de tarjeta</label>
+                                <input type="number" id="numero" name="numero">
+                            </div>
+                            <div class="campo">
+                                <label for="nombre">Nombre del titular</label>
+                                <input type="text" id="nombre" name="nombre">
+                            </div>
+                            <div class="campo">
+                                <label for="vencimiento">Fecha de vencimiento</label>
+                                <input type="number" id="vencimiento" name="vencimiento">
+                            </div>
+                            <div class="campo">
+                                <label for="codigo">Código de seguridad</label>
+                                <input type="password" name="codigo" id="codigo">
+                            </div>
+                        </fieldset>
+
+
+                        <button class="btn-cart" type="submit">Finalizar compra</button>
+                    </form>
+
+                </main>
+
+                <script src="/js/ventana.js"></script>
+
+                <%- include('./partials/footer')%>
     </body>
-</html>
+
+    </html>
