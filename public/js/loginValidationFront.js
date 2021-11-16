@@ -16,12 +16,10 @@ window.addEventListener("load", () => {
             case !$emailLog.value.trim():
                 $emailLog.style.border = "1px solid red"
                 $emailErrorsLog.innerHTML = "Debes ingresar un email";
-
                 break;
             case !regExEmail.test($emailLog.value):
                 $emailLog.style.border = "1px solid red"
                 $emailErrorsLog.innerHTML = "Debes ingresar un email válido";
-
                 break;
             default:
                 $emailLog.style.border = "none"
@@ -36,8 +34,6 @@ window.addEventListener("load", () => {
                 $passwordLog.style.border = "1px solid red"
                 $passwordErrorsLog.innerHTML = "Debes ingresar una contraseña"
                 break;
-
-
             default:
                 $passwordLog.style.border = "none"
                 $passwordErrorsLog.innerHTML = ""
