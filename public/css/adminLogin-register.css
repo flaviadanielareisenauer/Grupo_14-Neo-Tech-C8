@@ -35,7 +35,7 @@
 .inp-pas,
 .inp-email {
   font-size: 1rem;
-  width: 50%;
+  width: 80%;
   padding: 1rem;
   border: none;
 }
@@ -83,6 +83,6 @@
     margin: auto;
     width: 40rem;
     margin-top: 10rem;
-    border-radius: 2%;
+    border-radius: 2%;       
   }
 }
