@@ -6,6 +6,7 @@ window.addEventListener("load", () => {
     $emailLog = qs('#emailLog');
     $emailErrorsLog = qs('#emailErrorsLog');
     $passwordLog = qs('#passwordLog');
+    $form__login = qs('.form__login')
     $passwordErrorsLog = qs('#passwordErrorsLog');
     regExAlpha = /^[a-zA-Z\sñáéíóúü ]*$/;
     regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
@@ -40,13 +41,13 @@ window.addEventListener("load", () => {
                 break;
         }
     });
-    $form_login.addEventListener("submit", function(event) {
-        errors = false;
+    $form__login.addEventListener("submit", function(event) {
+        let errors = false;
         event.preventDefault();
         let elementForm = this.elements;
         for (let i = 0; i < elementForm.length - 1; i++) {
             if (elementForm[i].value == "") {
-                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                submitLoginErrors.innerHTML = "Los campos señalados son obligatorios";
                 elementForm[i].style.border = "1px solid red";
                 $emailErrorsLog.innerHTML = "Debes ingresar un email";
                 $passwordErrorsLog.innerHTML = "Debes ingresar una contraseña"
@@ -54,13 +55,13 @@ window.addEventListener("load", () => {
             }
             if (!elementForm[i].value == "" && errors == true) {
                 $emailErrorsLog.innerHTML = "Debes ingresar un email válido";
-                $submitErrors.innerHTML = "Los campos señalados son obligatorios";
+                submitLoginErrors.innerHTML = "Los campos señalados son obligatorios";
                 errors = true;
             }
         }
         if (!errors) {
             console.log("Todo bien");
-            $form_login.submit();
+            $form__login.submit();
         }
     });
 

@@ -71,7 +71,7 @@
 
 .btn_ad_lg {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .button_ad_lg:hover {

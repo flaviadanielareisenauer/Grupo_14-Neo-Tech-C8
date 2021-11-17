@@ -21,7 +21,6 @@ window.addEventListener("load", function () {
   $inputfirstName.addEventListener("blur", function () {    
     switch (true) {
       case !$inputfirstName.value.trim():
-        $inputfirstName.style.border = "1px solid red"
         $firstNameErrors.innerHTML = "Debes escribir tu nombre";
         break;
       case !regExAlpha.test($inputfirstName.value):
@@ -38,7 +37,6 @@ window.addEventListener("load", function () {
     console.log("hola");
     switch (true) {
       case !$inputlastName.value.trim():
-        $inputlastName.style.border = "1px solid red"
         $lastNameErrors.innerHTML = "Debes escribir tu apellido";
         break;
       case !regExAlpha.test($inputlastName.value):
@@ -54,7 +52,6 @@ window.addEventListener("load", function () {
   $email.addEventListener("blur", function () {
     switch (true) {
       case !$email.value.trim():
-        $email.style.border = "1px solid red"
         $emailErrors.innerHTML = "El campo email es obligatorio";
         break;
       case !regExEmail.test($email.value):
@@ -70,7 +67,6 @@ window.addEventListener("load", function () {
   $password1.addEventListener("blur", function () {
     switch (true) {
       case !$password1.value.trim():
-        $password1.style.border = "1px solid red"
         $password1Errors.innerHTML = "El campo contraseña es obligatorio";
         break;
       case !regExPass.test($password1.value):
@@ -87,7 +83,6 @@ window.addEventListener("load", function () {
   $password2.addEventListener("blur", function () {
     switch (true) {
       case !$password2.value.trim():
-        $password2.style.border = "1px solid red"
         $password2Errors.innerHTML = "Debes reingresar la contraseña";
         break;
       case $password2.value != $password1.value:
@@ -103,7 +98,6 @@ window.addEventListener("load", function () {
   $formRegister.addEventListener("submit", function (event) {
     let error = false;
     event.preventDefault();
-    console.log($formRegister.elements);
     let elementForm = this.elements;
 
     for (let index = 0; index < elementForm.length - 1; index++) {
