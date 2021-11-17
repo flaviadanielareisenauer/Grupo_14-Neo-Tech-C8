@@ -11,7 +11,7 @@
                                 <img src="/imagenes/compu.jpg" alt="">
                                 <p>Notebook Lenovo V15 15.6" Intel I5 1035G1 4GB Ram 1TB HDD FREEDOS</p>
                                 <div class="cantidad">
-                                    <input type="number" name="cantidad" min="1" max="10" step="1">
+                                    <input type="number" name="cantidad" min="1" max="10" step="1" onkeyup="this.value = minMaxValidationFunc(this, this.value)">
                                 </div>
                                 <p class="precio">$1000</p>
                                 <i class="fas fa-trash-alt"></i>
@@ -23,7 +23,7 @@
                                 <img src="/imagenes/Televisores/Tele3-Vista2.jpg" width=" 100px">
                                 <P>Televisor Smart TV de 30" con Sistema Oprativo y Control Remoto con Voz</p>
                                 <div class="cantidad">
-                                    <input type="number" name="cantidad" min="1" max="10" step="1">
+                                    <input type="number" name="cantidad" min="1" max="10" step="1" onkeyup="this.value = minMaxValidationFunc(this, this.value)">
                                 </div>
                                 <p class="precio">$1000</p>
                                 <i class="fas fa-trash-alt"></i>
@@ -130,6 +130,7 @@
                 </main>
 
                 <script src="/js/ventana.js"></script>
+                <script src="/js/cantidad.js"></script>
 
                 <%- include('./partials/footer')%>
     </body>
