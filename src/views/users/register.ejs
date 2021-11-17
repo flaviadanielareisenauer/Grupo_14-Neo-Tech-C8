@@ -31,20 +31,20 @@
                                 <input type="e-mail" placeholder="Ingrese su correo o nombre de ususario" name="emailLog" id="emailLog">
                                 <span class="mensajeError" id="emailErrorsLog"></span> <br>
                                 <% if (locals.errors && errors.emailLog) { %>
-                                    <small class="text-validation"><%= /*errors.emailLog.msg*/ %> </small>
+                                    <small class="text-validation"><%= /*errors.emailLog.msg */%> </small>
                                     <% } %>
                             </div>
                             <div>
                                 <input type="password" placeholder="Contraseña" name="passLog" id="passwordLog">
                                 <span class="mensajeError" id="passwordErrorsLog"></span> <br>
-                                <% if (locals.errors && errors.passLog) { %>
-                                    <small class="text-validation"><%= /*errors.passLog.msg*/ %> </small>
-                                    <% } %>
                             </div>
                             <div class="form-ad-input_check">
                                 <input type="checkbox" name="remember" id="check">
                                 <label for="check">Recordar tu ususario</label>
                             </div>
+                            <% if (locals.errors && errors.passLog) { %>
+                                <small class="text-validation"><%= errors.passLog.msg %> </small>
+                                <% } %>
                            <span class="mensajeError" id="submitLoginErrors"></span> <br>
                             <button type="submit">Iniciar sesión</button>
                         </form>

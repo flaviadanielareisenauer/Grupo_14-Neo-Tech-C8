@@ -69,9 +69,20 @@
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.3);
 }
 
+.btn_reg {
+  background-color: var(--azulOscuro);
+}
+.btn_reg:hover {
+  background-color: var(--naranja);
+}
+
 .btn_ad_lg {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  height: 7rem;
 }
 
 .button_ad_lg:hover {

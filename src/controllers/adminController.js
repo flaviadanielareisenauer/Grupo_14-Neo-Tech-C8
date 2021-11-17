@@ -15,6 +15,11 @@ module.exports = {
             session: req.session,
         });
     },
+    adminRegister: (req, res) => {
+        res.render("admin/adminRegister", {
+            session: req.session,
+        });
+    },
     productsList: (req, res) => {
         db.Products.findAll({
                 include: [{ association: "productsimage" }],
