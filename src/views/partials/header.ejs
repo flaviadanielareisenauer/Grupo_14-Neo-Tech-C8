@@ -30,7 +30,7 @@
                         <ul class="list">
                             <%if(typeof session.user != "undefined"){%>
                                 <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
-                                <li class="item-list"><a href="/user/logout"> Cerrar session</a></li>
+                                <li class="item-list"><a href="/user/logout"> Cerrar sesion</a></li>
                                 <%if(session.user.rol === 0){%>
                                     <li class="item-list"><a href="/admin/products"> Productos</a></li>
                                     <%}%>
