@@ -7,7 +7,8 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
     register: (req, res) => {
         res.render("users/register", {
-            session: req.session,
+            session: req.session, 
+            register: "no"
         });
     },
     profileLogin: (req, res) => {
@@ -43,9 +44,10 @@ module.exports = {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body.emailLog,
+                register: "no"
             });
         }
-    },
+    }, 
     processRegister: (req, res) => {
         let arrayImages = [];
         let errors = validationResult(req);
@@ -67,10 +69,10 @@ module.exports = {
                     email,
                     password: bcrypt.hashSync(password1, 12),
                     avatar: arrayImages.length > 0 ? arrayImages : "default-image.png",
-                    rol: 0,
+                    rol: 1,
                 })
-                .then(() => {
-                    res.redirect("/user/login");
+                .then(() => {     
+                    res.render("users/register")
                 })
                 .catch((err) => console.log(err));
         } else {
@@ -78,6 +80,7 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session,
+                register: "yes"
             });
         }
     },

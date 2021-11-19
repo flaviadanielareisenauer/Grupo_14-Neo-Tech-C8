@@ -5,7 +5,7 @@ function qs(element) {
 window.addEventListener("load", function () {
   let $inputfirstName = qs("#firstName");
   $firstNameErrors = qs("#firstNameErrors");
-  $inputlastName = qs("#lastName");
+  $lastName = qs("#lastName");
   $lastNameErrors = qs("#lastNameErrors");
   $formRegister = qs("#formRegister");
   $email = qs("#email");
@@ -18,33 +18,34 @@ window.addEventListener("load", function () {
   regExEmail = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
   regExPass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$/;
 
-  $inputfirstName.addEventListener("blur", function () {    
+  $inputfirstName.addEventListener("blur", function () {
     switch (true) {
       case !$inputfirstName.value.trim():
         $firstNameErrors.innerHTML = "Debes escribir tu nombre";
         break;
       case !regExAlpha.test($inputfirstName.value):
-        $inputfirstName.style.border = "1px solid red"
+        $inputfirstName.style.border = "1px solid red";
         $firstNameErrors.innerHTML = "Debes ingresar un nombre válido";
         break;
       default:
         $firstNameErrors.innerHTML = "";
+        $inputfirstName.style.border = "none";
         break;
     }
   });
 
-  $inputlastName.addEventListener("blur", function () {
-    console.log("hola");
+  $lastName.addEventListener("blur", function () {
     switch (true) {
-      case !$inputlastName.value.trim():
+      case !$lastName.value.trim():
         $lastNameErrors.innerHTML = "Debes escribir tu apellido";
         break;
-      case !regExAlpha.test($inputlastName.value):
-        $inputlastName.style.border = "1px solid red"
+      case !regExAlpha.test($lastName.value):
+        $lastName.style.border = "1px solid red";
         $lastNameErrors.innerHTML = "Debes ingresar un apellido válido";
         break;
       default:
         $lastNameErrors.innerHTML = "";
+        $lastName.style.border = "none";
         break;
     }
   });
@@ -55,11 +56,12 @@ window.addEventListener("load", function () {
         $emailErrors.innerHTML = "El campo email es obligatorio";
         break;
       case !regExEmail.test($email.value):
-        $email.style.border = "1px solid red"
+        $email.style.border = "1px solid red";
         $emailErrors.innerHTML = "Debe ingresar un email válido";
         break;
       default:
         $emailErrors.innerHTML = "";
+        $email.style.border = "none";
         break;
     }
   });
@@ -70,12 +72,13 @@ window.addEventListener("load", function () {
         $password1Errors.innerHTML = "El campo contraseña es obligatorio";
         break;
       case !regExPass.test($password1.value):
-        $password1.style.border = "1px solid red"
+        $password1.style.border = "1px solid red";
         $password1Errors.innerHTML =
           "La contraseña debe tener: entre 6 o 12 caracteres, al menos una mayúscula, una minúscula y un número";
         break;
       default:
         $password1Errors.innerHTML = "";
+        $password1.style.border = "none";
         break;
     }
   });
@@ -86,11 +89,12 @@ window.addEventListener("load", function () {
         $password2Errors.innerHTML = "Debes reingresar la contraseña";
         break;
       case $password2.value != $password1.value:
-        $password2.style.border = "1px solid red"
+        $password2.style.border = "1px solid red";
         $password2Errors.innerHTML = "Las contraseñas no coinciden";
         break;
       default:
         $password2Errors.innerHTML = "";
+        $password2.style.border = "none";
         break;
     }
   });
@@ -102,12 +106,16 @@ window.addEventListener("load", function () {
 
     for (let index = 0; index < elementForm.length - 1; index++) {
       if (elementForm[index].value == "") {
-        elementForm[index].style.border = '1px solid red'
+        elementForm[index].style.border = "1px solid red";
         submitErrors.innerHTML = "Los campos señalados son obligatorios";
         error = true;
       }
+      if (elementForm[index].style.border === "1px solid red") {
+        submitErrors.innerHTML = "Uno de los campos contiene un error";
+        error = true;
+      }
     }
-    if (!error) {
+    if (error == false) {
       console.log("Todo bien");
       $formRegister.submit();
     }
