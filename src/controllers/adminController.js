@@ -113,7 +113,6 @@ module.exports = {
       });
     });
   },
-
   update: (req, res) => {
     let errors = validationResult(req);
 

@@ -47,13 +47,13 @@ function iniciarSesion() {
   }
 }
 
-function register() {  
+function register() {
   if (window.innerWidth > 850) {
     form_register.style.display = "block"; // Al clickear el boton de registrarse el formulario register se va a mostrar.
     contenedor_login_register.style.left = "410px"; // El registro se va a deslizar hacia el otro lado manteniendo un borde de 10px.
     form_login.style.display = "none"; // Para que quede oculto.
     caja_trasera_register.style.opacity = "0";
-    caja_trasera_login.style.opacity = "1";    
+    caja_trasera_login.style.opacity = "1";
   } else {
     form_register.style.display = "block";
     contenedor_login_register.style.left = "0px";
