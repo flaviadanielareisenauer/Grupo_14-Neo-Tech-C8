@@ -45,9 +45,9 @@
                                         <%= errors.code.msg %>
                                     </small>
                                             <% } %>
-                                                <div class="inputcontainer ">
+                                       <div class="inputcontainer ">
 
-                                                    <select id="productCategorias" class="inputselect" name="categoria">
+                            <select id="productCategorias" class="inputselect" name="categoria">
                                <% categorias.forEach(categoria=> {%>
                                 <option hidden></option>
                                 <option value="<%-categoria.id%>">
@@ -62,7 +62,6 @@
                                 <%= errors.categoria.msg %>
                                 </small>
                                                     <% } %>
-
 
                                                         <% if(locals.errors && errors.price){ %>
                                                             <small class="text-validation">
@@ -90,7 +89,8 @@
                                 <option value="10 ">10%</option>
                                 <option value="20 ">20%</option>
                                 <option value="25 ">25%</option>
-                                <option value="30 ">30%</option>                                    <option value="35 ">35%</option>
+                                <option value="30 ">30%</option>
+                                <option value="35 ">35%</option>
                                 <option value="40 ">40%</option>
                             </select>
                                 </div>
