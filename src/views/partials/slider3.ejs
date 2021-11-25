@@ -1,0 +1,48 @@
+<section class="special-offers" id="slider_offers">
+
+    <!-- Product Slider -->
+
+    <div class="gallery productSlider js-flickity" data-flickity-options='{ "wrapAround": true }'>
+        <style>
+            .flickity-prev-next-button.next {
+                right: -20px;
+                background: hsla(0, 0%, 100%, 1);
+            }
+            
+            .flickity-prev-next-button.previous {
+                left: -20px;
+                background: hsla(0, 0%, 100%, 1);
+            }
+        </style>
+
+        <% Product.forEach(Product => {%>
+
+            <%if(Product.categoryId == 11){%>
+                <article class="producto ">
+
+
+                    <div class="img-container"><img src="/imagenes/<%-Product.productsimage[0].name %>" alt=" "></div>
+                    <p class="description-product-cart">
+                        <%= Product.description %>
+                    </p>
+                    <h4 class="price-product-slider">
+                        $
+                        <%-toThousand(Math.round(Product.price - Product.price * Product.discount /100))  %>
+                    </h4>
+                    <div class="slider-priceanddiscount-container"> <span class="real-price-slider"> $<%-toThousand(Product.price)%></span>
+                        <%if (Product.discount > 0) {%>
+                            <span class="discount-slider"><%- Product.discount %>% OFF</span>
+                            <%}%>
+                    </div>
+
+                    <a href="/products/detail/<%- Product.id%>">
+                        <div class="button">
+                            <p>COMPRAR YA</p>
+                        </div>
+                    </a>
+                </article>
+                <%}%>
+                    <% }) %>
+
+    </div>
+</section>

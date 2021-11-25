@@ -44,7 +44,7 @@
                                                 <div class="inputcontainer">
                                                     <select id="productCategorias" name="categoryId" class="inputselect">  
                                                         <% category.forEach(category => {%>
-                                                            <option hidden selected><%- category.id = Product.categoryId ? Product.categories.name : null %></option>
+                                                            <option hidden selected><%- category.id = Product.categoryId ? category.name  : '' %></option>
                                                             <option value="<%-category.id%>">
                                                                 <%- category.name %>
                                                                 </option>
@@ -55,8 +55,8 @@
                                                 </div>
 
 
-                                    <div class="inputcontainer">
-                                    <select name="discount" class="inputselect ">
+                                                <div class="inputcontainer">
+                                                    <select name="discount" class="inputselect ">
                                     <option value="<%- Product.discount%> " hidden selected>Descuento</option>
                                     <option value="10 ">10%</option>
                                     <option value="20 ">20%</option>

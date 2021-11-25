@@ -9,8 +9,6 @@
             <%- include("./partials/header")%>
                 <div class="products-general">
                     <div class="products-category-container">
-                        <div class="searchAll-container"> <input type="text" class="searchAll"></div>
-
                         <h4 class="h4-category">Categorías
                         </h4>
                         <%Category.forEach(category => {%>
@@ -34,6 +32,7 @@
                     </div>
 
                     <div class="products-container" id="products-results">
+
                         <%result.forEach(product=> {%>
 
                             <div class="products-cartAll">
@@ -63,10 +62,52 @@
                                         </div>
                                 </a>
                                 </div>
-
-
                             </div>
                             <%})%>
+                                <%if(result.length < 5){%>
+                                    <div class="resultTextContainer">
+                                        <%if(result.length  == 0){%>
+                                            <p class="productNotFound"> LO SENTIMOS, NO SE HA ENCONTRADO ESTE PRODUCTO:
+                                                <%- search%>
+                                            </p>
+                                            <%}%>
+                                                <div>
+                                                    <h3 style="color:gray; margin: 40px 0px 30px; text-align: left;">Tal vez te interesen</h3>
+                                                </div>
+                                    </div>
+
+                                    <%Products.forEach(product=> {%>
+                                        <div class="products-cartAll">
+                                            <a href="/products/detail/<%- product.id%>">
+                                                <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
+
+                                                </div>
+                                                <div class="detail-container-all">
+                                                    <h2 class="name-all">
+                                                        <%- product.name%>
+                                                    </h2>
+                                                    <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> $<%- product.price%></span>
+                                                    <p class="discount-all">
+                                                        <%- product.discount%>
+                                                    </p>
+                                                    <div class="button-all-container">
+
+                                                        <div class="button2-all">
+                                                            <a href="/user/productCart">
+                                                                <p>
+                                                                    Agregar al carrito
+                                                                </p>
+                                                            </a>
+
+                                                        </div>
+
+                                                    </div>
+                                            </a>
+                                            </div>
+                                        </div>
+                                        <%})%>
+                                            <%}%>
+
                     </div>
                 </div>
                 <%- include("./partials/footer")%>

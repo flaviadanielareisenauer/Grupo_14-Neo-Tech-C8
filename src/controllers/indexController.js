@@ -19,6 +19,7 @@ module.exports = {
             })
             /*   Promise.all([productsImage, Product]) */
             .then((Product) => {
+                console.log(req.session)
                 res.render("index", {
                     titleSlider: "productos",
                     session: req.session,
@@ -36,25 +37,43 @@ module.exports = {
     search: (req, res) => {
         let search = req.query.search.toLowerCase();
         let categories = db.Categories.findAll()
-        let results = db.Products.findAll({
-            where: {
-                name: {
-                    [Op.substring]: search,
-                },
-            },
+
+        let products = db.Products.findAll({
+            /*   where: {
+                  name: {
+                      [Op.substring]: search,
+                  },
+              },*/
             include: [{ association: "productsimage" }]
         })
-        Promise.all([results, categories])
+        Promise.all([products, categories])
 
-        .then(([result, Category]) => {
-            res.render("results", {
-                session: req.session,
-                result,
-                Category,
-                search: search,
-                toThousand,
-                req: req.params.id
-            });
+        .then(([Products, Category]) => {
+            db.Products.findAll({
+                        where: {
+                            name: {
+                                [Op.substring]: search,
+                            },
+                        },
+                        include: [{ association: "productsimage" }]
+                    }
+
+                )
+                .then(result => {
+                    res.render("results", {
+                        session: req.session,
+                        result,
+                        Category,
+                        search: search,
+                        toThousand,
+                        req: req.params.id,
+                        Products
+
+                    });
+                })
+
+
+
         });
     },
 

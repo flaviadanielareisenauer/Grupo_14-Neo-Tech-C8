@@ -30,10 +30,13 @@
                                     <a href="#img3" class="foto"><img src="/imagenes/<%=ProductD.productsimage[2]?.name %>"
                                         alt=""></a>
                                 </li>
-                                <li>
-                                    <a href="#img4" class="foto"><img src="/imagenes/<%=ProductD.productsimage[3]?.name %>"
-                                        alt=""></a>
-                                </li>
+                                <%if(ProductD.productsimage[3]){%>
+                                    <li>
+                                        <a href="#img4" class="foto"><img src="/imagenes/<%=ProductD.productsimage[3].name %>"
+                                    alt=""></a>
+                                    </li>
+                                    <%}%>
+
                             </ul>
 
                             <ul class="fotoMiniatura">

@@ -7,21 +7,25 @@
                 </a>
 
             </div>
-            <div class="search ">
+            <div class="search">
                 <form class="form_header" action="/search" method="GET">
-                    <input type="text" class="search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
-                </form>
-                <div class=" search-icon ">
-                    <a href="# "> <i class="fas fa-search bus "></i></a>
-                </div>
+                    <input type="text" id="search-bar" class="search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
+                    <button class="search-icon">
+                        <i class="fas fa-search bus"></i>
+                    </button>
 
-                <span class="btn-menu">
+                </form>
+            </div>
+            <span class="arrowSearch"><i class="fas fa-arrow-left"></i></span>
+            <span class="btn-menu">
+                  
                 <i class="fa fa-bars"></i>
             </span>
+            <div class="iconSearchMobile">
+                <i class="fas fa-search bus" id="iconooo" class="iconoo"></i>
             </div>
-            <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
 
-
+            <div class="iconos"> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
                 <div class="user-container">
                     <span class="user-containe"> <i class="far fa-user dos "><%if(typeof session.user != "undefined"){%><span class="session"></span>
                     <%}%>
@@ -49,20 +53,44 @@
     </div>
     <div class="menu-bottom">
         <ul class="menu-items">
+            <div class="logUserMobile">
+                <div class="logUserPhotoContainer">
+                    <div class="logUserPhoto">
+                        <img src="/imagenes/userAvatars/<%- session.user ? session.user.avatar : 'userDefaultPhoto.jpg' %>" alt="">
+                    </div>
+                    <p>Bienvenido
+                        <%- session.user ? session.user.firstName : '' %>
+                    </p>
 
+                </div>
+                <p class="logUserText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, eos.</p>
+                <div class="redicLog">
+                    <a href="/user/register">
+                        <p>Ingresar a mi cuenta</p>
+                    </a>
+
+                </div>
+            </div>
             <li class="active">
-                <a href="/ ">Inicio</a>
+                <a href="/ " class="menu-bottom-items">Inicio</a>
             </li>
             <li>
-                <a href="/allProducts">Productos</a>
+                <a href="/allProducts" class="menu-bottom-items">Productos</a>
             </li>
             <li>
-                <a href="/formas-de-pago "> Formas de pago</a>
+                <a href="/formas-de-pago " class="menu-bottom-items"> Formas de pago</a>
             </li>
             <li>
-                <a href="/user/categorias ">Todas las Categorias</a>
+                <a href="/user/categorias " class="menu-bottom-items">Todas las Categorias</a>
             </li>
-
+            <%if(session.user){%>
+                <%if(session.user.rol == 0){%>
+                    <li>
+                        <p class="menu-bottom-items" id="button-banner-modal">Banners</p>
+                        <%- include('./bannerModal')%>
+                    </li>
+                    <%}%>
+                        <%}%>
         </ul>
 
     </div>
@@ -72,4 +100,5 @@
     </div>
 
 </nav>
+<script src="/js/banners.js"></script>
 <script src="/header.js"></script>

@@ -33,7 +33,6 @@
                     <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
                     <a class="next " onclick="plusSlides(1) ">&#10095;</a>
 
-
                 </section>
 
                 <!-- The dots/circles -->
@@ -86,38 +85,46 @@
                             <div class="categorias ">
                                 <div class="categoria1 ">
                                     <div class="item-category ">
-                                        <a href="user/categorias#notebookNT"><i class="fas fa-laptop "></i></a>
+                                        <a href="user/categorias#notebookNT"><i class="fas fa-laptop "></i><p class="text-category">Notebooks</p></a>
 
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#computadorasNT"><i class="fas fa-desktop "></i></a>
-                                    </div>
-                                    <div class="item-category ">
-                                        <a href="user/categorias#celularesNT"><i class="fas fa-mobile-alt "></i></a>
+                                        <a href="user/categorias#computadorasNT"><i class="fas fa-desktop "></i><p class="text-category">Computadoras</p></a>
 
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#accesoriosNT"><i class="fas fa-headphones-alt "></i></a>
+                                        <a href="user/categorias#celularesNT"><i class="fas fa-mobile-alt "></i><p class="text-category">Celulares</p></a>
+
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#impresorasNT"><i class="fas fa-print"></i></a>
+                                        <a href="user/categorias#accesoriosNT"><i class="fas fa-headphones-alt "></i><p class="text-category">Accesorios</p></a>
+
+                                    </div>
+                                    <div class="item-category ">
+                                        <a href="user/categorias#impresorasNT"><i class="fas fa-print"></i><p class="text-category">Impresoras</p></a>
+
                                     </div>
                                 </div>
                                 <div class="categoria2 ">
                                     <div class="item-category ">
-                                        <a href="user/categorias#televisoresNT"><i class="fas fa-tv "></i></a>
+                                        <a href="user/categorias#televisoresNT"><i class="fas fa-tv "></i><p class="text-category">Televisores</p></a>
+
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#consolasNT"><i class="fas fa-gamepad"></i></a>
+                                        <a href="user/categorias#consolasNT"><i class="fas fa-gamepad"></i> <p class="text-category">Consolas</p></a>
+
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#combosNT"><i class="far fa-keyboard "></i></a>
+                                        <a href="user/categorias#combosNT"><i class="far fa-keyboard "></i><p class="text-category">Combos</p></a>
+
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#tabletNT"><i class="fas fa-tablet-alt "></i></a>
+                                        <a href="user/categorias#tabletNT"><i class="fas fa-tablet-alt "></i><p class="text-category">Tablet</p></a>
+
                                     </div>
                                     <div class="item-category ">
-                                        <a href="user/categorias#ofertasNT"><i class="fas fa-fire-alt"></i></a>
+                                        <a href="user/categorias#ofertasNT"><i class="fas fa-fire-alt"></i><p class="text-category">Ofertas</p></a>
+
                                     </div>
                                 </div>
                             </div>
@@ -126,13 +133,12 @@
 
                         <div class="notebook ">
                             <p class="secciones ">Notebook</p>
-                            <section class="general-products ">
-                                <%- include('partials/slider.ejs') %>
-
+                            <section class="general-products">
+                                <%- include('partials/slider2.ejs') %>
                             </section>
                             <p class="secciones ">Accesorios</p>
                             <section class="general-products ">
-                                <%- include('partials/slider.ejs') %>
+                                <%- include('partials/slider3.ejs') %>
 
 
                             </section>

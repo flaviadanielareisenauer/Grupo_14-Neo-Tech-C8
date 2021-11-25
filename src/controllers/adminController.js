@@ -106,6 +106,8 @@ module.exports = {
 
         .then(
             ([category, Product, Image]) => {
+
+
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
