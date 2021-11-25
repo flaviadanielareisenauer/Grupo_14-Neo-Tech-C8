@@ -23,22 +23,24 @@
 
 
                 <div class="user-container">
-                    <span class="user-containe"> <i class="far fa-user dos "><%if(typeof session.user != "undefined"){%><span class="session"></span>
-                    <%}%>
-                        </i>
+                    <span class="user-container"> <a href="/user/register"><i class="far fa-user dos"></i></a> <%if(!session.user){%> <div></div>
+                    <% } else if (session.user) { %> 
+                        <span class="session"></span>
+                        <%}%>                       
+                     
+                        
                         </span>
-                        <ul class="list">
-                            <%if(typeof session.user != "undefined"){%>
+
+                        <%if(typeof session.user != "undefined"){%>
+                            <ul class="list">
                                 <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
                                 <li class="item-list"><a href="/user/logout"> Cerrar sesion</a></li>
                                 <%if(session.user.rol === 0){%>
                                     <li class="item-list"><a href="/admin/products"> Administracion</a></li>
                                     <%}%>
-                                        <%}else{%>
-                                            <li class="item-list"><a href="/user/register">Ingresar</a> </li>
-                                            <li class="item-list"><a href="/user/register">Registrarse</a> </li>
-                                            <%}%>
-                        </ul>
+                                </ul>
+                                        <%}%>                                       
+                                           
                 </div>
 
             </div>

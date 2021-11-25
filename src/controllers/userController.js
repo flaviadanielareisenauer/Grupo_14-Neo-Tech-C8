@@ -72,7 +72,7 @@ module.exports = {
         rol: 1,
       })
         .then(() => {
-          res.render("users/register");
+          res.render("users/register", {session: req.session, register: "no"});
         })
         .catch((err) => console.log(err));
     } else {
