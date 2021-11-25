@@ -241,6 +241,7 @@
     }
     .caja {
         width: 100%;
+        flex-direction: column;
     }
     .resumen {
         width: 90%;
@@ -249,5 +250,8 @@
     }
     .formulario {
         width: 95%;
+    }
+    .caja i {
+        margin: 0;
     }
 }
