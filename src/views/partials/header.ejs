@@ -20,17 +20,18 @@
             </span>
             </div>
             <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
-
-
                 <div class="user-container">
-                    <span class="user-container"> <a href="/user/register"><i class="far fa-user dos"></i></a> <%if(!session.user){%> <div></div>
+                    <span class="user-icon-login"> <% if (!session.user) { %>
+                        <a href="/user/register"><i class="far fa-user dos"></i></a> 
+                    <% } %>
+                    <% if (session.user) { %>
+                        <i class="far fa-user dos"></i>
+                    <% } %>     
+                        <%if(!session.user){%> <div></div>
                     <% } else if (session.user) { %> 
                         <span class="session"></span>
-                        <%}%>                       
-                     
-                        
+                        <%}%>               
                         </span>
-
                         <%if(typeof session.user != "undefined"){%>
                             <ul class="list">
                                 <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
@@ -38,15 +39,11 @@
                                 <%if(session.user.rol === 0){%>
                                     <li class="item-list"><a href="/admin/products"> Administracion</a></li>
                                     <%}%>
-                                </ul>
-                                        <%}%>                                       
-                                           
+                                </ul>                                
+                                <%}%>                                       
                 </div>
-
             </div>
-
         </div>
-
     </div>
     </div>
     <div class="menu-bottom">
@@ -64,14 +61,11 @@
             <li>
                 <a href="/user/categorias ">Todas las Categorias</a>
             </li>
-
         </ul>
-
     </div>
 
     <div id="bar-arcoiris">
         <h1>. </h1>
     </div>
-
 </nav>
 <script src="/header.js"></script>
