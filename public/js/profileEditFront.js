@@ -86,7 +86,7 @@ window.addEventListener("load", function() {
             });
 
             provinces.forEach(province => {
-                $inputSelectProvince.innerHTML += `<option value="${province.id}">${province.nombre}</option>`
+                $inputSelectProvince.innerHTML += `<option value="${province.nombre}">${province.nombre}</option>`
             });
         })
         .catch((err) => {

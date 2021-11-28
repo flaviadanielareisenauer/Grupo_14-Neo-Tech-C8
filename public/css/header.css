@@ -48,13 +48,14 @@
 
 .search-bar {
     margin-right: 5px;
-    width: 98%;
+    width: 90%;
     height: 50px;
     border-radius: 5px;
     background-color: #f9f9f9;
     display: flex;
     align-items: center;
     border: none;
+    margin: auto;
 }
 
 .form_header {

@@ -83,14 +83,7 @@
             <li>
                 <a href="/user/categorias " class="menu-bottom-items">Todas las Categorias</a>
             </li>
-            <%if(session.user){%>
-                <%if(session.user.rol == 0){%>
-                    <li>
-                        <p class="menu-bottom-items" id="button-banner-modal">Banners</p>
-                        <%- include('./bannerModal')%>
-                    </li>
-                    <%}%>
-                        <%}%>
+
         </ul>
 
     </div>

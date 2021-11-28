@@ -1,7 +1,7 @@
 const { validationResult } = require("express-validator");
 let bcrypt = require("bcryptjs");
 const db = require("../database/models");
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
 module.exports = {
@@ -128,6 +128,7 @@ module.exports = {
                     dni,
                     numberPhone,
                     avatar: req.file ? req.file.filename : avatar ? "default-image.png" : avatar,
+                    location
                 }, {
                     where: {
                         id: req.params.id,
@@ -135,13 +136,14 @@ module.exports = {
                 },
                 options
             ).then(async() => {
+
                 if (await db.Address.findOne({ where: { id: req.params.id } })) {
                     db.Address.update({
                             streetName,
                             streetNumber,
                             dto,
                             postalCode,
-                            province,
+                            province: province,
                             location,
                             userId: req.params.id,
                         }, {
@@ -211,4 +213,35 @@ module.exports = {
     productCart: (req, res) => {
         res.render("productCart", { session: req.session });
     },
+    profileDelete: (req, res) => {
+
+        db.Address.destroy({
+                where: { userId: req.params.id },
+            })
+            .then(() => {
+                db.User.destroy({
+                    where: {
+                        id: req.params.id,
+                    },
+                }).then(() => {
+                    req.session.destroy()
+                    if (req.cookies.userNeoTech) {
+                        res.cookie('userNeoTech', '', { maxAge: -1 })
+                    }
+                    res.redirect("/");
+                });
+            })
+            .catch((error) => console.log(error));
+    },
+    imgDeleteProfile: (req, res) => {
+
+        db.User.update({ avatar: '' }, {
+                where: {
+                    id: req.params.id
+                }
+            })
+            .then((user) => {
+                res.redirect("/user/profile/" + req.params.id)
+            })
+    }
 };

@@ -39,16 +39,12 @@ module.exports = {
         let categories = db.Categories.findAll()
 
         let products = db.Products.findAll({
-            /*   where: {
-                  name: {
-                      [Op.substring]: search,
-                  },
-              },*/
-            include: [{ association: "productsimage" }]
+            include: [{ association: "productsimage" }],
+            limit: 10
         })
         Promise.all([products, categories])
 
-        .then(([Products, Category]) => {
+        .then(([products, Category]) => {
             db.Products.findAll({
                         where: {
                             name: {
@@ -67,7 +63,7 @@ module.exports = {
                         search: search,
                         toThousand,
                         req: req.params.id,
-                        Products
+                        products
 
                     });
                 })
@@ -87,7 +83,9 @@ module.exports = {
                         [Op.gte]: 0
                     }
                 },
-                include: [{ association: "productsimage" }]
+
+                include: [{ association: "productsimage" }],
+
             })
             /*   Promise.all([productsImage, Product]) */
         Promise.all([categories, products])

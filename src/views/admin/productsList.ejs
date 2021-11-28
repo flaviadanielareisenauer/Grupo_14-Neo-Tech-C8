@@ -8,11 +8,10 @@
         <%- include('../partials/backHome')%>
 
             <div class="p-3 text-end">
-                <a class="btn-secondary" href="products/create">Agregar producto</a>
+                <a class="btn-secondary" href="/admin/products/create">Agregar producto</a>
             </div>
 
             <main class="container">
-
 
                 <table class="table">
 
@@ -22,10 +21,18 @@
                             <th class="column-mobile" scope="col">imagenProducto</th>
                             <th scope="col">Nombre</th>
                             <th class="column-mobile" scope="col">Descripción</th>
-                            <th class="column-mobile" scope="col">precio</th>
+                            <th class="column-mobile" scope="col">Precio</th>
                         </tr>
                     </thead>
                     <style>
+                        .container {
+                            display: flex;
+                        }
+                        
+                        .products-category-container {
+                            margin: 0px 40px;
+                        }
+                        
                         td {
                             height: 120px;
                         }
@@ -40,8 +47,37 @@
                             object-fit: contain;
                         }
                     </style>
+
                     <tbody>
-                        <% products.forEach(product => { %>
+                        <div class="products-category-container">
+                            <h4 class="h4-category">Categorías
+                            </h4>
+                            <form class="" action="/admin/search" method="GET">
+                                <div class="searchAll-container"> <input type="text" class="searchAll" name="search" placeholder="   Busque un producto..."></div>
+                            </form>
+
+                            <%Category.forEach(category => {%>
+                                <p class="product-category-item">
+                                    <a href="/admin/products/<%-category.id%>" class="category-select">
+                                        <% if(category.id == req){%>
+                                            <p class="dark-select">
+                                                <%- category.name%>
+                                            </p>
+
+                                            <%}else{%>
+                                                <%- category.name%>
+                                                    <%}%>
+                                    </a>
+                                </p>
+
+                                <%})%>
+                                    <p class="addCategoryText">Agregar categoría <i class="fas fa-plus"></i></p>
+                                    <form action="/admin/addCategory" method="POST" onsubmit="return confirm('Se creará una nueva categoría')">
+                                        <div class="addCategory"><input type="text" name="addCategory"></div>
+                                    </form>
+                        </div>
+
+                        <% productsRev.forEach(product => { %>
                             <tr>
                                 <th scope="row">
                                     <div>
@@ -74,7 +110,7 @@
                                 </td>
 
                                 <td>
-                                    <a class="btn btn-success" href="products/<%- product.id%>/edit" style="margin: 10px 0;">
+                                    <a class="btn btn-success" href="/admin/products/<%- product.id%>/edit" style="margin: 10px 0;">
                                         <div class="buttons-container">
                                             <div class="btn btn-eliminar">
                                                 <i class="far fa-edit"></i>
@@ -111,6 +147,7 @@
             <%- include('../partials/footer')%>
                 <%- include('../partials/scripts.ejs')  %>
                     </body>
+                    <script src="/js/productList.js"></script>
                     <script src="/js/modalDelete.js"></script>
 
 </html>

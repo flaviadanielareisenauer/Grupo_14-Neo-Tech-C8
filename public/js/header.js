@@ -46,6 +46,7 @@ addEventListener('DOMContentLoaded', () => {
 function backHome() {
     const bar_arcoiris_container = document.querySelector('#bar-arcoiris');
     const scroll = document.documentElement.scrollTop;
+
     const icon = document.querySelector('.back-home-container');
     const btn_list = document.querySelector('.list');
 

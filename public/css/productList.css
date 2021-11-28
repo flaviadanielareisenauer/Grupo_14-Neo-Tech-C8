@@ -5,12 +5,13 @@ body {
 main.container {
     text-align: center;
     margin: auto;
-    max-width: 1000px;
 }
 
 main.container .table {
-    margin: auto;
+    margin: 0 auto auto;
+    top: 0;
     background-color: white;
+    max-width: 980px;
 }
 
 .text-end {
@@ -43,4 +44,24 @@ svg.btn-editar {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.addCategoryText {
+    cursor: pointer;
+}
+
+.addCategory {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.addCategory input {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 5px;
 }

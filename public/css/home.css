@@ -32,6 +32,7 @@
     align-items: center;
     justify-content: center;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .back-home i {
@@ -99,11 +100,12 @@ p {
 }
 
 .dots {
-    display: none;
-    width: fit-content;
-    height: 280px;
-    position: relative;
-    bottom: 70px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 5px auto;
 }
 
 
@@ -149,10 +151,10 @@ p {
 .dot {
     display: none;
     cursor: pointer;
-    height: 10px;
-    width: 10px;
+    height: 12px;
+    width: 12px;
     margin: 0 2px;
-    opacity: .3;
+    opacity: .4;
     background-color: #bbb;
     border-radius: 50%;
     display: inline-block;
@@ -161,7 +163,7 @@ p {
 
 .dot-active,
 .dot:hover {
-    background-color: #717171;
+    background-color: #555;
 }
 
 
@@ -196,7 +198,7 @@ p {
 /****************BANNER*******************/
 
 .icon {
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
     width: 90%;
     height: 50px;
@@ -206,7 +208,6 @@ p {
     justify-content: space-evenly;
     align-items: center;
     background-color: #fff;
-    margin-top: 10px;
 }
 
 .icon p {
@@ -662,7 +663,7 @@ p {
         font-weight: normal;
         font-size: 1.5rem;
         text-align: left;
-        margin: 2rem 3.5rem;
+        margin: 2rem 6.5rem;
         color: #a1a1a1;
     }
     /******* PRODUCTOS *******/

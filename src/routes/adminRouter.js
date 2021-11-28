@@ -11,6 +11,9 @@ const {
     update,
     productsList,
     crear,
+    productListAdCategory,
+    searchAd,
+    addCategory
 } = require("../controllers/adminController");
 const upLoadFile = require("../middlewares/cargaImagen");
 const checkLogAdmin = require("../middlewares/checkLogUserAdmin");
@@ -19,6 +22,7 @@ let productEditValidator = require('../validations/productEditValidator')
 
 //Muestra la lista de productos desde el admin
 router.get("/products", checkLogAdmin, productsList);
+
 
 //configuración del admin y login
 router.get("/config-perfil", checkLogAdmin, perfil);
@@ -36,6 +40,11 @@ router.put("/products/:id", upLoadFile.array("image"), productEditValidator, upd
 
 //elimina el producto seleccionado
 router.delete("/products/delete/:id", eliminarProducto);
+
+router.get("/products/:id", checkLogAdmin, productListAdCategory);
+router.get("/search", checkLogAdmin, searchAd)
+
+router.post("/addCategory", checkLogAdmin, addCategory)
 
 
 module.exports = router;

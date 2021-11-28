@@ -11,6 +11,8 @@ const {
     profileLogin,
     logout,
     profileEdit,
+    profileDelete,
+    imgDeleteProfile
 } = require("../controllers/userController");
 
 const checkUserLogin = require('../middlewares/checkUserlogin');
@@ -42,6 +44,9 @@ router.put("/profile-edit/:id", userAvatars.single("avatar"), profileUserValidat
 
 router.get("/categorias", categorias);
 router.get("/productCart", productCart);
+
+router.delete("/profileDelete/:id", checkLog, profileDelete)
+router.post("/profile/imgDeleteProfile/:id", checkLog, imgDeleteProfile)
 
 
 module.exports = router;

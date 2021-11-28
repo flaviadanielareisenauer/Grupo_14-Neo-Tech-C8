@@ -22,14 +22,20 @@
     padding-top: 10px;
     margin: auto;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .searchAll {
-    width: 90%;
+    width: 80%;
     height: 30px;
     border-radius: 15px;
     border: 1px solid #c4c4c4;
     outline: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .h4-category {
