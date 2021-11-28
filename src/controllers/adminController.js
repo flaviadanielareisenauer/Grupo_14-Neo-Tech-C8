@@ -105,11 +105,11 @@ module.exports = {
         Promise.all([categories, product, Image])
 
         .then(
-            ([category, Product, Image]) => {
+            ([categories, Product, Image]) => {
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
-                    category,
+                    categories,
                     session: req.session,
                 });
             }
