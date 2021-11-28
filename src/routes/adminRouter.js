@@ -13,7 +13,6 @@ const {
 } = require("../controllers/adminController");
 const upLoadFile = require("../middlewares/cargaImagen");
 const checkLogAdmin = require("../middlewares/checkLogUserAdmin");
-const imageValidator = require("../validations/imageValidator");
 let productValidator = require("../validations/productCargaValidator");
 let productEditValidator = require("../validations/productEditValidator");
 
@@ -28,8 +27,7 @@ router.get("/products/create", checkLogAdmin, agregarProducto);
 
 router.post(
   "/products/create",
-  upLoadFile.array("image"),
-  imageValidator,
+  upLoadFile.array("image"),  
   productValidator,
   crear
 );
