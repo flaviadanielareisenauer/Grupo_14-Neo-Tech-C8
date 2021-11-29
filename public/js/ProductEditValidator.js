@@ -27,7 +27,7 @@ window.addEventListener('load', function (){
         }
     })
 
-    $productCode.addEventListener('blur', function(){
+    $productCode.addEventListener('blur',function(){
         switch (true){
             case !$productCode.value.trim(): 
                 $productCodeError.innerHTML = 'este campo es obligatorio'
@@ -65,7 +65,7 @@ window.addEventListener('load', function (){
     $productCategorias.addEventListener('blur', function(){
    
         if(!$productCategorias.value.trim()){
-            $productcategoriasErrors.innerHTML = 'El campo requerido'
+            $productcategoriasErrors.innerHTML = 'Este campo es obligatorio'
             $productCategorias.style.border = "1px solid red"
             console.log('funciona')
         }else{
@@ -82,8 +82,10 @@ $formCarga.addEventListener('submit',function(event){
     console.log($formCarga.elements)
     let elementosForm = this.elements
     
-    for (let index = 0; index < elementosForm.length-5; index++) {
-        if(elementosForm[index].value == "" && elementosForm[index].name !== "image"){
+    for (let index = 1; index < elementosForm.length-1; index++) {
+        if(elementosForm[index].value == "" && elementosForm[index].name !== "image" 
+        && elementosForm[index].name !== "description" && elementosForm[index].name !== "discount"
+        && elementosForm[index].name !== "color" ){
             elementosForm[index].style.border = "1px solid red"
             submitErrors.innerHTML = "Los campos señalados son obligatorios";
             error = true;

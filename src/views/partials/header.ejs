@@ -24,31 +24,31 @@
             <div class="iconSearchMobile">
                 <i class="fas fa-search bus" id="iconooo" class="iconoo"></i>
             </div>
-
-            <div class="iconos"> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
+            <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
                 <div class="user-container">
-                    <span class="user-containe"> <i class="far fa-user dos "><%if(typeof session.user != "undefined"){%><span class="session"></span>
+                    <span class="user-icon-login"> <% if (!session.user) { %>
+                        <a href="/user/register"><i class="far fa-user dos"></i></a> 
+                    <% } %>
+                    <% if (session.user) { %>
+                        <i class="far fa-user dos"></i>
+                    <% } %>     
+                        <%if(!session.user){%> <div></div>
+                    <% } else if (session.user) { %> 
+                        <span class="session"></span>
                     <%}%>
-                        </i>
                         </span>
-                        <ul class="list">
-                            <%if(typeof session.user != "undefined"){%>
+                        <%if(typeof session.user != "undefined"){%>
+                            <ul class="list">
                                 <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
-                                <li class="item-list"><a href="/user/logout"> Cerrar session</a></li>
+                                <li class="item-list"><a href="/user/logout"> Cerrar sesion</a></li>
                                 <%if(session.user.rol === 0){%>
-                                    <li class="item-list"><a href="/admin/products"> Productos</a></li>
+                                    <li class="item-list"><a href="/admin/products"> Administracion</a></li>
                                     <%}%>
-                                        <%}else{%>
-                                            <li class="item-list"><a href="/user/register">Ingresar</a> </li>
-                                            <li class="item-list"><a href="/user/register">Registrarse</a> </li>
-                                            <%}%>
-                        </ul>
+                            </ul>
+                            <%}%>
                 </div>
-
             </div>
-
         </div>
-
     </div>
     </div>
     <div class="menu-bottom">
@@ -83,15 +83,12 @@
             <li>
                 <a href="/user/categorias " class="menu-bottom-items">Todas las Categorias</a>
             </li>
-
         </ul>
-
     </div>
 
     <div id="bar-arcoiris">
         <h1>. </h1>
     </div>
-
 </nav>
 <script src="/js/banners.js"></script>
 <script src="/header.js"></script>

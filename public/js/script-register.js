@@ -31,7 +31,7 @@ anchoPagina();
 
 function iniciarSesion() {
   // Si el ancho del W es mayor a 850 se ejecuta el codigo.
-  if (window.innerWidth > 850) {
+  if (window.innerWidth > 850) {    
     form_login.style.display = "block";
     contenedor_login_register.style.left = "10px";
     form_register.style.display = "none";
@@ -48,9 +48,17 @@ function iniciarSesion() {
 }
 
 function register() {
+  const classRegisterLeft = document.getElementsByClassName("registerLeft");
   if (window.innerWidth > 850) {
     form_register.style.display = "block"; // Al clickear el boton de registrarse el formulario register se va a mostrar.
-    contenedor_login_register.style.left = "410px"; // El registro se va a deslizar hacia el otro lado manteniendo un borde de 10px.
+    if(classRegisterLeft.length === 0 ) {
+      contenedor_login_register.style.left = "410px"; // El registro se va a deslizar hacia el otro lado manteniendo un borde de 10px.
+    }    
+    if (classRegisterLeft.length > 0) {
+      if (Number(contenedor_login_register.style.left) === 0 ) {
+        contenedor_login_register.style.left = "0px";
+      }
+    }
     form_login.style.display = "none"; // Para que quede oculto.
     caja_trasera_register.style.opacity = "0";
     caja_trasera_login.style.opacity = "1";

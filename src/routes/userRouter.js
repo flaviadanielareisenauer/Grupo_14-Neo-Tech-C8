@@ -45,7 +45,7 @@ router.put("/profile-edit/:id", userAvatars.single("avatar"), profileUserValidat
 router.get("/categorias", categorias);
 router.get("/productCart", productCart);
 
-router.delete("/profileDelete/:id", checkLog, profileDelete)
+router.post("/profileDelete/:id", checkLog, profileDelete)
 router.post("/profile/imgDeleteProfile/:id", checkLog, imgDeleteProfile)
 
 

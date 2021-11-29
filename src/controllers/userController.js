@@ -8,6 +8,7 @@ module.exports = {
     register: (req, res) => {
         res.render("users/register", {
             session: req.session,
+            register: "no",
         });
     },
     profileLogin: (req, res) => {
@@ -43,6 +44,7 @@ module.exports = {
                 errors: errors.mapped(),
                 session: req.session,
                 old: req.body.emailLog,
+                register: "no",
             });
         }
     },
@@ -67,10 +69,10 @@ module.exports = {
                     email,
                     password: bcrypt.hashSync(password1, 12),
                     avatar: arrayImages.length > 0 ? arrayImages : "default-image.png",
-                    rol: 0,
+                    rol: 1,
                 })
                 .then(() => {
-                    res.redirect("/user/login");
+                    res.render("users/register", { session: req.session, register: "no" });
                 })
                 .catch((err) => console.log(err));
         } else {
@@ -78,6 +80,7 @@ module.exports = {
                 errors: errors.mapped(),
                 old: req.body,
                 session: req.session,
+                register: "yes",
             });
         }
     },
@@ -118,7 +121,7 @@ module.exports = {
                 postalCode,
                 province,
                 location,
-                avatar
+                avatar,
             } = req.body;
 
             db.User.update({
@@ -136,7 +139,6 @@ module.exports = {
                 },
                 options
             ).then(async() => {
-
                 if (await db.Address.findOne({ where: { id: req.params.id } })) {
                     db.Address.update({
                             streetName,
@@ -171,23 +173,16 @@ module.exports = {
             });
         } else {
             db.User.findByPk(req.params.id, {
-                include: [{ association: "addresses" }]
+                include: [{ association: "addresses" }],
             }).then((user) => {
                 res.render("users/profile-edit", {
                     errors: errors.mapped(),
                     old: req.body,
                     session: req.session,
-                    user
+                    user,
                 });
-            })
+            });
         }
-    },
-    logout: (req, res) => {
-        req.session.destroy();
-        if (req.cookies.userNeoTech) {
-            res.cookie("userNeoTech", "", { maxAge: -1 });
-        }
-        res.redirect("/");
     },
     categorias: (req, res) => {
         db.Products.findAll({
@@ -214,7 +209,6 @@ module.exports = {
         res.render("productCart", { session: req.session });
     },
     profileDelete: (req, res) => {
-
         db.Address.destroy({
                 where: { userId: req.params.id },
             })
@@ -234,7 +228,6 @@ module.exports = {
             .catch((error) => console.log(error));
     },
     imgDeleteProfile: (req, res) => {
-
         db.User.update({ avatar: '' }, {
                 where: {
                     id: req.params.id
@@ -243,5 +236,14 @@ module.exports = {
             .then((user) => {
                 res.redirect("/user/profile/" + req.params.id)
             })
-    }
+    },
+    logout: (req, res) => {
+        req.session.destroy();
+        if (req.cookies.userNeoTech) {
+            res.cookie("userNeoTech", "", { maxAge: -1 });
+        }
+        res.redirect("/");
+    },
+
+
 };
