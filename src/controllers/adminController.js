@@ -242,14 +242,14 @@ module.exports = {
                     include: [{ association: "productsimage" }]
                 })
                 .then(products => {
+                    let productsRev = products.reverse();
                     res.render("admin/productsList", {
                         session: req.session,
                         Category,
                         search: search,
                         toThousand,
                         req: req.params.id,
-                        products
-
+                        productsRev,
                     });
                 })
         });
