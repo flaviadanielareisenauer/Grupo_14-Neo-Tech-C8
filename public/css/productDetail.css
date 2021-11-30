@@ -1,602 +1,500 @@
 .productDetail {
-  background-color: var(--clarito);
+    background-color: var(--clarito);
 }
+
 
 /*---------------------scrollbar------------------*/
 
 .productDetail::-webkit-scrollbar {
-  width: 9px;
+    width: 9px;
 }
 
 .productDetail::-webkit-scrollbar-thumb {
-  background-color: #070d2b;
-  border-radius: 5px;
-  border: 1px solid white;
+    background-color: #070d2b;
+    border-radius: 5px;
+    border: 1px solid white;
 }
+
 
 /*-------------fotos de producto-------------------*/
 
 .container1 {
-  background-color: var(--blanco);
-  width: 100%;
-  display: flex;
-  height: 500px;
+    background-color: var(--blanco);
+    width: 100%;
+    display: flex;
+    height: 500px;
 }
 
 ul.fotoMiniatura {
-  position: relative;
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
+    position: relative;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 ul.fotoMiniatura li {
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.5s;
-  background: var(--blanco);
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s;
+    background: var(--blanco);
 }
 
 ul.fotoMiniatura li img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 ul.fotoMiniatura li:first-child {
-  opacity: 0;
+    opacity: 1;
 }
 
 ul.fotoMiniatura li:target {
-  opacity: 1;
+    opacity: 1;
 }
 
 .fotoProducto {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
 }
 
 .fotoProducto .foto2 {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
 }
 
 .fotoProducto .foto {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
 }
 
 .fotoProducto li a img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 ul.fotoMiniatura li {
-  padding: 10px;
-  margin: 0;
-  list-style: none;
-  width: 100%;
-  height: 100%;
+    padding: 10px;
+    margin: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
 }
 
 ul.fotoProducto li {
-  width: 100%;
-  height: 25%;
+    width: 100%;
+    height: 25%;
 }
+
 
 /*-------agregar al carrito-----*/
 
 .agregar-carrito-der {
-  text-align: center;
-  background-color: var(--blanco);
-  padding: 3px;
+    text-align: center;
+    background-color: var(--blanco);
+    padding: 3px;
 }
 
 #boton-detalle {
-  border-bottom: var(--negro);
-  background-color: var(--naranja);
-  height: 40px;
-  width: 50%;
-  margin-top: 2rem;
+    border-bottom: var(--negro);
+    background-color: var(--naranja);
+    height: 40px;
+    width: 50%;
+    margin-top: 2rem;
 }
 
 a.text-agr-car {
-  display: block;
-  text-decoration: none;
-  color: blue;
+    display: block;
+    text-decoration: none;
+    color: blue;
 }
 
 .text-agr-car {
-  margin: 0 0 0.5em 0;
+    margin: 0 0 0.5em 0;
 }
 
 .text-agr-car2 {
-  margin: 2em 0 2em 0;
-  font-weight: 500;
+    margin: 2em 0 2em 0;
+    font-weight: 500;
 }
 
 .boton-d {
-  text-decoration: none;
-  color: var(--blanco);
+    text-decoration: none;
+    color: var(--blanco);
 }
+
 
 /*-----descripción producto-----*/
 
 .detalle-producto1 {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 div.texto-detalle {
-  
-
-  display: flex;
-
-  flex-wrap: wrap;
-
-        width: 100%;
-
-
-      margin: 10px;
-
-
-        border: 5px solid var(--azulOscuro);
-       
-        background: #ffffff;
-
-     
-
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px;
+    border: 5px solid var(--azulOscuro);
+    background: #ffffff;
 }
 
 .destacado {
-  margin: 0.5em;
+    margin: 0.5em;
 }
 
-
 div.texto-detalle ul li {
-  padding-top: 0;
-  padding-bottom: 0.5em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+    padding-top: 0;
+    padding-bottom: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
 }
 
 
 /*-------descuentos y horarios----------------*/
 
-
-.cuadrodesc{
-	/*width: 1100px;
+.cuadrodesc {
+    /*width: 1100px;
 	margin: 50px auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;*/
-   display: flex;
-  /* flex-direction: column;*/
-   align-items: center;
-   justify-content: space-evenly;
-   flex-wrap: wrap;
+    display: flex;
+    /* flex-direction: column;*/
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-.tarjeta-cuadrodesc{
-	margin: 10px;
-	-webkit-perspective: 800;
-	perspective: 800;
-    
+.tarjeta-cuadrodesc {
+    margin: 10px;
+    -webkit-perspective: 800;
+    perspective: 800;
 }
 
-.tarjeta{
-	width: 260px;
-	height: 260px;
-    
-	background: var(--naranja);
-	position: relative;
-	-webkit-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-transition: .7s ease;
-	transition: .7s ease;
-	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
-    
+.tarjeta {
+    width: 260px;
+    height: 260px;
+    background: var(--naranja);
+    position: relative;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: .7s ease;
+    transition: .7s ease;
+    -webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
 }
 
-.adelante , .atras{
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	-webkit-backface-visibility: hidden;
-	backface-visibility: hidden;
-
+.adelante,
+.atras {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
-.adelante{
-	width: 100%;
-  
-   text-align: center;
-   
+.adelante {
+    width: 100%;
+    text-align: center;
 }
 
-.atras{
-	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
-	padding: 15px;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-ms-flex-pack: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	-ms-flex-align: center;
-	align-items: center;
-
-
-	color: #fff;
-	
-  background: var(--naranja);
+.atras {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    padding: 15px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    color: #fff;
+    background: var(--naranja);
 }
 
-.tarjeta-cuadrodesc:hover .tarjeta{
-	-webkit-transform: rotateY(180deg);
-	transform: rotateY(180deg);
+.tarjeta-cuadrodesc:hover .tarjeta {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-
-
-
-
-.imgbox{
- 
-  width: 70%;
-  height: 70%;
-  object-fit: contain;
-  padding-top: 10px;
+.imgbox {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+    padding-top: 10px;
 }
-
-
 
 
 /*----------------hacer comentarios--------*/
 
-
-
-
-
-
-
-.botonComentar{
-  background-color: #fff;
-  border: 1px solid #ff6000;
-  border-radius: 3px;
-  width: 110px;
-  text-decoration: none;
-  text-align: center;
-  align-items: center;
-  height: 36px;
-  display: flex;
-  margin: auto;
-  transition: all .5s;
-  font-weight: normal;
-  margin-bottom: 5px;
-  padding: 5px;
-  cursor: pointer;
-  
+.botonComentar {
+    background-color: #fff;
+    border: 1px solid #ff6000;
+    border-radius: 3px;
+    width: 110px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    height: 36px;
+    display: flex;
+    margin: auto;
+    transition: all .5s;
+    font-weight: normal;
+    margin-bottom: 5px;
+    padding: 5px;
+    cursor: pointer;
 }
-
 
 .botonComentar:hover {
-  background-color: #ff4500;
-  color: white;
-  transform: .5s;
-  opacity: 1;
+    background-color: #ff4500;
+    color: white;
+    transform: .5s;
+    opacity: 1;
 }
+
 
 /*--------comentarios destacados-------*/
 
 .seccioncomentarios {
-  border: solid 2px var(--gris);
-  background-color: var(--blanco);
-  width: 90%;
-  max-height: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
+    border: solid 2px var(--gris);
+    background-color: var(--blanco);
+    width: 90%;
+    max-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
 }
 
 .comentariosuser {
-  border-bottom: solid 0.5px darkgrey;
-  width: 100%;
-  display: flex;
-  height: 50px;
+    border-bottom: solid 0.5px darkgrey;
+    width: 100%;
+    display: flex;
+    height: 50px;
 }
 
 .user {
-  width: 10%;
-  display: flex;
-  padding: 0.5em;
+    width: 10%;
+    display: flex;
+    padding: 0.5em;
 }
 
 .usercom {
-  width: 90%;
-  display: flex;
-  text-align: center;
- 
+    width: 90%;
+    display: flex;
+    text-align: center;
 }
 
 .textcomentario {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 
 /*------------*/
 
-#txtIdResultado{
-  width: 100%;
-  display: flex;
-  height: 50px;
-  border:none;
-
+#txtIdResultado {
+    width: 100%;
+    display: flex;
+    height: 50px;
+    border: none;
 }
 
-
-
-
-.mensajedecomentario{
-  display: none;
-  text-align: center;
+.mensajedecomentario {
+    display: none;
+    text-align: center;
 }
-
 
 .userESP {
-  width: 10%;
-  display: flex;
-  padding: 0.5em;
+    width: 10%;
+    display: flex;
+    padding: 0.5em;
 }
 
-
-.seccioncomentariosESP{
-  border: solid 2px darkgrey ;
-  background-color: white;
-  width: 90%;
-  max-height: 1000px;
-  display: flex;
-  flex-wrap: wrap;
-  margin: auto;
-
-  display:none;
+.seccioncomentariosESP {
+    border: solid 2px darkgrey;
+    background-color: white;
+    width: 90%;
+    max-height: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    display: none;
 }
 
-
-
-.comentariosuserESP{
-  border-bottom: solid 0.5px darkgrey;
-  width: 100%;
-  display: flex;
-  height: 50px;
-  background-color: #fff;
+.comentariosuserESP {
+    border-bottom: solid 0.5px darkgrey;
+    width: 100%;
+    display: flex;
+    height: 50px;
+    background-color: #fff;
 }
 
-
-
-#txtIdcomentar{
-  width: 70%;
-  display: flex;
-  height: 36px;
- 
-  margin: 5px;
- 
+#txtIdcomentar {
+    width: 70%;
+    display: flex;
+    height: 36px;
+    margin: 5px;
 }
 
-.comentarios{
- 
-  display: flex;
-  padding: 10px; 
-  align-items: center;
+.comentarios {
+    display: flex;
+    padding: 10px;
+    align-items: center;
 }
 
 
 /*--------------*/
+
 @media screen and (min-width: 782px) {
-  .productDetail {
-    background-color: var(--clarito);
-  }
-  .mainDetalleProducto {
-    display: flex;
-    width: 90%;
-    margin: auto;
-    
-    /*margin-left: 50px;*/
-  }
-  .pantalla-dividida {
-    display: flex;
-    width: 70%;
-    background-color: var(--azulOscuro);
-    padding: 10px;
-  }
-  .pantalla-dividida2 {
-    display: flex;
-    width: 20%;
-    background-color: var(--blanco);
-   
-  }
-  .agregar-carrito-der {
-   
-   
-    text-align: center;
-    background-color: var(--blanco);
-  }
-  
-  #boton-detalle {
-    border-bottom: var(--negro);
-    background-color: var(--naranja);
-    width: 70%;
-    margin-top: 3em;
-  }
-
- 
-
-  .text-agr-car {
-    margin: 2rem 0 2rem 0;
-  }
-  .text-agr-car2 {
-    margin: 1rem 0 1rem 0;
-  }
-  .boton-d {
-    text-decoration: none;
-    color: var(--blanco);
-  }
-  /*--------descripcion de producto--------*/
-
-
-div.texto-detalle{
-
-  width: 100%;
-
-  margin: 10px;
-
-  border: 10px solid var(--azulOscuro);
-
-  display: flex;
-
-  flex-wrap:inherit;
-         
-  background: #ffffff;
-
+    .productDetail {
+        background-color: var(--clarito);
+    }
+    .mainDetalleProducto {
+        display: flex;
+        width: 90%;
+        margin: auto;
+        /*margin-left: 50px;*/
+    }
+    .pantalla-dividida {
+        display: flex;
+        width: 70%;
+        background-color: var(--azulOscuro);
+        padding: 10px;
+    }
+    .pantalla-dividida2 {
+        display: flex;
+        width: 20%;
+        background-color: var(--blanco);
+    }
+    .agregar-carrito-der {
+        text-align: center;
+        background-color: var(--blanco);
+    }
+    #boton-detalle {
+        border-bottom: var(--negro);
+        background-color: var(--naranja);
+        width: 70%;
+        margin-top: 3em;
+    }
+    .text-agr-car {
+        margin: 2rem 0 2rem 0;
+    }
+    .text-agr-car2 {
+        margin: 1rem 0 1rem 0;
+    }
+    .boton-d {
+        text-decoration: none;
+        color: var(--blanco);
+    }
+    /*--------descripcion de producto--------*/
+    div.texto-detalle {
+        width: 100%;
+        margin: 10px;
+        border: 10px solid var(--azulOscuro);
+        display: flex;
+        flex-wrap: inherit;
+        background: #ffffff;
+    }
+    div.texto-detalle ul li {
+        padding-top: 1em;
+        padding-left: 1em;
+    }
+    .destacado {
+        margin: 1em;
+    }
+    /*-------descuentos y ahorros--------------*/
+    .tarjeta {
+        width: 300px;
+        height: 300px;
+    }
+    /*-------comentarios----*/
+    .comentarios {
+        width: 90%;
+    }
+    #txtIdcomentar {
+        width: 70%;
+        display: flex;
+        height: 50px;
+        border: none;
+        margin: auto;
+    }
+    .botonComentar {
+        width: 150px;
+        height: 46px;
+    }
+    .comentarioletra {
+        color: var(--blanco);
+    }
+    /*comentarios de usuarios*/
+    .seccioncomentarios {
+        width: 90%;
+    }
 }
-
-  div.texto-detalle ul li {
-    padding-top: 1em;
-    padding-left: 1em;
-  }
-
-  .destacado {
-    
-    margin: 1em;
-  }
-  
-/*-------descuentos y ahorros--------------*/
-
-
-.tarjeta{
-  width: 300px;
-  height: 300px;
-}
-
-
-
-
-/*-------comentarios----*/
-
-  .comentarios {
-    width: 90%;
-  }
- 
- 
-  #txtIdcomentar{
-    width: 70%;
-    display: flex;
-    height: 50px;
-    border:none;
-    margin: auto;
-  }
-
-
-  .botonComentar{
-    width: 150px;
-    height: 46px;
-  }
- 
-  .comentarioletra {
-    color: var(--blanco);
-  }
-  /*comentarios de usuarios*/
-  .seccioncomentarios {
-    width: 90%;
-    
-  }
-}
-
-
-
 
 @media screen and (min-width: 1024px) {
-  .pantalla-dividida2 {
-    display: flex;
-    width: 30%;
-    background-color: var(--blanco);
-  }
-  .agregar-carrito-der {
-   
-    text-align: center;
-    background-color: var(--blanco);
-  }
-  #boton-detalle {
-    border-bottom: var(--negro);
-    background-color: var(--naranja);
-    width: 60%;
-    margin-top: 2.5rem;
-  }
-  .text-agr-car {
-    margin: 2rem 0 2rem 0;
-  }
-  .text-agr-car2 {
-    margin: 2rem 0 2rem 0;
-  }
-
-/*---------descripcion y caracteristicas ----*/
-
-.detalle-producto1 {
-  width: 100%;
-  display: flex;
-  /*align-items:flex-start;
+    .pantalla-dividida2 {
+        display: flex;
+        width: 30%;
+        background-color: var(--blanco);
+    }
+    .agregar-carrito-der {
+        text-align: center;
+        background-color: var(--blanco);
+    }
+    #boton-detalle {
+        border-bottom: var(--negro);
+        background-color: var(--naranja);
+        width: 60%;
+        margin-top: 2.5rem;
+    }
+    .text-agr-car {
+        margin: 2rem 0 2rem 0;
+    }
+    .text-agr-car2 {
+        margin: 2rem 0 2rem 0;
+    }
+    /*---------descripcion y caracteristicas ----*/
+    .detalle-producto1 {
+        width: 100%;
+        display: flex;
+        /*align-items:flex-start;
   justify-content: flex-start;*/
-
- 
-}
-
-div.texto-detalle{
-
-width: 80%;
-
-margin: 10px;
-
-  border: 10px solid var(--azulOscuro);
-
-/*margin-left: 4%;*/
-  display: flex;
-
-  flex-wrap:inherit;
-
- background: var(--blanco);
-
-}
-
-/*--------descuentos y ahorros-------------------*/
-.tarjeta{
-  width: 260px;
-height: 260px;
-}
-
-
-/*-------comentarios----*/
-
-.comentarios {
-  width: 100%;
-}
-
+    }
+    div.texto-detalle {
+        width: 80%;
+        margin: 10px;
+        border: 10px solid var(--azulOscuro);
+        /*margin-left: 4%;*/
+        display: flex;
+        flex-wrap: inherit;
+        background: var(--blanco);
+    }
+    /*--------descuentos y ahorros-------------------*/
+    .tarjeta {
+        width: 260px;
+        height: 260px;
+    }
+    /*-------comentarios----*/
+    .comentarios {
+        width: 100%;
+    }
 }
