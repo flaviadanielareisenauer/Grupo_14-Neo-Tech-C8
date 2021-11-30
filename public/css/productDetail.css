@@ -45,7 +45,7 @@ ul.fotoMiniatura li img {
 }
 
 ul.fotoMiniatura li:first-child {
-  opacity: 0;
+  opacity: 1;
 }
 
 ul.fotoMiniatura li:target {

@@ -22,14 +22,18 @@
                                     <a href="#img1" class="foto"> <img src="/imagenes/<%=ProductD.productsimage[0].name%>"
                                         alt=""></a>
                                 </li>
+                                <%if(ProductD.productsimage[1]){%>
                                 <li>
                                     <a href="#img2" class="foto"><img src="/imagenes/<%=ProductD.productsimage[1]?.name %>"
                                         alt=""></a>
                                 </li>
+                                <%}%>
+                                <%if(ProductD.productsimage[2]){%>
                                 <li>
                                     <a href="#img3" class="foto"><img src="/imagenes/<%=ProductD.productsimage[2]?.name %>"
                                         alt=""></a>
                                 </li>
+                                <%}%>
                                 <%if(ProductD.productsimage[3]){%>
                                     <li>
                                         <a href="#img4" class="foto"><img src="/imagenes/<%=ProductD.productsimage[3].name %>"
@@ -179,7 +183,7 @@
 
                 </div>
 
-                <!---------------------------prueba2---------------------------->
+                <!---------------------------Comentarios---------------------------->
                 <h5>comentarios</h5>
 
                 <div class="comentarios">
