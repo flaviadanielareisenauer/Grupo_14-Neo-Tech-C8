@@ -46,6 +46,7 @@
                                                         <input class="controls " type="number" name="numberPhone" placeholder="Telefono" value="<%- user.numberPhone %>">
                                                         <input class="controls" type="date" name="dateBorn" placeholder="fecha de nacimiento" value="<%- user.dateBorn %>">
                                     </section>
+                                    <%if(user.rol == 1){%>
                                     <section class="form-register ">
                                         <h4>Datos de envío</h4>
                                         <hr class="divitionConfig">
@@ -69,6 +70,7 @@
                                     </select>
                                         </div>
                                     </section>
+                                    <%}%>
                                 </div>
 
                                 <p class="errorMessage-container"><span id="submitErrors" class="mensajeError"></span></p>
