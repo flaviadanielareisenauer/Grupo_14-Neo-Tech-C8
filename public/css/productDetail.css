@@ -98,11 +98,16 @@ ul.fotoProducto li {
 }
 
 #boton-detalle {
-  border-bottom: var(--negro);
+  border-bottom: var(--naranja);
   background-color: var(--naranja);
   height: 40px;
   width: 50%;
   margin-top: 2rem;
+}
+
+#boton-detalle:hover {
+	background: var(--azulOscuro);
+  border :1px solid var(--azulOscuro);
 }
 
 a.text-agr-car {
@@ -136,24 +141,12 @@ a.text-agr-car {
 }
 
 div.texto-detalle {
-  
-
   display: flex;
-
   flex-wrap: wrap;
-
-        width: 100%;
-
-
-      margin: 10px;
-
-
-        border: 5px solid var(--azulOscuro);
-       
-        background: #ffffff;
-
-     
-
+  width: 100%;
+  margin: 10px;
+  border: 5px solid var(--azulOscuro);
+  background: #ffffff;
 }
 
 .destacado {
@@ -170,7 +163,6 @@ div.texto-detalle ul li {
 
 
 /*-------descuentos y horarios----------------*/
-
 
 .cuadrodesc{
 	/*width: 1100px;
@@ -195,8 +187,7 @@ div.texto-detalle ul li {
 
 .tarjeta{
 	width: 260px;
-	height: 260px;
-    
+	height: 260px;  
 	background: var(--naranja);
 	position: relative;
 	-webkit-transform-style: preserve-3d;
@@ -216,13 +207,11 @@ div.texto-detalle ul li {
 	left: 0;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-
 }
 
 .adelante{
 	width: 100%;
-  
-   text-align: center;
+  text-align: center;
    
 }
 
@@ -242,10 +231,7 @@ div.texto-detalle ul li {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
-
-
 	color: #fff;
-	
   background: var(--naranja);
 }
 
@@ -253,10 +239,6 @@ div.texto-detalle ul li {
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
-
-
-
-
 
 .imgbox{
  
@@ -266,16 +248,7 @@ div.texto-detalle ul li {
   padding-top: 10px;
 }
 
-
-
-
 /*----------------hacer comentarios--------*/
-
-
-
-
-
-
 
 .botonComentar{
   background-color: #fff;
@@ -353,21 +326,16 @@ div.texto-detalle ul li {
 
 }
 
-
-
-
 .mensajedecomentario{
   display: none;
   text-align: center;
 }
-
 
 .userESP {
   width: 10%;
   display: flex;
   padding: 0.5em;
 }
-
 
 .seccioncomentariosESP{
   border: solid 2px darkgrey ;
@@ -377,11 +345,8 @@ div.texto-detalle ul li {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-
   display:none;
 }
-
-
 
 .comentariosuserESP{
   border-bottom: solid 0.5px darkgrey;
@@ -391,27 +356,22 @@ div.texto-detalle ul li {
   background-color: #fff;
 }
 
-
-
 #txtIdcomentar{
   width: 70%;
   display: flex;
   height: 36px;
- 
   margin: 5px;
- 
 }
 
 .comentarios{
- 
   display: flex;
   padding: 10px; 
   align-items: center;
 }
 
-
 /*--------------*/
 @media screen and (min-width: 782px) {
+  
   .productDetail {
     background-color: var(--clarito);
   }
@@ -419,8 +379,6 @@ div.texto-detalle ul li {
     display: flex;
     width: 90%;
     margin: auto;
-    
-    /*margin-left: 50px;*/
   }
   .pantalla-dividida {
     display: flex;
@@ -435,20 +393,16 @@ div.texto-detalle ul li {
    
   }
   .agregar-carrito-der {
-   
-   
     text-align: center;
     background-color: var(--blanco);
   }
   
   #boton-detalle {
-    border-bottom: var(--negro);
+    border-bottom: var(--naranja);
     background-color: var(--naranja);
     width: 70%;
     margin-top: 3em;
   }
-
- 
 
   .text-agr-car {
     margin: 2rem 0 2rem 0;
@@ -460,23 +414,17 @@ div.texto-detalle ul li {
     text-decoration: none;
     color: var(--blanco);
   }
+
   /*--------descripcion de producto--------*/
 
 
-div.texto-detalle{
-
+  div.texto-detalle{
   width: 100%;
-
   margin: 10px;
-
   border: 10px solid var(--azulOscuro);
-
   display: flex;
-
-  flex-wrap:inherit;
-         
+  flex-wrap:inherit;       
   background: #ffffff;
-
 }
 
   div.texto-detalle ul li {
@@ -497,16 +445,12 @@ div.texto-detalle{
   height: 300px;
 }
 
-
-
-
 /*-------comentarios----*/
 
   .comentarios {
     width: 90%;
   }
- 
- 
+
   #txtIdcomentar{
     width: 70%;
     display: flex;
@@ -514,7 +458,6 @@ div.texto-detalle{
     border:none;
     margin: auto;
   }
-
 
   .botonComentar{
     width: 150px;
@@ -531,9 +474,6 @@ div.texto-detalle{
   }
 }
 
-
-
-
 @media screen and (min-width: 1024px) {
   .pantalla-dividida2 {
     display: flex;
@@ -546,7 +486,7 @@ div.texto-detalle{
     background-color: var(--blanco);
   }
   #boton-detalle {
-    border-bottom: var(--negro);
+    border-bottom: var(--naranja);
     background-color: var(--naranja);
     width: 60%;
     margin-top: 2.5rem;
@@ -566,24 +506,15 @@ div.texto-detalle{
   /*align-items:flex-start;
   justify-content: flex-start;*/
 
- 
 }
 
 div.texto-detalle{
-
-width: 80%;
-
-margin: 10px;
-
+  width: 80%;
+  margin: 10px;
   border: 10px solid var(--azulOscuro);
-
-/*margin-left: 4%;*/
   display: flex;
-
   flex-wrap:inherit;
-
- background: var(--blanco);
-
+  background: var(--blanco);
 }
 
 /*--------descuentos y ahorros-------------------*/
@@ -591,7 +522,6 @@ margin: 10px;
   width: 260px;
 height: 260px;
 }
-
 
 /*-------comentarios----*/
 
