@@ -12,12 +12,13 @@
                         <div class="box">
                             <h4 class="h4-adm">Editar imagenes</h4>
                             <div class="imagenes_ad">
-                                <div class="input-file-container">
-                                    <input type="file" name="image" id="cambiarImagen" multiple>
+                                <div id="dropBox">
+                                    <div id="gallery"></div>
+                                    <input type="file" name="image" id="imgUpload"  onchange="filesManager(this.files)" multiple>
+                                    <label class="button-imgupload" for="imgUpload">Subir Imagenes</label>
                                 </div>
-                                <span class="mensajeError" id="fileErrors"></span>
-
                             </div>
+                            <span class="mensajeError" id="fileErrors"></span>
 
                         </div>
 
@@ -109,7 +110,7 @@
                     </form>
                 </div>
                 <script src="/js/ProductEditValidator.js"></script>
-
+                <script src="/js/previewMultiple.js" defer></script>
                 <%- include('../partials/footer')%>
 
     </body>
