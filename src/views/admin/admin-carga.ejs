@@ -12,16 +12,17 @@
                         <div class="box ">
                             <h4 class="h4-adm ">Cargar imagenes</h4>
                             <div class="imagenes_ad ">
-                                <div class="input-file-container ">
-                                    <input type="file" name="image" id="cambiarImagen" multiple>
+                                <div id="dropBox">
+                                    <div id="gallery"></div>
+                                    <input type="file" name="image" id="imgUpload"  onchange="filesManager(this.files)" multiple>
+                                    <label class="button-imgupload" for="imgUpload">Subir Imagenes</label>
                                 </div>
+                            </div>
                                 <% if(locals.errors && errors.image){ %>
                                     <small class="text-validation"><%=errors.image.msg%> </small>
                                     <% } %>
-                                        <span class="mensajeError" id="fileErrors"></span>
-                            </div>
+                                <span class="mensajeError" id="fileErrors"></span>
                         </div>
-
 
                         <div class="carga__form ">
                             <div class="box ">
@@ -34,57 +35,53 @@
                                     <small class="text-validation">
                                     <%= errors.name.msg %>
                                 </small>
-                                    <% } %>
-
-                                        <div class="inputcontainer ">
-                                            <input id="productCode" class="inputstyle " type="text " name="code" placeholder="Código " value="<%= locals.old && old.code %>">
-                                        </div>
-                                        <span class="mensajeError" id="productCodeErrors"></span>
-                                        <% if(locals.errors && errors.code){ %>
-                                            <small class="text-validation">
-                                        <%= errors.code.msg %>
+                                <% } %>
+                                <div class="inputcontainer ">
+                                    <input id="productCode" class="inputstyle " type="text " name="code" placeholder="Código " value="<%= locals.old && old.code %>">
+                                    </div>
+                                    <span class="mensajeError" id="productCodeErrors"></span>
+                                    <% if(locals.errors && errors.code){ %>
+                                    <small class="text-validation">
+                                    <%= errors.code.msg %>
                                     </small>
-                                            <% } %>
-                                       <div class="inputcontainer ">
+                                    <% } %>
+                               <div class="inputcontainer ">
 
                             <select id="productCategorias" class="inputselect" name="categoria">
+                                <option hidden value="">Elije una categoría</option>
                                <% categorias.forEach(categoria=> {%>
-                                <option hidden></option>
                                 <option value="<%-categoria.id%>">
                                 <%-categoria.name%>
                                 </option>
                                 <%})%>
                             </select>
-                                                </div>
-                                                <span class="mensajeError" id="categoriasErrors"></span>
-                                                <% if(locals.errors && errors.categoria){ %>
-                                                    <small class="text-validation">
-                                <%= errors.categoria.msg %>
+                            </div>
+                            <span class="mensajeError" id="categoriasErrors"></span>
+                            <% if(locals.errors && errors.categoria){ %>
+                            <small class="text-validation">
+                            <%= errors.categoria.msg %>
                                 </small>
-                                                    <% } %>
+                            <% } %>
 
-                                                        <% if(locals.errors && errors.price){ %>
-                                                            <small class="text-validation">
-                                            <%= errors.price.msg %>
-                                        </small>
-                                                            <% } %>
-                                                                <div class="inputcontainer ">
-                                                                    <input id="productPrice" class="inputstyle " type="number " name="price" placeholder="Precio" value="<%= locals.old && old.price %>">
-                                                                </div>
-                                                                <span class="mensajeError" id="productPriceErrors"></span>
+                            <% if(locals.errors && errors.price){ %>
+                                    <small class="text-validation">
+                                        <%= errors.price.msg %>
+                                    </small>
+                                    <% } %>
+                                        <div class="inputcontainer ">
+                                    <input id="productPrice" class="inputstyle " type="number " name="price" placeholder="Precio" value="<%= locals.old && old.price %>">
+                                    </div>
+                            <span class="mensajeError" id="productPriceErrors"></span>
 
-
-                                                                <div class="inputcontainer ">
-                                                                    <input class="inputstyle" type="text" name="marca" placeholder="Marca" value="<%= locals.old && old.marca %>">
-                                                                </div>
-
+                                <div class="inputcontainer ">
+                            <input class="inputstyle" type="text" name="marca" placeholder="Marca" value="<%= locals.old && old.marca %>">
+                            </div>
                             </div>
 
                             <div class="box ">
 
-
                                 <div class="inputcontainer ">
-                                    <select name="discount" class="inputselect ">
+                            <select name="discount" class="inputselect ">
                                 <option value=" " hidden selected>Descuento</option>
                                 <option value="10 ">10%</option>
                                 <option value="20 ">20%</option>
@@ -111,9 +108,7 @@
                 </div>
 
                 <script src="/js/ProductValidationFront.js"></script>
-
+                <script src="/js/previewMultiple.js" defer></script>
                 <%- include('../partials/footer')%>
-
     </body>
-
     </html>
