@@ -105,7 +105,7 @@ module.exports = {
             },
             include: [{ association: "categories" }]
         });
-        let Image = db.ProductsImage.findOne({
+        let Image = db.ProductsImage.findAll({
             where: { productId: req.params.id },
         });
 
@@ -149,27 +149,33 @@ module.exports = {
             }).catch((err) => {
                 console.log(err);
             });
-            let images = [];
-            db.ProductsImage.findOne({
-                    where: { productId: req.params.id }
-                })
-                .then((image) => {
-                    images = image.name
-                })
-
+            
+            
+            let arrayImages = [];
             if (req.files) {
                 req.files.forEach((image) => {
-                    images = "nuevos/" + image.filename;
+                    arrayImages.push("nuevos/" + image.filename);
                 });
+                db.ProductsImage.destroy({
+                        where: { productId: +req.params.id }
+                    })
+                    .then(() => {
+                        db.Products.findOne({
+                                where: { id: req.params.id }
+                            })
+                            .then(() => {
+                                let productsImage = arrayImages.map((image) => {
+                                    return {
+                                        name: image,
+                                        productId: +req.params.id
+                                    };
+                                });
+                                db.ProductsImage.bulkCreate(productsImage);
+                            })
+                    })
+
             }
-            db.ProductsImage.update({
-                name: images,
-                productId: req.params.id,
-            }, {
-                where: {
-                    productId: req.params.id,
-                },
-            });
+
             res.redirect("/admin/products");
 
         } else {

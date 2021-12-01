@@ -65,7 +65,7 @@ window.addEventListener('load', function (){
     $productCategorias.addEventListener('blur', function(){
    
         if(!$productCategorias.value.trim()){
-            $productcategoriasErrors.innerHTML = 'El campo requerido'
+            $productcategoriasErrors.innerHTML = 'Este campo es obligatorio'
             $productCategorias.style.border = "1px solid red"
             console.log('funciona')
         }else{
@@ -73,8 +73,6 @@ window.addEventListener('load', function (){
             $productCategorias.style.border = "none"
         }
     })
-
-
     
 $formCarga.addEventListener('submit',function(event){
     let error = false;
@@ -89,6 +87,15 @@ $formCarga.addEventListener('submit',function(event){
             error = true;
         }
     }
+
+    let $dropBox = document.getElementById('dropBox');
+  
+        if(imgUpload.value==""){
+            $dropBox.style.border="1px solid red"
+        }else{
+            $dropBox.style.border="none"
+    }
+    
 
     if(!error){
         console.log('Todo bien');
