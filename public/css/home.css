@@ -1,6 +1,6 @@
 /**** Barra de Scroll ****/
 
-.body {
+body {
     background-color: #f9f9f9;
 }
 
@@ -349,6 +349,7 @@ p {
     display: block;
     font-size: 3.4rem;
     color: #070d2b;
+    text-align: center;
 }
 
 .producto p {
@@ -807,7 +808,7 @@ p {
     }
     .item-category i {
         font-size: 3rem;
-        color: #0064F0;
+        color: #070d2b;
         font-weight: 600;
     }
     /******* CATEGORÍAS *******/

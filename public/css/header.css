@@ -322,6 +322,7 @@ ul.show {
         font-size: 1.7rem;
     }
 }
+#iconoo{display: none;}
 
 @media screen and (max-width: 576px) {
     .no-res,
@@ -417,6 +418,7 @@ ul.show {
         font-size: 2rem;
     }
     #iconooo {
+        display: block;
         color: white;
         font-size: 1.4rem;
     }

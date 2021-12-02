@@ -1,87 +1,120 @@
 <%- include('../partials/head')%>
-
     <body>
         <%- include('../partials/header')%>
-            <%-include('../partials/backHome')%>
-                <form action="/user/profile-edit/<%- user.id%>?_method=PUT" method="POST" enctype="multipart/form-data" id="profileEditForm">
+            <%-include('.. /partials/backHome')%>
+                <form action="/user/profile-edit/<%- user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
+                    id="profileEditForm">
+                    <!--IMAGEN DE PERFIL DE USUARIO/ consume la foto de perfil desde la DB comparando el avatar del usuario en sesión con los registros de usuarios guardados en la misma-->
                     <div class="container-avatar">
                         <div class="profile-box">
                             <h4 class="profile-subtitle">Avatar</h4>
                             <div class="avatar">
-                                <div id="preview"> <img src="/imagenes/userAvatars/<%= user.avatar ? user.avatar : 'default-image.png'%>" alt="" id="avatarProfile"></div>
+                                <div id="preview"> <img
+                                        src="/imagenes/userAvatars/<%= user.avatar ? user.avatar : 'default-image.png'%>"
+                                        alt="" id="avatarProfile"></div>
                             </div>
-                            <input type="file" name="avatar" id="cambiarImagen" accept=".jpg,.png.jpeg" value="<%= user.avatar%>">
+                            <input type="file" name="avatar" id="cambiarImagen" accept=".jpg,.png.jpeg"
+                                value="<%= user.avatar%>">
                         </div>
+                        <!--FIN IMAGEN DE PERFIL DE USUARIO-->
                         <% if(locals.errors && errors.image){ %>
-                            <small class="text-validation"><%=errors.image.msg%> </small>
+                            <small class="text-validation">
+                                <%=errors.image.msg%>
+                            </small>
                             <% } %>
                                 <p class="errorMessage-container"><span class="mensajeError" id="fileErrors"></span></p>
                                 <div class="form-container">
+                                    <!--PRIMERA SECCIÓN: DATOS DE LA CUENTA/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id-->
                                     <section class="form-register">
                                         <h4>Datos de la cuenta</h4>
-
                                         <hr class="divitionConfig">
-                                        <input class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email %>" id="email">
+                                        <input class="controls" type="email" name="email" placeholder="Usuario"
+                                            value="<%- user.email %>" id="email">
                                         <span class="mensajeError" id="emailErrors"></span>
                                         <% if (locals.errors && errors.email) { %>
-                                            <small class="text-validation"><%= errors.email.msg %> </small>
+                                            <small class="text-validation">
+                                                <%= errors.email.msg %>
+                                            </small>
                                             <% } %>
-                                                <input class="controls" type="password" name="password" placeholder="Contraseña">
+                                                <input class="controls" type="password" name="password"
+                                                    placeholder="Contraseña">
                                     </section>
                                     <section class=" form-register ">
+                                        <!--SEGUNDA SECCIÓN: DATOS DE LA CUENTA/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id-->
                                         <h4>Datos personales</h4>
-
                                         <hr class="divitionConfig ">
-                                        <input class="controls " type="text" name="firstName" placeholder="Nombre" value="<%-user.firstName%>" id="firstName">
+                                        <input class="controls " type="text" name="firstName" placeholder="Nombre"
+                                            value="<%-user.firstName%>" id="firstName">
                                         <span class="mensajeError" id="firstNameErrors"></span>
                                         <% if (locals.errors && errors.firstName) { %>
-                                            <small class="text-validation"><%= errors.firstName.msg %></small>
+                                            <small class="text-validation">
+                                                <%= errors.firstName.msg %>
+                                            </small>
                                             <% } %>
-                                                <input class="controls" type="text" name="lastName" placeholder="Apellido" value="<%- user.lastName %>" id="lastName">
+                                                <input class="controls" type="text" name="lastName"
+                                                    placeholder="Apellido" value="<%- user.lastName %>" id="lastName">
                                                 <span class="mensajeError" id="lastNameErrors"></span>
                                                 <% if (locals.errors && errors.lastName) { %>
-                                                    <small class="text-validation"><%= errors.lastName.msg %></small>
+                                                    <small class="text-validation">
+                                                        <%= errors.lastName.msg %>
+                                                    </small>
                                                     <% } %>
-                                                        <input class="controls" type="number" name="dni" placeholder="D.N.I." value="<%- user.dni %>">
-                                                        <input class="controls " type="number" name="numberPhone" placeholder="Telefono" value="<%- user.numberPhone %>">
-                                                        <input class="controls" type="date" name="dateBorn" placeholder="fecha de nacimiento" value="<%- user.dateBorn %>">
+                                                        <input class="controls" type="number" name="dni"
+                                                            placeholder="D.N.I." value="<%- user.dni %>">
+                                                        <input class="controls " type="number" name="numberPhone"
+                                                            placeholder="Telefono" value="<%- user.numberPhone %>">
+                                                        <input class="controls" type="date" name="dateBorn"
+                                                            placeholder="fecha de nacimiento"
+                                                            value="<%- user.dateBorn %>">
                                     </section>
-                                    <%if(user.rol == 1){%>
-                                    <section class="form-register ">
-                                        <h4>Datos de envío</h4>
-                                        <hr class="divitionConfig">
-                                        <input class="controls " type="text" name="streetName" placeholder="Direccion" value="<%- user.addresses[0]?user.addresses[0].streetName: '' %>">
-                                        <input class="controls " type="number" name="streetNumber" placeholder="Numero" value="<%- user.addresses[0]? user.addresses[0].streetNumber:'' %>">
-                                        <input class="controls " type="text " name="dto " placeholder="Dpto " value="<%- user.addresses[0]?user.addresses[0].dto: '' %>">
-                                        <input class="controls " type="number" name="postalCode" placeholder="Código Postal" value="<%- user.addresses[0]?user.addresses[0].postalCode:'' %>">
-                                        <div class=" input-container ">
-                                            <select name="province" class="input-select" id="inputSelectProvince">
-                                    <option hidden> <%if(user.addresses[0]){%>
-                                        <%-user.addresses[0].province%>
-                                            <%}%></option>
-                                    </select>
-                                        </div>
-                                        <div class="input-container ">
-                                            <select name="location" class="input-select" id="inputSelectCity">
-                                    <option hidden><%if(user){%>
-                                        <%-user.location%>
-                                            <%}%></option>
-                                     
-                                    </select>
-                                        </div>
-                                    </section>
-                                    <%}%>
-                                </div>
+                                    <%if(user.rol==1){%>
+                                        <section class="form-register ">
+                                            <!--TERCERA SECCIÓN: DATOS DE ENVÍO/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id en caso del usuario no ser administrador, si sí fuese administrador esta sección no le será mostrada-->
+                                            <h4>Datos de envío</h4>
+                                            <hr class="divitionConfig">
+                                            <input class="controls " type="text" name="streetName"
+                                                placeholder="Direccion"
+                                                value="<%- user.addresses[0]?user.addresses[0].streetName: '' %>">
+                                            <input class="controls " type="number" name="streetNumber"
+                                                placeholder="Numero"
+                                                value="<%- user.addresses[0]? user.addresses[0].streetNumber:'' %>">
+                                            <input class="controls " type="text " name="dto " placeholder="Dpto "
+                                                value="<%- user.addresses[0]?user.addresses[0].dto: '' %>">
+                                            <input class="controls " type="number" name="postalCode"
+                                                placeholder="Código Postal"
+                                                value="<%- user.addresses[0]?user.addresses[0].postalCode:'' %>">
+                                            <div class=" input-container ">
+                                                <select name="province" class="input-select" id="inputSelectProvince">
+                                                    <option hidden>
+                                                        <%if(user.addresses[0]){%>
+                                                            <%-user.addresses[0].province%>
+                                                                <%}%>
+                                                    </option>
+                                                </select>
+                                            </div>
+                                            <div class="input-container ">
+                                                <select name="location" class="input-select" id="inputSelectCity">
+                                                    <option hidden>
+                                                        <%if(user){%>
+                                                            <%-user.location%>
+                                                                <%}%>
+                                                    </option>
 
-                                <p class="errorMessage-container"><span id="submitErrors" class="mensajeError"></span></p>
+                                                </select>
+                                            </div>
+                                        </section>
+                                        <%}%>
+                                </div>
+                                <!--FIN DE SECCIONES DE LA VISTA-->
+                                <p class="errorMessage-container"><span id="submitErrors" class="mensajeError"></span>
+                                </p>
                                 <div class="button-container ">
                                     <button type="submit" class="button-all">Guardar</button>
                                 </div>
                 </form>
-
                 </main>
+                <!--FIN DEL CUERPO DE LA VISTA-->
                 <%- include('../partials/footer')%>
-
     </body>
     <script src="/prev.js"></script>
     <script src="/js/profileEditFront.js"></script>

@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="es">
-
 <%- include('./partials/head')%>
-
     <body class="body404">
         <div class="container404">
             <div class="content">
                 <div for=" " class="logo " style="width: 100%; height: 100px;">
                     <h1 class="neonText " style=" font-size: 5rem;"> Neo tech</h1>
-
                 </div>
                 <h2>404</h2>
                 <h4>Opps! page not found</h4>
@@ -16,10 +11,10 @@
                 <a href="/">Volver al inicio</a>
             </div>
         </div>
-
+        <!--LA PROPIEDAD BACKGROUND POSITION controla la posición en la que se muestra la imagen de fondo de un elemento, es decir que crea un efecto de movimiento al ejecutarse el evento ONMOUSEMOVE -->
         <script type="text/javascript">
             var container = document.querySelector('.container404');
-            window.onmousemove = function(e) {
+            window.onmousemove = function (e) {
                 var x = -e.clientX / 10,
                     y = -e.clientY / 10;
                 container.style.backgroundPositionX = x + 'px';
@@ -27,5 +22,4 @@
             }
         </script>
     </body>
-
 </html>

@@ -164,8 +164,9 @@ input.inputstyle {
   padding: 0.5rem;
 }
 
+
 input.inputstyle::placeholder {
-  color: black;
+  color: gray;
 }
 
 .input-file-container {

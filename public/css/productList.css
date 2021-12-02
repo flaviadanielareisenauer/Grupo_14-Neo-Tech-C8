@@ -4,7 +4,7 @@ body {
 
 main.container {
     text-align: center;
-    margin: auto;
+    margin: auto; 
 }
 
 main.container .table {
@@ -15,8 +15,11 @@ main.container .table {
 }
 
 .text-end {
-    padding: 40px;
+    padding: 20px;
     text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .btn-secondary {
@@ -28,7 +31,7 @@ main.container .table {
     color: black;
 }
 
-svg.btn-editar {
+svg.btn-editar {background-color: yellow;
     position: relative;
     right: 5px;
     top: 5px;
@@ -64,4 +67,62 @@ svg.btn-editar {
     height: 40px;
     border: 1px solid gray;
     border-radius: 5px;
+}
+ .products-category-container{
+    margin: 0px auto;
+    width: 350px;
+    text-align: left;
+    background-color: #fff;
+    height: auto;
+    max-height: 550px;
+    position: relative;
+}
+.formDeleteCategory {
+    margin-top: -20px;
+}
+.buttonDeleteCategory {list-style: none;
+text-decoration: none;
+cursor: pointer;
+position: absolute;
+right: 10px;
+background-color: white;
+border: none;}
+.deleteCategoryX{
+
+font-size: 1.3rem;
+color: red;
+}
+
+.deleteCategoryX:hover{
+ -webkit-transition: 1s;
+ -webkit-transform: rotate(360deg);
+}
+.deleteCategoryX:hover > .deleteCategoryText{
+    display: block;
+}
+.buttonAddProduct {
+    width: 180px;
+    height: 50px;
+    border: 1px solid #ff6000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+    border-radius: 5px;
+}
+
+.buttonAddProduct:hover{
+        background-color: #ff6000;
+        transform: .5s;
+        opacity: 1;
+    
+}
+.buttonAddProduct a .P{
+    color:  black;
+    font-size: 1rem;
+    text-decoration: none;
+}
+.buttonAddProduct a .P:hover{
+    color: white;
 }

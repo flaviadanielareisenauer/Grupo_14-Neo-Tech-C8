@@ -28,7 +28,7 @@
                             <div class="box ">
                                 <h4 class="h4-adm ">Carga de productos</h4>
                                 <div class="inputcontainer ">
-                                    <input id="productName" class="inputstyle " type="text " name="name" placeholder="Nombre" value="<%= locals.old && old.name %>">
+                                    <input id="productName" class="inputstyle " type="text " name="name" placeholder="Nombre*" value="<%= locals.old && old.name %>">
                                 </div>
                                 <span class="mensajeError" id="productNameErrors"></span>
                                 <% if(locals.errors && errors.name){ %>
@@ -37,7 +37,7 @@
                                 </small>
                                 <% } %>
                                 <div class="inputcontainer ">
-                                    <input id="productCode" class="inputstyle " type="text " name="code" placeholder="Código " value="<%= locals.old && old.code %>">
+                                    <input id="productCode" class="inputstyle " type="text " name="code" placeholder="Código*" value="<%= locals.old && old.code %>">
                                     </div>
                                     <span class="mensajeError" id="productCodeErrors"></span>
                                     <% if(locals.errors && errors.code){ %>
@@ -48,7 +48,7 @@
                                <div class="inputcontainer ">
 
                             <select id="productCategorias" class="inputselect" name="categoria">
-                                <option hidden value="">Elije una categoría</option>
+                                <option hidden value="">Elije una categoría*</option>
                                <% categorias.forEach(categoria=> {%>
                                 <option value="<%-categoria.id%>">
                                 <%-categoria.name%>
@@ -69,7 +69,7 @@
                                     </small>
                                     <% } %>
                                         <div class="inputcontainer ">
-                                    <input id="productPrice" class="inputstyle " type="number " name="price" placeholder="Precio" value="<%= locals.old && old.price %>">
+                                    <input id="productPrice" class="inputstyle " type="number " name="price" placeholder="Precio*" value="<%= locals.old && old.price %>">
                                     </div>
                             <span class="mensajeError" id="productPriceErrors"></span>
 

@@ -1,46 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-
-
-
 <%- include('../partials/head')%>
     <%- include('../partials/header')%>
         <%- include('../partials/backHome')%>
-
-            <div class="p-3 text-end">
-                <a class="btn-secondary" href="/admin/products/create">Agregar producto</a>
-            </div>
-
+        <div class="p-3 text-end">
+            <div class="buttonAddProduct"><a  href="/admin/products/create"><p class="P">Agregar producto</p> </a></div>
+        </div>
+            <!--CUERPO DE LA VISTA-->
             <main class="container">
-
+              
                 <table class="table">
-
+                 
+                    <!--FILA DE COLUMNAS-->
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
-                            <th class="column-mobile" scope="col">imagenProducto</th>
+                            <th class="column-mobile" scope="col">Imagen del producto</th>
                             <th scope="col">Nombre</th>
                             <th class="column-mobile" scope="col">Descripción</th>
                             <th class="column-mobile" scope="col">Precio</th>
+                         
                         </tr>
                     </thead>
+                    <!--FIN FILA DE COLUMNAS-->
                     <style>
                         .container {
                             display: flex;
                         }
-                        
-                        .products-category-container {
-                            margin: 0px 40px;
-                        }
-                        
                         td {
                             height: 120px;
                         }
-                        
+
                         th {
                             text-align: center;
                         }
-                        
+
                         td div img {
                             width: 100%;
                             height: 100%;
@@ -49,45 +41,53 @@
                     </style>
 
                     <tbody>
+                          <!--SECCIÓN DE CATEGORÍAS EN EL LADO IZQUIERDO DE LA VISTA/ itera todos los registros en la tabla de categorías en la base de datos, y los muestra-->
                         <div class="products-category-container">
+                          
                             <h4 class="h4-category">Categorías
                             </h4>
+                            <!--BUSCADOR DE PRODUCTOS-->
                             <form class="" action="/admin/search" method="GET">
-                                <div class="searchAll-container"> <input type="text" class="searchAll" name="search" placeholder="   Busque un producto..."></div>
+                                <div class="searchAll-container"> <input type="text" class="searchAll" name="search"
+                                        placeholder="   Busque un producto..."></div>
                             </form>
-
-                            <%Category.forEach(category => {%>
+                            <%Category.forEach(category=> {%>
                                 <p class="product-category-item">
                                     <a href="/admin/products/<%-category.id%>" class="category-select">
-                                        <% if(category.id == req){%>
+                                        <% if(category.id==req){%>
                                             <p class="dark-select">
                                                 <%- category.name%>
                                             </p>
-
                                             <%}else{%>
                                                 <%- category.name%>
                                                     <%}%>
                                     </a>
-                                </p>
-
-                                <%})%>
-                                    <p class="addCategoryText">Agregar categoría <i class="fas fa-plus"></i></p>
-                                    <form action="/admin/addCategory" method="POST" onsubmit="return confirm('Se creará una nueva categoría')">
-                                        <div class="addCategory"><input type="text" name="addCategory"></div>
+                                    <form action="/admin/deleteCategory/<%-category.id%>?_method=DELETE" method="POST" class="formDeleteCategory"onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?')">
+                                        <button type="submit" class="buttonDeleteCategory"><i class="fas fa-trash deleteCategoryX"></i></button>
+                                      
                                     </form>
+                                </p>
+                                <%})%>
+                                <!--OPCIÓN DE AGREGAR CATEGORÍA-->
+                                    <p class="addCategoryText">Agregar categoría <i class="fas fa-plus"></i></p>
+                                    <form action="/admin/addCategory" method="POST"
+                                        onsubmit="return confirm('Se creará una nueva categoría')">
+                                        <div class="addCategory"><input type="text" name="addCategory"placeholder="Ingrese el nombre de la nueva categoría"></div>
+                                    </form>
+                                  
                         </div>
-
-                        <% productsRev.forEach(product => { %>
+                        <!--FIN DE SECCIÓN DE CATEGORÍAS-->
+                        <% productsRev.forEach(product=> { %>
                             <tr>
                                 <th scope="row">
                                     <div>
                                         <%- product.id %>
                                     </div>
-
                                 </th>
                                 <td class="column-mobile">
                                     <div>
-                                        <img src="/imagenes/<%= product.productsimage[0]?product.productsimage[0].name: ''%>" alt="" style="width: 100px; height: 100px;">
+                                        <img src="/imagenes/<%= product.productsimage[0]?product.productsimage[0].name: ''%>"
+                                            alt="" style="width: 100px; height: 100px;">
                                     </div>
                                 </td>
                                 <td>
@@ -99,55 +99,54 @@
                                     <div>
                                         <%- product.description %>
                                     </div>
-
                                 </td>
                                 <td class="column-mobile">
                                     <div> $
                                         <%- product.price %>
                                     </div>
-
                                 </td>
                                 </td>
-
                                 <td>
-                                    <a class="btn btn-success" href="/admin/products/<%- product.id%>/edit" style="margin: 10px 0;">
+                                    <a class="btn btn-success" href="/admin/products/<%- product.id%>/edit"
+                                        style="margin: 10px 0;">
                                         <div class="buttons-container">
                                             <div class="btn btn-eliminar">
                                                 <i class="far fa-edit"></i>
                                             </div>
-
                                     </a>
                                     <button id="open" class="buttonModalDelete" value="<%-product.id%>">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-                                  </svg>
-                                 
-                                </button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                            <path
+                                                d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                            <path fill-rule="evenodd"
+                                                d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                        </svg>
+                                    </button>
+                                    <!--MODAL DE CONFIRMACIÓN/ eliminar producto-->
                                     <div class="modal-container" id="modal_container">
                                         <div class="modalDelete">
                                             <h1>Eliminar producto</h1>
                                             <p>
                                                 ¿Estás seguro que quieres eliminar este producto?
-
                                             </p>
                                             <div class="buttonsDeleteContainer">
-                                                <form id="productDeleteForm" method="POST"><button type="submit" id="close" class="buttonModalDelete">SI</button></form>
+                                                <form id="productDeleteForm" method="POST"><button type="submit"
+                                                        id="close" class="buttonModalDelete">SI</button></form>
                                                 <button id="cancel" class="buttonModalDelete">CANCELAR</button>
                                             </div>
                                         </div>
                                     </div>
+                                    <!--FIN DEL MODAL-->
                                 </td>
                             </tr>
                             <% }) %>
-
                     </tbody>
                 </table>
             </main>
             <%- include('../partials/footer')%>
-                <%- include('../partials/scripts.ejs')  %>
+                <%- include('../partials/scripts.ejs') %>
                     </body>
                     <script src="/js/productList.js"></script>
                     <script src="/js/modalDelete.js"></script>
-
-</html>
+                    </html>

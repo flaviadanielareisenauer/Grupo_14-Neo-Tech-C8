@@ -13,7 +13,8 @@ const {
     crear,
     productListAdCategory,
     searchAd,
-    addCategory
+    addCategory,
+    deleteCategory
 } = require("../controllers/adminController");
 const upLoadFile = require("../middlewares/cargaImagen");
 const checkLogAdmin = require("../middlewares/checkLogUserAdmin");
@@ -55,5 +56,5 @@ router.get("/products/:id", checkLogAdmin, productListAdCategory);
 router.get("/search", checkLogAdmin, searchAd)
 
 router.post("/addCategory", checkLogAdmin, addCategory)
-
+router.delete("/deleteCategory/:id", checkLogAdmin, deleteCategory)
 module.exports = router;

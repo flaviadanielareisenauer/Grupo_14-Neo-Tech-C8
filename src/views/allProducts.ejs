@@ -1,56 +1,49 @@
-<!DOCTYPE html>
 <%- include("./partials/head")%>
-    <html lang="es">
     <%-include('./partials/backHome')%>
-
         <body class="body-containerP">
             <%- include("./partials/header")%>
                 <div class="products-general">
+                    <!--SECCIÓN DE CATEGORÍAS EN EL LADO IZQUIERDO DE LA VISTA/ itera todos los registros en la tabla de categorías en la base de datos, y los muestra-->
                     <div class="products-category-container">
                         <h4 class="h4-category">Categorías
                         </h4>
-                        <%Category.forEach(category => {%>
+                        <%Category.forEach(category=> {%>
                             <p class="product-category-item">
                                 <a href="/allProducts/<%-category.id%>" class="category-select">
-                                    <% if(category.id == req){%>
+                                    <% if(category.id==req){%>
                                         <p class="dark-select">
                                             <%- category.name%>
                                         </p>
-
                                         <%}else{%>
                                             <%- category.name%>
                                                 <%}%>
-
-
                                 </a>
-
                             </p>
-
                             <%})%>
                     </div>
-
+                    <!--FIN SECCIÓN DE CATEGORÍAS-->
+                    <!--LISTADO DE TODOS LOS PRODUCTOS/ de igual manera iterados desde la base de datos -->
                     <div class="products-container">
                         <%Product.forEach(product=> {%>
-
                             <div class="products-cartAll">
                                 <a href="/products/detail/<%- product.id%>">
-                                    <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>" alt="">
-
+                                    <div class="image-all"><img src="/imagenes/<%-product.productsimage[0].name%>"
+                                            alt="">
                                     </div>
                                     <div class="detail-container-all">
                                         <h2 class="name-all">
                                             <%- product.name%>
                                         </h2>
-                                        <span class="price-all"> $<%- Math.round(product.price - product.price * product.discount /100)  %> </span>
+                                        <span class="price-all"> $<%- Math.round(product.price - product.price *
+                                                product.discount /100) %> </span>
                                         <span class="price-no-discount">$<%- product.price%></span>
-                                        <%if(product.discount > 0){%>
-                                            <p class="discount-allProduct-container"> <span class="discount-allProducts"><%- product.discount%>%Off</span></p>
+                                        <%if(product.discount> 0){%>
+                                            <p class="discount-allProduct-container"> <span
+                                                    class="discount-allProducts">
+                                                    <%- product.discount%>%Off
+                                                </span></p>
                                             <%}%>
-
-
-
                                                 <div class="button-all-container">
-
                                                     <div class="button2-all">
                                                         <a href="/products/detail/<%-product.id%>">
                                                             <p>
@@ -59,17 +52,14 @@
                                                         </a>
 
                                                     </div>
-
                                                 </div>
                                 </a>
-                                </div>
-
-
                             </div>
-                            <%})%>
                     </div>
+                    <!--FIN LISTADO DE TODOS LOS PRODUCTOS-->
+                    <%})%>
+                </div>
                 </div>
                 <%- include("./partials/footer")%>
         </body>
-
     </html>
