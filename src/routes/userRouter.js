@@ -12,7 +12,7 @@ const {
     logout,
     profileEdit,
     profileDelete,
-    imgDeleteProfile
+    imgDeleteProfile, contact
 } = require("../controllers/userController");
 
 const checkUserLogin = require('../middlewares/checkUserlogin');
@@ -48,5 +48,5 @@ router.get("/productCart", productCart);
 router.post("/profileDelete/:id", checkLog, profileDelete)
 router.post("/profile/imgDeleteProfile/:id", checkLog, imgDeleteProfile)
 
-
+router.get("/contact", contact)
 module.exports = router;

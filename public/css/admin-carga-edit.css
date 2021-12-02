@@ -91,16 +91,17 @@
 .button-imgupload {
 	display: inline-block;
 	padding: .5em 1em;
-	background: rgb(8, 0, 85);
+	background: var(--azulOscuro);
 	cursor: pointer;
 	border-radius: 5px;
-	border: 1px solid rgb(12, 0, 90);
-	color: #fff;
+	border: 1px solid var(--azulOscuro);
+	color: var(--blanco);
 	transition: .4s;
   margin:1rem;
 }
 .button-imgupload:hover {
-	background: orangered;
+	background: var(--naranja);
+  border :1px solid var(--naranja);
 }
 
 #imgUpload {

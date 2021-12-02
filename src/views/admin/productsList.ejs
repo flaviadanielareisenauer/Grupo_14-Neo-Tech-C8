@@ -42,7 +42,7 @@
 
                     <tbody>
                           <!--SECCIÓN DE CATEGORÍAS EN EL LADO IZQUIERDO DE LA VISTA/ itera todos los registros en la tabla de categorías en la base de datos, y los muestra-->
-                        <div class="products-category-container">
+                        <div class="products-category-containerAd">
                           
                             <h4 class="h4-category">Categorías
                             </h4>
@@ -52,19 +52,16 @@
                                         placeholder="   Busque un producto..."></div>
                             </form>
                             <%Category.forEach(category=> {%>
-                                <p class="product-category-item">
+                                <p class="product-category-itemAd">
                                     <a href="/admin/products/<%-category.id%>" class="category-select">
                                         <% if(category.id==req){%>
-                                            <p class="dark-select">
                                                 <%- category.name%>
-                                            </p>
                                             <%}else{%>
                                                 <%- category.name%>
                                                     <%}%>
                                     </a>
                                     <form action="/admin/deleteCategory/<%-category.id%>?_method=DELETE" method="POST" class="formDeleteCategory"onsubmit="return confirm('¿Estás seguro de eliminar esta categoría?')">
-                                        <button type="submit" class="buttonDeleteCategory"><i class="fas fa-trash deleteCategoryX"></i></button>
-                                      
+                                        <button type="submit" class="buttonDeleteCategory"><i class="fas fa-trash deleteCategoryX"></i></button> 
                                     </form>
                                 </p>
                                 <%})%>
@@ -78,6 +75,7 @@
                         </div>
                         <!--FIN DE SECCIÓN DE CATEGORÍAS-->
                         <% productsRev.forEach(product=> { %>
+                      
                             <tr>
                                 <th scope="row">
                                     <div>
@@ -110,7 +108,7 @@
                                     <a class="btn btn-success" href="/admin/products/<%- product.id%>/edit"
                                         style="margin: 10px 0;">
                                         <div class="buttons-container">
-                                            <div class="btn btn-eliminar">
+                                            <div class="btn-edit">
                                                 <i class="far fa-edit"></i>
                                             </div>
                                     </a>
@@ -132,7 +130,7 @@
                                             </p>
                                             <div class="buttonsDeleteContainer">
                                                 <form id="productDeleteForm" method="POST"><button type="submit"
-                                                        id="close" class="buttonModalDelete">SI</button></form>
+                                                        id="close" class="buttonModalDelete" style="background-color: #ff6000;">SI</button></form>
                                                 <button id="cancel" class="buttonModalDelete">CANCELAR</button>
                                             </div>
                                         </div>

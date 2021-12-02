@@ -256,4 +256,9 @@ module.exports = {
     }
     res.redirect("/");
   },
+  contact : (req, res) => {
+   res.render("contact", {
+    session: req.session,
+   })
+  }
 };

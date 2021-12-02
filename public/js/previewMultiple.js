@@ -27,7 +27,7 @@ let dropBox = document.getElementById('dropBox');
 		dropBox.classList.remove('hover');
 	}
 
-	// el objeto DataTransfer contiene los datos que se arrastran. es accesible
+	// el objeto DataTransfer contiene los datos que se arrastran(hover). es accesible
  	// de la propiedad dataTransfer de los eventos hover. la propiedad de archivos tiene
 	// todos los archivos que se arrastran. van a la función filesManager
 
@@ -44,7 +44,7 @@ let dropBox = document.getElementById('dropBox');
 
 	function upFile(file) {
 
-		// solo permite que se suban imágenes
+		// solo permite que se suban imágenes (RegExp)
 
 		let imageType = /image.*/;
 		if (file.type.match(imageType)) {

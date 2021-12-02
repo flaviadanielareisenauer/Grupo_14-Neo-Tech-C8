@@ -101,11 +101,16 @@ ul.fotoProducto li {
 }
 
 #boton-detalle {
-    border-bottom: var(--negro);
-    background-color: var(--naranja);
-    height: 40px;
-    width: 50%;
-    margin-top: 2rem;
+  border-bottom: var(--naranja);
+  background-color: var(--naranja);
+  height: 40px;
+  width: 50%;
+  margin-top: 2rem;
+}
+
+#boton-detalle:hover {
+	background: var(--azulOscuro);
+  border :1px solid var(--azulOscuro);
 }
 
 a.text-agr-car {
@@ -139,12 +144,12 @@ a.text-agr-car {
 }
 
 div.texto-detalle {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 10px;
-    border: 5px solid var(--azulOscuro);
-    background: #ffffff;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 10px;
+  border: 5px solid var(--azulOscuro);
+  background: #ffffff;
 }
 
 .destacado {
@@ -161,53 +166,75 @@ div.texto-detalle ul li {
 
 /*-------descuentos y horarios----------------*/
 
-.cuadrodesc {
-    /*width: 1100px;
+.cuadrodesc{
+	/*width: 1100px;
 	margin: 50px auto;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
 	display: flex;*/
-    display: flex;
-    /* flex-direction: column;*/
-    align-items: center;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+   display: flex;
+  /* flex-direction: column;*/
+   align-items: center;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
 }
 
-.tarjeta-cuadrodesc {
-    margin: 10px;
-    -webkit-perspective: 800;
-    perspective: 800;
+.tarjeta-cuadrodesc{
+	margin: 10px;
+	-webkit-perspective: 800;
+	perspective: 800;
+    
 }
 
-.tarjeta {
-    width: 260px;
-    height: 260px;
-    background: var(--naranja);
-    position: relative;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: .7s ease;
-    transition: .7s ease;
-    -webkit-box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
-    box-shadow: 0px 10px 15px -5px rgba(0, 0, 0, 0.65);
+.tarjeta{
+	width: 260px;
+	height: 260px;  
+	background: var(--naranja);
+	position: relative;
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: .7s ease;
+	transition: .7s ease;
+	-webkit-box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+	box-shadow: 0px 10px 15px -5px rgba(0,0,0,0.65);
+    
 }
 
-.adelante,
-.atras {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+.adelante , .atras{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
-.adelante {
-    width: 100%;
-    text-align: center;
+.adelante{
+	width: 100%;
+  text-align: center;
+   
+}
+
+.atras{
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	padding: 15px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: #fff;
+  background: var(--naranja);
 }
 
 .atras {
@@ -230,37 +257,33 @@ div.texto-detalle ul li {
     background: var(--naranja);
 }
 
-.tarjeta-cuadrodesc:hover .tarjeta {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
+.imgbox{
+ 
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  padding-top: 10px;
 }
-
-.imgbox {
-    width: 70%;
-    height: 70%;
-    object-fit: contain;
-    padding-top: 10px;
-}
-
 
 /*----------------hacer comentarios--------*/
 
-.botonComentar {
-    background-color: #fff;
-    border: 1px solid #ff6000;
-    border-radius: 3px;
-    width: 110px;
-    text-decoration: none;
-    text-align: center;
-    align-items: center;
-    height: 36px;
-    display: flex;
-    margin: auto;
-    transition: all .5s;
-    font-weight: normal;
-    margin-bottom: 5px;
-    padding: 5px;
-    cursor: pointer;
+.botonComentar{
+  background-color: #fff;
+  border: 1px solid #ff6000;
+  border-radius: 3px;
+  width: 110px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  height: 36px;
+  display: flex;
+  margin: auto;
+  transition: all .5s;
+  font-weight: normal;
+  margin-bottom: 5px;
+  padding: 5px;
+  cursor: pointer;
+  
 }
 
 .botonComentar:hover {
@@ -318,41 +341,194 @@ div.texto-detalle ul li {
     border: none;
 }
 
-.mensajedecomentario {
-    display: none;
-    text-align: center;
+.mensajedecomentario{
+  display: none;
+  text-align: center;
 }
 
 .userESP {
-    width: 10%;
-    display: flex;
-    padding: 0.5em;
+  width: 10%;
+  display: flex;
+  padding: 0.5em;
 }
 
-.seccioncomentariosESP {
-    border: solid 2px darkgrey;
-    background-color: white;
+.seccioncomentariosESP{
+  border: solid 2px darkgrey ;
+  background-color: white;
+  width: 90%;
+  max-height: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  display:none;
+}
+
+.comentariosuserESP{
+  border-bottom: solid 0.5px darkgrey;
+  width: 100%;
+  display: flex;
+  height: 50px;
+  background-color: #fff;
+}
+
+#txtIdcomentar{
+  width: 70%;
+  display: flex;
+  height: 36px;
+  margin: 5px;
+}
+
+.comentarios{
+  display: flex;
+  padding: 10px; 
+  align-items: center;
+}
+
+/*--------------*/
+@media screen and (min-width: 782px) {
+  
+  .productDetail {
+    background-color: var(--clarito);
+  }
+  .mainDetalleProducto {
+    display: flex;
     width: 90%;
-    max-height: 1000px;
+    margin: auto;
+  }
+  .pantalla-dividida {
+    display: flex;
+    width: 70%;
+    background-color: var(--azulOscuro);
+    padding: 10px;
+  }
+  .pantalla-dividida2 {
+    display: flex;
+    width: 20%;
+    background-color: var(--blanco);
+   
+  }
+  .agregar-carrito-der {
+    text-align: center;
+    background-color: var(--blanco);
+  }
+  
+  #boton-detalle {
+    border-bottom: var(--naranja);
+    background-color: var(--naranja);
+    width: 70%;
+    margin-top: 3em;
+  }
+
+  .text-agr-car {
+    margin: 2rem 0 2rem 0;
+  }
+  .text-agr-car2 {
+    margin: 1rem 0 1rem 0;
+  }
+  .boton-d {
+    text-decoration: none;
+    color: var(--blanco);
+  }
+
+  /*--------descripcion de producto--------*/
+
+
+  div.texto-detalle{
+  width: 100%;
+  margin: 10px;
+  border: 10px solid var(--azulOscuro);
+  display: flex;
+  flex-wrap:inherit;       
+  background: #ffffff;
+}
+
+  div.texto-detalle ul li {
+    padding-top: 1em;
+    padding-left: 1em;
+  }
+
+  .destacado {
+    
+    margin: 1em;
+  }
+  
+/*-------descuentos y ahorros--------------*/
+
+
+.tarjeta{
+  width: 300px;
+  height: 300px;
+}
+
+/*-------comentarios----*/
+
+  .comentarios {
+    width: 90%;
+  }
+
+  #txtIdcomentar{
+    width: 70%;
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    display: none;
+  }
+
+  .botonComentar{
+    width: 150px;
+    height: 46px;
+  }
+ 
+  .comentarioletra {
+    color: var(--blanco);
+  }
+  /*comentarios de usuarios*/
+  .seccioncomentarios {
+    width: 90%;
+    
+  }
 }
 
-.comentariosuserESP {
-    border-bottom: solid 0.5px darkgrey;
-    width: 100%;
+@media screen and (min-width: 1024px) {
+  .pantalla-dividida2 {
     display: flex;
-    height: 50px;
-    background-color: #fff;
+    width: 30%;
+    background-color: var(--blanco);
+  }
+  .agregar-carrito-der {
+   
+    text-align: center;
+    background-color: var(--blanco);
+  }
+  #boton-detalle {
+    border-bottom: var(--naranja);
+    background-color: var(--naranja);
+    width: 60%;
+    margin-top: 2.5rem;
+  }
+  .text-agr-car {
+    margin: 2rem 0 2rem 0;
+  }
+  .text-agr-car2 {
+    margin: 2rem 0 2rem 0;
+  }
+
+/*---------descripcion y caracteristicas ----*/
+
+.detalle-producto1 {
+  width: 100%;
+  display: flex;
+  /*align-items:flex-start;
+  justify-content: flex-start;*/
+
 }
 
-#txtIdcomentar {
-    width: 70%;
-    display: flex;
-    height: 36px;
-    margin: 5px;
+div.texto-detalle{
+  width: 80%;
+  margin: 10px;
+  border: 10px solid var(--azulOscuro);
+  display: flex;
+  flex-wrap:inherit;
+  background: var(--blanco);
 }
 
 .comentarios {
@@ -361,8 +537,7 @@ div.texto-detalle ul li {
     align-items: center;
 }
 
-
-/*--------------*/
+/*-------comentarios----*/
 
 @media screen and (min-width: 782px) {
     .productDetail {
@@ -497,4 +672,5 @@ div.texto-detalle ul li {
     .comentarios {
         width: 100%;
     }
+  }
 }

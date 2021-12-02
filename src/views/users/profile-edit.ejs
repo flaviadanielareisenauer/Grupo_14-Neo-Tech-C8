@@ -1,7 +1,7 @@
 <%- include('../partials/head')%>
     <body>
         <%- include('../partials/header')%>
-            <%-include('.. /partials/backHome')%>
+            <%-include('../partials/backHome')%>
                 <form action="/user/profile-edit/<%- user.id%>?_method=PUT" method="POST" enctype="multipart/form-data"
                     id="profileEditForm">
                     <!--IMAGEN DE PERFIL DE USUARIO/ consume la foto de perfil desde la DB comparando el avatar del usuario en sesión con los registros de usuarios guardados en la misma-->
@@ -117,4 +117,4 @@
                 <%- include('../partials/footer')%>
     </body>
     <script src="/prev.js"></script>
-    <script src="/js/profileEditFront.js"></script>
+    <script src="/js/validationsFront/profileEditFront.js"></script>
