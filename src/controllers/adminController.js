@@ -113,6 +113,7 @@ module.exports = {
 
         .then(
             ([categories, Product, Image]) => {
+                console.log(Image)
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
