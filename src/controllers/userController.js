@@ -156,7 +156,6 @@ module.exports = {
               dto,
               postalCode,
               province,
-              /*location,*/
               userId: req.params.id,
             },
             {
