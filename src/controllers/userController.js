@@ -134,6 +134,7 @@ module.exports = {
           lastName,
           dni,
           numberPhone,
+          location,
           avatar: req.file
             ? req.file.filename
             : avatar
@@ -155,7 +156,7 @@ module.exports = {
               dto,
               postalCode,
               province,
-              location,
+              /*location,*/
               userId: req.params.id,
             },
             {
