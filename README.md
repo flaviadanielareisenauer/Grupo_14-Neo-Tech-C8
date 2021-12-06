@@ -26,7 +26,7 @@
 
 ## Temática de la web y audiencia objetivo
 
-Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commerce. Está orientada a la venta de productos informáticos y electrónicos como computadoras, notebook, tablets, celulares, accesorios gamers, etc. El front-end de la página está hecho con HTML, CSS y JavaScript. Por otro lado, para el Backend se está utilizando NodeJS y el framework express. Para los controladores usamos MVC. Armamos la base de datos relacional usando Dbeaver, Sequelize, Mysql. El proyecto tambien cuenta con vistas parametrizadas y APIs. Contamos con Ejs para procesar los HTML y colocamos Coockies que cumplen funcionalidades como recordar al usuario.
+Somos un grupo de desarrolladores y creamos Neo-Tech una página web de E-commerce. Está orientada a la venta de productos informáticos y electrónicos como computadoras, notebook, tablets, celulares, accesorios gamers, etc. El front-end de la página está hecho con HTML, CSS y JavaScript. Por otro lado, para el Backend se está utilizando NodeJS y el framework express. Para los controladores usamos MVC. La base de datos es relacional basada en lenguaje SQL, consumida mediante sequelize. El proyecto tambien cuenta con vistas parametrizadas y APIs. Contamos con Ejs para procesar los HTML y colocamos Coockies que cumplen funcionalidades como recordar al usuario.
 
 La audiencia objetivo serán personas de todas las edades.
 

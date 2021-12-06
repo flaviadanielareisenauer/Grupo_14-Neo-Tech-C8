@@ -1,0 +1,74 @@
+.max_contact{ 
+   
+     display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background-color: rgba(0, 0, 0, .3);
+    opacity: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+.contact{cursor: pointer;}
+.formBoss{
+    background-color: white;
+
+    width: 100%;
+ max-width: 450px;
+ height: 450px;
+display: flex;
+align-items: center;
+justify-content:center ;
+position: relative;
+}
+
+.contact_container{
+    text-align: center;
+    width: 90%;
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 100%;
+  
+}
+.contact_container i{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size:2rem;
+    color: red;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.form_tittle{
+    text-align: center;
+    font-size: 1.9rem;
+    margin-bottom: .4rem;
+}
+
+.form_input_contact{
+    font-size: 1rem;
+    padding: 1rem 1rem;
+outline: none;
+border: none;
+border: 1px solid #bbb0b0;}
+
+
+.input_message {
+    resize: none;
+    padding: 1.8rem 1rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.formCta{
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ff6000;
+    border: none;
+    padding: .7rem 0;
+    border-radius: .5rem;
+    margin-top: 1rem;
+}

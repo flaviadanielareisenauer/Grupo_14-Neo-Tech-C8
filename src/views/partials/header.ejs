@@ -1,67 +1,79 @@
 <nav class="prueba">
     <div class="menu-top2">
+        <!--PARTE SUPERIOR DEL HEADER/ contiene buscador, logo, iconos de navegación.-->
         <div class="menu-top ">
+            <!--LOGO-->
             <div for=" " class="logo ">
                 <a href="/">
                     <h1 class="neonText "> Neo tech</h1>
                 </a>
-
             </div>
+            <!--LOGO-->
+            <!--BARRA DE BUSQUEDA/ desktop y mobile -->
             <div class="search">
                 <form class="form_header" action="/search" method="GET">
-                    <input type="text" id="search-bar" class="search-bar" name="search" placeHolder="Buscar productos, marcas, categorías... ">
+                    <input type="text" id="search-bar" class="search-bar" name="search"
+                        placeHolder="Buscar productos, marcas, categorías... ">
                     <button class="search-icon">
                         <i class="fas fa-search bus"></i>
                     </button>
-
                 </form>
             </div>
+            <!--FIN BARRA DE BUSQUEDA -->
+            <!--ICONOS DEL HEADER EN DESKTOP Y MOBILE-->
             <span class="arrowSearch"><i class="fas fa-arrow-left"></i></span>
             <span class="btn-menu">
-                  
                 <i class="fa fa-bars"></i>
             </span>
             <div class="iconSearchMobile">
-                <i class="fas fa-search bus" id="iconooo" class="iconoo"></i>
+                <i class="fas fa-search bus" id="iconooo" class="iconoo" ></i>
             </div>
-            <div class="iconos "> <a href="/user/productCart " class="no-res "><i class="fas fa-shopping-cart uno"></i></a>
+            <div class="iconos "> <a href="/user/productCart " class="no-res ">
+                    <i class="fas fa-shopping-cart uno"></i></a>
+                <!--ICONOS DEL HEADER EN DESKTOP Y MOBILE-->
+                <!--VARIEDAD DE LA FUNCIONALIDAD DE LOS ICONOS DEPENDIENDO EL ANCHO DE LA PAGINA, SESIÓN DE USUARIO O NO/ en desktop en caso del cliente no estar logueado el icono de usuario solo lo redigirá a la vista de login/registro, en caso de estar en sesión se desplegará un menú en el cual podrá ver su cuenta y pordrá cerrar sesión, en caso del usuario ademas ser administrador se desplegaran 3 opciones, las 2 anteriores y la de administración para así manejar los productos del sitio-->
                 <div class="user-container">
-                    <span class="user-icon-login"> <% if (!session.user) { %>
-                        <a href="/user/register"><i class="far fa-user dos"></i></a> 
-                    <% } %>
-                    <% if (session.user) { %>
-                        <i class="far fa-user dos"></i>
-                    <% } %>     
-                        <%if(!session.user){%> <div></div>
-                    <% } else if (session.user) { %> 
-                        <span class="session"></span>
-                    <%}%>
-                        </span>
-                        <%if(typeof session.user != "undefined"){%>
-                            <ul class="list">
-                                <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
-                                <li class="item-list"><a href="/user/logout"> Cerrar sesion</a></li>
-                                <%if(session.user.rol === 0){%>
-                                    <li class="item-list"><a href="/admin/products"> Administracion</a></li>
-                                    <%}%>
-                            </ul>
-                            <%}%>
+                    <span class="user-icon-login">
+                        <% if (!session.user) { %>
+                            <a href="/user/register"><i class="far fa-user dos"></i></a>
+                            <% } %>
+                                <% if (session.user) { %>
+                                    <i class="far fa-user dos"></i>
+                                    <% } %>
+                                        <%if(!session.user){%>
+                                            <div></div>
+                                            <% } else if (session.user) { %>
+                                                <span class="session"></span>
+                                                <%}%>
+                    </span>
+                    <%if(typeof session.user !="undefined" ){%>
+                        <ul class="list">
+                            <li class="item-list"><a href="/user/profile/<%- session.user.id%>">Mi cuenta</a></li>
+                            <li class="item-list"><a href="/user/logout"> Cerrar sesion</a></li>
+                            <%if(session.user.rol===0){%>
+                                <li class="item-list"><a href="/admin/products"> Administracion</a></li>
+                                <%}%>
+                        </ul>
+                        <%}%>
                 </div>
+                <!--FIN DEL FUNCIONALIDAD VARIABLE-->
             </div>
         </div>
+        <!--FIN PARTE SUPERIOR DEL HEADER/ contiene buscador, logo, iconos de navegación.-->
     </div>
-    </div>
+    <!--PARTE INFERIOR DEL HEADER, EN CASO DE HACER SCROLL PARA ABAJO SE OCULTARÁ/ contiene las demás opciones complementarias para la navegación por el sitio-->
     <div class="menu-bottom">
         <ul class="menu-items">
             <div class="logUserMobile">
+                <!--EN MOBILE/ se mostrará el avatar de usuario en caso de poseer, de no ser el caso se mostrará una imagen por defecto. Debajo un botón que dirige a la vista de login/register-->
                 <div class="logUserPhotoContainer">
                     <div class="logUserPhoto">
-                        <img src="/imagenes/userAvatars/<%- session.user ? session.user.avatar : 'userDefaultPhoto.jpg' %>" alt="">
+                        <img src="/imagenes/userAvatars/<%- session.user ? session.user.avatar : 'userDefaultPhoto.jpg' %>"
+                            alt="">
                     </div>
                     <p>Bienvenido
                         <%- session.user ? session.user.firstName : '' %>
                     </p>
-
                 </div>
                 <p class="logUserText">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, eos.</p>
                 <div class="redicLog">
@@ -70,6 +82,7 @@
                     </a>
 
                 </div>
+                <!--FIN-->
             </div>
             <li class="active">
                 <a href="/ " class="menu-bottom-items">Inicio</a>
@@ -85,7 +98,7 @@
             </li>
         </ul>
     </div>
-
+    <!--FIN PARTE INFERIOR DEL HEADER-->
     <div id="bar-arcoiris">
         <h1>. </h1>
     </div>

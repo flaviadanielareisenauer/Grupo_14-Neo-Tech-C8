@@ -13,7 +13,11 @@
                             <h4 class="h4-adm">Editar imagenes</h4>
                             <div class="imagenes_ad">
                                 <div id="dropBox">
-                                    <div id="gallery"></div>
+                                    <div id="gallery"><% if(Image.length > 1){%>
+                                        <%Image.forEach(img => {%>
+                                            <img src="/imagenes/<%-img.name%>" alt="">
+                                            <%})%>
+                                                <%}%></div>
                                     <input type="file" name="image" id="imgUpload"  onchange="filesManager(this.files)" multiple>
                                     <label class="button-imgupload" for="imgUpload">Subir Imagenes</label>
                                 </div>

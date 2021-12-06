@@ -1,139 +1,154 @@
 <%- include('../partials/head')%>
-
     <body>
         <%- include('../partials/header')%>
             <main>
+                <!--BOTÓN DE SUBIR A TOP 0-->
                 <%-include('../partials/backHome')%>
-
+                    <!--BOTÓN DE SUBIR A TOP 0-->
                     <div class="container-avatar">
+                        <!--IMAGEN DE PERFIL DE USUARIO/ consume la foto de perfil desde la DB comparando el avatar del usuario en sesión con los registros de usuarios guardados en la misma-->
                         <div class="profile-box">
                             <h4 class="profile-subtitle">Avatar</h4>
-                            <form action="/user/profile/imgDeleteProfile/<%-user.id%>" onsubmit="return confirm('¿Estás seguro de eliminar tu imagen de usuario?')" method="POST">
+                            <!--EL USUARIO TIENE LA OPCIÓN DE ELIMINAR SU AVATAR SI ASÍ LO DESEA-->
+                            <form action="/user/profile/imgDeleteProfile/<%-user.id%>"
+                                onsubmit="return confirm('¿Estás seguro de eliminar tu imagen de usuario?')"
+                                method="POST">
                                 <div class="avatar">
-                                    <img src="/imagenes/userAvatars/<%= user.avatar ? user.avatar : 'default-image.png'%>" alt="" id="avatarProfile">
-                                    <%if(user.avatar != ''){%>
+                                    <img src="/imagenes/userAvatars/<%= user.avatar ? user.avatar : 'default-image.png'%>"
+                                        alt="" id="avatarProfile">
+                                    <%if(user.avatar !='' ){%>
                                         <button class="imgProfileDelete" type="submit">
                                             <i class="fas fa-trash-alt"></i>
                                             <p>Eliminar imagen de perfil</p>
                                         </button>
                                         <%}%>
                             </form>
+                            <!--FIN DE ELIMINAR AVATAR-->
                             <div id="preview"></div>
-                            </div>
                         </div>
+                    </div>
+                    <!--FIN IMAGEN DE PERFIL DE USUARIO-->
 
-                        <div class="form-container">
-
+                    <!--CUERPO-->
+                    <div class="form-container">
+                        <!--PRIMERA SECCIÓN: DATOS DE LA CUENTA/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id-->
+                        <section class="form-register">
+                            <h4>Datos de la cuenta</h4>
+                            <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
+                            <hr class="divitionConfig">
+                            <div class="controls" type="email" name="email" placeholder="Usuario"
+                                value="<%- user.email%>">
+                                <p class="userInformation">
+                                    <%- user.email%>
+                                </p>
+                                <p class="userDescription">Correo</p>
+                            </div>
+                            <div class="controls" type="password" name="password" placeholder="Contraseña"
+                                value="<%- user.password%>">
+                                <p class="userInformation"></p>
+                                <p class="userDescription">Contraseña</p>
+                            </div>
+                        </section>
+                        <!--SEGUNDA SECCIÓN: DATOS PERSONALES/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id-->
+                        <section class="form-register">
+                            <h4>Datos personales</h4>
+                            <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
+                            <hr class="divitionConfig">
+                            <div class="controls" type=" text" name="firstName" placeholder="Nombre"
+                                value="<%- user.firstName%>">
+                                <p class="userInformation">
+                                    <%- user.firstName%>
+                                </p>
+                                <p class="userDescription">Nombre</p>
+                            </div>
+                            <div class="controls" type="text" name="lastName" placeholder="Apellido"
+                                value="<%- user.lastName%>">
+                                <p class="userInformation">
+                                    <%- user.lastName%>
+                                </p>
+                                <p class="userDescription">Apellido</p>
+                            </div>
+                            <div class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni%>">
+                                <p class="userInformation">
+                                    <%- user.dni%>
+                                </p>
+                                <p class="userDescription">D.N.I.</p>
+                            </div>
+                            <div class="controls" type="number" name="numberPhone" placeholder="Teléfono"
+                                value="<%- user.numberPhone%>">
+                                <p class="userInformation">
+                                    <%- user.numberPhone%>
+                                </p>
+                                <p class="userDescription">Teléfono</p>
+                            </div>
+                        </section>
+                        <!--TERCERA SECCIÓN: DATOS DE ENVÍO/ muestra los datos del usuario en sesion iterando los registros de usarios en la base de datos que sea compatible con el id en caso del usuario no ser administrador, si sí fuese administrador esta sección no le será mostrada-->
+                        <%if(user.rol==1){%>
                             <section class="form-register">
-
-                                <h4>Datos de la cuenta</h4>
+                                <h4>Datos de envío</h4>
                                 <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
                                 <hr class="divitionConfig">
-                                <div class="controls" type="email" name="email" placeholder="Usuario" value="<%- user.email%>">
+                                <div class="controls" type="text" name="streetName" placeholder="Dirección">
                                     <p class="userInformation">
-                                        <%- user.email%>
+                                        <%- user.addresses[0]? user.addresses[0].streetName: "" %>
                                     </p>
-                                    <p class="userDescription">Correo</p>
+                                    <p class="userDescription">Dirección</p>
                                 </div>
-                                <div class="controls" type="password" name="password" placeholder="Contraseña" value="<%- user.password%>">
-                                    <p class="userInformation"></p>
-                                    <p class="userDescription">Contraseña</p>
+                                <div class="controls" type="number" name="streetNumber" placeholder="Numero">
+                                    <p class="userInformation">
+                                        <%- user.addresses[0]?user.addresses[0].streetNumber: "" %>
+                                    </p>
+                                    <p class="userDescription">Número</p>
                                 </div>
+                                <div class="controls" type="text" name="dto" placeholder="Dpto">
+                                    <p class="userInformation">
+                                        <%- user.addresses[0]? user.addresses[0].dto:""%>
+                                    </p>
+                                    <p class="userDescription">Dpto</p>
+                                </div>
+                                <div class="controls" type="number" name="dirección" placeholder="Código Postal">
+                                    <p class="userInformation">
+                                        <%- user.addresses[0]?user.addresses[0].postalCode:""%>
+                                    </p>
+                                    <p class="userDescription">Código Postal</p>
+                                </div>
+                                <!--SECCIÓN DE SELECCIÓN DE PROVINCIA Y LOCALIDAD/ para esto se consumió la API del Servicio de Normalización de Datos Geográficos de Argentina-->
+                                <div class=" input-container ">
+                                    <div class="controls" type="text" name="province" placeholder="Provincia">
+                                        <p class="userInformation">
+                                            <%if(user.addresses[0]){%>
+                                                <%-user.addresses[0].province%>
+                                                    <%}%>
+                                        </p>
+                                        <p class="userDescription">Provincia</p>
+                                    </div>
+                                </div>
+                                <div class="input-container ">
+                                    <div class="controls" type="text" name="location" placeholder="Localidad">
+                                        <p class="userInformation">
+                                            <%if(user){%>
+                                                <%-user.location%>
+                                                    <%}%>
+                                        </p>
+                                        <p class="userDescription">Localidad</p>
+                                    </div>
+                                </div>
+                                <!--FIN DE SECCIÓN DE PROVINCIA Y LOCALIDAD-->
                             </section>
-
-                            <section class="form-register">
-                                <h4>Datos personales</h4>
-                                <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
-
-                                <hr class="divitionConfig">
-                                <div class="controls" type=" text" name="firstName" placeholder="Nombre" value="<%- user.firstName%>">
-                                    <p class="userInformation">
-                                        <%- user.firstName%>
-                                    </p>
-                                    <p class="userDescription">Nombre</p>
-                                </div>
-                                <div class="controls" type="text" name="lastName" placeholder="Apellido" value="<%- user.lastName%>">
-                                    <p class="userInformation">
-                                        <%- user.lastName%>
-                                    </p>
-                                    <p class="userDescription">Apellido</p>
-                                </div>
-                                <div class="controls" type="number" name="DNI" placeholder="D.N.I. " value="<%- user.dni%>">
-                                    <p class="userInformation">
-                                        <%- user.dni%>
-                                    </p>
-                                    <p class="userDescription">D.N.I.</p>
-                                </div>
-                                <div class="controls" type="number" name="numberPhone" placeholder="Teléfono" value="<%- user.numberPhone%>">
-                                    <p class="userInformation">
-                                        <%- user.numberPhone%>
-                                    </p>
-                                    <p class="userDescription">Teléfono</p>
-                                </div>
-                            </section>
-                            <%if(user.rol == 1){%>
-                                <section class="form-register">
-                                    <h4>Datos de envío</h4>
-                                    <a href="/user/profile-edit/<%- user.id%>"> <i class="fas fa-pencil-alt pencil"></i></a>
-                                    <hr class="divitionConfig">
-                                    <div class="controls" type="text" name="streetName" placeholder="Dirección">
-                                        <p class="userInformation">
-                                            <%- user.addresses[0]? user.addresses[0].streetName: "" %>
-                                        </p>
-                                        <p class="userDescription">Dirección</p>
-                                    </div>
-                                    <div class="controls" type="number" name="streetNumber" placeholder="Numero">
-                                        <p class="userInformation">
-                                            <%- user.addresses[0]?user.addresses[0].streetNumber: ""%>
-                                        </p>
-                                        <p class="userDescription">Número</p>
-                                    </div>
-                                    <div class="controls" type="text" name="dto" placeholder="Dpto">
-                                        <p class="userInformation">
-                                            <%- user.addresses[0]? user.addresses[0].dto:""%>
-                                        </p>
-                                        <p class="userDescription">Dpto</p>
-                                    </div>
-                                    <div class="controls" type="number" name="dirección" placeholder="Código Postal">
-                                        <p class="userInformation">
-                                            <%- user.addresses[0]?user.addresses[0].postalCode:""%>
-                                        </p>
-                                        <p class="userDescription">Código Postal</p>
-                                    </div>
-                                    <div class=" input-container ">
-                                        <div class="controls" type="text" name="province" placeholder="Provincia">
-                                            <p class="userInformation">
-                                                <%if(user.addresses[0]){%>
-                                                    <%-user.addresses[0].province%>
-                                                        <%}%>
-                                            </p>
-                                            <p class="userDescription">Provincia</p>
-                                        </div>
-                                    </div>
-                                    <div class="input-container ">
-                                        <div class="controls" type="text" name="location" placeholder="Localidad">
-                                            <p class="userInformation">
-                                                <%if(user){%>
-                                                    <%-user.location%>
-                                                        <%}%>
-                                            </p>
-                                            <p class="userDescription">Localidad</p>
-                                        </div>
-                                    </div>
-                                </section>
-                                </div>
-                         <%}%>
-
+                    </div>
+                    <%}%>
+                        <!--FIN DE SECCIONES DE LA VISTA-->
             </main>
-            <form action="/user/profileDelete/<%-user.id%>" method="POST" name="deleteProfile" onsubmit="return confirm('¿Estás seguro de eliminar tu cuenta?')">
+            <!--BOTÓN DE ELIMINAR USUARIO/ envía por Post el id del usuario en sesión para que luego un controlador pueda hacer la comparación con los id de registros en la tabla de usuarios y luego detruír el mismo-->
+            <form action="/user/profileDelete/<%-user.id%>" method="POST" name="deleteProfile"
+                onsubmit="return confirm('¿Estás seguro de eliminar tu cuenta?')">
                 <section class="profileButtonContainer">
-                    <button class="buttonProfileDelete"><p>Eliminar mi cuenta</p></button>
+                    <button class="buttonProfileDelete">
+                        <p>Eliminar mi cuenta</p>
+                    </button>
                 </section>
             </form>
-
-
+            <!--FIN DEL CUERPO DE LA VISTA-->
             <%- include('../partials/footer')%>
-
     </body>
-
     <script src="/public/js/prev.js "></script>

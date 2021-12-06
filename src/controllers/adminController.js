@@ -113,6 +113,7 @@ module.exports = {
 
         .then(
             ([categories, Product, Image]) => {
+                console.log(Image)
                 res.render("admin/admin-edit", {
                     Product,
                     Image,
@@ -268,5 +269,13 @@ module.exports = {
                 res.redirect("/admin/products");
             })
 
+    }, deleteCategory : (req, res)=> {
+        db.Categories.destroy({
+            where:{
+                id:req.params.id
+            }})
+            .then(()=> {
+                res.redirect('/admin/products')
+            })
     }
 };
